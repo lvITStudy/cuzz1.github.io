@@ -98,19 +98,19 @@
 
 
 
-<meta name="description" content="分布式基础CAP 定理CAP 定理指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可兼得。在分布式系统中，分区容错性是必须需要实现的。所以只能在一致性和可用性之间进行权衡（AP 或者 CP）。 BASE 理论BASE 是 Basically Available（基本可用）、Soft st">
+<meta name="description" content="&amp;#x5206;&amp;#x5E03;&amp;#x5F0F;&amp;#x57FA;&amp;#x7840;CAP &amp;#x5B9A;&amp;#x7406;CAP &amp;#x5B9A;&amp;#x7406;&amp;#x6307;&amp;#x7684;&amp;#x662F;&amp;#x5728;&amp;#x4E00;&amp;#x4E2A;&amp;#x5206;&amp;#x5E03;&amp;#x5F0F;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4E2D;&amp;#xFF0C; Consistency&amp;#xF">
 <meta name="keywords" content="Seata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分布式事务框架Seata">
 <meta property="og:url" content="http://blog.cuzz.site/2019/07/10/分布式事务框架Seata/index.html">
 <meta property="og:site_name" content="cuzz&#39;s blog">
-<meta property="og:description" content="分布式基础CAP 定理CAP 定理指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可兼得。在分布式系统中，分区容错性是必须需要实现的。所以只能在一致性和可用性之间进行权衡（AP 或者 CP）。 BASE 理论BASE 是 Basically Available（基本可用）、Soft st">
+<meta property="og:description" content="&amp;#x5206;&amp;#x5E03;&amp;#x5F0F;&amp;#x57FA;&amp;#x7840;CAP &amp;#x5B9A;&amp;#x7406;CAP &amp;#x5B9A;&amp;#x7406;&amp;#x6307;&amp;#x7684;&amp;#x662F;&amp;#x5728;&amp;#x4E00;&amp;#x4E2A;&amp;#x5206;&amp;#x5E03;&amp;#x5F0F;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4E2D;&amp;#xFF0C; Consistency&amp;#xF">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://camo.githubusercontent.com/b3a71332ae0a91db7f8616286a69b879fcbea672/68747470733a2f2f63646e2e6e6c61726b2e636f6d2f6c61726b2f302f323031382f706e672f31383836322f313534353239363739313037342d33626365376263652d303235652d343563332d393338362d3762393531333564616465382e706e67">
 <meta property="og:updated_time" content="2019-07-16T11:43:31.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式事务框架Seata">
-<meta name="twitter:description" content="分布式基础CAP 定理CAP 定理指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可兼得。在分布式系统中，分区容错性是必须需要实现的。所以只能在一致性和可用性之间进行权衡（AP 或者 CP）。 BASE 理论BASE 是 Basically Available（基本可用）、Soft st">
+<meta name="twitter:description" content="&amp;#x5206;&amp;#x5E03;&amp;#x5F0F;&amp;#x57FA;&amp;#x7840;CAP &amp;#x5B9A;&amp;#x7406;CAP &amp;#x5B9A;&amp;#x7406;&amp;#x6307;&amp;#x7684;&amp;#x662F;&amp;#x5728;&amp;#x4E00;&amp;#x4E2A;&amp;#x5206;&amp;#x5E03;&amp;#x5F0F;&amp;#x7CFB;&amp;#x7EDF;&amp;#x4E2D;&amp;#xFF0C; Consistency&amp;#xF">
 <meta name="twitter:image" content="https://camo.githubusercontent.com/b3a71332ae0a91db7f8616286a69b879fcbea672/68747470733a2f2f63646e2e6e6c61726b2e636f6d2f6c61726b2f302f323031382f706e672f31383836322f313534353239363739313037342d33626365376263652d303235652d343563332d393338362d3762393531333564616465382e706e67">
 
 
@@ -449,76 +449,76 @@
       
 
       
-        <h2 id="分布式基础"><a href="#分布式基础" class="headerlink" title="分布式基础"></a>分布式基础</h2><h3 id="CAP-定理"><a href="#CAP-定理" class="headerlink" title="CAP 定理"></a>CAP 定理</h3><p>CAP 定理指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可兼得。在分布式系统中，分区容错性是必须需要实现的。所以只能在一致性和可用性之间进行权衡（AP 或者 CP）。</p>
-<h3 id="BASE-理论"><a href="#BASE-理论" class="headerlink" title="BASE 理论"></a>BASE 理论</h3><p>BASE 是 Basically Available（基本可用）、Soft state（软状态）和 Eventually consistent（最终一致性）三个短语的缩写。是对 CAP 中 AP 的一个扩展</p>
+        <h2 id="&#x5206;&#x5E03;&#x5F0F;&#x57FA;&#x7840;"><a href="#&#x5206;&#x5E03;&#x5F0F;&#x57FA;&#x7840;" class="headerlink" title="&#x5206;&#x5E03;&#x5F0F;&#x57FA;&#x7840;"></a>&#x5206;&#x5E03;&#x5F0F;&#x57FA;&#x7840;</h2><h3 id="CAP-&#x5B9A;&#x7406;"><a href="#CAP-&#x5B9A;&#x7406;" class="headerlink" title="CAP &#x5B9A;&#x7406;"></a>CAP &#x5B9A;&#x7406;</h3><p>CAP &#x5B9A;&#x7406;&#x6307;&#x7684;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C; Consistency&#xFF08;&#x4E00;&#x81F4;&#x6027;&#xFF09;&#x3001; Availability&#xFF08;&#x53EF;&#x7528;&#x6027;&#xFF09;&#x3001;Partition tolerance&#xFF08;&#x5206;&#x533A;&#x5BB9;&#x9519;&#x6027;&#xFF09;&#xFF0C;&#x4E09;&#x8005;&#x4E0D;&#x53EF;&#x517C;&#x5F97;&#x3002;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5206;&#x533A;&#x5BB9;&#x9519;&#x6027;&#x662F;&#x5FC5;&#x987B;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x5728;&#x4E00;&#x81F4;&#x6027;&#x548C;&#x53EF;&#x7528;&#x6027;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x6743;&#x8861;&#xFF08;AP &#x6216;&#x8005; CP&#xFF09;&#x3002;</p>
+<h3 id="BASE-&#x7406;&#x8BBA;"><a href="#BASE-&#x7406;&#x8BBA;" class="headerlink" title="BASE &#x7406;&#x8BBA;"></a>BASE &#x7406;&#x8BBA;</h3><p>BASE &#x662F; Basically Available&#xFF08;&#x57FA;&#x672C;&#x53EF;&#x7528;&#xFF09;&#x3001;Soft state&#xFF08;&#x8F6F;&#x72B6;&#x6001;&#xFF09;&#x548C; Eventually consistent&#xFF08;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#xFF09;&#x4E09;&#x4E2A;&#x77ED;&#x8BED;&#x7684;&#x7F29;&#x5199;&#x3002;&#x662F;&#x5BF9; CAP &#x4E2D; AP &#x7684;&#x4E00;&#x4E2A;&#x6269;&#x5C55;</p>
 <ol>
-<li>BA 基本可用：分布式系统在出现故障时，允许损失部分可用功能，保证核心功能可用。</li>
-<li>S 软状态：允许系统中存在中间状态，这个状态不影响系统可用性，这里指的是 CAP 中的不一致。</li>
-<li>E 最终一致：最终一致是指经过一段时间后，所有节点数据都将会达到一致。</li>
+<li>BA &#x57FA;&#x672C;&#x53EF;&#x7528;&#xFF1A;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x5728;&#x51FA;&#x73B0;&#x6545;&#x969C;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x635F;&#x5931;&#x90E8;&#x5206;&#x53EF;&#x7528;&#x529F;&#x80FD;&#xFF0C;&#x4FDD;&#x8BC1;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x53EF;&#x7528;&#x3002;</li>
+<li>S &#x8F6F;&#x72B6;&#x6001;&#xFF1A;&#x5141;&#x8BB8;&#x7CFB;&#x7EDF;&#x4E2D;&#x5B58;&#x5728;&#x4E2D;&#x95F4;&#x72B6;&#x6001;&#xFF0C;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x4E0D;&#x5F71;&#x54CD;&#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x6027;&#xFF0C;&#x8FD9;&#x91CC;&#x6307;&#x7684;&#x662F; CAP &#x4E2D;&#x7684;&#x4E0D;&#x4E00;&#x81F4;&#x3002;</li>
+<li>E &#x6700;&#x7EC8;&#x4E00;&#x81F4;&#xFF1A;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x662F;&#x6307;&#x7ECF;&#x8FC7;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x8282;&#x70B9;&#x6570;&#x636E;&#x90FD;&#x5C06;&#x4F1A;&#x8FBE;&#x5230;&#x4E00;&#x81F4;&#x3002;</li>
 </ol>
-<p>BASE 解决了 CAP 中理论没有网络延迟，在 BASE 中用软状态和最终一致，保证了延迟后的一致性。</p>
-<p>BASE 和 ACID 是相反的，它完全不同于 ACID 的强一致性模型，而是通过牺牲强一致性来获得可用性，并允许数据在一段时间内是不一致的，但最终达到一致状态。</p>
-<h3 id="分布式事务实现方式"><a href="#分布式事务实现方式" class="headerlink" title="分布式事务实现方式"></a><a href="https://github.com/doocs/advanced-java/blob/master/docs/distributed-system/distributed-transaction.md" target="_blank" rel="noopener">分布式事务实现方式</a></h3><ul>
-<li><strong>XA 方案(两阶段提交)</strong></li>
-<li><strong>TCC 方案</strong></li>
-<li>本地消息表</li>
-<li>可靠消息最终一致性方案</li>
-<li>最大努力通知方案</li>
+<p>BASE &#x89E3;&#x51B3;&#x4E86; CAP &#x4E2D;&#x7406;&#x8BBA;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#x5EF6;&#x8FDF;&#xFF0C;&#x5728; BASE &#x4E2D;&#x7528;&#x8F6F;&#x72B6;&#x6001;&#x548C;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E86;&#x5EF6;&#x8FDF;&#x540E;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
+<p>BASE &#x548C; ACID &#x662F;&#x76F8;&#x53CD;&#x7684;&#xFF0C;&#x5B83;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x4E8E; ACID &#x7684;&#x5F3A;&#x4E00;&#x81F4;&#x6027;&#x6A21;&#x578B;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x727A;&#x7272;&#x5F3A;&#x4E00;&#x81F4;&#x6027;&#x6765;&#x83B7;&#x5F97;&#x53EF;&#x7528;&#x6027;&#xFF0C;&#x5E76;&#x5141;&#x8BB8;&#x6570;&#x636E;&#x5728;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x662F;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x4F46;&#x6700;&#x7EC8;&#x8FBE;&#x5230;&#x4E00;&#x81F4;&#x72B6;&#x6001;&#x3002;</p>
+<h3 id="&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;"><a href="#&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;" class="headerlink" title="&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;"></a><a href="https://github.com/doocs/advanced-java/blob/master/docs/distributed-system/distributed-transaction.md" target="_blank" rel="noopener">&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</a></h3><ul>
+<li><strong>XA &#x65B9;&#x6848;(&#x4E24;&#x9636;&#x6BB5;&#x63D0;&#x4EA4;)</strong></li>
+<li><strong>TCC &#x65B9;&#x6848;</strong></li>
+<li>&#x672C;&#x5730;&#x6D88;&#x606F;&#x8868;</li>
+<li>&#x53EF;&#x9760;&#x6D88;&#x606F;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x65B9;&#x6848;</li>
+<li>&#x6700;&#x5927;&#x52AA;&#x529B;&#x901A;&#x77E5;&#x65B9;&#x6848;</li>
 </ul>
-<h2 id="Seata简介"><a href="#Seata简介" class="headerlink" title="Seata简介"></a>Seata简介</h2><p>Seata (Simple Extensible Autonomous Transaction Architecture) 是阿里巴巴开源的分布式事务中间件，，解决微服务场景下面临的分布式事务问题。</p>
-<p>具体看 <a href="https://github.com/seata/seata" target="_blank" rel="noopener">Seata</a> 官网：</p>
+<h2 id="Seata&#x7B80;&#x4ECB;"><a href="#Seata&#x7B80;&#x4ECB;" class="headerlink" title="Seata&#x7B80;&#x4ECB;"></a>Seata&#x7B80;&#x4ECB;</h2><p>Seata (Simple Extensible Autonomous Transaction Architecture) &#x662F;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x5F00;&#x6E90;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#xFF0C;&#x89E3;&#x51B3;&#x5FAE;&#x670D;&#x52A1;&#x573A;&#x666F;&#x4E0B;&#x9762;&#x4E34;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x770B; <a href="https://github.com/seata/seata" target="_blank" rel="noopener">Seata</a> &#x5B98;&#x7F51;&#xFF1A;</p>
 <p><img src="https://camo.githubusercontent.com/b3a71332ae0a91db7f8616286a69b879fcbea672/68747470733a2f2f63646e2e6e6c61726b2e636f6d2f6c61726b2f302f323031382f706e672f31383836322f313534353239363739313037342d33626365376263652d303235652d343563332d393338362d3762393531333564616465382e706e67" alt="Seata solution"></p>
-<p><strong>Seata主要由三个重要组件组成：</strong></p>
+<p><strong>Seata&#x4E3B;&#x8981;&#x7531;&#x4E09;&#x4E2A;&#x91CD;&#x8981;&#x7EC4;&#x4EF6;&#x7EC4;&#x6210;&#xFF1A;</strong></p>
 <ul>
-<li>Transaction Coordinator(TC)：管理全局的分支事务的状态，用于全局性事务的提交和回滚。</li>
-<li>Transaction Manager(TM)：事务管理器，用于开启全局事务、提交或者回滚全局事务，是全局事务的开启者。</li>
-<li>Resource Manager(RM)：资源管理器，用于分支事务上的资源管理，向 TC 注册分支事务，上报分支事务的状态，接受 TC 的命令来提交或者回滚分支事务。</li>
+<li>Transaction Coordinator(TC)&#xFF1A;&#x7BA1;&#x7406;&#x5168;&#x5C40;&#x7684;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x7528;&#x4E8E;&#x5168;&#x5C40;&#x6027;&#x4E8B;&#x52A1;&#x7684;&#x63D0;&#x4EA4;&#x548C;&#x56DE;&#x6EDA;&#x3002;</li>
+<li>Transaction Manager(TM)&#xFF1A;&#x4E8B;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5F00;&#x542F;&#x5168;&#x5C40;&#x4E8B;&#x52A1;&#x3001;&#x63D0;&#x4EA4;&#x6216;&#x8005;&#x56DE;&#x6EDA;&#x5168;&#x5C40;&#x4E8B;&#x52A1;&#xFF0C;&#x662F;&#x5168;&#x5C40;&#x4E8B;&#x52A1;&#x7684;&#x5F00;&#x542F;&#x8005;&#x3002;</li>
+<li>Resource Manager(RM)&#xFF1A;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x4E0A;&#x7684;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#xFF0C;&#x5411; TC &#x6CE8;&#x518C;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#xFF0C;&#x4E0A;&#x62A5;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x63A5;&#x53D7; TC &#x7684;&#x547D;&#x4EE4;&#x6765;&#x63D0;&#x4EA4;&#x6216;&#x8005;&#x56DE;&#x6EDA;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x3002;</li>
 </ul>
-<h2 id="Seata-两种模式"><a href="#Seata-两种模式" class="headerlink" title="Seata 两种模式"></a>Seata 两种模式</h2><p>Seata 关注的就是微服务架构下的数据一致性问题，是一整套的分布式事务解决方案。Seata 框架包含两种模式，一种是 AT 模式。AT 模式主要从数据分片的角度，关注多 DB 访问的数据一致性，当然也包括多服务下的多 DB 数据访问一致性问题。</p>
-<p>另外一个就是 TCC 模式，TCC 模式主要关注业务拆分，在按照业务横向扩展资源时，解决微服务间调用的一致性问题，保证读资源访问的事务属性。</p>
-<h3 id="AT-模式"><a href="#AT-模式" class="headerlink" title="AT 模式"></a>AT 模式</h3><p>AT 模式是通过两段提交的方式实现，AT 模式下，把每个数据库被当做是一个 Resource，Seata 里称为 DataSource Resource。业务通过 JDBC 标准接口访问数据库资源时，Seata 框架会对所有请求进行拦截，做一些操作。每个本地事务提交时，Seata RM（Resource Manager，资源管理器） 都会向 TC（Transaction Coordinator，事务协调器） 注册一个分支事务。当请求链路调用完成后，发起方通知 TC 提交或回滚分布式事务，进入二阶段调用流程。此时，TC 会根据之前注册的分支事务回调到对应参与者去执行对应资源的第二阶段。TC 是怎么找到分支事务与资源的对应关系呢？每个资源都有一个全局唯一的资源 ID，并且在初始化时用该 ID 向 TC 注册资源。在运行时，每个分支事务的注册都会带上其资源 ID。这样 TC 就能在二阶段调用时正确找到对应的资源。</p>
-<p>这就是我们的 AT 模式。简单总结一下，就是把每个数据库当做一个 Resource，在本地事务提交时会去注册一个分支事务。</p>
-<p>这种模式是对业务零入侵，并发没那么高。</p>
-<h3 id="TCC-模式"><a href="#TCC-模式" class="headerlink" title="TCC 模式"></a>TCC 模式</h3><p><strong>TCC 模型是把锁的粒度完全交给业务处理，它需要每个子事务业务都实现Try-Confirm / Cancel 接口。</strong></p>
+<h2 id="Seata-&#x4E24;&#x79CD;&#x6A21;&#x5F0F;"><a href="#Seata-&#x4E24;&#x79CD;&#x6A21;&#x5F0F;" class="headerlink" title="Seata &#x4E24;&#x79CD;&#x6A21;&#x5F0F;"></a>Seata &#x4E24;&#x79CD;&#x6A21;&#x5F0F;</h2><p>Seata &#x5173;&#x6CE8;&#x7684;&#x5C31;&#x662F;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x4E0B;&#x7684;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x4E00;&#x6574;&#x5957;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;Seata &#x6846;&#x67B6;&#x5305;&#x542B;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x4E00;&#x79CD;&#x662F; AT &#x6A21;&#x5F0F;&#x3002;AT &#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x4ECE;&#x6570;&#x636E;&#x5206;&#x7247;&#x7684;&#x89D2;&#x5EA6;&#xFF0C;&#x5173;&#x6CE8;&#x591A; DB &#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x5305;&#x62EC;&#x591A;&#x670D;&#x52A1;&#x4E0B;&#x7684;&#x591A; DB &#x6570;&#x636E;&#x8BBF;&#x95EE;&#x4E00;&#x81F4;&#x6027;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5C31;&#x662F; TCC &#x6A21;&#x5F0F;&#xFF0C;TCC &#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x4E1A;&#x52A1;&#x62C6;&#x5206;&#xFF0C;&#x5728;&#x6309;&#x7167;&#x4E1A;&#x52A1;&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x89E3;&#x51B3;&#x5FAE;&#x670D;&#x52A1;&#x95F4;&#x8C03;&#x7528;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x4FDD;&#x8BC1;&#x8BFB;&#x8D44;&#x6E90;&#x8BBF;&#x95EE;&#x7684;&#x4E8B;&#x52A1;&#x5C5E;&#x6027;&#x3002;</p>
+<h3 id="AT-&#x6A21;&#x5F0F;"><a href="#AT-&#x6A21;&#x5F0F;" class="headerlink" title="AT &#x6A21;&#x5F0F;"></a>AT &#x6A21;&#x5F0F;</h3><p>AT &#x6A21;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x4E24;&#x6BB5;&#x63D0;&#x4EA4;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;AT &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x628A;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x88AB;&#x5F53;&#x505A;&#x662F;&#x4E00;&#x4E2A; Resource&#xFF0C;Seata &#x91CC;&#x79F0;&#x4E3A; DataSource Resource&#x3002;&#x4E1A;&#x52A1;&#x901A;&#x8FC7; JDBC &#x6807;&#x51C6;&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;Seata &#x6846;&#x67B6;&#x4F1A;&#x5BF9;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x8FDB;&#x884C;&#x62E6;&#x622A;&#xFF0C;&#x505A;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x3002;&#x6BCF;&#x4E2A;&#x672C;&#x5730;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;Seata RM&#xFF08;Resource Manager&#xFF0C;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#xFF09; &#x90FD;&#x4F1A;&#x5411; TC&#xFF08;Transaction Coordinator&#xFF0C;&#x4E8B;&#x52A1;&#x534F;&#x8C03;&#x5668;&#xFF09; &#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x3002;&#x5F53;&#x8BF7;&#x6C42;&#x94FE;&#x8DEF;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53D1;&#x8D77;&#x65B9;&#x901A;&#x77E5; TC &#x63D0;&#x4EA4;&#x6216;&#x56DE;&#x6EDA;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#xFF0C;&#x8FDB;&#x5165;&#x4E8C;&#x9636;&#x6BB5;&#x8C03;&#x7528;&#x6D41;&#x7A0B;&#x3002;&#x6B64;&#x65F6;&#xFF0C;TC &#x4F1A;&#x6839;&#x636E;&#x4E4B;&#x524D;&#x6CE8;&#x518C;&#x7684;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x56DE;&#x8C03;&#x5230;&#x5BF9;&#x5E94;&#x53C2;&#x4E0E;&#x8005;&#x53BB;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x8D44;&#x6E90;&#x7684;&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#x3002;TC &#x662F;&#x600E;&#x4E48;&#x627E;&#x5230;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x4E0E;&#x8D44;&#x6E90;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x5462;&#xFF1F;&#x6BCF;&#x4E2A;&#x8D44;&#x6E90;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x7684;&#x8D44;&#x6E90; ID&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x7528;&#x8BE5; ID &#x5411; TC &#x6CE8;&#x518C;&#x8D44;&#x6E90;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x6BCF;&#x4E2A;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x7684;&#x6CE8;&#x518C;&#x90FD;&#x4F1A;&#x5E26;&#x4E0A;&#x5176;&#x8D44;&#x6E90; ID&#x3002;&#x8FD9;&#x6837; TC &#x5C31;&#x80FD;&#x5728;&#x4E8C;&#x9636;&#x6BB5;&#x8C03;&#x7528;&#x65F6;&#x6B63;&#x786E;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684; AT &#x6A21;&#x5F0F;&#x3002;&#x7B80;&#x5355;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5F53;&#x505A;&#x4E00;&#x4E2A; Resource&#xFF0C;&#x5728;&#x672C;&#x5730;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x65F6;&#x4F1A;&#x53BB;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x662F;&#x5BF9;&#x4E1A;&#x52A1;&#x96F6;&#x5165;&#x4FB5;&#xFF0C;&#x5E76;&#x53D1;&#x6CA1;&#x90A3;&#x4E48;&#x9AD8;&#x3002;</p>
+<h3 id="TCC-&#x6A21;&#x5F0F;"><a href="#TCC-&#x6A21;&#x5F0F;" class="headerlink" title="TCC &#x6A21;&#x5F0F;"></a>TCC &#x6A21;&#x5F0F;</h3><p><strong>TCC &#x6A21;&#x578B;&#x662F;&#x628A;&#x9501;&#x7684;&#x7C92;&#x5EA6;&#x5B8C;&#x5168;&#x4EA4;&#x7ED9;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#xFF0C;&#x5B83;&#x9700;&#x8981;&#x6BCF;&#x4E2A;&#x5B50;&#x4E8B;&#x52A1;&#x4E1A;&#x52A1;&#x90FD;&#x5B9E;&#x73B0;Try-Confirm / Cancel &#x63A5;&#x53E3;&#x3002;</strong></p>
 <blockquote>
-<p>TCC 模式本质也是 2PC ，只是 TCC 在应用层控制。</p>
+<p>TCC &#x6A21;&#x5F0F;&#x672C;&#x8D28;&#x4E5F;&#x662F; 2PC &#xFF0C;&#x53EA;&#x662F; TCC &#x5728;&#x5E94;&#x7528;&#x5C42;&#x63A7;&#x5236;&#x3002;</p>
 </blockquote>
 <ul>
 <li>Try:<ul>
-<li>尝试执行业务</li>
-<li>完成所有业务检查（一致性）</li>
-<li>预留必须业务资源（准隔离性）</li>
+<li>&#x5C1D;&#x8BD5;&#x6267;&#x884C;&#x4E1A;&#x52A1;</li>
+<li>&#x5B8C;&#x6210;&#x6240;&#x6709;&#x4E1A;&#x52A1;&#x68C0;&#x67E5;&#xFF08;&#x4E00;&#x81F4;&#x6027;&#xFF09;</li>
+<li>&#x9884;&#x7559;&#x5FC5;&#x987B;&#x4E1A;&#x52A1;&#x8D44;&#x6E90;&#xFF08;&#x51C6;&#x9694;&#x79BB;&#x6027;&#xFF09;</li>
 </ul>
 </li>
 <li>Confirm:<ul>
-<li>确认执行业务；</li>
-<li>真正执行业务，不作任何业务检查</li>
-<li>只使用Try阶段预留的业务资源</li>
-<li>Confirm 操作满足幂等性</li>
+<li>&#x786E;&#x8BA4;&#x6267;&#x884C;&#x4E1A;&#x52A1;&#xFF1B;</li>
+<li>&#x771F;&#x6B63;&#x6267;&#x884C;&#x4E1A;&#x52A1;&#xFF0C;&#x4E0D;&#x4F5C;&#x4EFB;&#x4F55;&#x4E1A;&#x52A1;&#x68C0;&#x67E5;</li>
+<li>&#x53EA;&#x4F7F;&#x7528;Try&#x9636;&#x6BB5;&#x9884;&#x7559;&#x7684;&#x4E1A;&#x52A1;&#x8D44;&#x6E90;</li>
+<li>Confirm &#x64CD;&#x4F5C;&#x6EE1;&#x8DB3;&#x5E42;&#x7B49;&#x6027;</li>
 </ul>
 </li>
 <li>Cancel:<ul>
-<li>取消执行业务</li>
-<li>释放Try阶段预留的业务资源</li>
-<li>Cancel操作满足幂等性</li>
+<li>&#x53D6;&#x6D88;&#x6267;&#x884C;&#x4E1A;&#x52A1;</li>
+<li>&#x91CA;&#x653E;Try&#x9636;&#x6BB5;&#x9884;&#x7559;&#x7684;&#x4E1A;&#x52A1;&#x8D44;&#x6E90;</li>
+<li>Cancel&#x64CD;&#x4F5C;&#x6EE1;&#x8DB3;&#x5E42;&#x7B49;&#x6027;</li>
 </ul>
 </li>
 </ul>
-<p><strong>这三个阶段，都会按本地事务的方式执行。不同于 XA 的 prepare ，TCC 无需将 XA 的投票期间的所有资源挂起，因此极大的提高了吞吐量。</strong></p>
-<p>那么对应到 TCC 模式里，也是一样的，Seata 框架把每组 TCC 接口当做一个 Resource，称为 TCC Resource。这套 TCC 接口可以是 RPC，也以是服务内 JVM 调用。在业务启动时，Seata 框架会自动扫描识别到 TCC 接口的调用方和发布方。如果是 RPC 的话，就是 sofa:reference、sofa:service、dubbo:reference、dubbo:service 等。</p>
-<p>扫描到 TCC 接口的调用方和发布方之后。如果是发布方，会在业务启动时向 TC 注册 TCC Resource，与 DataSource Resource 一样，每个资源也会带有一个资源 ID。</p>
-<p>如果是调用方，Seata 框架会给调用方加上切面，与 AT 模式一样，在运行时，该切面会拦截所有对 TCC 接口的调用。每调用一次 Try 接口，切面会先向 TC 注册一个分支事务，然后才去执行原来的 RPC 调用。当请求链路调用完成后，TC 通过分支事务的资源 ID 回调到正确的参与者去执行对应 TCC 资源的 Confirm 或 Cancel 方法。</p>
-<p>在讲完了整个框架模型以后，大家可能会问 TCC 三个接口怎么实现。因为框架本身很简单，主要是扫描 TCC 接口，注册资源，拦截接口调用，注册分支事务，最后回调二阶段接口。最核心的实际上是 TCC 接口的实现逻辑。下面我将根据蚂蚁金服内部多年的实践来为大家分析怎么实现一个完备的 TCC 接口。</p>
-<h2 id="运行-Demo"><a href="#运行-Demo" class="headerlink" title="运行 Demo"></a>运行 Demo</h2><p><a href="https://github.com/seata/seata-samples" target="_blank" rel="noopener">官方Demo</a></p>
-<p>下面是 dubbo 的例子，运行后报错可以看到回滚信息：</p>
+<p><strong>&#x8FD9;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x90FD;&#x4F1A;&#x6309;&#x672C;&#x5730;&#x4E8B;&#x52A1;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;&#x3002;&#x4E0D;&#x540C;&#x4E8E; XA &#x7684; prepare &#xFF0C;TCC &#x65E0;&#x9700;&#x5C06; XA &#x7684;&#x6295;&#x7968;&#x671F;&#x95F4;&#x7684;&#x6240;&#x6709;&#x8D44;&#x6E90;&#x6302;&#x8D77;&#xFF0C;&#x56E0;&#x6B64;&#x6781;&#x5927;&#x7684;&#x63D0;&#x9AD8;&#x4E86;&#x541E;&#x5410;&#x91CF;&#x3002;</strong></p>
+<p>&#x90A3;&#x4E48;&#x5BF9;&#x5E94;&#x5230; TCC &#x6A21;&#x5F0F;&#x91CC;&#xFF0C;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;Seata &#x6846;&#x67B6;&#x628A;&#x6BCF;&#x7EC4; TCC &#x63A5;&#x53E3;&#x5F53;&#x505A;&#x4E00;&#x4E2A; Resource&#xFF0C;&#x79F0;&#x4E3A; TCC Resource&#x3002;&#x8FD9;&#x5957; TCC &#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x662F; RPC&#xFF0C;&#x4E5F;&#x4EE5;&#x662F;&#x670D;&#x52A1;&#x5185; JVM &#x8C03;&#x7528;&#x3002;&#x5728;&#x4E1A;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#xFF0C;Seata &#x6846;&#x67B6;&#x4F1A;&#x81EA;&#x52A8;&#x626B;&#x63CF;&#x8BC6;&#x522B;&#x5230; TCC &#x63A5;&#x53E3;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x548C;&#x53D1;&#x5E03;&#x65B9;&#x3002;&#x5982;&#x679C;&#x662F; RPC &#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x662F; sofa:reference&#x3001;sofa:service&#x3001;dubbo:reference&#x3001;dubbo:service &#x7B49;&#x3002;</p>
+<p>&#x626B;&#x63CF;&#x5230; TCC &#x63A5;&#x53E3;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x548C;&#x53D1;&#x5E03;&#x65B9;&#x4E4B;&#x540E;&#x3002;&#x5982;&#x679C;&#x662F;&#x53D1;&#x5E03;&#x65B9;&#xFF0C;&#x4F1A;&#x5728;&#x4E1A;&#x52A1;&#x542F;&#x52A8;&#x65F6;&#x5411; TC &#x6CE8;&#x518C; TCC Resource&#xFF0C;&#x4E0E; DataSource Resource &#x4E00;&#x6837;&#xFF0C;&#x6BCF;&#x4E2A;&#x8D44;&#x6E90;&#x4E5F;&#x4F1A;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x8D44;&#x6E90; ID&#x3002;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x8C03;&#x7528;&#x65B9;&#xFF0C;Seata &#x6846;&#x67B6;&#x4F1A;&#x7ED9;&#x8C03;&#x7528;&#x65B9;&#x52A0;&#x4E0A;&#x5207;&#x9762;&#xFF0C;&#x4E0E; AT &#x6A21;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x8BE5;&#x5207;&#x9762;&#x4F1A;&#x62E6;&#x622A;&#x6240;&#x6709;&#x5BF9; TCC &#x63A5;&#x53E3;&#x7684;&#x8C03;&#x7528;&#x3002;&#x6BCF;&#x8C03;&#x7528;&#x4E00;&#x6B21; Try &#x63A5;&#x53E3;&#xFF0C;&#x5207;&#x9762;&#x4F1A;&#x5148;&#x5411; TC &#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x53BB;&#x6267;&#x884C;&#x539F;&#x6765;&#x7684; RPC &#x8C03;&#x7528;&#x3002;&#x5F53;&#x8BF7;&#x6C42;&#x94FE;&#x8DEF;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x540E;&#xFF0C;TC &#x901A;&#x8FC7;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#x7684;&#x8D44;&#x6E90; ID &#x56DE;&#x8C03;&#x5230;&#x6B63;&#x786E;&#x7684;&#x53C2;&#x4E0E;&#x8005;&#x53BB;&#x6267;&#x884C;&#x5BF9;&#x5E94; TCC &#x8D44;&#x6E90;&#x7684; Confirm &#x6216; Cancel &#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x8BB2;&#x5B8C;&#x4E86;&#x6574;&#x4E2A;&#x6846;&#x67B6;&#x6A21;&#x578B;&#x4EE5;&#x540E;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x4F1A;&#x95EE; TCC &#x4E09;&#x4E2A;&#x63A5;&#x53E3;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x3002;&#x56E0;&#x4E3A;&#x6846;&#x67B6;&#x672C;&#x8EAB;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x626B;&#x63CF; TCC &#x63A5;&#x53E3;&#xFF0C;&#x6CE8;&#x518C;&#x8D44;&#x6E90;&#xFF0C;&#x62E6;&#x622A;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#xFF0C;&#x6CE8;&#x518C;&#x5206;&#x652F;&#x4E8B;&#x52A1;&#xFF0C;&#x6700;&#x540E;&#x56DE;&#x8C03;&#x4E8C;&#x9636;&#x6BB5;&#x63A5;&#x53E3;&#x3002;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x5B9E;&#x9645;&#x4E0A;&#x662F; TCC &#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x5C06;&#x6839;&#x636E;&#x8682;&#x8681;&#x91D1;&#x670D;&#x5185;&#x90E8;&#x591A;&#x5E74;&#x7684;&#x5B9E;&#x8DF5;&#x6765;&#x4E3A;&#x5927;&#x5BB6;&#x5206;&#x6790;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5B8C;&#x5907;&#x7684; TCC &#x63A5;&#x53E3;&#x3002;</p>
+<h2 id="&#x8FD0;&#x884C;-Demo"><a href="#&#x8FD0;&#x884C;-Demo" class="headerlink" title="&#x8FD0;&#x884C; Demo"></a>&#x8FD0;&#x884C; Demo</h2><p><a href="https://github.com/seata/seata-samples" target="_blank" rel="noopener">&#x5B98;&#x65B9;Demo</a></p>
+<p>&#x4E0B;&#x9762;&#x662F; dubbo &#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x62A5;&#x9519;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x56DE;&#x6EDA;&#x4FE1;&#x606F;&#xFF1A;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">INFO [rpcDispatch_RMROLE_4_8] - onMessage:xid=10.116.22.63:8091:2016481020,branchId=2016481022,branchType=AT,resourceId=jdbc:mysql://localhost:3306/fescar_demo?serverTimezone=UTC,applicationData=null</span><br><span class="line"> INFO [rpcDispatch_RMROLE_4_8] - Branch Rollbacking: 10.116.22.63:8091:2016481020 2016481022 jdbc:mysql://localhost:3306/fescar_demo?serverTimezone=UTC</span><br><span class="line"> INFO [rpcDispatch_RMROLE_4_8] - xid 10.116.22.63:8091:2016481020 branch 2016481022, undo_log deleted with GlobalFinished</span><br><span class="line"> INFO [rpcDispatch_RMROLE_4_8] - Branch Rollbacked result: PhaseTwo_Rollbacked</span><br><span class="line">DEBUG [rpcDispatch_RMROLE_4_8] - branch rollback result:xid=10.116.22.63:8091:2016481020,branchId=2016481022,branchStatus=PhaseTwo_Rollbacked,result code =Success,getMsg =null</span><br><span class="line"> INFO [rpcDispatch_RMROLE_4_8] - RmRpcClient sendResponse xid=10.116.22.63:8091:2016481020,branchId=2016481022,branchStatus=PhaseTwo_Rollbacked,result code =Success,getMsg =null</span><br><span class="line">DEBUG [rpcDispatch_RMROLE_4_8] - send response:xid=10.116.22.63:8091:2016481020,branchId=2016481022,branchStatus=PhaseTwo_Rollbacked,result code =Success,getMsg =null,channel:[id: 0xc8027ef7, L:/127.0.0.1:62873 - R:/127.0.0.1:8091]</span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong></p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
 <ul>
-<li>数据库驱动与 Mysql 版本一致</li>
-<li>数据库 rul 添加时区 <code>jdbc.account.url=jdbc:mysql://localhost:3306/fescar_demo?serverTimezone=UTC</code></li>
+<li>&#x6570;&#x636E;&#x5E93;&#x9A71;&#x52A8;&#x4E0E; Mysql &#x7248;&#x672C;&#x4E00;&#x81F4;</li>
+<li>&#x6570;&#x636E;&#x5E93; rul &#x6DFB;&#x52A0;&#x65F6;&#x533A; <code>jdbc.account.url=jdbc:mysql://localhost:3306/fescar_demo?serverTimezone=UTC</code></li>
 </ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://mp.weixin.qq.com/s/Nb3qeOXXW1xa-qFr-uNi9g" target="_blank" rel="noopener">Seata AT 模式分布式事务源码分析</a></p>
-<p><a href="https://mp.weixin.qq.com/s/G9vkficqBSpmtGITgsJPgw" target="_blank" rel="noopener">分布式事务 Seata TCC 模式深度解析</a></p>
+<h2 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;"><a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;" class="headerlink" title="&#x53C2;&#x8003;&#x94FE;&#x63A5;"></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;</h2><p><a href="https://mp.weixin.qq.com/s/Nb3qeOXXW1xa-qFr-uNi9g" target="_blank" rel="noopener">Seata AT &#x6A21;&#x5F0F;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x6E90;&#x7801;&#x5206;&#x6790;</a></p>
+<p><a href="https://mp.weixin.qq.com/s/G9vkficqBSpmtGITgsJPgw" target="_blank" rel="noopener">&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1; Seata TCC &#x6A21;&#x5F0F;&#x6DF1;&#x5EA6;&#x89E3;&#x6790;</a></p>
 
       
     </div>

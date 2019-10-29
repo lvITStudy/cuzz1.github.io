@@ -98,23 +98,23 @@
 
 
 
-<meta name="description" content="什么是 Redis ？Redis，全称 Remote Dictionary Server，是一个基于内存的高性能 Key-Value 数据库。 另外，Redis 已经成为互联网公司在缓存组件选择的唯一，更多的关注点是，如何使用好 Redis 。">
+<meta name="description" content="&amp;#x4EC0;&amp;#x4E48;&amp;#x662F; Redis &amp;#xFF1F;Redis&amp;#xFF0C;&amp;#x5168;&amp;#x79F0; Remote Dictionary Server&amp;#xFF0C;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x57FA;&amp;#x4E8E;&amp;#x5185;&amp;#x5B58;&amp;#x7684;&amp;#x9AD8;&amp;#x6027;&amp;#x80FD; Key-Value">
 <meta name="keywords" content="转载,Redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="http://blog.cuzz.site/2019/02/23/Redis/index.html">
 <meta property="og:site_name" content="cuzz&#39;s blog">
-<meta property="og:description" content="什么是 Redis ？Redis，全称 Remote Dictionary Server，是一个基于内存的高性能 Key-Value 数据库。 另外，Redis 已经成为互联网公司在缓存组件选择的唯一，更多的关注点是，如何使用好 Redis 。">
+<meta property="og:description" content="&amp;#x4EC0;&amp;#x4E48;&amp;#x662F; Redis &amp;#xFF1F;Redis&amp;#xFF0C;&amp;#x5168;&amp;#x79F0; Remote Dictionary Server&amp;#xFF0C;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x57FA;&amp;#x4E8E;&amp;#x5185;&amp;#x5B58;&amp;#x7684;&amp;#x9AD8;&amp;#x6027;&amp;#x80FD; Key-Value">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/01.png">
-<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/388326-20170726161552843-904424952.png">
-<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/388326-20170726161604968-371688235.png">
-<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/timg.jpg">
+<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/Redis/01.png">
+<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/Redis/388326-20170726161552843-904424952.png">
+<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/Redis/388326-20170726161604968-371688235.png">
+<meta property="og:image" content="http://blog.cuzz.site/2019/02/23/Redis/Redis/timg.jpg">
 <meta property="og:updated_time" content="2019-08-12T12:03:26.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="什么是 Redis ？Redis，全称 Remote Dictionary Server，是一个基于内存的高性能 Key-Value 数据库。 另外，Redis 已经成为互联网公司在缓存组件选择的唯一，更多的关注点是，如何使用好 Redis 。">
-<meta name="twitter:image" content="http://blog.cuzz.site/2019/02/23/Redis/01.png">
+<meta name="twitter:description" content="&amp;#x4EC0;&amp;#x4E48;&amp;#x662F; Redis &amp;#xFF1F;Redis&amp;#xFF0C;&amp;#x5168;&amp;#x79F0; Remote Dictionary Server&amp;#xFF0C;&amp;#x662F;&amp;#x4E00;&amp;#x4E2A;&amp;#x57FA;&amp;#x4E8E;&amp;#x5185;&amp;#x5B58;&amp;#x7684;&amp;#x9AD8;&amp;#x6027;&amp;#x80FD; Key-Value">
+<meta name="twitter:image" content="http://blog.cuzz.site/2019/02/23/Redis/Redis/01.png">
 
 
 
@@ -452,207 +452,207 @@
       
 
       
-        <h2 id="什么是-Redis-？"><a href="#什么是-Redis-？" class="headerlink" title="什么是 Redis ？"></a>什么是 Redis ？</h2><p>Redis，全称 Remote Dictionary Server，是一个基于内存的高性能 Key-Value 数据库。</p>
-<p>另外，Redis 已经成为互联网公司在缓存组件选择的唯一，更多的关注点是，如何使用好 Redis 。</p>
+        <h2 id="&#x4EC0;&#x4E48;&#x662F;-Redis-&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;-Redis-&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F; Redis &#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F; Redis &#xFF1F;</h2><p>Redis&#xFF0C;&#x5168;&#x79F0; Remote Dictionary Server&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x7684;&#x9AD8;&#x6027;&#x80FD; Key-Value &#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;Redis &#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x5728;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#x9009;&#x62E9;&#x7684;&#x552F;&#x4E00;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x5173;&#x6CE8;&#x70B9;&#x662F;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x597D; Redis &#x3002;</p>
 <a id="more"></a>
-<h3 id="Redis-有什么优点？"><a href="#Redis-有什么优点？" class="headerlink" title="Redis 有什么优点？"></a>Redis 有什么优点？</h3><p><strong>1、速度快</strong></p>
-<p>因为数据存在内存中，类似于 HashMap ，HashMap 的优势就是查找和操作的时间复杂度都是O (1) 。</p>
+<h3 id="Redis-&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x70B9;&#xFF1F;"><a href="#Redis-&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x70B9;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x70B9;&#xFF1F;"></a>Redis &#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x70B9;&#xFF1F;</h3><p><strong>1&#x3001;&#x901F;&#x5EA6;&#x5FEB;</strong></p>
+<p>&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; HashMap &#xFF0C;HashMap &#x7684;&#x4F18;&#x52BF;&#x5C31;&#x662F;&#x67E5;&#x627E;&#x548C;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x90FD;&#x662F;O (1) &#x3002;</p>
 <blockquote>
-<p>Redis 本质上是一个 Key-Value 类型的内存数据库，很像Memcached ，整个数据库统统加载在内存当中进行操作，定期通过异步操作把数据库数据 flush 到硬盘上进行保存。</p>
-<p>因为是纯内存操作，Redis 的性能非常出色，每秒可以处理超过 10 万次读写操作，是已知性能最快的 Key-Value 数据库。</p>
+<p>Redis &#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A; Key-Value &#x7C7B;&#x578B;&#x7684;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5F88;&#x50CF;Memcached &#xFF0C;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x7EDF;&#x7EDF;&#x52A0;&#x8F7D;&#x5728;&#x5185;&#x5B58;&#x5F53;&#x4E2D;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5B9A;&#x671F;&#x901A;&#x8FC7;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x628A;&#x6570;&#x636E;&#x5E93;&#x6570;&#x636E; flush &#x5230;&#x786C;&#x76D8;&#x4E0A;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x662F;&#x7EAF;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#xFF0C;Redis &#x7684;&#x6027;&#x80FD;&#x975E;&#x5E38;&#x51FA;&#x8272;&#xFF0C;&#x6BCF;&#x79D2;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x8D85;&#x8FC7; 10 &#x4E07;&#x6B21;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x662F;&#x5DF2;&#x77E5;&#x6027;&#x80FD;&#x6700;&#x5FEB;&#x7684; Key-Value &#x6570;&#x636E;&#x5E93;&#x3002;</p>
 </blockquote>
 <ul>
-<li>如果我们查看在<a href="https://help.aliyun.com/document_detail/26350.html" target="_blank" rel="noopener">阿里云销售的 Redis 规格</a>，最低的也是 8W QPS 。</li>
+<li>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x67E5;&#x770B;&#x5728;<a href="https://help.aliyun.com/document_detail/26350.html" target="_blank" rel="noopener">&#x963F;&#x91CC;&#x4E91;&#x9500;&#x552E;&#x7684; Redis &#x89C4;&#x683C;</a>&#xFF0C;&#x6700;&#x4F4E;&#x7684;&#x4E5F;&#x662F; 8W QPS &#x3002;</li>
 </ul>
-<p><strong>2、支持丰富数据类型</strong></p>
-<p>支持 String ，List，Set，Sorted Set，Hash 。</p>
+<p><strong>2&#x3001;&#x652F;&#x6301;&#x4E30;&#x5BCC;&#x6570;&#x636E;&#x7C7B;&#x578B;</strong></p>
+<p>&#x652F;&#x6301; String &#xFF0C;List&#xFF0C;Set&#xFF0C;Sorted Set&#xFF0C;Hash &#x3002;</p>
 <blockquote>
-<p>Redis 的出色之处不仅仅是性能，Redis 最大的魅力是支持保存多种数据结构，此外单个 Value 的最大限制是1GB，不像 Memcached只能保存1MB的数据，因此Redis可以用来实现很多有用的功能。比方说：</p>
+<p>Redis &#x7684;&#x51FA;&#x8272;&#x4E4B;&#x5904;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x6027;&#x80FD;&#xFF0C;Redis &#x6700;&#x5927;&#x7684;&#x9B45;&#x529B;&#x662F;&#x652F;&#x6301;&#x4FDD;&#x5B58;&#x591A;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x6B64;&#x5916;&#x5355;&#x4E2A; Value &#x7684;&#x6700;&#x5927;&#x9650;&#x5236;&#x662F;1GB&#xFF0C;&#x4E0D;&#x50CF; Memcached&#x53EA;&#x80FD;&#x4FDD;&#x5B58;1MB&#x7684;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;Redis&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x5F88;&#x591A;&#x6709;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002;&#x6BD4;&#x65B9;&#x8BF4;&#xFF1A;</p>
 <ul>
-<li>用他的 List 来做 FIFO 双向链表，实现一个轻量级的高性能消息队列服务。</li>
-<li>用他的 Set 可以做高性能的 tag 系统等等。</li>
+<li>&#x7528;&#x4ED6;&#x7684; List &#x6765;&#x505A; FIFO &#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x6D88;&#x606F;&#x961F;&#x5217;&#x670D;&#x52A1;&#x3002;</li>
+<li>&#x7528;&#x4ED6;&#x7684; Set &#x53EF;&#x4EE5;&#x505A;&#x9AD8;&#x6027;&#x80FD;&#x7684; tag &#x7CFB;&#x7EDF;&#x7B49;&#x7B49;&#x3002;</li>
 </ul>
 </blockquote>
-<p><strong>3、丰富的特性</strong></p>
+<p><strong>3&#x3001;&#x4E30;&#x5BCC;&#x7684;&#x7279;&#x6027;</strong></p>
 <ul>
-<li>订阅发布 Pub / Sub 功能</li>
-<li>Key 过期策略</li>
-<li>事务</li>
-<li>支持多个 DB</li>
-<li>计数</li>
-<li>…</li>
+<li>&#x8BA2;&#x9605;&#x53D1;&#x5E03; Pub / Sub &#x529F;&#x80FD;</li>
+<li>Key &#x8FC7;&#x671F;&#x7B56;&#x7565;</li>
+<li>&#x4E8B;&#x52A1;</li>
+<li>&#x652F;&#x6301;&#x591A;&#x4E2A; DB</li>
+<li>&#x8BA1;&#x6570;</li>
+<li>&#x2026;</li>
 </ul>
-<p>并且在 Redis 5.0 增加了 Stream 功能，一个新的强大的支持多播的可持久化的消息队列，提供类似 Kafka 的功能。</p>
-<p><strong>4、持久化存储</strong></p>
-<p>Redis 提供 RDB 和 AOF 两种数据的持久化存储方案，解决内存数据库最担心的万一 Redis 挂掉，数据会消失掉。</p>
-<h3 id="Redis-有什么缺点？"><a href="#Redis-有什么缺点？" class="headerlink" title="Redis 有什么缺点？"></a>Redis 有什么缺点？</h3><ul>
-<li><p>由于 Redis 是内存数据库，所以，单台机器，存储的数据量，跟机器本身的内存大小。虽然 Redis 本身有 Key 过期策略，但是还是需要提前预估和节约内存。如果内存增长过快，需要定期删除数据。</p>
+<p>&#x5E76;&#x4E14;&#x5728; Redis 5.0 &#x589E;&#x52A0;&#x4E86; Stream &#x529F;&#x80FD;&#xFF0C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5F3A;&#x5927;&#x7684;&#x652F;&#x6301;&#x591A;&#x64AD;&#x7684;&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C; Kafka &#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p><strong>4&#x3001;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</strong></p>
+<p>Redis &#x63D0;&#x4F9B; RDB &#x548C; AOF &#x4E24;&#x79CD;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x65B9;&#x6848;&#xFF0C;&#x89E3;&#x51B3;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5E93;&#x6700;&#x62C5;&#x5FC3;&#x7684;&#x4E07;&#x4E00; Redis &#x6302;&#x6389;&#xFF0C;&#x6570;&#x636E;&#x4F1A;&#x6D88;&#x5931;&#x6389;&#x3002;</p>
+<h3 id="Redis-&#x6709;&#x4EC0;&#x4E48;&#x7F3A;&#x70B9;&#xFF1F;"><a href="#Redis-&#x6709;&#x4EC0;&#x4E48;&#x7F3A;&#x70B9;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x4EC0;&#x4E48;&#x7F3A;&#x70B9;&#xFF1F;"></a>Redis &#x6709;&#x4EC0;&#x4E48;&#x7F3A;&#x70B9;&#xFF1F;</h3><ul>
+<li><p>&#x7531;&#x4E8E; Redis &#x662F;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5355;&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x91CF;&#xFF0C;&#x8DDF;&#x673A;&#x5668;&#x672C;&#x8EAB;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x3002;&#x867D;&#x7136; Redis &#x672C;&#x8EAB;&#x6709; Key &#x8FC7;&#x671F;&#x7B56;&#x7565;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x63D0;&#x524D;&#x9884;&#x4F30;&#x548C;&#x8282;&#x7EA6;&#x5185;&#x5B58;&#x3002;&#x5982;&#x679C;&#x5185;&#x5B58;&#x589E;&#x957F;&#x8FC7;&#x5FEB;&#xFF0C;&#x9700;&#x8981;&#x5B9A;&#x671F;&#x5220;&#x9664;&#x6570;&#x636E;&#x3002;</p>
 <blockquote>
-<p>另外，可使用 Redis Cluster、Codis 等方案，对 Redis 进行分区，从单机 Redis 变成集群 Redis 。</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x53EF;&#x4F7F;&#x7528; Redis Cluster&#x3001;Codis &#x7B49;&#x65B9;&#x6848;&#xFF0C;&#x5BF9; Redis &#x8FDB;&#x884C;&#x5206;&#x533A;&#xFF0C;&#x4ECE;&#x5355;&#x673A; Redis &#x53D8;&#x6210;&#x96C6;&#x7FA4; Redis &#x3002;</p>
 </blockquote>
 </li>
-<li><p>如果进行完整重同步，由于需要生成 RDB 文件，并进行传输，会占用主机的 CPU ，并会消耗现网的带宽。不过 Redis2.8 版本，已经有部分重同步的功能，但是还是有可能有完整重同步的。比如，新上线的备机。</p>
+<li><p>&#x5982;&#x679C;&#x8FDB;&#x884C;&#x5B8C;&#x6574;&#x91CD;&#x540C;&#x6B65;&#xFF0C;&#x7531;&#x4E8E;&#x9700;&#x8981;&#x751F;&#x6210; RDB &#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x4F1A;&#x5360;&#x7528;&#x4E3B;&#x673A;&#x7684; CPU &#xFF0C;&#x5E76;&#x4F1A;&#x6D88;&#x8017;&#x73B0;&#x7F51;&#x7684;&#x5E26;&#x5BBD;&#x3002;&#x4E0D;&#x8FC7; Redis2.8 &#x7248;&#x672C;&#xFF0C;&#x5DF2;&#x7ECF;&#x6709;&#x90E8;&#x5206;&#x91CD;&#x540C;&#x6B65;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x6709;&#x5B8C;&#x6574;&#x91CD;&#x540C;&#x6B65;&#x7684;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x65B0;&#x4E0A;&#x7EBF;&#x7684;&#x5907;&#x673A;&#x3002;</p>
 </li>
-<li><p>修改配置文件，进行重启，将硬盘中的数据加载进内存，时间比较久。在这个过程中，Redis 不能提供服务。</p>
-</li>
-</ul>
-<h2 id="Redis-和-Memcached-的区别有哪些？"><a href="#Redis-和-Memcached-的区别有哪些？" class="headerlink" title="Redis 和 Memcached 的区别有哪些？"></a>Redis 和 Memcached 的区别有哪些？</h2><p><strong>1、Redis 支持复杂的数据结构</strong></p>
-<ul>
-<li>Memcached 仅提供简单的字符串。</li>
-<li>Redis 提供复杂的数据结构，丰富的数据操作。</li>
-</ul>
-<p>也因为 Redis 支持复杂的数据结构，Redis 即使往于 Memcached 推出，却获得更多开发者的青睐。</p>
-<p>Redis 相比 Memcached 来说，拥有更多的数据结构，能支持更丰富的数据操作。如果需要缓存能够支持更复杂的结构和操作，Redis 会是不错的选择。</p>
-<p><strong>2、Redis 原生支持集群模式</strong></p>
-<ul>
-<li>在 Redis3.x 版本中，官方便能支持 Cluster 模式。</li>
-<li>Memcached 没有原生的集群模式，需要依靠客户端来实现往集群中分片写入数据。</li>
-</ul>
-<p><strong>3、性能对比</strong></p>
-<ul>
-<li>Redis 只使用单核，而 Memcached 可以使用多核，所以平均每一个核上 Redis在存储小数据时比 Memcached 性能更高。</li>
-<li>在 100k 以上的数据中，Memcached 性能要高于 Redis 。虽然 Redis 最近也在存储大数据的性能上进行优化，但是比起 Memcached，还是稍有逊色。</li>
-</ul>
-<p>更多关于性能的对比，可以看看 <a href="https://www.jianshu.com/p/34f90813d7c9" target="_blank" rel="noopener">《Memcached 与 Redis 的关键性能指标比较》</a> 。</p>
-<p><strong>4、内存使用效率对比</strong></p>
-<ul>
-<li>简单的 Key-Value 存储的话，Memcached 的内存利用率更高，可以使用类似内存池。</li>
-<li><p>如果 Redis 采用 hash 结构来做 key-value 存储，由于其组合式的压缩， 其内存利用率会高于 Memcached 。</p>
-</li>
-<li><p>Redis 和 Memcached 的内存管理方法不同，Redis 采用的是包装的 malloc/free ， 相较于 Memcached 的内存管理方法 tcmalloc / jmalloc 来说，要简单很多 。</p>
+<li><p>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x91CD;&#x542F;&#xFF0C;&#x5C06;&#x786C;&#x76D8;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#x8FDB;&#x5185;&#x5B58;&#xFF0C;&#x65F6;&#x95F4;&#x6BD4;&#x8F83;&#x4E45;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;Redis &#x4E0D;&#x80FD;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;</p>
 </li>
 </ul>
-<p><strong>5、网络 IO 模型</strong></p>
+<h2 id="Redis-&#x548C;-Memcached-&#x7684;&#x533A;&#x522B;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;"><a href="#Redis-&#x548C;-Memcached-&#x7684;&#x533A;&#x522B;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;" class="headerlink" title="Redis &#x548C; Memcached &#x7684;&#x533A;&#x522B;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;"></a>Redis &#x548C; Memcached &#x7684;&#x533A;&#x522B;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h2><p><strong>1&#x3001;Redis &#x652F;&#x6301;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</strong></p>
 <ul>
-<li>Memcached 是多线程，非阻塞 IO 复用的网络模型，原型上接近 Nignx 。</li>
-<li>Redis 使用单线程的 IO 复用模型，自己封装了一个简单的 AeEvent 事件处理框架，主要实现了 epoll, kqueue 和 select ，更接近 Apache 早期的模式。</li>
+<li>Memcached &#x4EC5;&#x63D0;&#x4F9B;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li>Redis &#x63D0;&#x4F9B;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4E30;&#x5BCC;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x3002;</li>
 </ul>
-<p>TODO 有点看不懂，找亚普表弟确认中。</p>
-<p><strong>6、持久化存储</strong></p>
+<p>&#x4E5F;&#x56E0;&#x4E3A; Redis &#x652F;&#x6301;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;Redis &#x5373;&#x4F7F;&#x5F80;&#x4E8E; Memcached &#x63A8;&#x51FA;&#xFF0C;&#x5374;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x9752;&#x7750;&#x3002;</p>
+<p>Redis &#x76F8;&#x6BD4; Memcached &#x6765;&#x8BF4;&#xFF0C;&#x62E5;&#x6709;&#x66F4;&#x591A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x80FD;&#x652F;&#x6301;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x7F13;&#x5B58;&#x80FD;&#x591F;&#x652F;&#x6301;&#x66F4;&#x590D;&#x6742;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x64CD;&#x4F5C;&#xFF0C;Redis &#x4F1A;&#x662F;&#x4E0D;&#x9519;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
+<p><strong>2&#x3001;Redis &#x539F;&#x751F;&#x652F;&#x6301;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;</strong></p>
 <ul>
-<li>Memcached 不支持持久化存储，重启时，数据被清空。</li>
-<li>Redis 支持持久化存储，重启时，可以恢复已持久化的数据。</li>
+<li>&#x5728; Redis3.x &#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x5B98;&#x65B9;&#x4FBF;&#x80FD;&#x652F;&#x6301; Cluster &#x6A21;&#x5F0F;&#x3002;</li>
+<li>Memcached &#x6CA1;&#x6709;&#x539F;&#x751F;&#x7684;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#xFF0C;&#x9700;&#x8981;&#x4F9D;&#x9760;&#x5BA2;&#x6237;&#x7AEF;&#x6765;&#x5B9E;&#x73B0;&#x5F80;&#x96C6;&#x7FA4;&#x4E2D;&#x5206;&#x7247;&#x5199;&#x5165;&#x6570;&#x636E;&#x3002;</li>
 </ul>
-<p>也推荐阅读下 <a href="https://www.imooc.com/article/23549" target="_blank" rel="noopener">《脚踏两只船的困惑 - Memcached 与 Redis》</a> 。</p>
-<h2 id="请说说-Redis-的线程模型？"><a href="#请说说-Redis-的线程模型？" class="headerlink" title="请说说 Redis 的线程模型？"></a>请说说 Redis 的线程模型？</h2><blockquote>
-<p>艿艿：这个是我从网络上找的资料，讲的灰常不错。</p>
+<p><strong>3&#x3001;&#x6027;&#x80FD;&#x5BF9;&#x6BD4;</strong></p>
+<ul>
+<li>Redis &#x53EA;&#x4F7F;&#x7528;&#x5355;&#x6838;&#xFF0C;&#x800C; Memcached &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x6838;&#xFF0C;&#x6240;&#x4EE5;&#x5E73;&#x5747;&#x6BCF;&#x4E00;&#x4E2A;&#x6838;&#x4E0A; Redis&#x5728;&#x5B58;&#x50A8;&#x5C0F;&#x6570;&#x636E;&#x65F6;&#x6BD4; Memcached &#x6027;&#x80FD;&#x66F4;&#x9AD8;&#x3002;</li>
+<li>&#x5728; 100k &#x4EE5;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x4E2D;&#xFF0C;Memcached &#x6027;&#x80FD;&#x8981;&#x9AD8;&#x4E8E; Redis &#x3002;&#x867D;&#x7136; Redis &#x6700;&#x8FD1;&#x4E5F;&#x5728;&#x5B58;&#x50A8;&#x5927;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#x4E0A;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF0C;&#x4F46;&#x662F;&#x6BD4;&#x8D77; Memcached&#xFF0C;&#x8FD8;&#x662F;&#x7A0D;&#x6709;&#x900A;&#x8272;&#x3002;</li>
+</ul>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x6027;&#x80FD;&#x7684;&#x5BF9;&#x6BD4;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="https://www.jianshu.com/p/34f90813d7c9" target="_blank" rel="noopener">&#x300A;Memcached &#x4E0E; Redis &#x7684;&#x5173;&#x952E;&#x6027;&#x80FD;&#x6307;&#x6807;&#x6BD4;&#x8F83;&#x300B;</a> &#x3002;</p>
+<p><strong>4&#x3001;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x6548;&#x7387;&#x5BF9;&#x6BD4;</strong></p>
+<ul>
+<li>&#x7B80;&#x5355;&#x7684; Key-Value &#x5B58;&#x50A8;&#x7684;&#x8BDD;&#xFF0C;Memcached &#x7684;&#x5185;&#x5B58;&#x5229;&#x7528;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x4F3C;&#x5185;&#x5B58;&#x6C60;&#x3002;</li>
+<li><p>&#x5982;&#x679C; Redis &#x91C7;&#x7528; hash &#x7ED3;&#x6784;&#x6765;&#x505A; key-value &#x5B58;&#x50A8;&#xFF0C;&#x7531;&#x4E8E;&#x5176;&#x7EC4;&#x5408;&#x5F0F;&#x7684;&#x538B;&#x7F29;&#xFF0C; &#x5176;&#x5185;&#x5B58;&#x5229;&#x7528;&#x7387;&#x4F1A;&#x9AD8;&#x4E8E; Memcached &#x3002;</p>
+</li>
+<li><p>Redis &#x548C; Memcached &#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#xFF0C;Redis &#x91C7;&#x7528;&#x7684;&#x662F;&#x5305;&#x88C5;&#x7684; malloc/free &#xFF0C; &#x76F8;&#x8F83;&#x4E8E; Memcached &#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x65B9;&#x6CD5; tcmalloc / jmalloc &#x6765;&#x8BF4;&#xFF0C;&#x8981;&#x7B80;&#x5355;&#x5F88;&#x591A; &#x3002;</p>
+</li>
+</ul>
+<p><strong>5&#x3001;&#x7F51;&#x7EDC; IO &#x6A21;&#x578B;</strong></p>
+<ul>
+<li>Memcached &#x662F;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x975E;&#x963B;&#x585E; IO &#x590D;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#xFF0C;&#x539F;&#x578B;&#x4E0A;&#x63A5;&#x8FD1; Nignx &#x3002;</li>
+<li>Redis &#x4F7F;&#x7528;&#x5355;&#x7EBF;&#x7A0B;&#x7684; IO &#x590D;&#x7528;&#x6A21;&#x578B;&#xFF0C;&#x81EA;&#x5DF1;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; AeEvent &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x6846;&#x67B6;&#xFF0C;&#x4E3B;&#x8981;&#x5B9E;&#x73B0;&#x4E86; epoll, kqueue &#x548C; select &#xFF0C;&#x66F4;&#x63A5;&#x8FD1; Apache &#x65E9;&#x671F;&#x7684;&#x6A21;&#x5F0F;&#x3002;</li>
+</ul>
+<p>TODO &#x6709;&#x70B9;&#x770B;&#x4E0D;&#x61C2;&#xFF0C;&#x627E;&#x4E9A;&#x666E;&#x8868;&#x5F1F;&#x786E;&#x8BA4;&#x4E2D;&#x3002;</p>
+<p><strong>6&#x3001;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</strong></p>
+<ul>
+<li>Memcached &#x4E0D;&#x652F;&#x6301;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#xFF0C;&#x91CD;&#x542F;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x88AB;&#x6E05;&#x7A7A;&#x3002;</li>
+<li>Redis &#x652F;&#x6301;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#xFF0C;&#x91CD;&#x542F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6062;&#x590D;&#x5DF2;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<p>&#x4E5F;&#x63A8;&#x8350;&#x9605;&#x8BFB;&#x4E0B; <a href="https://www.imooc.com/article/23549" target="_blank" rel="noopener">&#x300A;&#x811A;&#x8E0F;&#x4E24;&#x53EA;&#x8239;&#x7684;&#x56F0;&#x60D1; - Memcached &#x4E0E; Redis&#x300B;</a> &#x3002;</p>
+<h2 id="&#x8BF7;&#x8BF4;&#x8BF4;-Redis-&#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#xFF1F;"><a href="#&#x8BF7;&#x8BF4;&#x8BF4;-Redis-&#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#xFF1F;" class="headerlink" title="&#x8BF7;&#x8BF4;&#x8BF4; Redis &#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#xFF1F;"></a>&#x8BF7;&#x8BF4;&#x8BF4; Redis &#x7684;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#xFF1F;</h2><blockquote>
+<p>&#x827F;&#x827F;&#xFF1A;&#x8FD9;&#x4E2A;&#x662F;&#x6211;&#x4ECE;&#x7F51;&#x7EDC;&#x4E0A;&#x627E;&#x7684;&#x8D44;&#x6599;&#xFF0C;&#x8BB2;&#x7684;&#x7070;&#x5E38;&#x4E0D;&#x9519;&#x3002;</p>
 </blockquote>
-<p>redis 内部使用文件事件处理器 <code>file event handler</code>，这个文件事件处理器是单线程的，所以 redis 才叫做单线程的模型。它采用 IO 多路复用机制同时监听多个 socket，根据 socket 上的事件来选择对应的事件处理器进行处理。</p>
-<p>文件事件处理器的结构包含 4 个部分：</p>
+<p>redis &#x5185;&#x90E8;&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668; <code>file event handler</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#xFF0C;&#x6240;&#x4EE5; redis &#x624D;&#x53EB;&#x505A;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x6A21;&#x578B;&#x3002;&#x5B83;&#x91C7;&#x7528; IO &#x591A;&#x8DEF;&#x590D;&#x7528;&#x673A;&#x5236;&#x540C;&#x65F6;&#x76D1;&#x542C;&#x591A;&#x4E2A; socket&#xFF0C;&#x6839;&#x636E; socket &#x4E0A;&#x7684;&#x4E8B;&#x4EF6;&#x6765;&#x9009;&#x62E9;&#x5BF9;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x6587;&#x4EF6;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x7684;&#x7ED3;&#x6784;&#x5305;&#x542B; 4 &#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
 <ul>
-<li>多个 socket</li>
-<li>IO 多路复用程序</li>
-<li>文件事件分派器</li>
-<li>事件处理器（连接应答处理器、命令请求处理器、命令回复处理器）</li>
+<li>&#x591A;&#x4E2A; socket</li>
+<li>IO &#x591A;&#x8DEF;&#x590D;&#x7528;&#x7A0B;&#x5E8F;</li>
+<li>&#x6587;&#x4EF6;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;</li>
+<li>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#xFF08;&#x8FDE;&#x63A5;&#x5E94;&#x7B54;&#x5904;&#x7406;&#x5668;&#x3001;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x5668;&#x3001;&#x547D;&#x4EE4;&#x56DE;&#x590D;&#x5904;&#x7406;&#x5668;&#xFF09;</li>
 </ul>
-<p>多个 socket 可能会并发产生不同的操作，每个操作对应不同的文件事件，但是 IO 多路复用程序会监听多个 socket，会将 socket 产生的事件放入队列中排队，事件分派器每次从队列中取出一个事件，把该事件交给对应的事件处理器进行处理。</p>
-<p>来看客户端与 redis 的一次通信过程：</p>
-<p><img src="/2019/02/23/Redis/01.png" alt="redis-single-thread-model"></p>
+<p>&#x591A;&#x4E2A; socket &#x53EF;&#x80FD;&#x4F1A;&#x5E76;&#x53D1;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6BCF;&#x4E2A;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x662F; IO &#x591A;&#x8DEF;&#x590D;&#x7528;&#x7A0B;&#x5E8F;&#x4F1A;&#x76D1;&#x542C;&#x591A;&#x4E2A; socket&#xFF0C;&#x4F1A;&#x5C06; socket &#x4EA7;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x653E;&#x5165;&#x961F;&#x5217;&#x4E2D;&#x6392;&#x961F;&#xFF0C;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;&#x6BCF;&#x6B21;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x628A;&#x8BE5;&#x4E8B;&#x4EF6;&#x4EA4;&#x7ED9;&#x5BF9;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5668;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x6765;&#x770B;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E; redis &#x7684;&#x4E00;&#x6B21;&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p><img src="/2019/02/23/Redis/Redis\01.png" alt="redis-single-thread-model"></p>
 <ul>
-<li>客户端 socket01 向 redis 的 server socket 请求建立连接，此时 server socket 会产生一个 <code>AE_READABLE</code> 事件，IO 多路复用程序监听到 server socket 产生的事件后，将该事件压入队列中。文件事件分派器从队列中获取该事件，交给<strong>连接应答处理器</strong>。连接应答处理器会创建一个能与客户端通信的 socket01，并将该 socket01 的 <code>AE_READABLE</code> 事件与命令请求处理器关联。</li>
-<li>假设此时客户端发送了一个 <code>set key value</code> 请求，此时 redis 中的 socket01 会产生 <code>AE_READABLE</code> 事件，IO 多路复用程序将事件压入队列，此时事件分派器从队列中获取到该事件，由于前面 socket01 的 <code>AE_READABLE</code> 事件已经与命令请求处理器关联，因此事件分派器将事件交给命令请求处理器来处理。命令请求处理器读取 socket01 的 <code>key value</code> 并在自己内存中完成 <code>key value</code> 的设置。操作完成后，它会将 socket01 的 <code>AE_WRITABLE</code> 事件与令回复处理器关联。</li>
-<li>如果此时客户端准备好接收返回结果了，那么 redis 中的 socket01 会产生一个 <code>AE_WRITABLE</code> 事件，同样压入队列中，事件分派器找到相关联的命令回复处理器，由命令回复处理器对 socket01 输入本次操作的一个结果，比如 <code>ok</code>，之后解除 socket01 的 <code>AE_WRITABLE</code> 事件与命令回复处理器的关联。</li>
+<li>&#x5BA2;&#x6237;&#x7AEF; socket01 &#x5411; redis &#x7684; server socket &#x8BF7;&#x6C42;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF0C;&#x6B64;&#x65F6; server socket &#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; <code>AE_READABLE</code> &#x4E8B;&#x4EF6;&#xFF0C;IO &#x591A;&#x8DEF;&#x590D;&#x7528;&#x7A0B;&#x5E8F;&#x76D1;&#x542C;&#x5230; server socket &#x4EA7;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x540E;&#xFF0C;&#x5C06;&#x8BE5;&#x4E8B;&#x4EF6;&#x538B;&#x5165;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x6587;&#x4EF6;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x8BE5;&#x4E8B;&#x4EF6;&#xFF0C;&#x4EA4;&#x7ED9;<strong>&#x8FDE;&#x63A5;&#x5E94;&#x7B54;&#x5904;&#x7406;&#x5668;</strong>&#x3002;&#x8FDE;&#x63A5;&#x5E94;&#x7B54;&#x5904;&#x7406;&#x5668;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x80FD;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x4FE1;&#x7684; socket01&#xFF0C;&#x5E76;&#x5C06;&#x8BE5; socket01 &#x7684; <code>AE_READABLE</code> &#x4E8B;&#x4EF6;&#x4E0E;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x5668;&#x5173;&#x8054;&#x3002;</li>
+<li>&#x5047;&#x8BBE;&#x6B64;&#x65F6;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x4E86;&#x4E00;&#x4E2A; <code>set key value</code> &#x8BF7;&#x6C42;&#xFF0C;&#x6B64;&#x65F6; redis &#x4E2D;&#x7684; socket01 &#x4F1A;&#x4EA7;&#x751F; <code>AE_READABLE</code> &#x4E8B;&#x4EF6;&#xFF0C;IO &#x591A;&#x8DEF;&#x590D;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;&#x4E8B;&#x4EF6;&#x538B;&#x5165;&#x961F;&#x5217;&#xFF0C;&#x6B64;&#x65F6;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x8BE5;&#x4E8B;&#x4EF6;&#xFF0C;&#x7531;&#x4E8E;&#x524D;&#x9762; socket01 &#x7684; <code>AE_READABLE</code> &#x4E8B;&#x4EF6;&#x5DF2;&#x7ECF;&#x4E0E;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x5668;&#x5173;&#x8054;&#xFF0C;&#x56E0;&#x6B64;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;&#x5C06;&#x4E8B;&#x4EF6;&#x4EA4;&#x7ED9;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x5668;&#x6765;&#x5904;&#x7406;&#x3002;&#x547D;&#x4EE4;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x5668;&#x8BFB;&#x53D6; socket01 &#x7684; <code>key value</code> &#x5E76;&#x5728;&#x81EA;&#x5DF1;&#x5185;&#x5B58;&#x4E2D;&#x5B8C;&#x6210; <code>key value</code> &#x7684;&#x8BBE;&#x7F6E;&#x3002;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5B83;&#x4F1A;&#x5C06; socket01 &#x7684; <code>AE_WRITABLE</code> &#x4E8B;&#x4EF6;&#x4E0E;&#x4EE4;&#x56DE;&#x590D;&#x5904;&#x7406;&#x5668;&#x5173;&#x8054;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6B64;&#x65F6;&#x5BA2;&#x6237;&#x7AEF;&#x51C6;&#x5907;&#x597D;&#x63A5;&#x6536;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E86;&#xFF0C;&#x90A3;&#x4E48; redis &#x4E2D;&#x7684; socket01 &#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; <code>AE_WRITABLE</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x540C;&#x6837;&#x538B;&#x5165;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x4E8B;&#x4EF6;&#x5206;&#x6D3E;&#x5668;&#x627E;&#x5230;&#x76F8;&#x5173;&#x8054;&#x7684;&#x547D;&#x4EE4;&#x56DE;&#x590D;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x7531;&#x547D;&#x4EE4;&#x56DE;&#x590D;&#x5904;&#x7406;&#x5668;&#x5BF9; socket01 &#x8F93;&#x5165;&#x672C;&#x6B21;&#x64CD;&#x4F5C;&#x7684;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#xFF0C;&#x6BD4;&#x5982; <code>ok</code>&#xFF0C;&#x4E4B;&#x540E;&#x89E3;&#x9664; socket01 &#x7684; <code>AE_WRITABLE</code> &#x4E8B;&#x4EF6;&#x4E0E;&#x547D;&#x4EE4;&#x56DE;&#x590D;&#x5904;&#x7406;&#x5668;&#x7684;&#x5173;&#x8054;&#x3002;</li>
 </ul>
-<p>这样便完成了一次通信。😈 耐心理解一下，灰常重要。如果还是不能理解，可以在网络上搜一些资料，在理解理解。</p>
-<h2 id="为什么-Redis-单线程模型也能效率这么高？"><a href="#为什么-Redis-单线程模型也能效率这么高？" class="headerlink" title="为什么 Redis 单线程模型也能效率这么高？"></a>为什么 Redis 单线程模型也能效率这么高？</h2><ul>
-<li><p>1、纯内存操作。</p>
+<p>&#x8FD9;&#x6837;&#x4FBF;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x6B21;&#x901A;&#x4FE1;&#x3002;&#x1F608; &#x8010;&#x5FC3;&#x7406;&#x89E3;&#x4E00;&#x4E0B;&#xFF0C;&#x7070;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x4E0D;&#x80FD;&#x7406;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x641C;&#x4E00;&#x4E9B;&#x8D44;&#x6599;&#xFF0C;&#x5728;&#x7406;&#x89E3;&#x7406;&#x89E3;&#x3002;</p>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;-Redis-&#x5355;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#x4E5F;&#x80FD;&#x6548;&#x7387;&#x8FD9;&#x4E48;&#x9AD8;&#xFF1F;"><a href="#&#x4E3A;&#x4EC0;&#x4E48;-Redis-&#x5355;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#x4E5F;&#x80FD;&#x6548;&#x7387;&#x8FD9;&#x4E48;&#x9AD8;&#xFF1F;" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48; Redis &#x5355;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#x4E5F;&#x80FD;&#x6548;&#x7387;&#x8FD9;&#x4E48;&#x9AD8;&#xFF1F;"></a>&#x4E3A;&#x4EC0;&#x4E48; Redis &#x5355;&#x7EBF;&#x7A0B;&#x6A21;&#x578B;&#x4E5F;&#x80FD;&#x6548;&#x7387;&#x8FD9;&#x4E48;&#x9AD8;&#xFF1F;</h2><ul>
+<li><p>1&#x3001;&#x7EAF;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x3002;</p>
 <blockquote>
-<p>Redis 为了达到最快的读写速度，将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以 Redis 具有快速和数据持久化的特征。</p>
-<p>如果不将数据放在内存中，磁盘 I/O 速度为严重影响 Redis 的性能。</p>
+<p>Redis &#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x6700;&#x5FEB;&#x7684;&#x8BFB;&#x5199;&#x901F;&#x5EA6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x90FD;&#x8BFB;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x5F02;&#x6B65;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x3002;&#x6240;&#x4EE5; Redis &#x5177;&#x6709;&#x5FEB;&#x901F;&#x548C;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x7684;&#x7279;&#x5F81;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x5C06;&#x6570;&#x636E;&#x653E;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x78C1;&#x76D8; I/O &#x901F;&#x5EA6;&#x4E3A;&#x4E25;&#x91CD;&#x5F71;&#x54CD; Redis &#x7684;&#x6027;&#x80FD;&#x3002;</p>
 </blockquote>
 </li>
-<li><p>2、核心是基于非阻塞的 IO 多路复用机制。</p>
+<li><p>2&#x3001;&#x6838;&#x5FC3;&#x662F;&#x57FA;&#x4E8E;&#x975E;&#x963B;&#x585E;&#x7684; IO &#x591A;&#x8DEF;&#x590D;&#x7528;&#x673A;&#x5236;&#x3002;</p>
 </li>
-<li><p>3、单线程反而避免了多线程的频繁上下文切换问题。</p>
+<li><p>3&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x53CD;&#x800C;&#x907F;&#x514D;&#x4E86;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x9891;&#x7E41;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x95EE;&#x9898;&#x3002;</p>
 <blockquote>
-<p>Redis 利用队列技术，将并发访问变为串行访问，消除了传统数据库串行控制的开销</p>
+<p>Redis &#x5229;&#x7528;&#x961F;&#x5217;&#x6280;&#x672F;&#xFF0C;&#x5C06;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x53D8;&#x4E3A;&#x4E32;&#x884C;&#x8BBF;&#x95EE;&#xFF0C;&#x6D88;&#x9664;&#x4E86;&#x4F20;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x4E32;&#x884C;&#x63A7;&#x5236;&#x7684;&#x5F00;&#x9500;</p>
 </blockquote>
 </li>
-<li><p>4、Redis 全程使用 hash 结构，读取速度快，还有一些特殊的数据结构，对数据存储进行了优化，如压缩表，对短数据进行压缩存储，再如，跳表，使用有序的数据结构加快读取的速度。</p>
+<li><p>4&#x3001;Redis &#x5168;&#x7A0B;&#x4F7F;&#x7528; hash &#x7ED3;&#x6784;&#xFF0C;&#x8BFB;&#x53D6;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5BF9;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x8FDB;&#x884C;&#x4E86;&#x4F18;&#x5316;&#xFF0C;&#x5982;&#x538B;&#x7F29;&#x8868;&#xFF0C;&#x5BF9;&#x77ED;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x5B58;&#x50A8;&#xFF0C;&#x518D;&#x5982;&#xFF0C;&#x8DF3;&#x8868;&#xFF0C;&#x4F7F;&#x7528;&#x6709;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x52A0;&#x5FEB;&#x8BFB;&#x53D6;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
 </li>
 </ul>
-<h2 id="Redis-有几种持久化方式？"><a href="#Redis-有几种持久化方式？" class="headerlink" title="Redis 有几种持久化方式？"></a>Redis 有几种持久化方式？</h2><h3 id="持久化方式"><a href="#持久化方式" class="headerlink" title="持久化方式"></a>持久化方式</h3><p>Redis 提供了两种方式，实现数据的持久化到硬盘。</p>
+<h2 id="Redis-&#x6709;&#x51E0;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#xFF1F;"><a href="#Redis-&#x6709;&#x51E0;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x51E0;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#xFF1F;"></a>Redis &#x6709;&#x51E0;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#xFF1F;</h2><h3 id="&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;"><a href="#&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;" class="headerlink" title="&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;"></a>&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;</h3><p>Redis &#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5230;&#x786C;&#x76D8;&#x3002;</p>
 <ul>
-<li>【全量】RDB 持久化，是指在指定的时间间隔内将内存中的<strong>数据集快照</strong>写入磁盘。实际操作过程是，fork 一个子进程，先将数据集写入临时文件，写入成功后，再替换之前的文件，用二进制压缩存储。</li>
-<li>【增量】AOF持久化，以日志的形式记录服务器所处理的每一个<strong>写、删除操作</strong>，查询操作不会记录，以文本的方式记录，可以打开文件看到详细的操作记录。</li>
+<li>&#x3010;&#x5168;&#x91CF;&#x3011;RDB &#x6301;&#x4E45;&#x5316;&#xFF0C;&#x662F;&#x6307;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5185;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;<strong>&#x6570;&#x636E;&#x96C6;&#x5FEB;&#x7167;</strong>&#x5199;&#x5165;&#x78C1;&#x76D8;&#x3002;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#xFF0C;fork &#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x5148;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x5199;&#x5165;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF0C;&#x5199;&#x5165;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x518D;&#x66FF;&#x6362;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x538B;&#x7F29;&#x5B58;&#x50A8;&#x3002;</li>
+<li>&#x3010;&#x589E;&#x91CF;&#x3011;AOF&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4EE5;&#x65E5;&#x5FD7;&#x7684;&#x5F62;&#x5F0F;&#x8BB0;&#x5F55;&#x670D;&#x52A1;&#x5668;&#x6240;&#x5904;&#x7406;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;<strong>&#x5199;&#x3001;&#x5220;&#x9664;&#x64CD;&#x4F5C;</strong>&#xFF0C;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x8BB0;&#x5F55;&#xFF0C;&#x4EE5;&#x6587;&#x672C;&#x7684;&#x65B9;&#x5F0F;&#x8BB0;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x770B;&#x5230;&#x8BE6;&#x7EC6;&#x7684;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x3002;</li>
 </ul>
-<h3 id="二者的区别"><a href="#二者的区别" class="headerlink" title="二者的区别"></a>二者的区别</h3><p>RDB持久化是指在指定的时间间隔内将内存中的数据集快照写入磁盘，实际操作过程是fork一个子进程，先将数据集写入临时文件，写入成功后，再替换之前的文件，用二进制压缩存储。</p>
-<p><img src="/2019/02/23/Redis/388326-20170726161552843-904424952.png" alt="img"></p>
-<p>AOF持久化以日志的形式记录服务器所处理的每一个写、删除操作，查询操作不会记录，以文本的方式记录，可以打开文件看到详细的操作记录。</p>
-<p><img src="/2019/02/23/Redis/388326-20170726161604968-371688235.png" alt="img"></p>
-<h3 id="二者优缺点"><a href="#二者优缺点" class="headerlink" title="二者优缺点"></a>二者优缺点</h3><p><strong>RDB存在哪些优势呢？</strong></p>
+<h3 id="&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;"><a href="#&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;" class="headerlink" title="&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;"></a>&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;</h3><p>RDB&#x6301;&#x4E45;&#x5316;&#x662F;&#x6307;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5185;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5FEB;&#x7167;&#x5199;&#x5165;&#x78C1;&#x76D8;&#xFF0C;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;fork&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x5148;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x5199;&#x5165;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF0C;&#x5199;&#x5165;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x518D;&#x66FF;&#x6362;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x538B;&#x7F29;&#x5B58;&#x50A8;&#x3002;</p>
+<p><img src="/2019/02/23/Redis/Redis\388326-20170726161552843-904424952.png" alt="img"></p>
+<p>AOF&#x6301;&#x4E45;&#x5316;&#x4EE5;&#x65E5;&#x5FD7;&#x7684;&#x5F62;&#x5F0F;&#x8BB0;&#x5F55;&#x670D;&#x52A1;&#x5668;&#x6240;&#x5904;&#x7406;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5199;&#x3001;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x4E0D;&#x4F1A;&#x8BB0;&#x5F55;&#xFF0C;&#x4EE5;&#x6587;&#x672C;&#x7684;&#x65B9;&#x5F0F;&#x8BB0;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x770B;&#x5230;&#x8BE6;&#x7EC6;&#x7684;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x3002;</p>
+<p><img src="/2019/02/23/Redis/Redis\388326-20170726161604968-371688235.png" alt="img"></p>
+<h3 id="&#x4E8C;&#x8005;&#x4F18;&#x7F3A;&#x70B9;"><a href="#&#x4E8C;&#x8005;&#x4F18;&#x7F3A;&#x70B9;" class="headerlink" title="&#x4E8C;&#x8005;&#x4F18;&#x7F3A;&#x70B9;"></a>&#x4E8C;&#x8005;&#x4F18;&#x7F3A;&#x70B9;</h3><p><strong>RDB&#x5B58;&#x5728;&#x54EA;&#x4E9B;&#x4F18;&#x52BF;&#x5462;&#xFF1F;</strong></p>
 <ul>
-<li>一旦采用该方式，那么你的整个Redis数据库将只包含一个文件，这对于文件备份而言是非常完美的。比如，你可能打算每个小时归档一次最近24小时的数据，同时还要每天归档一次最近30天的数据。通过这样的备份策略，一旦系统出现灾难性故障，我们可以非常容易的进行恢复。</li>
-<li>对于灾难恢复而言，RDB是非常不错的选择。因为我们可以非常轻松的将一个单独的文件压缩后再转移到其它存储介质上。</li>
-<li>性能最大化。对于Redis的服务进程而言，在开始持久化时，它唯一需要做的只是fork出子进程，之后再由子进程完成这些持久化的工作，这样就可以极大的避免服务进程执行IO操作了。</li>
-<li>相比于AOF机制，如果数据集很大，RDB的启动效率会更高。</li>
+<li>&#x4E00;&#x65E6;&#x91C7;&#x7528;&#x8BE5;&#x65B9;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x7684;&#x6574;&#x4E2A;Redis&#x6570;&#x636E;&#x5E93;&#x5C06;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x6587;&#x4EF6;&#x5907;&#x4EFD;&#x800C;&#x8A00;&#x662F;&#x975E;&#x5E38;&#x5B8C;&#x7F8E;&#x7684;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x6253;&#x7B97;&#x6BCF;&#x4E2A;&#x5C0F;&#x65F6;&#x5F52;&#x6863;&#x4E00;&#x6B21;&#x6700;&#x8FD1;24&#x5C0F;&#x65F6;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x8981;&#x6BCF;&#x5929;&#x5F52;&#x6863;&#x4E00;&#x6B21;&#x6700;&#x8FD1;30&#x5929;&#x7684;&#x6570;&#x636E;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5907;&#x4EFD;&#x7B56;&#x7565;&#xFF0C;&#x4E00;&#x65E6;&#x7CFB;&#x7EDF;&#x51FA;&#x73B0;&#x707E;&#x96BE;&#x6027;&#x6545;&#x969C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x7684;&#x8FDB;&#x884C;&#x6062;&#x590D;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x707E;&#x96BE;&#x6062;&#x590D;&#x800C;&#x8A00;&#xFF0C;RDB&#x662F;&#x975E;&#x5E38;&#x4E0D;&#x9519;&#x7684;&#x9009;&#x62E9;&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x8F7B;&#x677E;&#x7684;&#x5C06;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x538B;&#x7F29;&#x540E;&#x518D;&#x8F6C;&#x79FB;&#x5230;&#x5176;&#x5B83;&#x5B58;&#x50A8;&#x4ECB;&#x8D28;&#x4E0A;&#x3002;</li>
+<li>&#x6027;&#x80FD;&#x6700;&#x5927;&#x5316;&#x3002;&#x5BF9;&#x4E8E;Redis&#x7684;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x800C;&#x8A00;&#xFF0C;&#x5728;&#x5F00;&#x59CB;&#x6301;&#x4E45;&#x5316;&#x65F6;&#xFF0C;&#x5B83;&#x552F;&#x4E00;&#x9700;&#x8981;&#x505A;&#x7684;&#x53EA;&#x662F;fork&#x51FA;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x7531;&#x5B50;&#x8FDB;&#x7A0B;&#x5B8C;&#x6210;&#x8FD9;&#x4E9B;&#x6301;&#x4E45;&#x5316;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x6781;&#x5927;&#x7684;&#x907F;&#x514D;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x6267;&#x884C;IO&#x64CD;&#x4F5C;&#x4E86;&#x3002;</li>
+<li>&#x76F8;&#x6BD4;&#x4E8E;AOF&#x673A;&#x5236;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x96C6;&#x5F88;&#x5927;&#xFF0C;RDB&#x7684;&#x542F;&#x52A8;&#x6548;&#x7387;&#x4F1A;&#x66F4;&#x9AD8;&#x3002;</li>
 </ul>
-<p><strong>RDB又存在哪些劣势呢？</strong></p>
+<p><strong>RDB&#x53C8;&#x5B58;&#x5728;&#x54EA;&#x4E9B;&#x52A3;&#x52BF;&#x5462;&#xFF1F;</strong></p>
 <ul>
-<li>.如果你想保证数据的高可用性，即最大限度的避免数据丢失，那么RDB将不是一个很好的选择。因为系统一旦在定时持久化之前出现宕机现象，此前没有来得及写入磁盘的数据都将丢失。</li>
-<li>由于RDB是通过fork子进程来协助完成数据持久化工作的，因此，如果当数据集较大时，可能会导致整个服务器停止服务几百毫秒，甚至是1秒钟。</li>
+<li>.&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x9AD8;&#x53EF;&#x7528;&#x6027;&#xFF0C;&#x5373;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x7684;&#x907F;&#x514D;&#x6570;&#x636E;&#x4E22;&#x5931;&#xFF0C;&#x90A3;&#x4E48;RDB&#x5C06;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x4E00;&#x65E6;&#x5728;&#x5B9A;&#x65F6;&#x6301;&#x4E45;&#x5316;&#x4E4B;&#x524D;&#x51FA;&#x73B0;&#x5B95;&#x673A;&#x73B0;&#x8C61;&#xFF0C;&#x6B64;&#x524D;&#x6CA1;&#x6709;&#x6765;&#x5F97;&#x53CA;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x7684;&#x6570;&#x636E;&#x90FD;&#x5C06;&#x4E22;&#x5931;&#x3002;</li>
+<li>&#x7531;&#x4E8E;RDB&#x662F;&#x901A;&#x8FC7;fork&#x5B50;&#x8FDB;&#x7A0B;&#x6765;&#x534F;&#x52A9;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x6570;&#x636E;&#x96C6;&#x8F83;&#x5927;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x505C;&#x6B62;&#x670D;&#x52A1;&#x51E0;&#x767E;&#x6BEB;&#x79D2;&#xFF0C;&#x751A;&#x81F3;&#x662F;1&#x79D2;&#x949F;&#x3002;</li>
 </ul>
-<p><strong>AOF的优势有哪些呢？</strong></p>
+<p><strong>AOF&#x7684;&#x4F18;&#x52BF;&#x6709;&#x54EA;&#x4E9B;&#x5462;&#xFF1F;</strong></p>
 <ul>
-<li>该机制可以带来更高的数据安全性，即数据持久性。Redis中提供了3中同步策略，即每秒同步、每修改同步和不同步。事实上，每秒同步也是异步完成的，其效率也是非常高的，所差的是一旦系统出现宕机现象，那么这一秒钟之内修改的数据将会丢失。而每修改同步，我们可以将其视为同步持久化，即每次发生的数据变化都会被立即记录到磁盘中。可以预见，这种方式在效率上是最低的。至于无同步，无需多言，我想大家都能正确的理解它。</li>
-<li>由于该机制对日志文件的写入操作采用的是append模式，因此在写入过程中即使出现宕机现象，也不会破坏日志文件中已经存在的内容。然而如果我们本次操作只是写入了一半数据就出现了系统崩溃问题，不用担心，在Redis下一次启动之前，我们可以通过redis-check-aof工具来帮助我们解决数据一致性的问题。</li>
-<li>如果日志过大，Redis可以自动启用rewrite机制。即Redis以append模式不断的将修改数据写入到老的磁盘文件中，同时Redis还会创建一个新的文件用于记录此期间有哪些修改命令被执行。因此在进行rewrite切换时可以更好的保证数据安全性。</li>
-<li>AOF包含一个格式清晰、易于理解的日志文件用于记录所有的修改操作。事实上，我们也可以通过该文件完成数据的重建。</li>
+<li>&#x8BE5;&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x5E26;&#x6765;&#x66F4;&#x9AD8;&#x7684;&#x6570;&#x636E;&#x5B89;&#x5168;&#x6027;&#xFF0C;&#x5373;&#x6570;&#x636E;&#x6301;&#x4E45;&#x6027;&#x3002;Redis&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;3&#x4E2D;&#x540C;&#x6B65;&#x7B56;&#x7565;&#xFF0C;&#x5373;&#x6BCF;&#x79D2;&#x540C;&#x6B65;&#x3001;&#x6BCF;&#x4FEE;&#x6539;&#x540C;&#x6B65;&#x548C;&#x4E0D;&#x540C;&#x6B65;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6BCF;&#x79D2;&#x540C;&#x6B65;&#x4E5F;&#x662F;&#x5F02;&#x6B65;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x5176;&#x6548;&#x7387;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x9AD8;&#x7684;&#xFF0C;&#x6240;&#x5DEE;&#x7684;&#x662F;&#x4E00;&#x65E6;&#x7CFB;&#x7EDF;&#x51FA;&#x73B0;&#x5B95;&#x673A;&#x73B0;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E00;&#x79D2;&#x949F;&#x4E4B;&#x5185;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#x5C06;&#x4F1A;&#x4E22;&#x5931;&#x3002;&#x800C;&#x6BCF;&#x4FEE;&#x6539;&#x540C;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x540C;&#x6B65;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5373;&#x6BCF;&#x6B21;&#x53D1;&#x751F;&#x7684;&#x6570;&#x636E;&#x53D8;&#x5316;&#x90FD;&#x4F1A;&#x88AB;&#x7ACB;&#x5373;&#x8BB0;&#x5F55;&#x5230;&#x78C1;&#x76D8;&#x4E2D;&#x3002;&#x53EF;&#x4EE5;&#x9884;&#x89C1;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5728;&#x6548;&#x7387;&#x4E0A;&#x662F;&#x6700;&#x4F4E;&#x7684;&#x3002;&#x81F3;&#x4E8E;&#x65E0;&#x540C;&#x6B65;&#xFF0C;&#x65E0;&#x9700;&#x591A;&#x8A00;&#xFF0C;&#x6211;&#x60F3;&#x5927;&#x5BB6;&#x90FD;&#x80FD;&#x6B63;&#x786E;&#x7684;&#x7406;&#x89E3;&#x5B83;&#x3002;</li>
+<li>&#x7531;&#x4E8E;&#x8BE5;&#x673A;&#x5236;&#x5BF9;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x91C7;&#x7528;&#x7684;&#x662F;append&#x6A21;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x5199;&#x5165;&#x8FC7;&#x7A0B;&#x4E2D;&#x5373;&#x4F7F;&#x51FA;&#x73B0;&#x5B95;&#x673A;&#x73B0;&#x8C61;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x7834;&#x574F;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x7136;&#x800C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x672C;&#x6B21;&#x64CD;&#x4F5C;&#x53EA;&#x662F;&#x5199;&#x5165;&#x4E86;&#x4E00;&#x534A;&#x6570;&#x636E;&#x5C31;&#x51FA;&#x73B0;&#x4E86;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#xFF0C;&#x5728;Redis&#x4E0B;&#x4E00;&#x6B21;&#x542F;&#x52A8;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;redis-check-aof&#x5DE5;&#x5177;&#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x89E3;&#x51B3;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x7684;&#x95EE;&#x9898;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x65E5;&#x5FD7;&#x8FC7;&#x5927;&#xFF0C;Redis&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x542F;&#x7528;rewrite&#x673A;&#x5236;&#x3002;&#x5373;Redis&#x4EE5;append&#x6A21;&#x5F0F;&#x4E0D;&#x65AD;&#x7684;&#x5C06;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x5199;&#x5165;&#x5230;&#x8001;&#x7684;&#x78C1;&#x76D8;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x540C;&#x65F6;Redis&#x8FD8;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x6B64;&#x671F;&#x95F4;&#x6709;&#x54EA;&#x4E9B;&#x4FEE;&#x6539;&#x547D;&#x4EE4;&#x88AB;&#x6267;&#x884C;&#x3002;&#x56E0;&#x6B64;&#x5728;&#x8FDB;&#x884C;rewrite&#x5207;&#x6362;&#x65F6;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x7684;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x5B89;&#x5168;&#x6027;&#x3002;</li>
+<li>AOF&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x6E05;&#x6670;&#x3001;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#x7684;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x6240;&#x6709;&#x7684;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;&#x6587;&#x4EF6;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x7684;&#x91CD;&#x5EFA;&#x3002;</li>
 </ul>
-<p><strong>AOF的劣势有哪些呢？</strong></p>
+<p><strong>AOF&#x7684;&#x52A3;&#x52BF;&#x6709;&#x54EA;&#x4E9B;&#x5462;&#xFF1F;</strong></p>
 <ul>
-<li>对于相同数量的数据集而言，AOF文件通常要大于RDB文件。RDB 在恢复大数据集时的速度比 AOF 的恢复速度要快。</li>
-<li>根据同步策略的不同，AOF在运行效率上往往会慢于RDB。总之，每秒同步策略的效率是比较高的，同步禁用策略的效率和RDB一样高效。</li>
+<li>&#x5BF9;&#x4E8E;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;&#x96C6;&#x800C;&#x8A00;&#xFF0C;AOF&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x8981;&#x5927;&#x4E8E;RDB&#x6587;&#x4EF6;&#x3002;RDB &#x5728;&#x6062;&#x590D;&#x5927;&#x6570;&#x636E;&#x96C6;&#x65F6;&#x7684;&#x901F;&#x5EA6;&#x6BD4; AOF &#x7684;&#x6062;&#x590D;&#x901F;&#x5EA6;&#x8981;&#x5FEB;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x540C;&#x6B65;&#x7B56;&#x7565;&#x7684;&#x4E0D;&#x540C;&#xFF0C;AOF&#x5728;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x4E0A;&#x5F80;&#x5F80;&#x4F1A;&#x6162;&#x4E8E;RDB&#x3002;&#x603B;&#x4E4B;&#xFF0C;&#x6BCF;&#x79D2;&#x540C;&#x6B65;&#x7B56;&#x7565;&#x7684;&#x6548;&#x7387;&#x662F;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#xFF0C;&#x540C;&#x6B65;&#x7981;&#x7528;&#x7B56;&#x7565;&#x7684;&#x6548;&#x7387;&#x548C;RDB&#x4E00;&#x6837;&#x9AD8;&#x6548;&#x3002;</li>
 </ul>
-<p>二者选择的标准，就是看系统是愿意牺牲一些性能，换取更高的缓存一致性（aof），还是愿意写操作频繁的时候，不启用备份来换取更高的性能，待手动运行save的时候，再做备份（rdb）。rdb这个就更有些 eventually consistent 的意思了。</p>
-<h3 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h3><p><strong>RDB持久化配置</strong></p>
-<p>Redis会将数据集的快照dump到dump.rdb文件中。此外，我们也可以通过配置文件来修改Redis服务器dump快照的频率，在打开6379.conf文件之后，我们搜索save，可以看到下面的配置信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save 900 1         # 在900秒(15分钟)之后，如果至少有1个key发生变化，则dump内存快照。</span><br><span class="line">save 300 10        # 在300秒(5分钟)之后，如果至少有10个key发生变化，则dump内存快照。</span><br><span class="line">save 60 10000      # 在60秒(1分钟)之后，如果至少有10000个key发生变化，则dump内存快照。</span><br></pre></td></tr></table></figure>
-<p><strong>AOF持久化配置</strong></p>
-<p>在Redis的配置文件中存在三种同步方式，它们分别是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">appendfsync always     # 每次有数据修改发生时都会写入AOF文件。</span><br><span class="line">appendfsync everysec   # 每秒钟同步一次，该策略为AOF的缺省策略。</span><br><span class="line">appendfsync no         # 从不同步。高效但是数据不会被持久化。</span><br></pre></td></tr></table></figure>
-<h3 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择"></a>如何选择</h3><ul>
-<li><p>不要仅仅使用 RDB，因为那样会导致你丢失很多数据</p>
+<p>&#x4E8C;&#x8005;&#x9009;&#x62E9;&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x5C31;&#x662F;&#x770B;&#x7CFB;&#x7EDF;&#x662F;&#x613F;&#x610F;&#x727A;&#x7272;&#x4E00;&#x4E9B;&#x6027;&#x80FD;&#xFF0C;&#x6362;&#x53D6;&#x66F4;&#x9AD8;&#x7684;&#x7F13;&#x5B58;&#x4E00;&#x81F4;&#x6027;&#xFF08;aof&#xFF09;&#xFF0C;&#x8FD8;&#x662F;&#x613F;&#x610F;&#x5199;&#x64CD;&#x4F5C;&#x9891;&#x7E41;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x542F;&#x7528;&#x5907;&#x4EFD;&#x6765;&#x6362;&#x53D6;&#x66F4;&#x9AD8;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x5F85;&#x624B;&#x52A8;&#x8FD0;&#x884C;save&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x518D;&#x505A;&#x5907;&#x4EFD;&#xFF08;rdb&#xFF09;&#x3002;rdb&#x8FD9;&#x4E2A;&#x5C31;&#x66F4;&#x6709;&#x4E9B; eventually consistent &#x7684;&#x610F;&#x601D;&#x4E86;&#x3002;</p>
+<h3 id="&#x5E38;&#x7528;&#x914D;&#x7F6E;"><a href="#&#x5E38;&#x7528;&#x914D;&#x7F6E;" class="headerlink" title="&#x5E38;&#x7528;&#x914D;&#x7F6E;"></a>&#x5E38;&#x7528;&#x914D;&#x7F6E;</h3><p><strong>RDB&#x6301;&#x4E45;&#x5316;&#x914D;&#x7F6E;</strong></p>
+<p>Redis&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5FEB;&#x7167;dump&#x5230;dump.rdb&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x4FEE;&#x6539;Redis&#x670D;&#x52A1;&#x5668;dump&#x5FEB;&#x7167;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x5728;&#x6253;&#x5F00;6379.conf&#x6587;&#x4EF6;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x641C;&#x7D22;save&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save 900 1         # &#x5728;900&#x79D2;(15&#x5206;&#x949F;)&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x81F3;&#x5C11;&#x6709;1&#x4E2A;key&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;dump&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x3002;</span><br><span class="line">save 300 10        # &#x5728;300&#x79D2;(5&#x5206;&#x949F;)&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x81F3;&#x5C11;&#x6709;10&#x4E2A;key&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;dump&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x3002;</span><br><span class="line">save 60 10000      # &#x5728;60&#x79D2;(1&#x5206;&#x949F;)&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x81F3;&#x5C11;&#x6709;10000&#x4E2A;key&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5219;dump&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x3002;</span><br></pre></td></tr></table></figure>
+<p><strong>AOF&#x6301;&#x4E45;&#x5316;&#x914D;&#x7F6E;</strong></p>
+<p>&#x5728;Redis&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x5728;&#x4E09;&#x79CD;&#x540C;&#x6B65;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">appendfsync always     # &#x6BCF;&#x6B21;&#x6709;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x53D1;&#x751F;&#x65F6;&#x90FD;&#x4F1A;&#x5199;&#x5165;AOF&#x6587;&#x4EF6;&#x3002;</span><br><span class="line">appendfsync everysec   # &#x6BCF;&#x79D2;&#x949F;&#x540C;&#x6B65;&#x4E00;&#x6B21;&#xFF0C;&#x8BE5;&#x7B56;&#x7565;&#x4E3A;AOF&#x7684;&#x7F3A;&#x7701;&#x7B56;&#x7565;&#x3002;</span><br><span class="line">appendfsync no         # &#x4ECE;&#x4E0D;&#x540C;&#x6B65;&#x3002;&#x9AD8;&#x6548;&#x4F46;&#x662F;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x88AB;&#x6301;&#x4E45;&#x5316;&#x3002;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x5982;&#x4F55;&#x9009;&#x62E9;"><a href="#&#x5982;&#x4F55;&#x9009;&#x62E9;" class="headerlink" title="&#x5982;&#x4F55;&#x9009;&#x62E9;"></a>&#x5982;&#x4F55;&#x9009;&#x62E9;</h3><ul>
+<li><p>&#x4E0D;&#x8981;&#x4EC5;&#x4EC5;&#x4F7F;&#x7528; RDB&#xFF0C;&#x56E0;&#x4E3A;&#x90A3;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x4F60;&#x4E22;&#x5931;&#x5F88;&#x591A;&#x6570;&#x636E;</p>
 </li>
-<li><p>也不要仅仅使用 AOF，因为那样有两个问题，第一，你通过 AOF 做冷备，没有 RDB 做冷备，来的恢复速度更快; 第二，RDB 每次简单粗暴生成数据快照，更加健壮，可以避免 AOF 这种复杂的备份和恢复机制的 bug 。</p>
+<li><p>&#x4E5F;&#x4E0D;&#x8981;&#x4EC5;&#x4EC5;&#x4F7F;&#x7528; AOF&#xFF0C;&#x56E0;&#x4E3A;&#x90A3;&#x6837;&#x6709;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x7B2C;&#x4E00;&#xFF0C;&#x4F60;&#x901A;&#x8FC7; AOF &#x505A;&#x51B7;&#x5907;&#xFF0C;&#x6CA1;&#x6709; RDB &#x505A;&#x51B7;&#x5907;&#xFF0C;&#x6765;&#x7684;&#x6062;&#x590D;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;; &#x7B2C;&#x4E8C;&#xFF0C;RDB &#x6BCF;&#x6B21;&#x7B80;&#x5355;&#x7C97;&#x66B4;&#x751F;&#x6210;&#x6570;&#x636E;&#x5FEB;&#x7167;&#xFF0C;&#x66F4;&#x52A0;&#x5065;&#x58EE;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D; AOF &#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7684;&#x5907;&#x4EFD;&#x548C;&#x6062;&#x590D;&#x673A;&#x5236;&#x7684; bug &#x3002;</p>
 </li>
-<li><p>Redis 支持同时开启开启两种持久化方式，我们可以综合使用 AOF 和 RDB 两种持久化机制，用 AOF 来保证数据不丢失，作为数据恢复的第一选择; 用 RDB 来做不同程度的冷备，在 AOF 文件都丢失或损坏不可用的时候，还可以使用 RDB 来进行快速的数据恢复。</p>
+<li><p>Redis &#x652F;&#x6301;&#x540C;&#x65F6;&#x5F00;&#x542F;&#x5F00;&#x542F;&#x4E24;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7EFC;&#x5408;&#x4F7F;&#x7528; AOF &#x548C; RDB &#x4E24;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x7528; AOF &#x6765;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4E0D;&#x4E22;&#x5931;&#xFF0C;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x6062;&#x590D;&#x7684;&#x7B2C;&#x4E00;&#x9009;&#x62E9;; &#x7528; RDB &#x6765;&#x505A;&#x4E0D;&#x540C;&#x7A0B;&#x5EA6;&#x7684;&#x51B7;&#x5907;&#xFF0C;&#x5728; AOF &#x6587;&#x4EF6;&#x90FD;&#x4E22;&#x5931;&#x6216;&#x635F;&#x574F;&#x4E0D;&#x53EF;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; RDB &#x6765;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x7684;&#x6570;&#x636E;&#x6062;&#x590D;&#x3002;</p>
 <ul>
-<li><p>如果同时使用 RDB 和 AOF 两种持久化机制，那么在 Redis 重启的时候，会使用 <strong>AOF</strong> 来重新构建数据，因为 AOF 中的<strong>数据更加完整</strong>。</p>
+<li><p>&#x5982;&#x679C;&#x540C;&#x65F6;&#x4F7F;&#x7528; RDB &#x548C; AOF &#x4E24;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x90A3;&#x4E48;&#x5728; Redis &#x91CD;&#x542F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528; <strong>AOF</strong> &#x6765;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x4E3A; AOF &#x4E2D;&#x7684;<strong>&#x6570;&#x636E;&#x66F4;&#x52A0;&#x5B8C;&#x6574;</strong>&#x3002;</p>
 <blockquote>
-<p>一般来说， 如果想达到足以媲美 PostgreSQL 的数据安全性， 你应该同时使用两种持久化功能。如果你非常关心你的数据， 但仍然可以承受数分钟以内的数据丢失，那么你可以只使用 RDB 持久化。</p>
-<p>有很多用户都只使用 AOF 持久化，但并不推荐这种方式：因为定时生成 RDB 快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外，使用 RDB 还可以避免之前提到的 AOF 程序的 bug。</p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C; &#x5982;&#x679C;&#x60F3;&#x8FBE;&#x5230;&#x8DB3;&#x4EE5;&#x5AB2;&#x7F8E; PostgreSQL &#x7684;&#x6570;&#x636E;&#x5B89;&#x5168;&#x6027;&#xFF0C; &#x4F60;&#x5E94;&#x8BE5;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E24;&#x79CD;&#x6301;&#x4E45;&#x5316;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x4F60;&#x975E;&#x5E38;&#x5173;&#x5FC3;&#x4F60;&#x7684;&#x6570;&#x636E;&#xFF0C; &#x4F46;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x627F;&#x53D7;&#x6570;&#x5206;&#x949F;&#x4EE5;&#x5185;&#x7684;&#x6570;&#x636E;&#x4E22;&#x5931;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x53EA;&#x4F7F;&#x7528; RDB &#x6301;&#x4E45;&#x5316;&#x3002;</p>
+<p>&#x6709;&#x5F88;&#x591A;&#x7528;&#x6237;&#x90FD;&#x53EA;&#x4F7F;&#x7528; AOF &#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x63A8;&#x8350;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x56E0;&#x4E3A;&#x5B9A;&#x65F6;&#x751F;&#x6210; RDB &#x5FEB;&#x7167;&#xFF08;snapshot&#xFF09;&#x975E;&#x5E38;&#x4FBF;&#x4E8E;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5E93;&#x5907;&#x4EFD;&#xFF0C; &#x5E76;&#x4E14; RDB &#x6062;&#x590D;&#x6570;&#x636E;&#x96C6;&#x7684;&#x901F;&#x5EA6;&#x4E5F;&#x8981;&#x6BD4;AOF&#x6062;&#x590D;&#x7684;&#x901F;&#x5EA6;&#x8981;&#x5FEB;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x4F7F;&#x7528; RDB &#x8FD8;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E4B;&#x524D;&#x63D0;&#x5230;&#x7684; AOF &#x7A0B;&#x5E8F;&#x7684; bug&#x3002;</p>
 </blockquote>
 </li>
 </ul>
 </li>
 </ul>
-<p>在 Redis4.0 版本开始，允许你使用 RDB-AOF 混合持久化方式，详细可见 <a href="https://yq.aliyun.com/articles/193034" target="_blank" rel="noopener">《Redis4.0 之 RDB-AOF 混合持久化》</a> 。也因此，RDB 和 AOF 同时使用，是希望达到安全的持久化的推荐方式。</p>
-<h3 id="自动化触发-RDB-持久化的方式"><a href="#自动化触发-RDB-持久化的方式" class="headerlink" title="自动化触发 RDB 持久化的方式"></a>自动化触发 RDB 持久化的方式</h3><ul>
-<li>根据 redis.conf 配置中 SAVE m n 定时触发（使用的BGSAVE）</li>
-<li>主从复制时，主节点自动触发</li>
-<li>执行 Debug Reload</li>
-<li>执行 Shutdown 且没有开启 AOF 持久化</li>
+<p>&#x5728; Redis4.0 &#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x5141;&#x8BB8;&#x4F60;&#x4F7F;&#x7528; RDB-AOF &#x6DF7;&#x5408;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#xFF0C;&#x8BE6;&#x7EC6;&#x53EF;&#x89C1; <a href="https://yq.aliyun.com/articles/193034" target="_blank" rel="noopener">&#x300A;Redis4.0 &#x4E4B; RDB-AOF &#x6DF7;&#x5408;&#x6301;&#x4E45;&#x5316;&#x300B;</a> &#x3002;&#x4E5F;&#x56E0;&#x6B64;&#xFF0C;RDB &#x548C; AOF &#x540C;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x662F;&#x5E0C;&#x671B;&#x8FBE;&#x5230;&#x5B89;&#x5168;&#x7684;&#x6301;&#x4E45;&#x5316;&#x7684;&#x63A8;&#x8350;&#x65B9;&#x5F0F;&#x3002;</p>
+<h3 id="&#x81EA;&#x52A8;&#x5316;&#x89E6;&#x53D1;-RDB-&#x6301;&#x4E45;&#x5316;&#x7684;&#x65B9;&#x5F0F;"><a href="#&#x81EA;&#x52A8;&#x5316;&#x89E6;&#x53D1;-RDB-&#x6301;&#x4E45;&#x5316;&#x7684;&#x65B9;&#x5F0F;" class="headerlink" title="&#x81EA;&#x52A8;&#x5316;&#x89E6;&#x53D1; RDB &#x6301;&#x4E45;&#x5316;&#x7684;&#x65B9;&#x5F0F;"></a>&#x81EA;&#x52A8;&#x5316;&#x89E6;&#x53D1; RDB &#x6301;&#x4E45;&#x5316;&#x7684;&#x65B9;&#x5F0F;</h3><ul>
+<li>&#x6839;&#x636E; redis.conf &#x914D;&#x7F6E;&#x4E2D; SAVE m n &#x5B9A;&#x65F6;&#x89E6;&#x53D1;&#xFF08;&#x4F7F;&#x7528;&#x7684;BGSAVE&#xFF09;</li>
+<li>&#x4E3B;&#x4ECE;&#x590D;&#x5236;&#x65F6;&#xFF0C;&#x4E3B;&#x8282;&#x70B9;&#x81EA;&#x52A8;&#x89E6;&#x53D1;</li>
+<li>&#x6267;&#x884C; Debug Reload</li>
+<li>&#x6267;&#x884C; Shutdown &#x4E14;&#x6CA1;&#x6709;&#x5F00;&#x542F; AOF &#x6301;&#x4E45;&#x5316;</li>
 </ul>
-<p>BGSAVE 原理：</p>
-<p><img src="/2019/02/23/Redis/timg.jpg" alt="timg"></p>
-<p><strong>重要知识：</strong></p>
+<p>BGSAVE &#x539F;&#x7406;&#xFF1A;</p>
+<p><img src="/2019/02/23/Redis/Redis\timg.jpg" alt="timg"></p>
+<p><strong>&#x91CD;&#x8981;&#x77E5;&#x8BC6;&#xFF1A;</strong></p>
 <ul>
-<li>bgsave 做镜像全量持久化，AOF 做增量持久化。因为 bgsave 会耗费较长时间，不够实时，在停机的时候会导致大量丢失数据，所以需要 AOF 来配合使用。在 Redis 实例重启时，会使用 bgsave 持久化文件重新构建内存，再使用 AOF 重放近期的操作指令来实现完整恢复重启之前的状态。</li>
-<li>对方追问那如果突然机器掉电会怎样？取决于 AOF 日志 sync 属性的配置，如果不要求性能，在每条写指令时都 sync 一下磁盘，就不会丢失数据。但是在高性能的要求下每次都 sync 是不现实的，一般都使用定时 sync ，比如 1 秒 1 次，这个时候最多就会丢失 1 秒的数据。</li>
-<li>对方追问 bgsave 的原理是什么？你给出两个词汇就可以了，fork 和 cow 。fork 是指 Redis 通过创建子进程来进行 bgsave 操作。cow 指的是 copy on write ，子进程创建后，父子进程共享数据段，父进程继续提供读写服务，写脏的页面数据会逐渐和子进程分离开来。</li>
+<li>bgsave &#x505A;&#x955C;&#x50CF;&#x5168;&#x91CF;&#x6301;&#x4E45;&#x5316;&#xFF0C;AOF &#x505A;&#x589E;&#x91CF;&#x6301;&#x4E45;&#x5316;&#x3002;&#x56E0;&#x4E3A; bgsave &#x4F1A;&#x8017;&#x8D39;&#x8F83;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x4E0D;&#x591F;&#x5B9E;&#x65F6;&#xFF0C;&#x5728;&#x505C;&#x673A;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981; AOF &#x6765;&#x914D;&#x5408;&#x4F7F;&#x7528;&#x3002;&#x5728; Redis &#x5B9E;&#x4F8B;&#x91CD;&#x542F;&#x65F6;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528; bgsave &#x6301;&#x4E45;&#x5316;&#x6587;&#x4EF6;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x5185;&#x5B58;&#xFF0C;&#x518D;&#x4F7F;&#x7528; AOF &#x91CD;&#x653E;&#x8FD1;&#x671F;&#x7684;&#x64CD;&#x4F5C;&#x6307;&#x4EE4;&#x6765;&#x5B9E;&#x73B0;&#x5B8C;&#x6574;&#x6062;&#x590D;&#x91CD;&#x542F;&#x4E4B;&#x524D;&#x7684;&#x72B6;&#x6001;&#x3002;</li>
+<li>&#x5BF9;&#x65B9;&#x8FFD;&#x95EE;&#x90A3;&#x5982;&#x679C;&#x7A81;&#x7136;&#x673A;&#x5668;&#x6389;&#x7535;&#x4F1A;&#x600E;&#x6837;&#xFF1F;&#x53D6;&#x51B3;&#x4E8E; AOF &#x65E5;&#x5FD7; sync &#x5C5E;&#x6027;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8981;&#x6C42;&#x6027;&#x80FD;&#xFF0C;&#x5728;&#x6BCF;&#x6761;&#x5199;&#x6307;&#x4EE4;&#x65F6;&#x90FD; sync &#x4E00;&#x4E0B;&#x78C1;&#x76D8;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x4E22;&#x5931;&#x6570;&#x636E;&#x3002;&#x4F46;&#x662F;&#x5728;&#x9AD8;&#x6027;&#x80FD;&#x7684;&#x8981;&#x6C42;&#x4E0B;&#x6BCF;&#x6B21;&#x90FD; sync &#x662F;&#x4E0D;&#x73B0;&#x5B9E;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x4F7F;&#x7528;&#x5B9A;&#x65F6; sync &#xFF0C;&#x6BD4;&#x5982; 1 &#x79D2; 1 &#x6B21;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6700;&#x591A;&#x5C31;&#x4F1A;&#x4E22;&#x5931; 1 &#x79D2;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x5BF9;&#x65B9;&#x8FFD;&#x95EE; bgsave &#x7684;&#x539F;&#x7406;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x4F60;&#x7ED9;&#x51FA;&#x4E24;&#x4E2A;&#x8BCD;&#x6C47;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;fork &#x548C; cow &#x3002;fork &#x662F;&#x6307; Redis &#x901A;&#x8FC7;&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x6765;&#x8FDB;&#x884C; bgsave &#x64CD;&#x4F5C;&#x3002;cow &#x6307;&#x7684;&#x662F; copy on write &#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x7236;&#x5B50;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x6BB5;&#xFF0C;&#x7236;&#x8FDB;&#x7A0B;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x8BFB;&#x5199;&#x670D;&#x52A1;&#xFF0C;&#x5199;&#x810F;&#x7684;&#x9875;&#x9762;&#x6570;&#x636E;&#x4F1A;&#x9010;&#x6E10;&#x548C;&#x5B50;&#x8FDB;&#x7A0B;&#x5206;&#x79BB;&#x5F00;&#x6765;&#x3002;</li>
 </ul>
-<h2 id="Redis-有几种数据“过期”策略？"><a href="#Redis-有几种数据“过期”策略？" class="headerlink" title="Redis 有几种数据“过期”策略？"></a>Redis 有几种数据“过期”策略？</h2><p>Redis 的过期策略，就是指当 Redis 中缓存的 key 过期了，Redis 如何处理。</p>
-<p>Redis 提供了 3 种数据过期策略：</p>
+<h2 id="Redis-&#x6709;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x8FC7;&#x671F;&#x201D;&#x7B56;&#x7565;&#xFF1F;"><a href="#Redis-&#x6709;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x8FC7;&#x671F;&#x201D;&#x7B56;&#x7565;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x8FC7;&#x671F;&#x201D;&#x7B56;&#x7565;&#xFF1F;"></a>Redis &#x6709;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x8FC7;&#x671F;&#x201D;&#x7B56;&#x7565;&#xFF1F;</h2><p>Redis &#x7684;&#x8FC7;&#x671F;&#x7B56;&#x7565;&#xFF0C;&#x5C31;&#x662F;&#x6307;&#x5F53; Redis &#x4E2D;&#x7F13;&#x5B58;&#x7684; key &#x8FC7;&#x671F;&#x4E86;&#xFF0C;Redis &#x5982;&#x4F55;&#x5904;&#x7406;&#x3002;</p>
+<p>Redis &#x63D0;&#x4F9B;&#x4E86; 3 &#x79CD;&#x6570;&#x636E;&#x8FC7;&#x671F;&#x7B56;&#x7565;&#xFF1A;</p>
 <ul>
-<li>被动删除：当读/写一个已经过期的 key 时，会触发惰性删除策略，直接删除掉这个过期 key 。</li>
-<li>主动删除：由于惰性删除策略无法保证冷数据被及时删掉，所以 Redis 会定期主动淘汰一批已过期的 key 。</li>
-<li>主动删除：当前已用内存超过 maxmemory 限定时，触发主动清理策略，即 <a href="http://svip.iocoder.cn/Redis/Interview/#" target="_blank" rel="noopener">「数据“淘汰”策略」</a> 。</li>
+<li>&#x88AB;&#x52A8;&#x5220;&#x9664;&#xFF1A;&#x5F53;&#x8BFB;/&#x5199;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x8FC7;&#x671F;&#x7684; key &#x65F6;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;&#x60F0;&#x6027;&#x5220;&#x9664;&#x7B56;&#x7565;&#xFF0C;&#x76F4;&#x63A5;&#x5220;&#x9664;&#x6389;&#x8FD9;&#x4E2A;&#x8FC7;&#x671F; key &#x3002;</li>
+<li>&#x4E3B;&#x52A8;&#x5220;&#x9664;&#xFF1A;&#x7531;&#x4E8E;&#x60F0;&#x6027;&#x5220;&#x9664;&#x7B56;&#x7565;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x51B7;&#x6570;&#x636E;&#x88AB;&#x53CA;&#x65F6;&#x5220;&#x6389;&#xFF0C;&#x6240;&#x4EE5; Redis &#x4F1A;&#x5B9A;&#x671F;&#x4E3B;&#x52A8;&#x6DD8;&#x6C70;&#x4E00;&#x6279;&#x5DF2;&#x8FC7;&#x671F;&#x7684; key &#x3002;</li>
+<li>&#x4E3B;&#x52A8;&#x5220;&#x9664;&#xFF1A;&#x5F53;&#x524D;&#x5DF2;&#x7528;&#x5185;&#x5B58;&#x8D85;&#x8FC7; maxmemory &#x9650;&#x5B9A;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;&#x4E3B;&#x52A8;&#x6E05;&#x7406;&#x7B56;&#x7565;&#xFF0C;&#x5373; <a href="http://svip.iocoder.cn/Redis/Interview/#" target="_blank" rel="noopener">&#x300C;&#x6570;&#x636E;&#x201C;&#x6DD8;&#x6C70;&#x201D;&#x7B56;&#x7565;&#x300D;</a> &#x3002;</li>
 </ul>
-<p>在 Redis 中，同时使用了上述 3 种策略，即它们<strong>非互斥</strong>的。</p>
-<p>想要进一步了解，可以看看 <a href="https://www.cnblogs.com/chenpingzhao/p/5022467.html" target="_blank" rel="noopener">《关于 Redis 数据过期策略》</a> 文章。</p>
-<h2 id="Redis-有哪几种数据“淘汰”策略？"><a href="#Redis-有哪几种数据“淘汰”策略？" class="headerlink" title="Redis 有哪几种数据“淘汰”策略？"></a>Redis 有哪几种数据“淘汰”策略？</h2><p>Redis 内存数据集大小上升到一定大小的时候，就会进行数据淘汰策略。</p>
-<p>Redis 提供了 6 种数据淘汰策略：</p>
+<p>&#x5728; Redis &#x4E2D;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E86;&#x4E0A;&#x8FF0; 3 &#x79CD;&#x7B56;&#x7565;&#xFF0C;&#x5373;&#x5B83;&#x4EEC;<strong>&#x975E;&#x4E92;&#x65A5;</strong>&#x7684;&#x3002;</p>
+<p>&#x60F3;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x4E86;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="https://www.cnblogs.com/chenpingzhao/p/5022467.html" target="_blank" rel="noopener">&#x300A;&#x5173;&#x4E8E; Redis &#x6570;&#x636E;&#x8FC7;&#x671F;&#x7B56;&#x7565;&#x300B;</a> &#x6587;&#x7AE0;&#x3002;</p>
+<h2 id="Redis-&#x6709;&#x54EA;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x6DD8;&#x6C70;&#x201D;&#x7B56;&#x7565;&#xFF1F;"><a href="#Redis-&#x6709;&#x54EA;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x6DD8;&#x6C70;&#x201D;&#x7B56;&#x7565;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x54EA;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x6DD8;&#x6C70;&#x201D;&#x7B56;&#x7565;&#xFF1F;"></a>Redis &#x6709;&#x54EA;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x6DD8;&#x6C70;&#x201D;&#x7B56;&#x7565;&#xFF1F;</h2><p>Redis &#x5185;&#x5B58;&#x6570;&#x636E;&#x96C6;&#x5927;&#x5C0F;&#x4E0A;&#x5347;&#x5230;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x3002;</p>
+<p>Redis &#x63D0;&#x4F9B;&#x4E86; 6 &#x79CD;&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#xFF1A;</p>
 <ol>
 <li>volatile-lru</li>
 <li>volatile-ttl</li>
@@ -661,342 +661,342 @@
 <li>allkeys-random</li>
 <li>no-enviction</li>
 </ol>
-<p>具体的 <strong>每种数据淘汰策略的定义</strong>，和 <strong>如何选择讨论策略</strong>，可见 <a href="http://blog.720ui.com/2016/redis_action_02_maxmemory_policy/" target="_blank" rel="noopener">《Redis实战（二） 内存淘汰机制》</a> 。</p>
-<p> <strong>Redis LRU 算法</strong></p>
-<p>另外，Redis 的 LRU 算法，<strong>并不是一个严格的 LRU 实现</strong>。这意味着 Redis 不能选择最佳候选键来回收，也就是最久未被访问的那些键。相反，Redis 会尝试执行一个近似的 LRU 算法，通过采样一小部分键，然后在采样键中回收最适合(拥有最久未被访问时间)的那个。</p>
+<p>&#x5177;&#x4F53;&#x7684; <strong>&#x6BCF;&#x79CD;&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x7684;&#x5B9A;&#x4E49;</strong>&#xFF0C;&#x548C; <strong>&#x5982;&#x4F55;&#x9009;&#x62E9;&#x8BA8;&#x8BBA;&#x7B56;&#x7565;</strong>&#xFF0C;&#x53EF;&#x89C1; <a href="http://blog.720ui.com/2016/redis_action_02_maxmemory_policy/" target="_blank" rel="noopener">&#x300A;Redis&#x5B9E;&#x6218;&#xFF08;&#x4E8C;&#xFF09; &#x5185;&#x5B58;&#x6DD8;&#x6C70;&#x673A;&#x5236;&#x300B;</a> &#x3002;</p>
+<p> <strong>Redis LRU &#x7B97;&#x6CD5;</strong></p>
+<p>&#x53E6;&#x5916;&#xFF0C;Redis &#x7684; LRU &#x7B97;&#x6CD5;&#xFF0C;<strong>&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x4E25;&#x683C;&#x7684; LRU &#x5B9E;&#x73B0;</strong>&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; Redis &#x4E0D;&#x80FD;&#x9009;&#x62E9;&#x6700;&#x4F73;&#x5019;&#x9009;&#x952E;&#x6765;&#x56DE;&#x6536;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6700;&#x4E45;&#x672A;&#x88AB;&#x8BBF;&#x95EE;&#x7684;&#x90A3;&#x4E9B;&#x952E;&#x3002;&#x76F8;&#x53CD;&#xFF0C;Redis &#x4F1A;&#x5C1D;&#x8BD5;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x8FD1;&#x4F3C;&#x7684; LRU &#x7B97;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x91C7;&#x6837;&#x4E00;&#x5C0F;&#x90E8;&#x5206;&#x952E;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x91C7;&#x6837;&#x952E;&#x4E2D;&#x56DE;&#x6536;&#x6700;&#x9002;&#x5408;(&#x62E5;&#x6709;&#x6700;&#x4E45;&#x672A;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;)&#x7684;&#x90A3;&#x4E2A;&#x3002;</p>
 <ul>
-<li><p>具体的可以看看 <a href="http://ifeve.com/lru-cache/" target="_blank" rel="noopener">《使用 Redis 作为一个 LRU 缓存》</a> 文章。</p>
-<p><strong>MySQL 里有 2000w 数据，Redis 中只存 20w 的数据，如何保证 Redis 中的数据都是热点数据？</strong></p>
+<li><p>&#x5177;&#x4F53;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="http://ifeve.com/lru-cache/" target="_blank" rel="noopener">&#x300A;&#x4F7F;&#x7528; Redis &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A; LRU &#x7F13;&#x5B58;&#x300B;</a> &#x6587;&#x7AE0;&#x3002;</p>
+<p><strong>MySQL &#x91CC;&#x6709; 2000w &#x6570;&#x636E;&#xFF0C;Redis &#x4E2D;&#x53EA;&#x5B58; 20w &#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x4F55;&#x4FDD;&#x8BC1; Redis &#x4E2D;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x70ED;&#x70B9;&#x6570;&#x636E;&#xFF1F;</strong></p>
 </li>
 </ul>
 <blockquote>
-<p>艿艿：这个是从网络上找到的一个神奇的问题，并且看了答案之后，觉得有点莫名的对不上。</p>
-<p>所以，感觉这个问题的目的是，如何保证热点数据不要被淘汰。</p>
+<p>&#x827F;&#x827F;&#xFF1A;&#x8FD9;&#x4E2A;&#x662F;&#x4ECE;&#x7F51;&#x7EDC;&#x4E0A;&#x627E;&#x5230;&#x7684;&#x4E00;&#x4E2A;&#x795E;&#x5947;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x4E14;&#x770B;&#x4E86;&#x7B54;&#x6848;&#x4E4B;&#x540E;&#xFF0C;&#x89C9;&#x5F97;&#x6709;&#x70B9;&#x83AB;&#x540D;&#x7684;&#x5BF9;&#x4E0D;&#x4E0A;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x611F;&#x89C9;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x76EE;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x70ED;&#x70B9;&#x6570;&#x636E;&#x4E0D;&#x8981;&#x88AB;&#x6DD8;&#x6C70;&#x3002;</p>
 </blockquote>
-<p>在 <a href="http://svip.iocoder.cn/Redis/Interview/#" target="_blank" rel="noopener">「Redis 有哪几种数据“淘汰”策略？」</a> 问题中，我们已经看到，“Redis 内存数据集大小上升到一定大小的时候，就会进行数据淘汰策略。” 。</p>
-<p>那么，如果我们此时要保证热点数据不被淘汰，那么需要选择 volatile-lru 或 allkeys-lru 这两个基于 LRU 算法的淘汰策略。</p>
-<p>相比较来说，最终会选择 allkeys-lru 淘汰策略。原因是，如果我们的应用对缓存的访问符合幂律分布，也就是存在相对热点数据，或者我们不太清楚我们应用的缓存访问分布状况，我们可以选择 allkeys-lru 策略。</p>
-<p> <strong>Redis 回收进程如何工作的？</strong></p>
-<p>理解回收进程如何工作是非常重要的：</p>
+<p>&#x5728; <a href="http://svip.iocoder.cn/Redis/Interview/#" target="_blank" rel="noopener">&#x300C;Redis &#x6709;&#x54EA;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x201C;&#x6DD8;&#x6C70;&#x201D;&#x7B56;&#x7565;&#xFF1F;&#x300D;</a> &#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#xFF0C;&#x201C;Redis &#x5185;&#x5B58;&#x6570;&#x636E;&#x96C6;&#x5927;&#x5C0F;&#x4E0A;&#x5347;&#x5230;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x3002;&#x201D; &#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6B64;&#x65F6;&#x8981;&#x4FDD;&#x8BC1;&#x70ED;&#x70B9;&#x6570;&#x636E;&#x4E0D;&#x88AB;&#x6DD8;&#x6C70;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x9009;&#x62E9; volatile-lru &#x6216; allkeys-lru &#x8FD9;&#x4E24;&#x4E2A;&#x57FA;&#x4E8E; LRU &#x7B97;&#x6CD5;&#x7684;&#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x3002;</p>
+<p>&#x76F8;&#x6BD4;&#x8F83;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x7EC8;&#x4F1A;&#x9009;&#x62E9; allkeys-lru &#x6DD8;&#x6C70;&#x7B56;&#x7565;&#x3002;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x5E94;&#x7528;&#x5BF9;&#x7F13;&#x5B58;&#x7684;&#x8BBF;&#x95EE;&#x7B26;&#x5408;&#x5E42;&#x5F8B;&#x5206;&#x5E03;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5B58;&#x5728;&#x76F8;&#x5BF9;&#x70ED;&#x70B9;&#x6570;&#x636E;&#xFF0C;&#x6216;&#x8005;&#x6211;&#x4EEC;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#x6211;&#x4EEC;&#x5E94;&#x7528;&#x7684;&#x7F13;&#x5B58;&#x8BBF;&#x95EE;&#x5206;&#x5E03;&#x72B6;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9009;&#x62E9; allkeys-lru &#x7B56;&#x7565;&#x3002;</p>
+<p> <strong>Redis &#x56DE;&#x6536;&#x8FDB;&#x7A0B;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;</strong></p>
+<p>&#x7406;&#x89E3;&#x56DE;&#x6536;&#x8FDB;&#x7A0B;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x662F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#xFF1A;</p>
 <ul>
-<li>一个客户端运行了新的命令，添加了新的数据</li>
-<li>Redis 检查内存使用情况，如果大于 maxmemory 的限制, 则根据设定好的策略进行回收。</li>
-<li>Redis 执行新命令……</li>
+<li>&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FD0;&#x884C;&#x4E86;&#x65B0;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x65B0;&#x7684;&#x6570;&#x636E;</li>
+<li>Redis &#x68C0;&#x67E5;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x5927;&#x4E8E; maxmemory &#x7684;&#x9650;&#x5236;, &#x5219;&#x6839;&#x636E;&#x8BBE;&#x5B9A;&#x597D;&#x7684;&#x7B56;&#x7565;&#x8FDB;&#x884C;&#x56DE;&#x6536;&#x3002;</li>
+<li>Redis &#x6267;&#x884C;&#x65B0;&#x547D;&#x4EE4;&#x2026;&#x2026;</li>
 </ul>
-<p>所以我们不断地穿越内存限制的边界，通过不断达到边界然后不断地回收回到边界以下（跌宕起伏）。</p>
-<h2 id="如果有大量的-key-需要设置同一时间过期，一般需要注意什么？"><a href="#如果有大量的-key-需要设置同一时间过期，一般需要注意什么？" class="headerlink" title="如果有大量的 key 需要设置同一时间过期，一般需要注意什么？"></a>如果有大量的 key 需要设置同一时间过期，一般需要注意什么？</h2><p>如果大量的 key 过期时间设置的过于集中，到过期的那个时间点，Redis可能会出现短暂的卡顿现象。</p>
-<p>一般需要在时间上加一个随机值，使得过期时间分散一些。</p>
-<h2 id="Redis-有哪些数据结构？"><a href="#Redis-有哪些数据结构？" class="headerlink" title="Redis 有哪些数据结构？"></a>Redis 有哪些数据结构？</h2><p>如果你是 Redis 普通玩家，可能你的回答是如下五种数据结构：</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E0D;&#x65AD;&#x5730;&#x7A7F;&#x8D8A;&#x5185;&#x5B58;&#x9650;&#x5236;&#x7684;&#x8FB9;&#x754C;&#xFF0C;&#x901A;&#x8FC7;&#x4E0D;&#x65AD;&#x8FBE;&#x5230;&#x8FB9;&#x754C;&#x7136;&#x540E;&#x4E0D;&#x65AD;&#x5730;&#x56DE;&#x6536;&#x56DE;&#x5230;&#x8FB9;&#x754C;&#x4EE5;&#x4E0B;&#xFF08;&#x8DCC;&#x5B95;&#x8D77;&#x4F0F;&#xFF09;&#x3002;</p>
+<h2 id="&#x5982;&#x679C;&#x6709;&#x5927;&#x91CF;&#x7684;-key-&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x8FC7;&#x671F;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;"><a href="#&#x5982;&#x679C;&#x6709;&#x5927;&#x91CF;&#x7684;-key-&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x8FC7;&#x671F;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;" class="headerlink" title="&#x5982;&#x679C;&#x6709;&#x5927;&#x91CF;&#x7684; key &#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x8FC7;&#x671F;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;"></a>&#x5982;&#x679C;&#x6709;&#x5927;&#x91CF;&#x7684; key &#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x8FC7;&#x671F;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;</h2><p>&#x5982;&#x679C;&#x5927;&#x91CF;&#x7684; key &#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#x7684;&#x8FC7;&#x4E8E;&#x96C6;&#x4E2D;&#xFF0C;&#x5230;&#x8FC7;&#x671F;&#x7684;&#x90A3;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#xFF0C;Redis&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x77ED;&#x6682;&#x7684;&#x5361;&#x987F;&#x73B0;&#x8C61;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x9700;&#x8981;&#x5728;&#x65F6;&#x95F4;&#x4E0A;&#x52A0;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x503C;&#xFF0C;&#x4F7F;&#x5F97;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x5206;&#x6563;&#x4E00;&#x4E9B;&#x3002;</p>
+<h2 id="Redis-&#x6709;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1F;"><a href="#Redis-&#x6709;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1F;"></a>Redis &#x6709;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1F;</h2><p>&#x5982;&#x679C;&#x4F60;&#x662F; Redis &#x666E;&#x901A;&#x73A9;&#x5BB6;&#xFF0C;&#x53EF;&#x80FD;&#x4F60;&#x7684;&#x56DE;&#x7B54;&#x662F;&#x5982;&#x4E0B;&#x4E94;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
 <ul>
-<li>字符串 String</li>
-<li>字典Hash</li>
-<li>列表List</li>
-<li>集合Set</li>
-<li>有序集合 SortedSet</li>
+<li>&#x5B57;&#x7B26;&#x4E32; String</li>
+<li>&#x5B57;&#x5178;Hash</li>
+<li>&#x5217;&#x8868;List</li>
+<li>&#x96C6;&#x5408;Set</li>
+<li>&#x6709;&#x5E8F;&#x96C6;&#x5408; SortedSet</li>
 </ul>
-<p>如果你是 Redis 中级玩家，还需要加上下面几种数据结构：</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F; Redis &#x4E2D;&#x7EA7;&#x73A9;&#x5BB6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x52A0;&#x4E0A;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
 <ul>
 <li>HyperLogLog</li>
 <li>Geo</li>
 <li>Pub / Sub</li>
 </ul>
-<p>如果你是 Redis 高端玩家，你可能玩过 Redis Module ，可以再加上下面几种数据结构：</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x662F; Redis &#x9AD8;&#x7AEF;&#x73A9;&#x5BB6;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x73A9;&#x8FC7; Redis Module &#xFF0C;&#x53EF;&#x4EE5;&#x518D;&#x52A0;&#x4E0A;&#x4E0B;&#x9762;&#x51E0;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
 <ul>
 <li>BloomFilter</li>
 <li>RedisSearch</li>
 <li>Redis-ML</li>
 <li>JSON</li>
 </ul>
-<p>另外，在 Redis 5.0 增加了 Stream 功能，一个新的强大的支持多播的可持久化的消息队列，提供类似 Kafka 的功能。😈 默默跟面试官在装一波。</p>
-<h2 id="聊聊-Redis-使用场景"><a href="#聊聊-Redis-使用场景" class="headerlink" title="聊聊 Redis 使用场景"></a>聊聊 Redis 使用场景</h2><p>Redis 可用的场景非常之多：</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5728; Redis 5.0 &#x589E;&#x52A0;&#x4E86; Stream &#x529F;&#x80FD;&#xFF0C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5F3A;&#x5927;&#x7684;&#x652F;&#x6301;&#x591A;&#x64AD;&#x7684;&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C; Kafka &#x7684;&#x529F;&#x80FD;&#x3002;&#x1F608; &#x9ED8;&#x9ED8;&#x8DDF;&#x9762;&#x8BD5;&#x5B98;&#x5728;&#x88C5;&#x4E00;&#x6CE2;&#x3002;</p>
+<h2 id="&#x804A;&#x804A;-Redis-&#x4F7F;&#x7528;&#x573A;&#x666F;"><a href="#&#x804A;&#x804A;-Redis-&#x4F7F;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x804A;&#x804A; Redis &#x4F7F;&#x7528;&#x573A;&#x666F;"></a>&#x804A;&#x804A; Redis &#x4F7F;&#x7528;&#x573A;&#x666F;</h2><p>Redis &#x53EF;&#x7528;&#x7684;&#x573A;&#x666F;&#x975E;&#x5E38;&#x4E4B;&#x591A;&#xFF1A;</p>
 <ul>
-<li>数据缓存</li>
-<li>会话缓存</li>
-<li>时效性数据</li>
-<li>访问频率</li>
-<li>计数器</li>
-<li>社交列表</li>
-<li>记录用户判定信息</li>
-<li>交集、并集和差集</li>
-<li>热门列表与排行榜</li>
-<li>最新动态</li>
-<li>消息队列</li>
-<li>分布式锁</li>
+<li>&#x6570;&#x636E;&#x7F13;&#x5B58;</li>
+<li>&#x4F1A;&#x8BDD;&#x7F13;&#x5B58;</li>
+<li>&#x65F6;&#x6548;&#x6027;&#x6570;&#x636E;</li>
+<li>&#x8BBF;&#x95EE;&#x9891;&#x7387;</li>
+<li>&#x8BA1;&#x6570;&#x5668;</li>
+<li>&#x793E;&#x4EA4;&#x5217;&#x8868;</li>
+<li>&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x5224;&#x5B9A;&#x4FE1;&#x606F;</li>
+<li>&#x4EA4;&#x96C6;&#x3001;&#x5E76;&#x96C6;&#x548C;&#x5DEE;&#x96C6;</li>
+<li>&#x70ED;&#x95E8;&#x5217;&#x8868;&#x4E0E;&#x6392;&#x884C;&#x699C;</li>
+<li>&#x6700;&#x65B0;&#x52A8;&#x6001;</li>
+<li>&#x6D88;&#x606F;&#x961F;&#x5217;</li>
+<li>&#x5206;&#x5E03;&#x5F0F;&#x9501;</li>
 </ul>
-<p>详细的介绍，可以看看如下文章：</p>
+<p>&#x8BE6;&#x7EC6;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x5982;&#x4E0B;&#x6587;&#x7AE0;&#xFF1A;</p>
 <ul>
-<li><a href="http://blog.720ui.com/2017/redis_core_use/" target="_blank" rel="noopener">《聊聊 Redis 使用场景》</a></li>
-<li><a href="https://www.jianshu.com/p/af277c77b1c9" target="_blank" rel="noopener">《Redis 应用场景及实例》</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/29665317" target="_blank" rel="noopener">《Redis 常见的应用场景解析》</a></li>
-<li><a href="https://www.zhihu.com/question/19829601" target="_blank" rel="noopener">《Redis 和 Memcached 各有什么优缺点，主要的应用场景是什么样的？》</a></li>
+<li><a href="http://blog.720ui.com/2017/redis_core_use/" target="_blank" rel="noopener">&#x300A;&#x804A;&#x804A; Redis &#x4F7F;&#x7528;&#x573A;&#x666F;&#x300B;</a></li>
+<li><a href="https://www.jianshu.com/p/af277c77b1c9" target="_blank" rel="noopener">&#x300A;Redis &#x5E94;&#x7528;&#x573A;&#x666F;&#x53CA;&#x5B9E;&#x4F8B;&#x300B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/29665317" target="_blank" rel="noopener">&#x300A;Redis &#x5E38;&#x89C1;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x89E3;&#x6790;&#x300B;</a></li>
+<li><a href="https://www.zhihu.com/question/19829601" target="_blank" rel="noopener">&#x300A;Redis &#x548C; Memcached &#x5404;&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x7F3A;&#x70B9;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#xFF1F;&#x300B;</a></li>
 </ul>
-<p><strong>请用 Redis 和任意语言实现一段恶意登录保护的代码，限制 1 小时内每用户 Id 最多只能登录 5 次。</strong></p>
-<p>用列表实现，列表中每个元素代表登陆时间，只要最后的第 5 次登陆时间和现在时间差不超过 1 小时就禁止登陆。</p>
-<p>具体的代码实现，可以看看 <a href="https://www.jianshu.com/p/e3abbfc59d77" target="_blank" rel="noopener">《一道 Redis 面试题》</a> 。</p>
-<h2 id="Redis-支持的-Java-客户端都有哪些？"><a href="#Redis-支持的-Java-客户端都有哪些？" class="headerlink" title="Redis 支持的 Java 客户端都有哪些？"></a>Redis 支持的 Java 客户端都有哪些？</h2><p>使用比较广泛的有三个 Java 客户端：</p>
+<p><strong>&#x8BF7;&#x7528; Redis &#x548C;&#x4EFB;&#x610F;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x4E00;&#x6BB5;&#x6076;&#x610F;&#x767B;&#x5F55;&#x4FDD;&#x62A4;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x9650;&#x5236; 1 &#x5C0F;&#x65F6;&#x5185;&#x6BCF;&#x7528;&#x6237; Id &#x6700;&#x591A;&#x53EA;&#x80FD;&#x767B;&#x5F55; 5 &#x6B21;&#x3002;</strong></p>
+<p>&#x7528;&#x5217;&#x8868;&#x5B9E;&#x73B0;&#xFF0C;&#x5217;&#x8868;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4EE3;&#x8868;&#x767B;&#x9646;&#x65F6;&#x95F4;&#xFF0C;&#x53EA;&#x8981;&#x6700;&#x540E;&#x7684;&#x7B2C; 5 &#x6B21;&#x767B;&#x9646;&#x65F6;&#x95F4;&#x548C;&#x73B0;&#x5728;&#x65F6;&#x95F4;&#x5DEE;&#x4E0D;&#x8D85;&#x8FC7; 1 &#x5C0F;&#x65F6;&#x5C31;&#x7981;&#x6B62;&#x767B;&#x9646;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="https://www.jianshu.com/p/e3abbfc59d77" target="_blank" rel="noopener">&#x300A;&#x4E00;&#x9053; Redis &#x9762;&#x8BD5;&#x9898;&#x300B;</a> &#x3002;</p>
+<h2 id="Redis-&#x652F;&#x6301;&#x7684;-Java-&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;"><a href="#Redis-&#x652F;&#x6301;&#x7684;-Java-&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;" class="headerlink" title="Redis &#x652F;&#x6301;&#x7684; Java &#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;"></a>Redis &#x652F;&#x6301;&#x7684; Java &#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h2><p>&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#x7684;&#x6709;&#x4E09;&#x4E2A; Java &#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</p>
 <ul>
 <li><p>Redisson</p>
 <blockquote>
-<p>Redisson ，是一个高级的分布式协调 Redis 客服端，能帮助用户在分布式环境中轻松实现一些 Java 的对象 (Bloom filter, BitSet, Set, SetMultimap, ScoredSortedSet, SortedSet, Map, ConcurrentMap, List, ListMultimap, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, ReadWriteLock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog)。</p>
+<p>Redisson &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x7EA7;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x534F;&#x8C03; Redis &#x5BA2;&#x670D;&#x7AEF;&#xFF0C;&#x80FD;&#x5E2E;&#x52A9;&#x7528;&#x6237;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x73AF;&#x5883;&#x4E2D;&#x8F7B;&#x677E;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B; Java &#x7684;&#x5BF9;&#x8C61; (Bloom filter, BitSet, Set, SetMultimap, ScoredSortedSet, SortedSet, Map, ConcurrentMap, List, ListMultimap, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, ReadWriteLock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog)&#x3002;</p>
 </blockquote>
 </li>
 <li><p>Jedis</p>
 <blockquote>
-<p>Jedis 是 Redis 的 Java 实现的客户端，其 API 提供了比较全面的 Redis 命令的支持。</p>
-<p>Redisson 实现了分布式和可扩展的 Java 数据结构，和 Jedis 相比，Jedis 功能较为简单，不支持字符串操作，不支持排序、事务、管道、分区等 Redis 特性。</p>
-<p>Redisson 的宗旨是促进使用者对 Redis 的关注分离，从而让使用者能够将精力更集中地放在处理业务逻辑上。</p>
+<p>Jedis &#x662F; Redis &#x7684; Java &#x5B9E;&#x73B0;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5176; API &#x63D0;&#x4F9B;&#x4E86;&#x6BD4;&#x8F83;&#x5168;&#x9762;&#x7684; Redis &#x547D;&#x4EE4;&#x7684;&#x652F;&#x6301;&#x3002;</p>
+<p>Redisson &#x5B9E;&#x73B0;&#x4E86;&#x5206;&#x5E03;&#x5F0F;&#x548C;&#x53EF;&#x6269;&#x5C55;&#x7684; Java &#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x548C; Jedis &#x76F8;&#x6BD4;&#xFF0C;Jedis &#x529F;&#x80FD;&#x8F83;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x6392;&#x5E8F;&#x3001;&#x4E8B;&#x52A1;&#x3001;&#x7BA1;&#x9053;&#x3001;&#x5206;&#x533A;&#x7B49; Redis &#x7279;&#x6027;&#x3002;</p>
+<p>Redisson &#x7684;&#x5B97;&#x65E8;&#x662F;&#x4FC3;&#x8FDB;&#x4F7F;&#x7528;&#x8005;&#x5BF9; Redis &#x7684;&#x5173;&#x6CE8;&#x5206;&#x79BB;&#xFF0C;&#x4ECE;&#x800C;&#x8BA9;&#x4F7F;&#x7528;&#x8005;&#x80FD;&#x591F;&#x5C06;&#x7CBE;&#x529B;&#x66F4;&#x96C6;&#x4E2D;&#x5730;&#x653E;&#x5728;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0A;&#x3002;</p>
 </blockquote>
 </li>
 <li><p>Lettuce</p>
 <blockquote>
-<p>Lettuce 是一个可伸缩线程安全的 Redis 客户端。多个线程可以共享同一个 RedisConnection 。它利用优秀 Netty NIO 框架来高效地管理多个连接。</p>
+<p>Lettuce &#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4F38;&#x7F29;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684; Redis &#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x5171;&#x4EAB;&#x540C;&#x4E00;&#x4E2A; RedisConnection &#x3002;&#x5B83;&#x5229;&#x7528;&#x4F18;&#x79C0; Netty NIO &#x6846;&#x67B6;&#x6765;&#x9AD8;&#x6548;&#x5730;&#x7BA1;&#x7406;&#x591A;&#x4E2A;&#x8FDE;&#x63A5;&#x3002;</p>
 </blockquote>
 </li>
 </ul>
-<p>Redis 官方推荐使用 Redisson 或 Jedis 。</p>
-<p>Spring Boot 2.x 内置使用 Lettuce 。</p>
-<h2 id="如何使用-Redis-实现分布式锁？"><a href="#如何使用-Redis-实现分布式锁？" class="headerlink" title="如何使用 Redis 实现分布式锁？"></a>如何使用 Redis 实现分布式锁？</h2><p> <strong>方案一：set 指令</strong></p>
-<p>先拿 setnx 来争抢锁，抢到之后，再用 expire 给锁加一个过期时间防止锁忘记了释放。</p>
+<p>Redis &#x5B98;&#x65B9;&#x63A8;&#x8350;&#x4F7F;&#x7528; Redisson &#x6216; Jedis &#x3002;</p>
+<p>Spring Boot 2.x &#x5185;&#x7F6E;&#x4F7F;&#x7528; Lettuce &#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;-Redis-&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#xFF1F;"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;-Redis-&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#xFF1F;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528; Redis &#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#xFF1F;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528; Redis &#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#xFF1F;</h2><p> <strong>&#x65B9;&#x6848;&#x4E00;&#xFF1A;set &#x6307;&#x4EE4;</strong></p>
+<p>&#x5148;&#x62FF; setnx &#x6765;&#x4E89;&#x62A2;&#x9501;&#xFF0C;&#x62A2;&#x5230;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x7528; expire &#x7ED9;&#x9501;&#x52A0;&#x4E00;&#x4E2A;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x9632;&#x6B62;&#x9501;&#x5FD8;&#x8BB0;&#x4E86;&#x91CA;&#x653E;&#x3002;</p>
 <ul>
-<li>这时候对方会告诉你说你回答得不错，然后接着问如果在 setnx 之后执行 expire 之前进程意外 crash 或者要重启维护了，那会怎么样？</li>
-<li>这时候你要给予惊讶的反馈：唉，是喔，这个锁就永远得不到释放了。紧接着你需要抓一抓自己得脑袋，故作思考片刻，好像接下来的结果是你主动思考出来的，然后回答：我记得 set 指令有非常复杂的参数，这个应该是可以同时把 setnx 和 expire 合成一条指令来用的！对方这时会显露笑容，心里开始默念：摁，这小子还不错。</li>
+<li>&#x8FD9;&#x65F6;&#x5019;&#x5BF9;&#x65B9;&#x4F1A;&#x544A;&#x8BC9;&#x4F60;&#x8BF4;&#x4F60;&#x56DE;&#x7B54;&#x5F97;&#x4E0D;&#x9519;&#xFF0C;&#x7136;&#x540E;&#x63A5;&#x7740;&#x95EE;&#x5982;&#x679C;&#x5728; setnx &#x4E4B;&#x540E;&#x6267;&#x884C; expire &#x4E4B;&#x524D;&#x8FDB;&#x7A0B;&#x610F;&#x5916; crash &#x6216;&#x8005;&#x8981;&#x91CD;&#x542F;&#x7EF4;&#x62A4;&#x4E86;&#xFF0C;&#x90A3;&#x4F1A;&#x600E;&#x4E48;&#x6837;&#xFF1F;</li>
+<li>&#x8FD9;&#x65F6;&#x5019;&#x4F60;&#x8981;&#x7ED9;&#x4E88;&#x60CA;&#x8BB6;&#x7684;&#x53CD;&#x9988;&#xFF1A;&#x5509;&#xFF0C;&#x662F;&#x5594;&#xFF0C;&#x8FD9;&#x4E2A;&#x9501;&#x5C31;&#x6C38;&#x8FDC;&#x5F97;&#x4E0D;&#x5230;&#x91CA;&#x653E;&#x4E86;&#x3002;&#x7D27;&#x63A5;&#x7740;&#x4F60;&#x9700;&#x8981;&#x6293;&#x4E00;&#x6293;&#x81EA;&#x5DF1;&#x5F97;&#x8111;&#x888B;&#xFF0C;&#x6545;&#x4F5C;&#x601D;&#x8003;&#x7247;&#x523B;&#xFF0C;&#x597D;&#x50CF;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4F60;&#x4E3B;&#x52A8;&#x601D;&#x8003;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x56DE;&#x7B54;&#xFF1A;&#x6211;&#x8BB0;&#x5F97; set &#x6307;&#x4EE4;&#x6709;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x628A; setnx &#x548C; expire &#x5408;&#x6210;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x6765;&#x7528;&#x7684;&#xFF01;&#x5BF9;&#x65B9;&#x8FD9;&#x65F6;&#x4F1A;&#x663E;&#x9732;&#x7B11;&#x5BB9;&#xFF0C;&#x5FC3;&#x91CC;&#x5F00;&#x59CB;&#x9ED8;&#x5FF5;&#xFF1A;&#x6441;&#xFF0C;&#x8FD9;&#x5C0F;&#x5B50;&#x8FD8;&#x4E0D;&#x9519;&#x3002;</li>
 </ul>
-<p>所以，我们可以使用 <strong>set</strong> 指令，实现分布式锁。指令如下：</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>set</strong> &#x6307;&#x4EE4;&#xFF0C;&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x3002;&#x6307;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET key value [EX seconds] [PX milliseconds] [NX|XX]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>可以使用 <code>SET key value EX seconds NX</code> 命令，尝试获得锁。</li>
-<li>具体的实现，可以参考 <a href="https://wudashan.cn/2017/10/23/Redis-Distributed-Lock-Implement/" target="_blank" rel="noopener">《Redis 分布式锁的正确实现方式（Java版）》</a> 文章。</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>SET key value EX seconds NX</code> &#x547D;&#x4EE4;&#xFF0C;&#x5C1D;&#x8BD5;&#x83B7;&#x5F97;&#x9501;&#x3002;</li>
+<li>&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://wudashan.cn/2017/10/23/Redis-Distributed-Lock-Implement/" target="_blank" rel="noopener">&#x300A;Redis &#x5206;&#x5E03;&#x5F0F;&#x9501;&#x7684;&#x6B63;&#x786E;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF08;Java&#x7248;&#xFF09;&#x300B;</a> &#x6587;&#x7AE0;&#x3002;</li>
 </ul>
-<p><strong>方案二：redlock</strong></p>
-<p>set 指令的方案，适合用于在单机 Redis 节点的场景下，在多 Redis 节点的场景下，会存在分布式锁丢失的问题。所以，Redis 作者 Antirez 基于分布式环境下提出了一种更高级的分布式锁的实现方式：Redlock 。</p>
-<p>具体的方案，胖友可以看看老友飞哥的两篇博客：</p>
+<p><strong>&#x65B9;&#x6848;&#x4E8C;&#xFF1A;redlock</strong></p>
+<p>set &#x6307;&#x4EE4;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x9002;&#x5408;&#x7528;&#x4E8E;&#x5728;&#x5355;&#x673A; Redis &#x8282;&#x70B9;&#x7684;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x5728;&#x591A; Redis &#x8282;&#x70B9;&#x7684;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x4F1A;&#x5B58;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x4E22;&#x5931;&#x7684;&#x95EE;&#x9898;&#x3002;&#x6240;&#x4EE5;&#xFF0C;Redis &#x4F5C;&#x8005; Antirez &#x57FA;&#x4E8E;&#x5206;&#x5E03;&#x5F0F;&#x73AF;&#x5883;&#x4E0B;&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF1A;Redlock &#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x80D6;&#x53CB;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x8001;&#x53CB;&#x98DE;&#x54E5;&#x7684;&#x4E24;&#x7BC7;&#x535A;&#x5BA2;&#xFF1A;</p>
 <ul>
-<li><a href="https://mp.weixin.qq.com/s/JLEzNqQsx-Lec03eAsXFOQ" target="_blank" rel="noopener">《Redlock：Redis分布式锁最牛逼的实现》</a></li>
-<li><a href="https://www.jianshu.com/p/f302aa345ca8" target="_blank" rel="noopener">《Redisson 实现 Redis 分布式锁的 N 种姿势》</a></li>
+<li><a href="https://mp.weixin.qq.com/s/JLEzNqQsx-Lec03eAsXFOQ" target="_blank" rel="noopener">&#x300A;Redlock&#xFF1A;Redis&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x6700;&#x725B;&#x903C;&#x7684;&#x5B9E;&#x73B0;&#x300B;</a></li>
+<li><a href="https://www.jianshu.com/p/f302aa345ca8" target="_blank" rel="noopener">&#x300A;Redisson &#x5B9E;&#x73B0; Redis &#x5206;&#x5E03;&#x5F0F;&#x9501;&#x7684; N &#x79CD;&#x59FF;&#x52BF;&#x300B;</a></li>
 </ul>
-<p> <strong>对比 Zookeeper 分布式锁</strong></p>
+<p> <strong>&#x5BF9;&#x6BD4; Zookeeper &#x5206;&#x5E03;&#x5F0F;&#x9501;</strong></p>
 <ul>
-<li>从可靠性上来说，Zookeeper 分布式锁好于 Redis 分布式锁。</li>
-<li>从性能上来说，Redis 分布式锁好于 Zookeeper 分布式锁。</li>
+<li>&#x4ECE;&#x53EF;&#x9760;&#x6027;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;Zookeeper &#x5206;&#x5E03;&#x5F0F;&#x9501;&#x597D;&#x4E8E; Redis &#x5206;&#x5E03;&#x5F0F;&#x9501;&#x3002;</li>
+<li>&#x4ECE;&#x6027;&#x80FD;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;Redis &#x5206;&#x5E03;&#x5F0F;&#x9501;&#x597D;&#x4E8E; Zookeeper &#x5206;&#x5E03;&#x5F0F;&#x9501;&#x3002;</li>
 </ul>
-<p>所以，没有绝对的好坏，可以根据自己的业务来具体选择。</p>
-<h2 id="如何使用-Redis-实现消息队列？"><a href="#如何使用-Redis-实现消息队列？" class="headerlink" title="如何使用 Redis 实现消息队列？"></a>如何使用 Redis 实现消息队列？</h2><p>一般使用 list 结构作为队列，rpush 生产消息，lpop 消费消息。当 lpop 没有消息的时候，要适当 sleep 一会再重试。</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x6CA1;&#x6709;&#x7EDD;&#x5BF9;&#x7684;&#x597D;&#x574F;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x4E1A;&#x52A1;&#x6765;&#x5177;&#x4F53;&#x9009;&#x62E9;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;-Redis-&#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF1F;"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;-Redis-&#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF1F;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528; Redis &#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF1F;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528; Redis &#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF1F;</h2><p>&#x4E00;&#x822C;&#x4F7F;&#x7528; list &#x7ED3;&#x6784;&#x4F5C;&#x4E3A;&#x961F;&#x5217;&#xFF0C;rpush &#x751F;&#x4EA7;&#x6D88;&#x606F;&#xFF0C;lpop &#x6D88;&#x8D39;&#x6D88;&#x606F;&#x3002;&#x5F53; lpop &#x6CA1;&#x6709;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x9002;&#x5F53; sleep &#x4E00;&#x4F1A;&#x518D;&#x91CD;&#x8BD5;&#x3002;</p>
 <ul>
-<li>如果对方追问可不可以不用 sleep 呢？list 还有个指令叫 blpop ，在没有消息的时候，它会阻塞住直到消息到来。</li>
-<li>如果对方追问能不能生产一次消费多次呢？使用 pub / sub 主题订阅者模式，可以实现 1:N 的消息队列。</li>
-<li>如果对方追问 pub / sub 有什么缺点？在消费者下线的情况下，生产的消息会丢失，得使用专业的消息队列如 rabbitmq 等。</li>
-<li>如果对方追问 redis 如何实现延时队列？我估计现在你很想把面试官一棒打死如果你手上有一根棒球棍的话，怎么问的这么详细。但是你很克制，然后神态自若的回答道：使用 sortedset ，拿时间戳作为 score ，消息内容作为 key 调用 zadd 来生产消息，消费者用 zrangebyscore 指令获取 N 秒之前的数据轮询进行处理。</li>
+<li>&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x8FFD;&#x95EE;&#x53EF;&#x4E0D;&#x53EF;&#x4EE5;&#x4E0D;&#x7528; sleep &#x5462;&#xFF1F;list &#x8FD8;&#x6709;&#x4E2A;&#x6307;&#x4EE4;&#x53EB; blpop &#xFF0C;&#x5728;&#x6CA1;&#x6709;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4F1A;&#x963B;&#x585E;&#x4F4F;&#x76F4;&#x5230;&#x6D88;&#x606F;&#x5230;&#x6765;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x8FFD;&#x95EE;&#x80FD;&#x4E0D;&#x80FD;&#x751F;&#x4EA7;&#x4E00;&#x6B21;&#x6D88;&#x8D39;&#x591A;&#x6B21;&#x5462;&#xFF1F;&#x4F7F;&#x7528; pub / sub &#x4E3B;&#x9898;&#x8BA2;&#x9605;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0; 1:N &#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x8FFD;&#x95EE; pub / sub &#x6709;&#x4EC0;&#x4E48;&#x7F3A;&#x70B9;&#xFF1F;&#x5728;&#x6D88;&#x8D39;&#x8005;&#x4E0B;&#x7EBF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x751F;&#x4EA7;&#x7684;&#x6D88;&#x606F;&#x4F1A;&#x4E22;&#x5931;&#xFF0C;&#x5F97;&#x4F7F;&#x7528;&#x4E13;&#x4E1A;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x5982; rabbitmq &#x7B49;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x8FFD;&#x95EE; redis &#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x5EF6;&#x65F6;&#x961F;&#x5217;&#xFF1F;&#x6211;&#x4F30;&#x8BA1;&#x73B0;&#x5728;&#x4F60;&#x5F88;&#x60F3;&#x628A;&#x9762;&#x8BD5;&#x5B98;&#x4E00;&#x68D2;&#x6253;&#x6B7B;&#x5982;&#x679C;&#x4F60;&#x624B;&#x4E0A;&#x6709;&#x4E00;&#x6839;&#x68D2;&#x7403;&#x68CD;&#x7684;&#x8BDD;&#xFF0C;&#x600E;&#x4E48;&#x95EE;&#x7684;&#x8FD9;&#x4E48;&#x8BE6;&#x7EC6;&#x3002;&#x4F46;&#x662F;&#x4F60;&#x5F88;&#x514B;&#x5236;&#xFF0C;&#x7136;&#x540E;&#x795E;&#x6001;&#x81EA;&#x82E5;&#x7684;&#x56DE;&#x7B54;&#x9053;&#xFF1A;&#x4F7F;&#x7528; sortedset &#xFF0C;&#x62FF;&#x65F6;&#x95F4;&#x6233;&#x4F5C;&#x4E3A; score &#xFF0C;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A; key &#x8C03;&#x7528; zadd &#x6765;&#x751F;&#x4EA7;&#x6D88;&#x606F;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x7528; zrangebyscore &#x6307;&#x4EE4;&#x83B7;&#x53D6; N &#x79D2;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#x8F6E;&#x8BE2;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</li>
 </ul>
-<p>到这里，面试官暗地里已经对你竖起了大拇指。但是他不知道的是此刻你却竖起了中指，在椅子背后。</p>
-<p>当然，实际上 Redis 真的真的真的不推荐作为消息队列使用，它最多只是消息队列的存储层，上层的逻辑，还需要做大量的封装和支持。</p>
-<p>另外，在 Redis 5.0 增加了 Stream 功能，一个新的强大的支持多播的可持久化的消息队列，提供类似 Kafka 的功能。</p>
-<h2 id="什么是-Redis-Pipelining-？"><a href="#什么是-Redis-Pipelining-？" class="headerlink" title="什么是 Redis Pipelining ？"></a>什么是 Redis Pipelining ？</h2><p>一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。</p>
-<p>这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多 POP3 协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
-<p>Redis 很早就支持管道（<a href="http://redis.cn/topics/pipelining.html" target="_blank" rel="noopener">pipelining</a>）技术，因此无论你运行的是什么版本，你都可以使用管道（pipelining）操作 Redis。</p>
-<p> <strong>Redis 如何做大量数据插入？</strong></p>
-<p>Redis2.6 开始，Redis-cli 支持一种新的被称之为 pipe mode 的新模式用于执行大量数据插入工作。</p>
-<p>具体可见 <a href="http://www.redis.cn/topics/mass-insert.html" target="_blank" rel="noopener">《Redis 大量数据插入》</a> 文章。</p>
-<h2 id="什么是-Redis-事务？"><a href="#什么是-Redis-事务？" class="headerlink" title="什么是 Redis 事务？"></a>什么是 Redis 事务？</h2><p>和众多其它数据库一样，Redis 作为 NoSQL 数据库也同样提供了事务机制。在Redis中，MULTI / EXEC / DISCARD / WATCH 这四个命令是我们实现事务的基石。相信对有关系型数据库开发经验的开发者而言这一概念并不陌生，即便如此，我们还是会简要的列出 Redis 中事务的实现特征：</p>
+<p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x9762;&#x8BD5;&#x5B98;&#x6697;&#x5730;&#x91CC;&#x5DF2;&#x7ECF;&#x5BF9;&#x4F60;&#x7AD6;&#x8D77;&#x4E86;&#x5927;&#x62C7;&#x6307;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x4E0D;&#x77E5;&#x9053;&#x7684;&#x662F;&#x6B64;&#x523B;&#x4F60;&#x5374;&#x7AD6;&#x8D77;&#x4E86;&#x4E2D;&#x6307;&#xFF0C;&#x5728;&#x6905;&#x5B50;&#x80CC;&#x540E;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A; Redis &#x771F;&#x7684;&#x771F;&#x7684;&#x771F;&#x7684;&#x4E0D;&#x63A8;&#x8350;&#x4F5C;&#x4E3A;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4F7F;&#x7528;&#xFF0C;&#x5B83;&#x6700;&#x591A;&#x53EA;&#x662F;&#x6D88;&#x606F;&#x961F;&#x5217;&#x7684;&#x5B58;&#x50A8;&#x5C42;&#xFF0C;&#x4E0A;&#x5C42;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x505A;&#x5927;&#x91CF;&#x7684;&#x5C01;&#x88C5;&#x548C;&#x652F;&#x6301;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5728; Redis 5.0 &#x589E;&#x52A0;&#x4E86; Stream &#x529F;&#x80FD;&#xFF0C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5F3A;&#x5927;&#x7684;&#x652F;&#x6301;&#x591A;&#x64AD;&#x7684;&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C; Kafka &#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-Redis-Pipelining-&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;-Redis-Pipelining-&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F; Redis Pipelining &#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F; Redis Pipelining &#xFF1F;</h2><p>&#x4E00;&#x6B21;&#x8BF7;&#x6C42;/&#x54CD;&#x5E94;&#x670D;&#x52A1;&#x5668;&#x80FD;&#x5B9E;&#x73B0;&#x5904;&#x7406;&#x65B0;&#x7684;&#x8BF7;&#x6C42;&#x5373;&#x4F7F;&#x65E7;&#x7684;&#x8BF7;&#x6C42;&#x8FD8;&#x672A;&#x88AB;&#x54CD;&#x5E94;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x7B49;&#x5F85;&#x56DE;&#x590D;&#xFF0C;&#x6700;&#x540E;&#x5728;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x4E2D;&#x8BFB;&#x53D6;&#x8BE5;&#x7B54;&#x590D;&#x3002;</p>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x7BA1;&#x9053;&#xFF08;pipelining&#xFF09;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x51E0;&#x5341;&#x5E74;&#x6765;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x6280;&#x672F;&#x3002;&#x4F8B;&#x5982;&#x8BB8;&#x591A; POP3 &#x534F;&#x8BAE;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x5927;&#x5927;&#x52A0;&#x5FEB;&#x4E86;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x4E0B;&#x8F7D;&#x65B0;&#x90AE;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>Redis &#x5F88;&#x65E9;&#x5C31;&#x652F;&#x6301;&#x7BA1;&#x9053;&#xFF08;<a href="http://redis.cn/topics/pipelining.html" target="_blank" rel="noopener">pipelining</a>&#xFF09;&#x6280;&#x672F;&#xFF0C;&#x56E0;&#x6B64;&#x65E0;&#x8BBA;&#x4F60;&#x8FD0;&#x884C;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x7248;&#x672C;&#xFF0C;&#x4F60;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7BA1;&#x9053;&#xFF08;pipelining&#xFF09;&#x64CD;&#x4F5C; Redis&#x3002;</p>
+<p> <strong>Redis &#x5982;&#x4F55;&#x505A;&#x5927;&#x91CF;&#x6570;&#x636E;&#x63D2;&#x5165;&#xFF1F;</strong></p>
+<p>Redis2.6 &#x5F00;&#x59CB;&#xFF0C;Redis-cli &#x652F;&#x6301;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x88AB;&#x79F0;&#x4E4B;&#x4E3A; pipe mode &#x7684;&#x65B0;&#x6A21;&#x5F0F;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x5927;&#x91CF;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x53EF;&#x89C1; <a href="http://www.redis.cn/topics/mass-insert.html" target="_blank" rel="noopener">&#x300A;Redis &#x5927;&#x91CF;&#x6570;&#x636E;&#x63D2;&#x5165;&#x300B;</a> &#x6587;&#x7AE0;&#x3002;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-Redis-&#x4E8B;&#x52A1;&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;-Redis-&#x4E8B;&#x52A1;&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F; Redis &#x4E8B;&#x52A1;&#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F; Redis &#x4E8B;&#x52A1;&#xFF1F;</h2><p>&#x548C;&#x4F17;&#x591A;&#x5176;&#x5B83;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x6837;&#xFF0C;Redis &#x4F5C;&#x4E3A; NoSQL &#x6570;&#x636E;&#x5E93;&#x4E5F;&#x540C;&#x6837;&#x63D0;&#x4F9B;&#x4E86;&#x4E8B;&#x52A1;&#x673A;&#x5236;&#x3002;&#x5728;Redis&#x4E2D;&#xFF0C;MULTI / EXEC / DISCARD / WATCH &#x8FD9;&#x56DB;&#x4E2A;&#x547D;&#x4EE4;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E8B;&#x52A1;&#x7684;&#x57FA;&#x77F3;&#x3002;&#x76F8;&#x4FE1;&#x5BF9;&#x6709;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#x7684;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#x8FD9;&#x4E00;&#x6982;&#x5FF5;&#x5E76;&#x4E0D;&#x964C;&#x751F;&#xFF0C;&#x5373;&#x4FBF;&#x5982;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x4F1A;&#x7B80;&#x8981;&#x7684;&#x5217;&#x51FA; Redis &#x4E2D;&#x4E8B;&#x52A1;&#x7684;&#x5B9E;&#x73B0;&#x7279;&#x5F81;&#xFF1A;</p>
 <ul>
-<li><p>1、在事务中的所有命令都将会被串行化的顺序执行，事务执行期间，Redis 不会再为其它客户端的请求提供任何服务，从而保证了事物中的所有命令被原子的执行。</p>
+<li><p>1&#x3001;&#x5728;&#x4E8B;&#x52A1;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x5C06;&#x4F1A;&#x88AB;&#x4E32;&#x884C;&#x5316;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x671F;&#x95F4;&#xFF0C;Redis &#x4E0D;&#x4F1A;&#x518D;&#x4E3A;&#x5176;&#x5B83;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;&#x63D0;&#x4F9B;&#x4EFB;&#x4F55;&#x670D;&#x52A1;&#xFF0C;&#x4ECE;&#x800C;&#x4FDD;&#x8BC1;&#x4E86;&#x4E8B;&#x7269;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x88AB;&#x539F;&#x5B50;&#x7684;&#x6267;&#x884C;&#x3002;</p>
 </li>
-<li><p>2、和关系型数据库中的事务相比，在 Redis 事务中如果有某一条命令执行失败，其后的命令仍然会被继续执行。</p>
+<li><p>2&#x3001;&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x4E8B;&#x52A1;&#x76F8;&#x6BD4;&#xFF0C;&#x5728; Redis &#x4E8B;&#x52A1;&#x4E2D;&#x5982;&#x679C;&#x6709;&#x67D0;&#x4E00;&#x6761;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#xFF0C;&#x5176;&#x540E;&#x7684;&#x547D;&#x4EE4;&#x4ECD;&#x7136;&#x4F1A;&#x88AB;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;</p>
 </li>
-<li><p>3、我们可以通过 MULTI 命令开启一个事务，有关系型数据库开发经验的人可以将其理解为 <code>&quot;BEGIN TRANSACTION&quot;</code> 语句。在该语句之后执行的命令都，将被视为事务之内的操作，最后我们可以通过执行 EXEC / DISCARD 命令来提交 / 回滚该事务内的所有操作。这两个 Redis 命令，可被视为等同于关系型数据库中的 COMMIT / ROLLBACK 语句。</p>
+<li><p>3&#x3001;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; MULTI &#x547D;&#x4EE4;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#xFF0C;&#x6709;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#x7684;&#x4EBA;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x7406;&#x89E3;&#x4E3A; <code>&quot;BEGIN TRANSACTION&quot;</code> &#x8BED;&#x53E5;&#x3002;&#x5728;&#x8BE5;&#x8BED;&#x53E5;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#xFF0C;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&#x4E8B;&#x52A1;&#x4E4B;&#x5185;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6267;&#x884C; EXEC / DISCARD &#x547D;&#x4EE4;&#x6765;&#x63D0;&#x4EA4; / &#x56DE;&#x6EDA;&#x8BE5;&#x4E8B;&#x52A1;&#x5185;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x4E24;&#x4E2A; Redis &#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x88AB;&#x89C6;&#x4E3A;&#x7B49;&#x540C;&#x4E8E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684; COMMIT / ROLLBACK &#x8BED;&#x53E5;&#x3002;</p>
 </li>
-<li><p>4、在事务开启之前，如果客户端与服务器之间出现通讯故障并导致网络断开，其后所有待执行的语句都将不会被服务器执行。然而如果网络中断事件是发生在客户端执行 EXEC 命令之后，那么该事务中的所有命令都会被服务器执行。</p>
+<li><p>4&#x3001;&#x5728;&#x4E8B;&#x52A1;&#x5F00;&#x542F;&#x4E4B;&#x524D;&#xFF0C;&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x51FA;&#x73B0;&#x901A;&#x8BAF;&#x6545;&#x969C;&#x5E76;&#x5BFC;&#x81F4;&#x7F51;&#x7EDC;&#x65AD;&#x5F00;&#xFF0C;&#x5176;&#x540E;&#x6240;&#x6709;&#x5F85;&#x6267;&#x884C;&#x7684;&#x8BED;&#x53E5;&#x90FD;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x670D;&#x52A1;&#x5668;&#x6267;&#x884C;&#x3002;&#x7136;&#x800C;&#x5982;&#x679C;&#x7F51;&#x7EDC;&#x4E2D;&#x65AD;&#x4E8B;&#x4EF6;&#x662F;&#x53D1;&#x751F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x6267;&#x884C; EXEC &#x547D;&#x4EE4;&#x4E4B;&#x540E;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x4E8B;&#x52A1;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x4F1A;&#x88AB;&#x670D;&#x52A1;&#x5668;&#x6267;&#x884C;&#x3002;</p>
 </li>
-<li><p>5、当使用 Append-Only 模式时，Redis 会通过调用系统函数 write 将该事务内的所有写操作在本次调用中全部写入磁盘。然而如果在写入的过程中出现系统崩溃，如电源故障导致的宕机，那么此时也许只有部分数据被写入到磁盘，而另外一部分数据却已经丢失。</p>
+<li><p>5&#x3001;&#x5F53;&#x4F7F;&#x7528; Append-Only &#x6A21;&#x5F0F;&#x65F6;&#xFF0C;Redis &#x4F1A;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x7CFB;&#x7EDF;&#x51FD;&#x6570; write &#x5C06;&#x8BE5;&#x4E8B;&#x52A1;&#x5185;&#x7684;&#x6240;&#x6709;&#x5199;&#x64CD;&#x4F5C;&#x5728;&#x672C;&#x6B21;&#x8C03;&#x7528;&#x4E2D;&#x5168;&#x90E8;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x3002;&#x7136;&#x800C;&#x5982;&#x679C;&#x5728;&#x5199;&#x5165;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#xFF0C;&#x5982;&#x7535;&#x6E90;&#x6545;&#x969C;&#x5BFC;&#x81F4;&#x7684;&#x5B95;&#x673A;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x65F6;&#x4E5F;&#x8BB8;&#x53EA;&#x6709;&#x90E8;&#x5206;&#x6570;&#x636E;&#x88AB;&#x5199;&#x5165;&#x5230;&#x78C1;&#x76D8;&#xFF0C;&#x800C;&#x53E6;&#x5916;&#x4E00;&#x90E8;&#x5206;&#x6570;&#x636E;&#x5374;&#x5DF2;&#x7ECF;&#x4E22;&#x5931;&#x3002;</p>
 <blockquote>
-<p>Redis 服务器会在重新启动时执行一系列必要的一致性检测，一旦发现类似问题，就会立即退出并给出相应的错误提示。此时，我们就要充分利用 Redis 工具包中提供的 redis-check-aof 工具，该工具可以帮助我们定位到数据不一致的错误，并将已经写入的部分数据进行回滚。修复之后我们就可以再次重新启动Redis服务器了。</p>
+<p>Redis &#x670D;&#x52A1;&#x5668;&#x4F1A;&#x5728;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x5FC5;&#x8981;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x68C0;&#x6D4B;&#xFF0C;&#x4E00;&#x65E6;&#x53D1;&#x73B0;&#x7C7B;&#x4F3C;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x4F1A;&#x7ACB;&#x5373;&#x9000;&#x51FA;&#x5E76;&#x7ED9;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x5145;&#x5206;&#x5229;&#x7528; Redis &#x5DE5;&#x5177;&#x5305;&#x4E2D;&#x63D0;&#x4F9B;&#x7684; redis-check-aof &#x5DE5;&#x5177;&#xFF0C;&#x8BE5;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B9A;&#x4F4D;&#x5230;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5E76;&#x5C06;&#x5DF2;&#x7ECF;&#x5199;&#x5165;&#x7684;&#x90E8;&#x5206;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x56DE;&#x6EDA;&#x3002;&#x4FEE;&#x590D;&#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x91CD;&#x65B0;&#x542F;&#x52A8;Redis&#x670D;&#x52A1;&#x5668;&#x4E86;&#x3002;</p>
 </blockquote>
 </li>
 </ul>
-<p><strong>如何实现 Redis CAS 操作？</strong></p>
-<p>在 Redis 的事务中，WATCH 命令可用于提供CAS(check-and-set)功能。</p>
-<p>假设我们通过 WATCH 命令在事务执行之前监控了多个 keys ，倘若在 WATCH 之后有任何 Key 的值发生了变化，EXEC 命令执行的事务都将被放弃，同时返回 <code>nil</code> 应答以通知调用者事务执行失败。</p>
-<p>具体的示例，可以看看 <a href="https://www.jianshu.com/p/0244a875aa26" target="_blank" rel="noopener">《Redis 事务锁 CAS 实现以及深入误区》</a> 。</p>
-<h2 id="Redis-集群都有哪些方案？"><a href="#Redis-集群都有哪些方案？" class="headerlink" title="Redis 集群都有哪些方案？"></a>Redis 集群都有哪些方案？</h2><p>Redis 集群方案如下：</p>
+<p><strong>&#x5982;&#x4F55;&#x5B9E;&#x73B0; Redis CAS &#x64CD;&#x4F5C;&#xFF1F;</strong></p>
+<p>&#x5728; Redis &#x7684;&#x4E8B;&#x52A1;&#x4E2D;&#xFF0C;WATCH &#x547D;&#x4EE4;&#x53EF;&#x7528;&#x4E8E;&#x63D0;&#x4F9B;CAS(check-and-set)&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x901A;&#x8FC7; WATCH &#x547D;&#x4EE4;&#x5728;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x76D1;&#x63A7;&#x4E86;&#x591A;&#x4E2A; keys &#xFF0C;&#x5018;&#x82E5;&#x5728; WATCH &#x4E4B;&#x540E;&#x6709;&#x4EFB;&#x4F55; Key &#x7684;&#x503C;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;EXEC &#x547D;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x4E8B;&#x52A1;&#x90FD;&#x5C06;&#x88AB;&#x653E;&#x5F03;&#xFF0C;&#x540C;&#x65F6;&#x8FD4;&#x56DE; <code>nil</code> &#x5E94;&#x7B54;&#x4EE5;&#x901A;&#x77E5;&#x8C03;&#x7528;&#x8005;&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x5931;&#x8D25;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="https://www.jianshu.com/p/0244a875aa26" target="_blank" rel="noopener">&#x300A;Redis &#x4E8B;&#x52A1;&#x9501; CAS &#x5B9E;&#x73B0;&#x4EE5;&#x53CA;&#x6DF1;&#x5165;&#x8BEF;&#x533A;&#x300B;</a> &#x3002;</p>
+<h2 id="Redis-&#x96C6;&#x7FA4;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x65B9;&#x6848;&#xFF1F;"><a href="#Redis-&#x96C6;&#x7FA4;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x65B9;&#x6848;&#xFF1F;" class="headerlink" title="Redis &#x96C6;&#x7FA4;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x65B9;&#x6848;&#xFF1F;"></a>Redis &#x96C6;&#x7FA4;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x65B9;&#x6848;&#xFF1F;</h2><p>Redis &#x96C6;&#x7FA4;&#x65B9;&#x6848;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
-<li>1、Redis Sentinel</li>
-<li>2、Redis Cluster</li>
-<li>3、Twemproxy</li>
-<li>4、Codis</li>
-<li>5、客户端分片</li>
+<li>1&#x3001;Redis Sentinel</li>
+<li>2&#x3001;Redis Cluster</li>
+<li>3&#x3001;Twemproxy</li>
+<li>4&#x3001;Codis</li>
+<li>5&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x7247;</li>
 </ul>
-<p>关于前四种，可以看看 <a href="http://blog.720ui.com/2016/redis_action_04_cluster/" target="_blank" rel="noopener">《Redis 实战（四）集群机制》</a> 这篇文章。</p>
-<p>关于最后一种，客户端分片，在 Redis Cluster 出现之前使用较多，目前已经使用比较少了。实现方式如下：</p>
+<p>&#x5173;&#x4E8E;&#x524D;&#x56DB;&#x79CD;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="http://blog.720ui.com/2016/redis_action_04_cluster/" target="_blank" rel="noopener">&#x300A;Redis &#x5B9E;&#x6218;&#xFF08;&#x56DB;&#xFF09;&#x96C6;&#x7FA4;&#x673A;&#x5236;&#x300B;</a> &#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x6700;&#x540E;&#x4E00;&#x79CD;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x7247;&#xFF0C;&#x5728; Redis Cluster &#x51FA;&#x73B0;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x8F83;&#x591A;&#xFF0C;&#x76EE;&#x524D;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x5C11;&#x4E86;&#x3002;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
 <blockquote>
-<p>在业务代码层实现，起几个毫无关联的 Redis 实例，在代码层，对 Key 进行 hash 计算，然后去对应的 Redis 实例操作数据。</p>
-<p>这种方式对 hash 层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的自动脚本恢复，实例的监控，等等。</p>
+<p>&#x5728;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x5C42;&#x5B9E;&#x73B0;&#xFF0C;&#x8D77;&#x51E0;&#x4E2A;&#x6BEB;&#x65E0;&#x5173;&#x8054;&#x7684; Redis &#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x5C42;&#xFF0C;&#x5BF9; Key &#x8FDB;&#x884C; hash &#x8BA1;&#x7B97;&#xFF0C;&#x7136;&#x540E;&#x53BB;&#x5BF9;&#x5E94;&#x7684; Redis &#x5B9E;&#x4F8B;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5BF9; hash &#x5C42;&#x4EE3;&#x7801;&#x8981;&#x6C42;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x8003;&#x8651;&#x90E8;&#x5206;&#x5305;&#x62EC;&#xFF0C;&#x8282;&#x70B9;&#x5931;&#x6548;&#x540E;&#x7684;&#x66FF;&#x4EE3;&#x7B97;&#x6CD5;&#x65B9;&#x6848;&#xFF0C;&#x6570;&#x636E;&#x9707;&#x8361;&#x540E;&#x7684;&#x81EA;&#x52A8;&#x811A;&#x672C;&#x6062;&#x590D;&#xFF0C;&#x5B9E;&#x4F8B;&#x7684;&#x76D1;&#x63A7;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
 </blockquote>
-<p><strong>选择</strong></p>
-<p>目前一般在选型上来说：</p>
+<p><strong>&#x9009;&#x62E9;</strong></p>
+<p>&#x76EE;&#x524D;&#x4E00;&#x822C;&#x5728;&#x9009;&#x578B;&#x4E0A;&#x6765;&#x8BF4;&#xFF1A;</p>
 <ul>
-<li>体量较小时，选择 Redis Sentinel ，单主 Redis 足以支撑业务。</li>
-<li><p>体量较大时，选择 Redis Cluster ，通过分片，使用更多内存。</p>
-<p><strong>Redis 集群如何扩容？</strong></p>
+<li>&#x4F53;&#x91CF;&#x8F83;&#x5C0F;&#x65F6;&#xFF0C;&#x9009;&#x62E9; Redis Sentinel &#xFF0C;&#x5355;&#x4E3B; Redis &#x8DB3;&#x4EE5;&#x652F;&#x6491;&#x4E1A;&#x52A1;&#x3002;</li>
+<li><p>&#x4F53;&#x91CF;&#x8F83;&#x5927;&#x65F6;&#xFF0C;&#x9009;&#x62E9; Redis Cluster &#xFF0C;&#x901A;&#x8FC7;&#x5206;&#x7247;&#xFF0C;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x5185;&#x5B58;&#x3002;</p>
+<p><strong>Redis &#x96C6;&#x7FA4;&#x5982;&#x4F55;&#x6269;&#x5BB9;&#xFF1F;</strong></p>
 </li>
 </ul>
 <blockquote>
-<p>这个问题，艿艿了解的也不是很多，建议在搜索有什么方案。</p>
+<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x827F;&#x827F;&#x4E86;&#x89E3;&#x7684;&#x4E5F;&#x4E0D;&#x662F;&#x5F88;&#x591A;&#xFF0C;&#x5EFA;&#x8BAE;&#x5728;&#x641C;&#x7D22;&#x6709;&#x4EC0;&#x4E48;&#x65B9;&#x6848;&#x3002;</p>
 </blockquote>
 <ul>
-<li>如果 Redis 被当做<strong>缓存</strong>使用，使用一致性哈希实现动态扩容缩容。</li>
-<li>如果 Redis 被当做一个<strong>持久化存</strong>储使用，必须使用固定的 keys-to-nodes 映射关系，节点的数量一旦确定不能变化。否则的话(即Redis 节点需要动态变化的情况），必须使用可以在运行时进行数据再平衡的一套系统，而当前只有 Redis Cluster、Codis 可以做到这样。</li>
+<li>&#x5982;&#x679C; Redis &#x88AB;&#x5F53;&#x505A;<strong>&#x7F13;&#x5B58;</strong>&#x4F7F;&#x7528;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x81F4;&#x6027;&#x54C8;&#x5E0C;&#x5B9E;&#x73B0;&#x52A8;&#x6001;&#x6269;&#x5BB9;&#x7F29;&#x5BB9;&#x3002;</li>
+<li>&#x5982;&#x679C; Redis &#x88AB;&#x5F53;&#x505A;&#x4E00;&#x4E2A;<strong>&#x6301;&#x4E45;&#x5316;&#x5B58;</strong>&#x50A8;&#x4F7F;&#x7528;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x7684; keys-to-nodes &#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x8282;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x4E00;&#x65E6;&#x786E;&#x5B9A;&#x4E0D;&#x80FD;&#x53D8;&#x5316;&#x3002;&#x5426;&#x5219;&#x7684;&#x8BDD;(&#x5373;Redis &#x8282;&#x70B9;&#x9700;&#x8981;&#x52A8;&#x6001;&#x53D8;&#x5316;&#x7684;&#x60C5;&#x51B5;&#xFF09;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x518D;&#x5E73;&#x8861;&#x7684;&#x4E00;&#x5957;&#x7CFB;&#x7EDF;&#xFF0C;&#x800C;&#x5F53;&#x524D;&#x53EA;&#x6709; Redis Cluster&#x3001;Codis &#x53EF;&#x4EE5;&#x505A;&#x5230;&#x8FD9;&#x6837;&#x3002;</li>
 </ul>
-<h2 id="什么是-Redis-主从同步？"><a href="#什么是-Redis-主从同步？" class="headerlink" title="什么是 Redis 主从同步？"></a>什么是 Redis 主从同步？</h2><p><strong>Redis 主从同步</strong></p>
-<p>Redis 的主从同步(replication)机制，允许 Slave 从 Master 那里，通过网络传输拷贝到完整的数据备份，从而达到主从机制。</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-Redis-&#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;-Redis-&#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F; Redis &#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F; Redis &#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#xFF1F;</h2><p><strong>Redis &#x4E3B;&#x4ECE;&#x540C;&#x6B65;</strong></p>
+<p>Redis &#x7684;&#x4E3B;&#x4ECE;&#x540C;&#x6B65;(replication)&#x673A;&#x5236;&#xFF0C;&#x5141;&#x8BB8; Slave &#x4ECE; Master &#x90A3;&#x91CC;&#xFF0C;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x62F7;&#x8D1D;&#x5230;&#x5B8C;&#x6574;&#x7684;&#x6570;&#x636E;&#x5907;&#x4EFD;&#xFF0C;&#x4ECE;&#x800C;&#x8FBE;&#x5230;&#x4E3B;&#x4ECE;&#x673A;&#x5236;&#x3002;</p>
 <ul>
-<li>主数据库可以进行读写操作，当发生写操作的时候自动将数据同步到从数据库，而从数据库一般是只读的，并接收主数据库同步过来的数据。</li>
-<li>一个主数据库可以有多个从数据库，而一个从数据库只能有一个主数据库。</li>
-<li>第一次同步时，主节点做一次 bgsave 操作，并同时将后续修改操作记录到内存 buffer ，待完成后将 RDB 文件全量同步到复制节点，复制节点接受完成后将 RDB 镜像加载到内存。加载完成后，再通知主节点将期间修改的操作记录同步到复制节点进行重放就完成了同步过程。</li>
+<li>&#x4E3B;&#x6570;&#x636E;&#x5E93;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x5F53;&#x53D1;&#x751F;&#x5199;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#x81EA;&#x52A8;&#x5C06;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x800C;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E00;&#x822C;&#x662F;&#x53EA;&#x8BFB;&#x7684;&#xFF0C;&#x5E76;&#x63A5;&#x6536;&#x4E3B;&#x6570;&#x636E;&#x5E93;&#x540C;&#x6B65;&#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+<li>&#x4E00;&#x4E2A;&#x4E3B;&#x6570;&#x636E;&#x5E93;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x800C;&#x4E00;&#x4E2A;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x6570;&#x636E;&#x5E93;&#x3002;</li>
+<li>&#x7B2C;&#x4E00;&#x6B21;&#x540C;&#x6B65;&#x65F6;&#xFF0C;&#x4E3B;&#x8282;&#x70B9;&#x505A;&#x4E00;&#x6B21; bgsave &#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x540C;&#x65F6;&#x5C06;&#x540E;&#x7EED;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x5230;&#x5185;&#x5B58; buffer &#xFF0C;&#x5F85;&#x5B8C;&#x6210;&#x540E;&#x5C06; RDB &#x6587;&#x4EF6;&#x5168;&#x91CF;&#x540C;&#x6B65;&#x5230;&#x590D;&#x5236;&#x8282;&#x70B9;&#xFF0C;&#x590D;&#x5236;&#x8282;&#x70B9;&#x63A5;&#x53D7;&#x5B8C;&#x6210;&#x540E;&#x5C06; RDB &#x955C;&#x50CF;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x3002;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x518D;&#x901A;&#x77E5;&#x4E3B;&#x8282;&#x70B9;&#x5C06;&#x671F;&#x95F4;&#x4FEE;&#x6539;&#x7684;&#x64CD;&#x4F5C;&#x8BB0;&#x5F55;&#x540C;&#x6B65;&#x5230;&#x590D;&#x5236;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x91CD;&#x653E;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x540C;&#x6B65;&#x8FC7;&#x7A0B;&#x3002;</li>
 </ul>
-<p><strong>好处</strong></p>
-<p>通过 Redis 的复制功，能可以很好的实现数据库的读写分离，提高服务器的负载能力。主数据库主要进行写操作，而从数据库负责读操作。</p>
-<p>Redis 主从同步，是很多 Redis 集群方案的基础，例如 Redis Sentinel、Redis Cluster 等等。</p>
-<p>更多详细，可以看看 <a href="https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/redis-master-slave.md" target="_blank" rel="noopener">《Redis 主从架构》</a> 。</p>
-<h2 id="如何使用-Redis-Sentinel-实现高可用？"><a href="#如何使用-Redis-Sentinel-实现高可用？" class="headerlink" title="如何使用 Redis Sentinel 实现高可用？"></a>如何使用 Redis Sentinel 实现高可用？</h2><p>可以看看 <a href="https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/redis-sentinel.md" target="_blank" rel="noopener">《Redis 哨兵集群实现高可用》</a> 。</p>
-<h2 id="如果使用-Redis-Cluster-实现高可用？"><a href="#如果使用-Redis-Cluster-实现高可用？" class="headerlink" title="如果使用 Redis Cluster 实现高可用？"></a>如果使用 Redis Cluster 实现高可用？</h2><p>可以看看</p>
+<p><strong>&#x597D;&#x5904;</strong></p>
+<p>&#x901A;&#x8FC7; Redis &#x7684;&#x590D;&#x5236;&#x529F;&#xFF0C;&#x80FD;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8BFB;&#x5199;&#x5206;&#x79BB;&#xFF0C;&#x63D0;&#x9AD8;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8D1F;&#x8F7D;&#x80FD;&#x529B;&#x3002;&#x4E3B;&#x6570;&#x636E;&#x5E93;&#x4E3B;&#x8981;&#x8FDB;&#x884C;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x8D1F;&#x8D23;&#x8BFB;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>Redis &#x4E3B;&#x4ECE;&#x540C;&#x6B65;&#xFF0C;&#x662F;&#x5F88;&#x591A; Redis &#x96C6;&#x7FA4;&#x65B9;&#x6848;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x4F8B;&#x5982; Redis Sentinel&#x3001;Redis Cluster &#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/redis-master-slave.md" target="_blank" rel="noopener">&#x300A;Redis &#x4E3B;&#x4ECE;&#x67B6;&#x6784;&#x300B;</a> &#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;-Redis-Sentinel-&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;-Redis-Sentinel-&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528; Redis Sentinel &#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528; Redis Sentinel &#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;</h2><p>&#x53EF;&#x4EE5;&#x770B;&#x770B; <a href="https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/redis-sentinel.md" target="_blank" rel="noopener">&#x300A;Redis &#x54E8;&#x5175;&#x96C6;&#x7FA4;&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#x300B;</a> &#x3002;</p>
+<h2 id="&#x5982;&#x679C;&#x4F7F;&#x7528;-Redis-Cluster-&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;"><a href="#&#x5982;&#x679C;&#x4F7F;&#x7528;-Redis-Cluster-&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;" class="headerlink" title="&#x5982;&#x679C;&#x4F7F;&#x7528; Redis Cluster &#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;"></a>&#x5982;&#x679C;&#x4F7F;&#x7528; Redis Cluster &#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF1F;</h2><p>&#x53EF;&#x4EE5;&#x770B;&#x770B;</p>
 <ul>
-<li><a href="http://redis.cn/topics/cluster-tutorial.html" target="_blank" rel="noopener">《Redis 集群教程》</a> 完整版</li>
-<li><a href="https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/redis-cluster.md" target="_blank" rel="noopener">《Redis 集群模式的工作原理能说一下么？》</a> 精简版</li>
+<li><a href="http://redis.cn/topics/cluster-tutorial.html" target="_blank" rel="noopener">&#x300A;Redis &#x96C6;&#x7FA4;&#x6559;&#x7A0B;&#x300B;</a> &#x5B8C;&#x6574;&#x7248;</li>
+<li><a href="https://github.com/doocs/advanced-java/blob/master/docs/high-concurrency/redis-cluster.md" target="_blank" rel="noopener">&#x300A;Redis &#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x80FD;&#x8BF4;&#x4E00;&#x4E0B;&#x4E48;&#xFF1F;&#x300B;</a> &#x7CBE;&#x7B80;&#x7248;</li>
 </ul>
-<p><strong>说说 Redis 哈希槽的概念？</strong></p>
-<p>Redis Cluster 没有使用一致性 hash ，而是引入了哈希槽的概念。</p>
-<p>Redis 集群有 16384 个哈希槽，每个 key 通过 CRC16 校验后对 16384 取模来决定放置哪个槽，集群的每个节点负责一部分 hash 槽。</p>
-<p>因为最大是 16384 个哈希槽，所以考虑 Redis 集群中的每个节点都能分配到一个哈希槽，所以最多支持 16384 个 Redis 节点。</p>
-<p> <strong>Redis Cluster 的主从复制模型是怎样的？</strong></p>
-<p>为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所以集群使用了<strong>主从复制</strong>模型，每个节点都会有 N-1 个复制节点。</p>
-<p>所以，Redis Cluster 可以说是 Redis Sentinel 带分片的加强版。也可以说：</p>
+<p><strong>&#x8BF4;&#x8BF4; Redis &#x54C8;&#x5E0C;&#x69FD;&#x7684;&#x6982;&#x5FF5;&#xFF1F;</strong></p>
+<p>Redis Cluster &#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4E00;&#x81F4;&#x6027; hash &#xFF0C;&#x800C;&#x662F;&#x5F15;&#x5165;&#x4E86;&#x54C8;&#x5E0C;&#x69FD;&#x7684;&#x6982;&#x5FF5;&#x3002;</p>
+<p>Redis &#x96C6;&#x7FA4;&#x6709; 16384 &#x4E2A;&#x54C8;&#x5E0C;&#x69FD;&#xFF0C;&#x6BCF;&#x4E2A; key &#x901A;&#x8FC7; CRC16 &#x6821;&#x9A8C;&#x540E;&#x5BF9; 16384 &#x53D6;&#x6A21;&#x6765;&#x51B3;&#x5B9A;&#x653E;&#x7F6E;&#x54EA;&#x4E2A;&#x69FD;&#xFF0C;&#x96C6;&#x7FA4;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x8D1F;&#x8D23;&#x4E00;&#x90E8;&#x5206; hash &#x69FD;&#x3002;</p>
+<p>&#x56E0;&#x4E3A;&#x6700;&#x5927;&#x662F; 16384 &#x4E2A;&#x54C8;&#x5E0C;&#x69FD;&#xFF0C;&#x6240;&#x4EE5;&#x8003;&#x8651; Redis &#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x80FD;&#x5206;&#x914D;&#x5230;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x69FD;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x591A;&#x652F;&#x6301; 16384 &#x4E2A; Redis &#x8282;&#x70B9;&#x3002;</p>
+<p> <strong>Redis Cluster &#x7684;&#x4E3B;&#x4ECE;&#x590D;&#x5236;&#x6A21;&#x578B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;</strong></p>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x5728;&#x90E8;&#x5206;&#x8282;&#x70B9;&#x5931;&#x8D25;&#x6216;&#x8005;&#x5927;&#x90E8;&#x5206;&#x8282;&#x70B9;&#x65E0;&#x6CD5;&#x901A;&#x4FE1;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x96C6;&#x7FA4;&#x4ECD;&#x7136;&#x53EF;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x96C6;&#x7FA4;&#x4F7F;&#x7528;&#x4E86;<strong>&#x4E3B;&#x4ECE;&#x590D;&#x5236;</strong>&#x6A21;&#x578B;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x4F1A;&#x6709; N-1 &#x4E2A;&#x590D;&#x5236;&#x8282;&#x70B9;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;Redis Cluster &#x53EF;&#x4EE5;&#x8BF4;&#x662F; Redis Sentinel &#x5E26;&#x5206;&#x7247;&#x7684;&#x52A0;&#x5F3A;&#x7248;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;&#xFF1A;</p>
 <ul>
-<li>Redis Sentinel 着眼于高可用，在 master 宕机时会自动将 slave 提升为 master ，继续提供服务。</li>
-<li>Redis Cluster 着眼于扩展性，在单个 Redis 内存不足时，使用Cluster 进行分片存储。</li>
+<li>Redis Sentinel &#x7740;&#x773C;&#x4E8E;&#x9AD8;&#x53EF;&#x7528;&#xFF0C;&#x5728; master &#x5B95;&#x673A;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x5C06; slave &#x63D0;&#x5347;&#x4E3A; master &#xFF0C;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;</li>
+<li>Redis Cluster &#x7740;&#x773C;&#x4E8E;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x5728;&#x5355;&#x4E2A; Redis &#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;Cluster &#x8FDB;&#x884C;&#x5206;&#x7247;&#x5B58;&#x50A8;&#x3002;</li>
 </ul>
-<p><strong>Redis Cluster 方案什么情况下会导致整个集群不可用？</strong></p>
-<p>有 A，B，C 三个节点的集群，在没有复制模型的情况下，如果节点 B 宕机了，那么整个集群就会以为缺少 5501-11000 这个范围的槽而不可用。</p>
-<p> <strong>Redis Cluster 会有写操作丢失吗？为什么？</strong></p>
-<p>Redis 并不能保证数据的强一致性，而是【异步复制】，这意味这在实际中集群在特定的条件下可能会丢失写操作。</p>
-<p><strong>Redis 集群如何选择数据库？</strong></p>
-<p>Redis 集群目前无法做数据库选择，默认在 0 数据库。</p>
-<p><strong>请说说生产环境中的 Redis 是怎么部署的？</strong></p>
+<p><strong>Redis Cluster &#x65B9;&#x6848;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x4E0D;&#x53EF;&#x7528;&#xFF1F;</strong></p>
+<p>&#x6709; A&#xFF0C;B&#xFF0C;C &#x4E09;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x96C6;&#x7FA4;&#xFF0C;&#x5728;&#x6CA1;&#x6709;&#x590D;&#x5236;&#x6A21;&#x578B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x8282;&#x70B9; B &#x5B95;&#x673A;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x5C31;&#x4F1A;&#x4EE5;&#x4E3A;&#x7F3A;&#x5C11; 5501-11000 &#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x7684;&#x69FD;&#x800C;&#x4E0D;&#x53EF;&#x7528;&#x3002;</p>
+<p> <strong>Redis Cluster &#x4F1A;&#x6709;&#x5199;&#x64CD;&#x4F5C;&#x4E22;&#x5931;&#x5417;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;</strong></p>
+<p>Redis &#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x5F3A;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x800C;&#x662F;&#x3010;&#x5F02;&#x6B65;&#x590D;&#x5236;&#x3011;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x8FD9;&#x5728;&#x5B9E;&#x9645;&#x4E2D;&#x96C6;&#x7FA4;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x5199;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><strong>Redis &#x96C6;&#x7FA4;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x6570;&#x636E;&#x5E93;&#xFF1F;</strong></p>
+<p>Redis &#x96C6;&#x7FA4;&#x76EE;&#x524D;&#x65E0;&#x6CD5;&#x505A;&#x6570;&#x636E;&#x5E93;&#x9009;&#x62E9;&#xFF0C;&#x9ED8;&#x8BA4;&#x5728; 0 &#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p><strong>&#x8BF7;&#x8BF4;&#x8BF4;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x7684; Redis &#x662F;&#x600E;&#x4E48;&#x90E8;&#x7F72;&#x7684;&#xFF1F;</strong></p>
 <blockquote>
-<p>重点问题，仔细理解。</p>
+<p>&#x91CD;&#x70B9;&#x95EE;&#x9898;&#xFF0C;&#x4ED4;&#x7EC6;&#x7406;&#x89E3;&#x3002;</p>
 </blockquote>
 <ul>
-<li>Redis Cluster，10 台机器，5 台机器部署了 redis 主实例，另外 5 台机器部署了 redis 的从实例，每个主实例挂了一个从实例，5 个节点对外提供读写服务，每个节点的读写高峰 qps 可能可以达到每秒 5 万，5 台机器最多是 25 万读写请求每秒。</li>
-<li>机器是什么配置？32G 内存 + 8 核 CPU + 1T 磁盘，但是分配给 Redis 进程的是 10g 内存，一般线上生产环境，Redis 的内存尽量不要超过 10g，超过 10g 可能会有问题。那么，5 台机器对外提供读写，一共有 50g 内存。</li>
-<li>因为每个主实例都挂了一个从实例，所以是高可用的，任何一个主实例宕机，都会自动故障迁移，Redis 从实例会自动变成主实例继续提供读写服务。</li>
-<li>你往内存里写的是什么数据？每条数据的大小是多少？商品数据，每条数据是 10kb 。100 条数据是 1mb ，10 万条数据是 1g 。常驻内存的是 200 万条商品数据，占用内存是 20g，仅仅不到总内存的 50%。目前高峰期每秒就是 3500 左右的请求量。</li>
-<li>其实大型的公司，会有基础架构的 team 负责缓存集群的运维。</li>
+<li>Redis Cluster&#xFF0C;10 &#x53F0;&#x673A;&#x5668;&#xFF0C;5 &#x53F0;&#x673A;&#x5668;&#x90E8;&#x7F72;&#x4E86; redis &#x4E3B;&#x5B9E;&#x4F8B;&#xFF0C;&#x53E6;&#x5916; 5 &#x53F0;&#x673A;&#x5668;&#x90E8;&#x7F72;&#x4E86; redis &#x7684;&#x4ECE;&#x5B9E;&#x4F8B;&#xFF0C;&#x6BCF;&#x4E2A;&#x4E3B;&#x5B9E;&#x4F8B;&#x6302;&#x4E86;&#x4E00;&#x4E2A;&#x4ECE;&#x5B9E;&#x4F8B;&#xFF0C;5 &#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x8BFB;&#x5199;&#x670D;&#x52A1;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x8BFB;&#x5199;&#x9AD8;&#x5CF0; qps &#x53EF;&#x80FD;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x6BCF;&#x79D2; 5 &#x4E07;&#xFF0C;5 &#x53F0;&#x673A;&#x5668;&#x6700;&#x591A;&#x662F; 25 &#x4E07;&#x8BFB;&#x5199;&#x8BF7;&#x6C42;&#x6BCF;&#x79D2;&#x3002;</li>
+<li>&#x673A;&#x5668;&#x662F;&#x4EC0;&#x4E48;&#x914D;&#x7F6E;&#xFF1F;32G &#x5185;&#x5B58; + 8 &#x6838; CPU + 1T &#x78C1;&#x76D8;&#xFF0C;&#x4F46;&#x662F;&#x5206;&#x914D;&#x7ED9; Redis &#x8FDB;&#x7A0B;&#x7684;&#x662F; 10g &#x5185;&#x5B58;&#xFF0C;&#x4E00;&#x822C;&#x7EBF;&#x4E0A;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;Redis &#x7684;&#x5185;&#x5B58;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x8D85;&#x8FC7; 10g&#xFF0C;&#x8D85;&#x8FC7; 10g &#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#x3002;&#x90A3;&#x4E48;&#xFF0C;5 &#x53F0;&#x673A;&#x5668;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x8BFB;&#x5199;&#xFF0C;&#x4E00;&#x5171;&#x6709; 50g &#x5185;&#x5B58;&#x3002;</li>
+<li>&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x4E3B;&#x5B9E;&#x4F8B;&#x90FD;&#x6302;&#x4E86;&#x4E00;&#x4E2A;&#x4ECE;&#x5B9E;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x662F;&#x9AD8;&#x53EF;&#x7528;&#x7684;&#xFF0C;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x4E3B;&#x5B9E;&#x4F8B;&#x5B95;&#x673A;&#xFF0C;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x6545;&#x969C;&#x8FC1;&#x79FB;&#xFF0C;Redis &#x4ECE;&#x5B9E;&#x4F8B;&#x4F1A;&#x81EA;&#x52A8;&#x53D8;&#x6210;&#x4E3B;&#x5B9E;&#x4F8B;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x8BFB;&#x5199;&#x670D;&#x52A1;&#x3002;</li>
+<li>&#x4F60;&#x5F80;&#x5185;&#x5B58;&#x91CC;&#x5199;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#xFF1F;&#x6BCF;&#x6761;&#x6570;&#x636E;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x591A;&#x5C11;&#xFF1F;&#x5546;&#x54C1;&#x6570;&#x636E;&#xFF0C;&#x6BCF;&#x6761;&#x6570;&#x636E;&#x662F; 10kb &#x3002;100 &#x6761;&#x6570;&#x636E;&#x662F; 1mb &#xFF0C;10 &#x4E07;&#x6761;&#x6570;&#x636E;&#x662F; 1g &#x3002;&#x5E38;&#x9A7B;&#x5185;&#x5B58;&#x7684;&#x662F; 200 &#x4E07;&#x6761;&#x5546;&#x54C1;&#x6570;&#x636E;&#xFF0C;&#x5360;&#x7528;&#x5185;&#x5B58;&#x662F; 20g&#xFF0C;&#x4EC5;&#x4EC5;&#x4E0D;&#x5230;&#x603B;&#x5185;&#x5B58;&#x7684; 50%&#x3002;&#x76EE;&#x524D;&#x9AD8;&#x5CF0;&#x671F;&#x6BCF;&#x79D2;&#x5C31;&#x662F; 3500 &#x5DE6;&#x53F3;&#x7684;&#x8BF7;&#x6C42;&#x91CF;&#x3002;</li>
+<li>&#x5176;&#x5B9E;&#x5927;&#x578B;&#x7684;&#x516C;&#x53F8;&#xFF0C;&#x4F1A;&#x6709;&#x57FA;&#x7840;&#x67B6;&#x6784;&#x7684; team &#x8D1F;&#x8D23;&#x7F13;&#x5B58;&#x96C6;&#x7FA4;&#x7684;&#x8FD0;&#x7EF4;&#x3002;</li>
 </ul>
-<h2 id="什么是-Redis-分区？"><a href="#什么是-Redis-分区？" class="headerlink" title="什么是 Redis 分区？"></a>什么是 Redis 分区？</h2><blockquote>
-<p>这个问题，和 <a href="http://svip.iocoder.cn/Redis/Interview/#" target="_blank" rel="noopener">「Redis 集群都有哪些方案？」</a> 是同类问题。</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-Redis-&#x5206;&#x533A;&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;-Redis-&#x5206;&#x533A;&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F; Redis &#x5206;&#x533A;&#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F; Redis &#x5206;&#x533A;&#xFF1F;</h2><blockquote>
+<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x548C; <a href="http://svip.iocoder.cn/Redis/Interview/#" target="_blank" rel="noopener">&#x300C;Redis &#x96C6;&#x7FA4;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x65B9;&#x6848;&#xFF1F;&#x300D;</a> &#x662F;&#x540C;&#x7C7B;&#x95EE;&#x9898;&#x3002;</p>
 </blockquote>
-<p> 关于如下四个问题，直接看 <a href="http://www.runoob.com/redis/redis-partitioning.html" target="_blank" rel="noopener">《Redis 分区》</a> 文章。</p>
+<p> &#x5173;&#x4E8E;&#x5982;&#x4E0B;&#x56DB;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x76F4;&#x63A5;&#x770B; <a href="http://www.runoob.com/redis/redis-partitioning.html" target="_blank" rel="noopener">&#x300A;Redis &#x5206;&#x533A;&#x300B;</a> &#x6587;&#x7AE0;&#x3002;</p>
 <ul>
-<li>Redis 分区是什么？</li>
-<li>分区的优势？</li>
-<li>分区的不足？</li>
-<li>分区类型？</li>
+<li>Redis &#x5206;&#x533A;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>&#x5206;&#x533A;&#x7684;&#x4F18;&#x52BF;&#xFF1F;</li>
+<li>&#x5206;&#x533A;&#x7684;&#x4E0D;&#x8DB3;&#xFF1F;</li>
+<li>&#x5206;&#x533A;&#x7C7B;&#x578B;&#xFF1F;</li>
 </ul>
-<p>可能有胖友会懵逼，又是 Redis 主从复制，又是 Redis 分区，又是 Redis 集群。傻傻分不清啊！</p>
+<p>&#x53EF;&#x80FD;&#x6709;&#x80D6;&#x53CB;&#x4F1A;&#x61F5;&#x903C;&#xFF0C;&#x53C8;&#x662F; Redis &#x4E3B;&#x4ECE;&#x590D;&#x5236;&#xFF0C;&#x53C8;&#x662F; Redis &#x5206;&#x533A;&#xFF0C;&#x53C8;&#x662F; Redis &#x96C6;&#x7FA4;&#x3002;&#x50BB;&#x50BB;&#x5206;&#x4E0D;&#x6E05;&#x554A;&#xFF01;</p>
 <ul>
-<li>Redis 分区是一种模式，将数据分区到不同的 Redis 节点上，而 Redis 集群的 Redis Cluster、Twemproxy、Codis、客户端分片( 不包括 Redis Sentinel ) 这四种方案，是 Redis 分区的具体实现。</li>
-<li>Redis 每个分区，如果想要实现高可用，需要使用到 Redis 主从复制。</li>
+<li>Redis &#x5206;&#x533A;&#x662F;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x5206;&#x533A;&#x5230;&#x4E0D;&#x540C;&#x7684; Redis &#x8282;&#x70B9;&#x4E0A;&#xFF0C;&#x800C; Redis &#x96C6;&#x7FA4;&#x7684; Redis Cluster&#x3001;Twemproxy&#x3001;Codis&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x7247;( &#x4E0D;&#x5305;&#x62EC; Redis Sentinel ) &#x8FD9;&#x56DB;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x662F; Redis &#x5206;&#x533A;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;</li>
+<li>Redis &#x6BCF;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230; Redis &#x4E3B;&#x4ECE;&#x590D;&#x5236;&#x3002;</li>
 </ul>
-<p><strong>你知道有哪些 Redis 分区实现方案</strong>？</p>
-<p>Redis 分区方案，主要分成两种类型：</p>
+<p><strong>&#x4F60;&#x77E5;&#x9053;&#x6709;&#x54EA;&#x4E9B; Redis &#x5206;&#x533A;&#x5B9E;&#x73B0;&#x65B9;&#x6848;</strong>&#xFF1F;</p>
+<p>Redis &#x5206;&#x533A;&#x65B9;&#x6848;&#xFF0C;&#x4E3B;&#x8981;&#x5206;&#x6210;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;</p>
 <ul>
-<li>客户端分区，就是在客户端就已经决定数据会被存储到哪个 Redis 节点或者从哪个 Redis 节点读取。大多数客户端已经实现了客户端分区。<ul>
-<li>案例：Redis Cluster 和客户端分区。</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x533A;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x5C31;&#x5DF2;&#x7ECF;&#x51B3;&#x5B9A;&#x6570;&#x636E;&#x4F1A;&#x88AB;&#x5B58;&#x50A8;&#x5230;&#x54EA;&#x4E2A; Redis &#x8282;&#x70B9;&#x6216;&#x8005;&#x4ECE;&#x54EA;&#x4E2A; Redis &#x8282;&#x70B9;&#x8BFB;&#x53D6;&#x3002;&#x5927;&#x591A;&#x6570;&#x5BA2;&#x6237;&#x7AEF;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x533A;&#x3002;<ul>
+<li>&#x6848;&#x4F8B;&#xFF1A;Redis Cluster &#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x533A;&#x3002;</li>
 </ul>
 </li>
-<li>代理分区，意味着客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。代理根据分区规则决定请求哪些 Redis 实例，然后根据 Redis 的响应结果返回给客户端。 <ul>
-<li>案例：Twemproxy 和 Codis 。</li>
+<li>&#x4EE3;&#x7406;&#x5206;&#x533A;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x7ED9;&#x4EE3;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x4EE3;&#x7406;&#x51B3;&#x5B9A;&#x53BB;&#x54EA;&#x4E2A;&#x8282;&#x70B9;&#x5199;&#x6570;&#x636E;&#x6216;&#x8005;&#x8BFB;&#x6570;&#x636E;&#x3002;&#x4EE3;&#x7406;&#x6839;&#x636E;&#x5206;&#x533A;&#x89C4;&#x5219;&#x51B3;&#x5B9A;&#x8BF7;&#x6C42;&#x54EA;&#x4E9B; Redis &#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E; Redis &#x7684;&#x54CD;&#x5E94;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x3002; <ul>
+<li>&#x6848;&#x4F8B;&#xFF1A;Twemproxy &#x548C; Codis &#x3002;</li>
 </ul>
 </li>
 </ul>
-<p>查询路由(Query routing)的意思，是客户端随机地请求任意一个 Redis 实例，然后由 Redis 将请求转发给正确的 Redis 节点。Redis Cluster 实现了一种混合形式的查询路由，但并不是直接将请求从一个Redis 节点转发到另一个 Redis 节点，而是在客户端的帮助下直接 redirect 到正确的 Redis 节点。</p>
-<p><strong>分布式 Redis 是前期做还是后期规模上来了再做好？为什么？？</strong></p>
-<p>如下是网络上的一个大答案：</p>
+<p>&#x67E5;&#x8BE2;&#x8DEF;&#x7531;(Query routing)&#x7684;&#x610F;&#x601D;&#xFF0C;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x968F;&#x673A;&#x5730;&#x8BF7;&#x6C42;&#x4EFB;&#x610F;&#x4E00;&#x4E2A; Redis &#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x7531; Redis &#x5C06;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x7ED9;&#x6B63;&#x786E;&#x7684; Redis &#x8282;&#x70B9;&#x3002;Redis Cluster &#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x79CD;&#x6DF7;&#x5408;&#x5F62;&#x5F0F;&#x7684;&#x67E5;&#x8BE2;&#x8DEF;&#x7531;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x5C06;&#x8BF7;&#x6C42;&#x4ECE;&#x4E00;&#x4E2A;Redis &#x8282;&#x70B9;&#x8F6C;&#x53D1;&#x5230;&#x53E6;&#x4E00;&#x4E2A; Redis &#x8282;&#x70B9;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5E2E;&#x52A9;&#x4E0B;&#x76F4;&#x63A5; redirect &#x5230;&#x6B63;&#x786E;&#x7684; Redis &#x8282;&#x70B9;&#x3002;</p>
+<p><strong>&#x5206;&#x5E03;&#x5F0F; Redis &#x662F;&#x524D;&#x671F;&#x505A;&#x8FD8;&#x662F;&#x540E;&#x671F;&#x89C4;&#x6A21;&#x4E0A;&#x6765;&#x4E86;&#x518D;&#x505A;&#x597D;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;&#xFF1F;</strong></p>
+<p>&#x5982;&#x4E0B;&#x662F;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x5927;&#x7B54;&#x6848;&#xFF1A;</p>
 <blockquote>
-<p>既然 Redis 是如此的轻量（单实例只使用1M内存），为防止以后的扩容，最好的办法就是一开始就启动较多实例。即便你只有一台服务器，你也可以一开始就让 Redis 以分布式的方式运行，使用分区，在同一台服务器上启动多个实例。</p>
-<p>一开始就多设置几个 Redis 实例，例如 32 或者 64 个实例，对大多数用户来说这操作起来可能比较麻烦，但是从长久来看做这点牺牲是值得的。</p>
-<p>这样的话，当你的数据不断增长，需要更多的 Redis 服务器时，你需要做的就是仅仅将 Redis 实例从一台服务迁移到另外一台服务器而已（而不用考虑重新分区的问题）。一旦你添加了另一台服务器，你需要将你一半的 Redis 实例从第一台机器迁移到第二台机器。</p>
+<p>&#x65E2;&#x7136; Redis &#x662F;&#x5982;&#x6B64;&#x7684;&#x8F7B;&#x91CF;&#xFF08;&#x5355;&#x5B9E;&#x4F8B;&#x53EA;&#x4F7F;&#x7528;1M&#x5185;&#x5B58;&#xFF09;&#xFF0C;&#x4E3A;&#x9632;&#x6B62;&#x4EE5;&#x540E;&#x7684;&#x6269;&#x5BB9;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x542F;&#x52A8;&#x8F83;&#x591A;&#x5B9E;&#x4F8B;&#x3002;&#x5373;&#x4FBF;&#x4F60;&#x53EA;&#x6709;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x8BA9; Redis &#x4EE5;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#xFF0C;&#x4F7F;&#x7528;&#x5206;&#x533A;&#xFF0C;&#x5728;&#x540C;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x542F;&#x52A8;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x591A;&#x8BBE;&#x7F6E;&#x51E0;&#x4E2A; Redis &#x5B9E;&#x4F8B;&#xFF0C;&#x4F8B;&#x5982; 32 &#x6216;&#x8005; 64 &#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5BF9;&#x5927;&#x591A;&#x6570;&#x7528;&#x6237;&#x6765;&#x8BF4;&#x8FD9;&#x64CD;&#x4F5C;&#x8D77;&#x6765;&#x53EF;&#x80FD;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;&#x957F;&#x4E45;&#x6765;&#x770B;&#x505A;&#x8FD9;&#x70B9;&#x727A;&#x7272;&#x662F;&#x503C;&#x5F97;&#x7684;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5F53;&#x4F60;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x65AD;&#x589E;&#x957F;&#xFF0C;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684; Redis &#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x4EC5;&#x4EC5;&#x5C06; Redis &#x5B9E;&#x4F8B;&#x4ECE;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x8FC1;&#x79FB;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x800C;&#x5DF2;&#xFF08;&#x800C;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x91CD;&#x65B0;&#x5206;&#x533A;&#x7684;&#x95EE;&#x9898;&#xFF09;&#x3002;&#x4E00;&#x65E6;&#x4F60;&#x6DFB;&#x52A0;&#x4E86;&#x53E6;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x4F60;&#x4E00;&#x534A;&#x7684; Redis &#x5B9E;&#x4F8B;&#x4ECE;&#x7B2C;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x8FC1;&#x79FB;&#x5230;&#x7B2C;&#x4E8C;&#x53F0;&#x673A;&#x5668;&#x3002;</p>
 </blockquote>
 <ul>
-<li>和飞哥沟通了下，这个操作不是很合理。</li>
-<li>无论怎么说，建议，需要搭建下 Redis Sentinel 高可用，至于拓展性，根据自己的情况，是否使用 Redis Cluster 集群</li>
+<li>&#x548C;&#x98DE;&#x54E5;&#x6C9F;&#x901A;&#x4E86;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x4E0D;&#x662F;&#x5F88;&#x5408;&#x7406;&#x3002;</li>
+<li>&#x65E0;&#x8BBA;&#x600E;&#x4E48;&#x8BF4;&#xFF0C;&#x5EFA;&#x8BAE;&#xFF0C;&#x9700;&#x8981;&#x642D;&#x5EFA;&#x4E0B; Redis Sentinel &#x9AD8;&#x53EF;&#x7528;&#xFF0C;&#x81F3;&#x4E8E;&#x62D3;&#x5C55;&#x6027;&#xFF0C;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x662F;&#x5426;&#x4F7F;&#x7528; Redis Cluster &#x96C6;&#x7FA4;</li>
 </ul>
-<h2 id="Redis-有哪些重要的健康指标？"><a href="#Redis-有哪些重要的健康指标？" class="headerlink" title="Redis 有哪些重要的健康指标？"></a>Redis 有哪些重要的健康指标？</h2><p>推荐阅读 <a href="https://mp.weixin.qq.com/s/D_khsApGkRckEoV75pYpDA" target="_blank" rel="noopener">《Redis 几个重要的健康指标》</a></p>
+<h2 id="Redis-&#x6709;&#x54EA;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x5065;&#x5EB7;&#x6307;&#x6807;&#xFF1F;"><a href="#Redis-&#x6709;&#x54EA;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x5065;&#x5EB7;&#x6307;&#x6807;&#xFF1F;" class="headerlink" title="Redis &#x6709;&#x54EA;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x5065;&#x5EB7;&#x6307;&#x6807;&#xFF1F;"></a>Redis &#x6709;&#x54EA;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x5065;&#x5EB7;&#x6307;&#x6807;&#xFF1F;</h2><p>&#x63A8;&#x8350;&#x9605;&#x8BFB; <a href="https://mp.weixin.qq.com/s/D_khsApGkRckEoV75pYpDA" target="_blank" rel="noopener">&#x300A;Redis &#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x5065;&#x5EB7;&#x6307;&#x6807;&#x300B;</a></p>
 <ul>
-<li>存活情况</li>
-<li>连接数</li>
-<li>阻塞客户端数量</li>
-<li>使用内存峰值</li>
-<li>内存碎片率</li>
-<li>缓存命中率</li>
+<li>&#x5B58;&#x6D3B;&#x60C5;&#x51B5;</li>
+<li>&#x8FDE;&#x63A5;&#x6570;</li>
+<li>&#x963B;&#x585E;&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x91CF;</li>
+<li>&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x5CF0;&#x503C;</li>
+<li>&#x5185;&#x5B58;&#x788E;&#x7247;&#x7387;</li>
+<li>&#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387;</li>
 <li>OPS</li>
-<li>持久化</li>
-<li>失效KEY</li>
-<li>慢日志</li>
+<li>&#x6301;&#x4E45;&#x5316;</li>
+<li>&#x5931;&#x6548;KEY</li>
+<li>&#x6162;&#x65E5;&#x5FD7;</li>
 </ul>
-<p><strong>如何提高 Redis 命中率？</strong></p>
-<p>推荐阅读 <a href="http://www.cnblogs.com/shamo89/p/8383915.html" target="_blank" rel="noopener">《如何提高缓存命中率（Redis）》</a> 。</p>
-<h2 id="怎么优化-Redis-的内存占用"><a href="#怎么优化-Redis-的内存占用" class="headerlink" title="怎么优化 Redis 的内存占用"></a>怎么优化 Redis 的内存占用</h2><p>推荐阅读 <a href="https://www.jianshu.com/p/8677603d3865" target="_blank" rel="noopener">《Redis 的内存优化》</a></p>
+<p><strong>&#x5982;&#x4F55;&#x63D0;&#x9AD8; Redis &#x547D;&#x4E2D;&#x7387;&#xFF1F;</strong></p>
+<p>&#x63A8;&#x8350;&#x9605;&#x8BFB; <a href="http://www.cnblogs.com/shamo89/p/8383915.html" target="_blank" rel="noopener">&#x300A;&#x5982;&#x4F55;&#x63D0;&#x9AD8;&#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387;&#xFF08;Redis&#xFF09;&#x300B;</a> &#x3002;</p>
+<h2 id="&#x600E;&#x4E48;&#x4F18;&#x5316;-Redis-&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;"><a href="#&#x600E;&#x4E48;&#x4F18;&#x5316;-Redis-&#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;" class="headerlink" title="&#x600E;&#x4E48;&#x4F18;&#x5316; Redis &#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;"></a>&#x600E;&#x4E48;&#x4F18;&#x5316; Redis &#x7684;&#x5185;&#x5B58;&#x5360;&#x7528;</h2><p>&#x63A8;&#x8350;&#x9605;&#x8BFB; <a href="https://www.jianshu.com/p/8677603d3865" target="_blank" rel="noopener">&#x300A;Redis &#x7684;&#x5185;&#x5B58;&#x4F18;&#x5316;&#x300B;</a></p>
 <ul>
-<li>redisObject 对象</li>
-<li>缩减键值对象</li>
-<li>共享对象池</li>
-<li>字符串优化</li>
-<li>编码优化</li>
-<li><p>控制 key 的数量</p>
-<p><strong>一个 Redis 实例最多能存放多少的 keys？List、Set、Sorted Set 他们最多能存放多少元素？</strong></p>
+<li>redisObject &#x5BF9;&#x8C61;</li>
+<li>&#x7F29;&#x51CF;&#x952E;&#x503C;&#x5BF9;&#x8C61;</li>
+<li>&#x5171;&#x4EAB;&#x5BF9;&#x8C61;&#x6C60;</li>
+<li>&#x5B57;&#x7B26;&#x4E32;&#x4F18;&#x5316;</li>
+<li>&#x7F16;&#x7801;&#x4F18;&#x5316;</li>
+<li><p>&#x63A7;&#x5236; key &#x7684;&#x6570;&#x91CF;</p>
+<p><strong>&#x4E00;&#x4E2A; Redis &#x5B9E;&#x4F8B;&#x6700;&#x591A;&#x80FD;&#x5B58;&#x653E;&#x591A;&#x5C11;&#x7684; keys&#xFF1F;List&#x3001;Set&#x3001;Sorted Set &#x4ED6;&#x4EEC;&#x6700;&#x591A;&#x80FD;&#x5B58;&#x653E;&#x591A;&#x5C11;&#x5143;&#x7D20;&#xFF1F;</strong></p>
 </li>
 </ul>
-<p>一个 Redis 实例，最多能存放多少的 keys ，List、Set、Sorted Set 他们最多能存放多少元素。</p>
-<p>理论上，Redis 可以处理多达 2^32 的 keys ，并且在实际中进行了测试，每个实例至少存放了 2 亿 5 千万的 keys。</p>
-<p>任何 list、set、和 sorted set 都可以放 2^32 个元素。</p>
-<p><strong>假如 Redis 里面有 1 亿个 key，其中有 10w 个 key 是以某个固定的已知的前缀开头的，如果将它们全部找出来？</strong></p>
-<p>使用 keys 指令可以扫出指定模式的 key 列表。</p>
+<p>&#x4E00;&#x4E2A; Redis &#x5B9E;&#x4F8B;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x5B58;&#x653E;&#x591A;&#x5C11;&#x7684; keys &#xFF0C;List&#x3001;Set&#x3001;Sorted Set &#x4ED6;&#x4EEC;&#x6700;&#x591A;&#x80FD;&#x5B58;&#x653E;&#x591A;&#x5C11;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x7406;&#x8BBA;&#x4E0A;&#xFF0C;Redis &#x53EF;&#x4EE5;&#x5904;&#x7406;&#x591A;&#x8FBE; 2^32 &#x7684; keys &#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x5B9E;&#x9645;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;&#x6D4B;&#x8BD5;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x81F3;&#x5C11;&#x5B58;&#x653E;&#x4E86; 2 &#x4EBF; 5 &#x5343;&#x4E07;&#x7684; keys&#x3002;</p>
+<p>&#x4EFB;&#x4F55; list&#x3001;set&#x3001;&#x548C; sorted set &#x90FD;&#x53EF;&#x4EE5;&#x653E; 2^32 &#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<p><strong>&#x5047;&#x5982; Redis &#x91CC;&#x9762;&#x6709; 1 &#x4EBF;&#x4E2A; key&#xFF0C;&#x5176;&#x4E2D;&#x6709; 10w &#x4E2A; key &#x662F;&#x4EE5;&#x67D0;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x5DF2;&#x77E5;&#x7684;&#x524D;&#x7F00;&#x5F00;&#x5934;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x5C06;&#x5B83;&#x4EEC;&#x5168;&#x90E8;&#x627E;&#x51FA;&#x6765;&#xFF1F;</strong></p>
+<p>&#x4F7F;&#x7528; keys &#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x626B;&#x51FA;&#x6307;&#x5B9A;&#x6A21;&#x5F0F;&#x7684; key &#x5217;&#x8868;&#x3002;</p>
 <ul>
-<li>对方接着追问：如果这个 Redis 正在给线上的业务提供服务，那使用keys指令会有什么问题？</li>
-<li>这个时候你要回答 Redis 关键的一个特性：Redis 的单线程的。keys 指令会导致线程阻塞一段时间，线上服务会停顿，直到指令执行完毕，服务才能恢复。这个时候可以使用 scan 指令，scan 指令可以无阻塞的提取出指定模式的 key 列表，但是会有一定的重复概率，在客户端做一次去重就可以了，但是整体所花费的时间会比直接用 keys 指令长。</li>
+<li>&#x5BF9;&#x65B9;&#x63A5;&#x7740;&#x8FFD;&#x95EE;&#xFF1A;&#x5982;&#x679C;&#x8FD9;&#x4E2A; Redis &#x6B63;&#x5728;&#x7ED9;&#x7EBF;&#x4E0A;&#x7684;&#x4E1A;&#x52A1;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x90A3;&#x4F7F;&#x7528;keys&#x6307;&#x4EE4;&#x4F1A;&#x6709;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;</li>
+<li>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F60;&#x8981;&#x56DE;&#x7B54; Redis &#x5173;&#x952E;&#x7684;&#x4E00;&#x4E2A;&#x7279;&#x6027;&#xFF1A;Redis &#x7684;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x3002;keys &#x6307;&#x4EE4;&#x4F1A;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;&#x963B;&#x585E;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x4F1A;&#x505C;&#x987F;&#xFF0C;&#x76F4;&#x5230;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x670D;&#x52A1;&#x624D;&#x80FD;&#x6062;&#x590D;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; scan &#x6307;&#x4EE4;&#xFF0C;scan &#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x65E0;&#x963B;&#x585E;&#x7684;&#x63D0;&#x53D6;&#x51FA;&#x6307;&#x5B9A;&#x6A21;&#x5F0F;&#x7684; key &#x5217;&#x8868;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x91CD;&#x590D;&#x6982;&#x7387;&#xFF0C;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x505A;&#x4E00;&#x6B21;&#x53BB;&#x91CD;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x6574;&#x4F53;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4F1A;&#x6BD4;&#x76F4;&#x63A5;&#x7528; keys &#x6307;&#x4EE4;&#x957F;&#x3002;</li>
 </ul>
-<h2 id="Redis-常见的性能问题都有哪些？如何解决？"><a href="#Redis-常见的性能问题都有哪些？如何解决？" class="headerlink" title="Redis 常见的性能问题都有哪些？如何解决？"></a>Redis 常见的性能问题都有哪些？如何解决？</h2><p><strong>1、Master 最好不要做任何持久化工作，如 RDB 内存快照和 AOF 日志文件。</strong></p>
+<h2 id="Redis-&#x5E38;&#x89C1;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#xFF1F;"><a href="#Redis-&#x5E38;&#x89C1;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#xFF1F;" class="headerlink" title="Redis &#x5E38;&#x89C1;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#xFF1F;"></a>Redis &#x5E38;&#x89C1;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#xFF1F;</h2><p><strong>1&#x3001;Master &#x6700;&#x597D;&#x4E0D;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x6301;&#x4E45;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x5982; RDB &#x5185;&#x5B58;&#x5FEB;&#x7167;&#x548C; AOF &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x3002;</strong></p>
 <ul>
-<li>Master 写内存快照，save 命令调度 rdbSave 函数，会阻塞主线程的工作，当快照比较大时对性能影响是非常大的，会间断性暂停服务，所以 Master 最好不要写内存快照。</li>
-<li>Master AOF 持久化，如果不重写 AOF 文件，这个持久化方式对性能的影响是最小的，但是 AOF 文件会不断增大，AOF 文件过大会影响 Master 重启的恢复速度。</li>
-<li>所以，Master 最好不要做任何持久化工作，包括内存快照和 AOF 日志文件，特别是不要启用内存快照做持久化。如果数据比较关键，某个 Slave 开启AOF备份数据，策略为每秒同步一次</li>
+<li>Master &#x5199;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#xFF0C;save &#x547D;&#x4EE4;&#x8C03;&#x5EA6; rdbSave &#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x963B;&#x585E;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x5F53;&#x5FEB;&#x7167;&#x6BD4;&#x8F83;&#x5927;&#x65F6;&#x5BF9;&#x6027;&#x80FD;&#x5F71;&#x54CD;&#x662F;&#x975E;&#x5E38;&#x5927;&#x7684;&#xFF0C;&#x4F1A;&#x95F4;&#x65AD;&#x6027;&#x6682;&#x505C;&#x670D;&#x52A1;&#xFF0C;&#x6240;&#x4EE5; Master &#x6700;&#x597D;&#x4E0D;&#x8981;&#x5199;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x3002;</li>
+<li>Master AOF &#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x91CD;&#x5199; AOF &#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x5F0F;&#x5BF9;&#x6027;&#x80FD;&#x7684;&#x5F71;&#x54CD;&#x662F;&#x6700;&#x5C0F;&#x7684;&#xFF0C;&#x4F46;&#x662F; AOF &#x6587;&#x4EF6;&#x4F1A;&#x4E0D;&#x65AD;&#x589E;&#x5927;&#xFF0C;AOF &#x6587;&#x4EF6;&#x8FC7;&#x5927;&#x4F1A;&#x5F71;&#x54CD; Master &#x91CD;&#x542F;&#x7684;&#x6062;&#x590D;&#x901F;&#x5EA6;&#x3002;</li>
+<li>&#x6240;&#x4EE5;&#xFF0C;Master &#x6700;&#x597D;&#x4E0D;&#x8981;&#x505A;&#x4EFB;&#x4F55;&#x6301;&#x4E45;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x548C; AOF &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x4E0D;&#x8981;&#x542F;&#x7528;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x505A;&#x6301;&#x4E45;&#x5316;&#x3002;&#x5982;&#x679C;&#x6570;&#x636E;&#x6BD4;&#x8F83;&#x5173;&#x952E;&#xFF0C;&#x67D0;&#x4E2A; Slave &#x5F00;&#x542F;AOF&#x5907;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x7B56;&#x7565;&#x4E3A;&#x6BCF;&#x79D2;&#x540C;&#x6B65;&#x4E00;&#x6B21;</li>
 </ul>
-<p><strong>2、Master 调用 BGREWRITEAOF 重写 AOF 文件，AOF 在重写的时候会占大量的 CPU 和内存资源，导致服务 load 过高，出现短暂服务暂停现象。</strong> </p>
-<p><strong>3、尽量避免在压力很大的主库上增加从库。</strong> </p>
-<p><strong>4、主从复制不要用图状结构，用单向链表结构更为稳定，即：<code>Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3...</code> 。</strong> </p>
+<p><strong>2&#x3001;Master &#x8C03;&#x7528; BGREWRITEAOF &#x91CD;&#x5199; AOF &#x6587;&#x4EF6;&#xFF0C;AOF &#x5728;&#x91CD;&#x5199;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5360;&#x5927;&#x91CF;&#x7684; CPU &#x548C;&#x5185;&#x5B58;&#x8D44;&#x6E90;&#xFF0C;&#x5BFC;&#x81F4;&#x670D;&#x52A1; load &#x8FC7;&#x9AD8;&#xFF0C;&#x51FA;&#x73B0;&#x77ED;&#x6682;&#x670D;&#x52A1;&#x6682;&#x505C;&#x73B0;&#x8C61;&#x3002;</strong> </p>
+<p><strong>3&#x3001;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5728;&#x538B;&#x529B;&#x5F88;&#x5927;&#x7684;&#x4E3B;&#x5E93;&#x4E0A;&#x589E;&#x52A0;&#x4ECE;&#x5E93;&#x3002;</strong> </p>
+<p><strong>4&#x3001;&#x4E3B;&#x4ECE;&#x590D;&#x5236;&#x4E0D;&#x8981;&#x7528;&#x56FE;&#x72B6;&#x7ED3;&#x6784;&#xFF0C;&#x7528;&#x5355;&#x5411;&#x94FE;&#x8868;&#x7ED3;&#x6784;&#x66F4;&#x4E3A;&#x7A33;&#x5B9A;&#xFF0C;&#x5373;&#xFF1A;<code>Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3...</code> &#x3002;</strong> </p>
 <ul>
-<li>这样的结构，也方便解决单点故障问题，实现 Slave 对 Master 的替换。如果 Master挂了，可以立刻启用 Slave1 做 Master ，其他不变。</li>
+<li>&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x4E5F;&#x65B9;&#x4FBF;&#x89E3;&#x51B3;&#x5355;&#x70B9;&#x6545;&#x969C;&#x95EE;&#x9898;&#xFF0C;&#x5B9E;&#x73B0; Slave &#x5BF9; Master &#x7684;&#x66FF;&#x6362;&#x3002;&#x5982;&#x679C; Master&#x6302;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x7ACB;&#x523B;&#x542F;&#x7528; Slave1 &#x505A; Master &#xFF0C;&#x5176;&#x4ED6;&#x4E0D;&#x53D8;&#x3002;</li>
 </ul>
-<p><strong>5、Redis 主从复制的性能问题，为了主从复制的速度和连接的稳定性，Slave 和 Master 最好在同一个局域网内。</strong></p>
+<p><strong>5&#x3001;Redis &#x4E3B;&#x4ECE;&#x590D;&#x5236;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x4E3A;&#x4E86;&#x4E3B;&#x4ECE;&#x590D;&#x5236;&#x7684;&#x901F;&#x5EA6;&#x548C;&#x8FDE;&#x63A5;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;Slave &#x548C; Master &#x6700;&#x597D;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5C40;&#x57DF;&#x7F51;&#x5185;&#x3002;</strong></p>
 <hr>
-<p>和飞哥沟通过后，他们主节点开启 AOF ，从节点开启 AOF + RDB 。</p>
-<p>和晓峰沟通后，他们主节点开启 AOF ，从节点开启 RDB 居多，也有开启 AOF + RDB 的。</p>
-<h2 id="修改配置不重启-Redis-会实时生效吗？"><a href="#修改配置不重启-Redis-会实时生效吗？" class="headerlink" title="修改配置不重启 Redis 会实时生效吗？"></a>修改配置不重启 Redis 会实时生效吗？</h2><p>针对运行实例，有许多配置选项可以通过 <code>CONFIG SET</code> 命令进行修改，而无需执行任何形式的重启。</p>
-<p>从 Redis 2.2 开始，可以从 AOF 切换到 RDB 的快照持久性或其他方式而不需要重启 Redis。检索 <code>CONFIG GET *</code> 命令获取更多信息。</p>
-<p>但偶尔重新启动是必须的，如为升级 Redis 程序到新的版本，或者当你需要修改某些目前 CONFIG 命令还不支持的配置参数的时候。</p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><p>有些比较凶残的面试官，可能会问我们一些 Redis 数据结构的问题，例如：</p>
+<p>&#x548C;&#x98DE;&#x54E5;&#x6C9F;&#x901A;&#x8FC7;&#x540E;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E3B;&#x8282;&#x70B9;&#x5F00;&#x542F; AOF &#xFF0C;&#x4ECE;&#x8282;&#x70B9;&#x5F00;&#x542F; AOF + RDB &#x3002;</p>
+<p>&#x548C;&#x6653;&#x5CF0;&#x6C9F;&#x901A;&#x540E;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E3B;&#x8282;&#x70B9;&#x5F00;&#x542F; AOF &#xFF0C;&#x4ECE;&#x8282;&#x70B9;&#x5F00;&#x542F; RDB &#x5C45;&#x591A;&#xFF0C;&#x4E5F;&#x6709;&#x5F00;&#x542F; AOF + RDB &#x7684;&#x3002;</p>
+<h2 id="&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E0D;&#x91CD;&#x542F;-Redis-&#x4F1A;&#x5B9E;&#x65F6;&#x751F;&#x6548;&#x5417;&#xFF1F;"><a href="#&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E0D;&#x91CD;&#x542F;-Redis-&#x4F1A;&#x5B9E;&#x65F6;&#x751F;&#x6548;&#x5417;&#xFF1F;" class="headerlink" title="&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E0D;&#x91CD;&#x542F; Redis &#x4F1A;&#x5B9E;&#x65F6;&#x751F;&#x6548;&#x5417;&#xFF1F;"></a>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E0D;&#x91CD;&#x542F; Redis &#x4F1A;&#x5B9E;&#x65F6;&#x751F;&#x6548;&#x5417;&#xFF1F;</h2><p>&#x9488;&#x5BF9;&#x8FD0;&#x884C;&#x5B9E;&#x4F8B;&#xFF0C;&#x6709;&#x8BB8;&#x591A;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>CONFIG SET</code> &#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x5F62;&#x5F0F;&#x7684;&#x91CD;&#x542F;&#x3002;</p>
+<p>&#x4ECE; Redis 2.2 &#x5F00;&#x59CB;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE; AOF &#x5207;&#x6362;&#x5230; RDB &#x7684;&#x5FEB;&#x7167;&#x6301;&#x4E45;&#x6027;&#x6216;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x542F; Redis&#x3002;&#x68C0;&#x7D22; <code>CONFIG GET *</code> &#x547D;&#x4EE4;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x4F46;&#x5076;&#x5C14;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x5982;&#x4E3A;&#x5347;&#x7EA7; Redis &#x7A0B;&#x5E8F;&#x5230;&#x65B0;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x6216;&#x8005;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x67D0;&#x4E9B;&#x76EE;&#x524D; CONFIG &#x547D;&#x4EE4;&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<h2 id="&#x5176;&#x4ED6;&#x95EE;&#x9898;"><a href="#&#x5176;&#x4ED6;&#x95EE;&#x9898;" class="headerlink" title="&#x5176;&#x4ED6;&#x95EE;&#x9898;"></a>&#x5176;&#x4ED6;&#x95EE;&#x9898;</h2><p>&#x6709;&#x4E9B;&#x6BD4;&#x8F83;&#x51F6;&#x6B8B;&#x7684;&#x9762;&#x8BD5;&#x5B98;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x95EE;&#x6211;&#x4EEC;&#x4E00;&#x4E9B; Redis &#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 <ul>
-<li><p>Skiplist 插入和查询原理？</p>
+<li><p>Skiplist &#x63D2;&#x5165;&#x548C;&#x67E5;&#x8BE2;&#x539F;&#x7406;&#xFF1F;</p>
 </li>
-<li><p>压缩列表的原理？</p>
+<li><p>&#x538B;&#x7F29;&#x5217;&#x8868;&#x7684;&#x539F;&#x7406;&#xFF1F;</p>
 </li>
-<li><p>Redis 底层为什么使用跳跃表而不是红黑树？</p>
+<li><p>Redis &#x5E95;&#x5C42;&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x8DF3;&#x8DC3;&#x8868;&#x800C;&#x4E0D;&#x662F;&#x7EA2;&#x9ED1;&#x6811;&#xFF1F;</p>
 <blockquote>
-<p>跳跃表在范围查找的时候性能比较高。</p>
+<p>&#x8DF3;&#x8DC3;&#x8868;&#x5728;&#x8303;&#x56F4;&#x67E5;&#x627E;&#x7684;&#x65F6;&#x5019;&#x6027;&#x80FD;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://svip.iocoder.cn/Redis/Interview/" target="_blank" rel="noopener">精尽 Redis 面试题 </a></li>
+<h2 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;"><a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;" class="headerlink" title="&#x53C2;&#x8003;&#x94FE;&#x63A5;"></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;</h2><ul>
+<li><a href="http://svip.iocoder.cn/Redis/Interview/" target="_blank" rel="noopener">&#x7CBE;&#x5C3D; Redis &#x9762;&#x8BD5;&#x9898; </a></li>
 </ul>
 
       

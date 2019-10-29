@@ -98,13 +98,13 @@
 
 
 
-<meta name="description" content="JVM 垃圾回收的时候如何确定垃圾？知道什么是 GC Roots ? 什么是垃圾 简单来说就是内存中已经不在被使用到的空间就是垃圾   要进行垃圾回收，如何判断一个对象是否可以被回收？ 引用计数法 枚举根节点做可达性分析    为了解决引用计数法的循环引用问题，Java 使用了可达性算法。  跟踪收集器采用的为集中式的管理方式，全局记录对象之间的引用状态，执行时从一些列GC  Roots的对象做为">
+<meta name="description" content="JVM &amp;#x5783;&amp;#x573E;&amp;#x56DE;&amp;#x6536;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5982;&amp;#x4F55;&amp;#x786E;&amp;#x5B9A;&amp;#x5783;&amp;#x573E;&amp;#xFF1F;&amp;#x77E5;&amp;#x9053;&amp;#x4EC0;&amp;#x4E48;&amp;#x662F; GC Roots ? &amp;#x4EC0;&amp;#x4E48;&amp;#x662F;&amp;#x5783;">
 <meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM 面试">
 <meta property="og:url" content="http://blog.cuzz.site/2019/05/10/JVM面试/index.html">
 <meta property="og:site_name" content="cuzz&#39;s blog">
-<meta property="og:description" content="JVM 垃圾回收的时候如何确定垃圾？知道什么是 GC Roots ? 什么是垃圾 简单来说就是内存中已经不在被使用到的空间就是垃圾   要进行垃圾回收，如何判断一个对象是否可以被回收？ 引用计数法 枚举根节点做可达性分析    为了解决引用计数法的循环引用问题，Java 使用了可达性算法。  跟踪收集器采用的为集中式的管理方式，全局记录对象之间的引用状态，执行时从一些列GC  Roots的对象做为">
+<meta property="og:description" content="JVM &amp;#x5783;&amp;#x573E;&amp;#x56DE;&amp;#x6536;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5982;&amp;#x4F55;&amp;#x786E;&amp;#x5B9A;&amp;#x5783;&amp;#x573E;&amp;#xFF1F;&amp;#x77E5;&amp;#x9053;&amp;#x4EC0;&amp;#x4E48;&amp;#x662F; GC Roots ? &amp;#x4EC0;&amp;#x4E48;&amp;#x662F;&amp;#x5783;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.cuzz.site/2019/05/10/JVM面试/1350633405_4538.jpg">
 <meta property="og:image" content="http://blog.cuzz.site/2019/05/10/JVM面试/a9a0eb99b30cf3fd8973f464eb4678bf50f760cc.jpg">
@@ -116,7 +116,7 @@
 <meta property="og:updated_time" content="2019-08-12T12:03:26.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM 面试">
-<meta name="twitter:description" content="JVM 垃圾回收的时候如何确定垃圾？知道什么是 GC Roots ? 什么是垃圾 简单来说就是内存中已经不在被使用到的空间就是垃圾   要进行垃圾回收，如何判断一个对象是否可以被回收？ 引用计数法 枚举根节点做可达性分析    为了解决引用计数法的循环引用问题，Java 使用了可达性算法。  跟踪收集器采用的为集中式的管理方式，全局记录对象之间的引用状态，执行时从一些列GC  Roots的对象做为">
+<meta name="twitter:description" content="JVM &amp;#x5783;&amp;#x573E;&amp;#x56DE;&amp;#x6536;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5982;&amp;#x4F55;&amp;#x786E;&amp;#x5B9A;&amp;#x5783;&amp;#x573E;&amp;#xFF1F;&amp;#x77E5;&amp;#x9053;&amp;#x4EC0;&amp;#x4E48;&amp;#x662F; GC Roots ? &amp;#x4EC0;&amp;#x4E48;&amp;#x662F;&amp;#x5783;">
 <meta name="twitter:image" content="http://blog.cuzz.site/2019/05/10/JVM面试/1350633405_4538.jpg">
 
 
@@ -455,257 +455,257 @@
       
 
       
-        <h2 id="JVM-垃圾回收的时候如何确定垃圾？知道什么是-GC-Roots"><a href="#JVM-垃圾回收的时候如何确定垃圾？知道什么是-GC-Roots" class="headerlink" title="JVM 垃圾回收的时候如何确定垃圾？知道什么是 GC Roots ?"></a>JVM 垃圾回收的时候如何确定垃圾？知道什么是 GC Roots ?</h2><ul>
-<li>什么是垃圾<ul>
-<li>简单来说就是内存中已经不在被使用到的空间就是垃圾</li>
+        <h2 id="JVM-&#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x65F6;&#x5019;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x5783;&#x573E;&#xFF1F;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F;-GC-Roots"><a href="#JVM-&#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x65F6;&#x5019;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x5783;&#x573E;&#xFF1F;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F;-GC-Roots" class="headerlink" title="JVM &#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x65F6;&#x5019;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x5783;&#x573E;&#xFF1F;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F; GC Roots ?"></a>JVM &#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x65F6;&#x5019;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x5783;&#x573E;&#xFF1F;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x662F; GC Roots ?</h2><ul>
+<li>&#x4EC0;&#x4E48;&#x662F;&#x5783;&#x573E;<ul>
+<li>&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x5185;&#x5B58;&#x4E2D;&#x5DF2;&#x7ECF;&#x4E0D;&#x5728;&#x88AB;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x7A7A;&#x95F4;&#x5C31;&#x662F;&#x5783;&#x573E;</li>
 </ul>
 </li>
-<li>要进行垃圾回收，如何判断一个对象是否可以被回收？<ul>
-<li>引用计数法</li>
-<li>枚举根节点做可达性分析</li>
+<li>&#x8981;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x5982;&#x4F55;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x56DE;&#x6536;&#xFF1F;<ul>
+<li>&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;</li>
+<li>&#x679A;&#x4E3E;&#x6839;&#x8282;&#x70B9;&#x505A;&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;</li>
 </ul>
 </li>
 </ul>
-<p>为了解决引用计数法的循环引用问题，Java 使用了可达性算法。</p>
-<p><img src="/2019/05/10/JVM面试/1350633405_4538.jpg" alt="img"></p>
-<p>跟踪收集器采用的为集中式的管理方式，全局记录对象之间的引用状态，执行时从一些列GC  Roots的对象做为起点，从这些节点向下开始进行搜索所有的引用链，当一个对象到GC  Roots 没有任何引用链时，则证明此对象是不可用的。</p>
-<p>图中，对象Object6、Object7、Object8虽然互相引用，但他们的GC Roots是不可到达的，所以它们将会被判定为是可回收的对象。</p>
-<p>哪些对象可以作为 GC Roots 的对象：</p>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;&#x7684;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x95EE;&#x9898;&#xFF0C;Java &#x4F7F;&#x7528;&#x4E86;&#x53EF;&#x8FBE;&#x6027;&#x7B97;&#x6CD5;&#x3002;</p>
+<p><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/1350633405_4538.jpg" alt="img"></p>
+<p>&#x8DDF;&#x8E2A;&#x6536;&#x96C6;&#x5668;&#x91C7;&#x7528;&#x7684;&#x4E3A;&#x96C6;&#x4E2D;&#x5F0F;&#x7684;&#x7BA1;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x5168;&#x5C40;&#x8BB0;&#x5F55;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5F15;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x6267;&#x884C;&#x65F6;&#x4ECE;&#x4E00;&#x4E9B;&#x5217;GC  Roots&#x7684;&#x5BF9;&#x8C61;&#x505A;&#x4E3A;&#x8D77;&#x70B9;&#xFF0C;&#x4ECE;&#x8FD9;&#x4E9B;&#x8282;&#x70B9;&#x5411;&#x4E0B;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x6240;&#x6709;&#x7684;&#x5F15;&#x7528;&#x94FE;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5230;GC  Roots &#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5F15;&#x7528;&#x94FE;&#x65F6;&#xFF0C;&#x5219;&#x8BC1;&#x660E;&#x6B64;&#x5BF9;&#x8C61;&#x662F;&#x4E0D;&#x53EF;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x56FE;&#x4E2D;&#xFF0C;&#x5BF9;&#x8C61;Object6&#x3001;Object7&#x3001;Object8&#x867D;&#x7136;&#x4E92;&#x76F8;&#x5F15;&#x7528;&#xFF0C;&#x4F46;&#x4ED6;&#x4EEC;&#x7684;GC Roots&#x662F;&#x4E0D;&#x53EF;&#x5230;&#x8FBE;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x5C06;&#x4F1A;&#x88AB;&#x5224;&#x5B9A;&#x4E3A;&#x662F;&#x53EF;&#x56DE;&#x6536;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A; GC Roots &#x7684;&#x5BF9;&#x8C61;&#xFF1A;</p>
 <ul>
-<li>虚拟机栈（栈帧中的局部变量区，也叫局部变量表）中引用的对象</li>
-<li>方法区中的类静态属性引用的对象</li>
-<li>方法去常量引用的对象</li>
-<li>本地方法栈中 JNI (Native方法)引用的对象</li>
+<li>&#x865A;&#x62DF;&#x673A;&#x6808;&#xFF08;&#x6808;&#x5E27;&#x4E2D;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#xFF0C;&#x4E5F;&#x53EB;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#xFF09;&#x4E2D;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x7684;&#x7C7B;&#x9759;&#x6001;&#x5C5E;&#x6027;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>&#x65B9;&#x6CD5;&#x53BB;&#x5E38;&#x91CF;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</li>
+<li>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x4E2D; JNI (Native&#x65B9;&#x6CD5;)&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</li>
 </ul>
-<h2 id="你说你做过-JVM-调优和参数配置，请问如果盘点查看-JVM-系统默认值？"><a href="#你说你做过-JVM-调优和参数配置，请问如果盘点查看-JVM-系统默认值？" class="headerlink" title="你说你做过 JVM 调优和参数配置，请问如果盘点查看 JVM 系统默认值？"></a>你说你做过 JVM 调优和参数配置，请问如果盘点查看 JVM 系统默认值？</h2><h3 id="JVM-的参数类型"><a href="#JVM-的参数类型" class="headerlink" title="JVM 的参数类型"></a>JVM 的参数类型</h3><ul>
-<li>标配参数<ul>
+<h2 id="&#x4F60;&#x8BF4;&#x4F60;&#x505A;&#x8FC7;-JVM-&#x8C03;&#x4F18;&#x548C;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#xFF0C;&#x8BF7;&#x95EE;&#x5982;&#x679C;&#x76D8;&#x70B9;&#x67E5;&#x770B;-JVM-&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x503C;&#xFF1F;"><a href="#&#x4F60;&#x8BF4;&#x4F60;&#x505A;&#x8FC7;-JVM-&#x8C03;&#x4F18;&#x548C;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#xFF0C;&#x8BF7;&#x95EE;&#x5982;&#x679C;&#x76D8;&#x70B9;&#x67E5;&#x770B;-JVM-&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x503C;&#xFF1F;" class="headerlink" title="&#x4F60;&#x8BF4;&#x4F60;&#x505A;&#x8FC7; JVM &#x8C03;&#x4F18;&#x548C;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#xFF0C;&#x8BF7;&#x95EE;&#x5982;&#x679C;&#x76D8;&#x70B9;&#x67E5;&#x770B; JVM &#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x503C;&#xFF1F;"></a>&#x4F60;&#x8BF4;&#x4F60;&#x505A;&#x8FC7; JVM &#x8C03;&#x4F18;&#x548C;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#xFF0C;&#x8BF7;&#x95EE;&#x5982;&#x679C;&#x76D8;&#x70B9;&#x67E5;&#x770B; JVM &#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x503C;&#xFF1F;</h2><h3 id="JVM-&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;"><a href="#JVM-&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;" class="headerlink" title="JVM &#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;"></a>JVM &#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;</h3><ul>
+<li>&#x6807;&#x914D;&#x53C2;&#x6570;<ul>
 <li>-version</li>
 <li>-help </li>
 </ul>
 </li>
-<li>X 参数（了解）<ul>
-<li>-Xint：解释执行</li>
-<li>-Xcomp：第一次使用就编译成本地代码</li>
-<li>-Xmixed：混合模式</li>
+<li>X &#x53C2;&#x6570;&#xFF08;&#x4E86;&#x89E3;&#xFF09;<ul>
+<li>-Xint&#xFF1A;&#x89E3;&#x91CA;&#x6267;&#x884C;</li>
+<li>-Xcomp&#xFF1A;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x5C31;&#x7F16;&#x8BD1;&#x6210;&#x672C;&#x5730;&#x4EE3;&#x7801;</li>
+<li>-Xmixed&#xFF1A;&#x6DF7;&#x5408;&#x6A21;&#x5F0F;</li>
 </ul>
 </li>
-<li><p>XX 参数</p>
+<li><p>XX &#x53C2;&#x6570;</p>
 <ul>
-<li>Boolean 类型：-XX：+ 或者 - 某个属性值（+ 表示开启，- 表示关闭）<ul>
-<li>-XX:+PrintGCDetails：打印 GC 收集细节</li>
-<li>-XX:-PrintGCDetails：不打印 GC 收集细节</li>
-<li>-XX:+UseSerialGC：使用了串行收集器</li>
-<li>-XX:-UseSerialGC：不使用了串行收集器</li>
+<li>Boolean &#x7C7B;&#x578B;&#xFF1A;-XX&#xFF1A;+ &#x6216;&#x8005; - &#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#xFF08;+ &#x8868;&#x793A;&#x5F00;&#x542F;&#xFF0C;- &#x8868;&#x793A;&#x5173;&#x95ED;&#xFF09;<ul>
+<li>-XX:+PrintGCDetails&#xFF1A;&#x6253;&#x5370; GC &#x6536;&#x96C6;&#x7EC6;&#x8282;</li>
+<li>-XX:-PrintGCDetails&#xFF1A;&#x4E0D;&#x6253;&#x5370; GC &#x6536;&#x96C6;&#x7EC6;&#x8282;</li>
+<li>-XX:+UseSerialGC&#xFF1A;&#x4F7F;&#x7528;&#x4E86;&#x4E32;&#x884C;&#x6536;&#x96C6;&#x5668;</li>
+<li>-XX:-UseSerialGC&#xFF1A;&#x4E0D;&#x4F7F;&#x7528;&#x4E86;&#x4E32;&#x884C;&#x6536;&#x96C6;&#x5668;</li>
 </ul>
 </li>
-<li>KV 设置类型：-XX:key=value<ul>
+<li>KV &#x8BBE;&#x7F6E;&#x7C7B;&#x578B;&#xFF1A;-XX:key=value<ul>
 <li>-XX:MetaspaceSize=128m</li>
 <li>-XX:MaxTenuringThreshold=15</li>
 </ul>
 </li>
-<li><p>jinfo 举例，如何查看当前运行程序的配置</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloGC</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello GC..."</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(Integer.MAX_VALUE);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们可以使用 <code>jps -l</code> 命令，查出进程 id</p>
+<li><p>jinfo &#x4E3E;&#x4F8B;&#xFF0C;&#x5982;&#x4F55;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x914D;&#x7F6E;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloGC</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">&quot;hello GC...&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            Thread.sleep(Integer.MAX_VALUE);</span><br><span class="line">        } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>jps -l</code> &#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x51FA;&#x8FDB;&#x7A0B; id</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1923 org.jetbrains.jps.cmdline.Launcher</span><br><span class="line">1988 sun.tools.jps.Jps</span><br><span class="line">1173 org.jetbrains.kotlin.daemon.KotlinCompileDaemon</span><br><span class="line">32077 com.intellij.idea.Main</span><br><span class="line">1933 com.cuzz.jvm.HelloGC</span><br><span class="line">32382 org.jetbrains.idea.maven.server.RemoteMavenServer</span><br></pre></td></tr></table></figure>
-<p>在使用 <code>jinfo -flag PrintGCDetails 1933</code> 命令查看</p>
+<p>&#x5728;&#x4F7F;&#x7528; <code>jinfo -flag PrintGCDetails 1933</code> &#x547D;&#x4EE4;&#x67E5;&#x770B;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:-PrintGCDetails</span><br></pre></td></tr></table></figure>
-<p>可以看出默认是不打印 GC 收集细节<br>也可是使用<code>jinfo -flags 1933</code> 查看所以的参数</p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x9ED8;&#x8BA4;&#x662F;&#x4E0D;&#x6253;&#x5370; GC &#x6536;&#x96C6;&#x7EC6;&#x8282;<br>&#x4E5F;&#x53EF;&#x662F;&#x4F7F;&#x7528;<code>jinfo -flags 1933</code> &#x67E5;&#x770B;&#x6240;&#x4EE5;&#x7684;&#x53C2;&#x6570;</p>
 </li>
-<li>两个经典参数：-Xms 和 - Xmx（如 -Xms1024m）<ul>
-<li>-Xms 等价于 -XX:InitialHeapSize</li>
-<li>-Xmx 等价于 -XX:MaxHeapSize</li>
+<li>&#x4E24;&#x4E2A;&#x7ECF;&#x5178;&#x53C2;&#x6570;&#xFF1A;-Xms &#x548C; - Xmx&#xFF08;&#x5982; -Xms1024m&#xFF09;<ul>
+<li>-Xms &#x7B49;&#x4EF7;&#x4E8E; -XX:InitialHeapSize</li>
+<li>-Xmx &#x7B49;&#x4EF7;&#x4E8E; -XX:MaxHeapSize</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="盘点家底查看-JVM-默认值"><a href="#盘点家底查看-JVM-默认值" class="headerlink" title="盘点家底查看 JVM 默认值"></a>盘点家底查看 JVM 默认值</h3><ul>
-<li><p>查看初始默认值：-XX:+PrintFlagsInitial</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cuzz@cuzz-pc:~/Project/demo$ java -XX:+PrintFlagsInitial</span><br><span class="line">[Global flags]</span><br><span class="line">     intx ActiveProcessorCount                      = -1                                  &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizeDecrementScaleFactor          = 4                                   &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizeMajorGCDecayTimeScale         = 10                                  &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizePausePolicy                   = 0                                   &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizePolicyCollectionCostMargin    = 50                                  &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizePolicyInitializingSteps       = 20                                  &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizePolicyOutputInterval          = 0                                   &#123;product&#125;</span><br><span class="line">    uintx AdaptiveSizePolicyWeight                  = 10                                  &#123;product&#125;</span><br><span class="line">   ...</span><br></pre></td></tr></table></figure>
+<h3 id="&#x76D8;&#x70B9;&#x5BB6;&#x5E95;&#x67E5;&#x770B;-JVM-&#x9ED8;&#x8BA4;&#x503C;"><a href="#&#x76D8;&#x70B9;&#x5BB6;&#x5E95;&#x67E5;&#x770B;-JVM-&#x9ED8;&#x8BA4;&#x503C;" class="headerlink" title="&#x76D8;&#x70B9;&#x5BB6;&#x5E95;&#x67E5;&#x770B; JVM &#x9ED8;&#x8BA4;&#x503C;"></a>&#x76D8;&#x70B9;&#x5BB6;&#x5E95;&#x67E5;&#x770B; JVM &#x9ED8;&#x8BA4;&#x503C;</h3><ul>
+<li><p>&#x67E5;&#x770B;&#x521D;&#x59CB;&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;-XX:+PrintFlagsInitial</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cuzz@cuzz-pc:~/Project/demo$ java -XX:+PrintFlagsInitial</span><br><span class="line">[Global flags]</span><br><span class="line">     intx ActiveProcessorCount                      = -1                                  {product}</span><br><span class="line">    uintx AdaptiveSizeDecrementScaleFactor          = 4                                   {product}</span><br><span class="line">    uintx AdaptiveSizeMajorGCDecayTimeScale         = 10                                  {product}</span><br><span class="line">    uintx AdaptiveSizePausePolicy                   = 0                                   {product}</span><br><span class="line">    uintx AdaptiveSizePolicyCollectionCostMargin    = 50                                  {product}</span><br><span class="line">    uintx AdaptiveSizePolicyInitializingSteps       = 20                                  {product}</span><br><span class="line">    uintx AdaptiveSizePolicyOutputInterval          = 0                                   {product}</span><br><span class="line">    uintx AdaptiveSizePolicyWeight                  = 10                                  {product}</span><br><span class="line">   ...</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看修改更新：-XX:+PrintFlagsFinal</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bool UsePSAdaptiveSurvivorSizePolicy           = true                                &#123;product&#125;</span><br><span class="line">bool UseParNewGC                               = false                               &#123;product&#125;</span><br><span class="line">bool UseParallelGC                            := true                                &#123;product&#125;</span><br><span class="line">bool UseParallelOldGC                          = true                                &#123;product&#125;</span><br><span class="line">bool UsePerfData                               = true                                &#123;product&#125;</span><br><span class="line">bool UsePopCountInstruction                    = true                                &#123;product&#125;</span><br><span class="line">bool UseRDPCForConstantTableBase               = false                               &#123;C2 product&#125;</span><br></pre></td></tr></table></figure>
-<p>= 与 := 的区别是，一个是默认，一个是人物改变或者 jvm 加载时改变的参数</p>
+<li><p>&#x67E5;&#x770B;&#x4FEE;&#x6539;&#x66F4;&#x65B0;&#xFF1A;-XX:+PrintFlagsFinal</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bool UsePSAdaptiveSurvivorSizePolicy           = true                                {product}</span><br><span class="line">bool UseParNewGC                               = false                               {product}</span><br><span class="line">bool UseParallelGC                            := true                                {product}</span><br><span class="line">bool UseParallelOldGC                          = true                                {product}</span><br><span class="line">bool UsePerfData                               = true                                {product}</span><br><span class="line">bool UsePopCountInstruction                    = true                                {product}</span><br><span class="line">bool UseRDPCForConstantTableBase               = false                               {C2 product}</span><br></pre></td></tr></table></figure>
+<p>= &#x4E0E; := &#x7684;&#x533A;&#x522B;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x9ED8;&#x8BA4;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x4EBA;&#x7269;&#x6539;&#x53D8;&#x6216;&#x8005; jvm &#x52A0;&#x8F7D;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x53C2;&#x6570;</p>
 </li>
-<li>打印命令行参数(可以看默认垃圾回收器)：-XX:+PrintCommandLineFlags<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cuzz@cuzz-pc:~/Project/demo$ java -XX:+PrintCommandLineFlags</span><br><span class="line">-XX:InitialHeapSize=128789376 -XX:MaxHeapSize=2060630016 -XX:+PrintCommandLineFlags -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseParallelGC</span><br></pre></td></tr></table></figure>
+<li>&#x6253;&#x5370;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;(&#x53EF;&#x4EE5;&#x770B;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;)&#xFF1A;-XX:+PrintCommandLineFlags<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cuzz@cuzz-pc:~/Project/demo$ java -XX:+PrintCommandLineFlags</span><br><span class="line">-XX:InitialHeapSize=128789376 -XX:MaxHeapSize=2060630016 -XX:+PrintCommandLineFlags -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseParallelGC</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="你平时工作用过的-JVM-常用的基本配置参数有哪些？"><a href="#你平时工作用过的-JVM-常用的基本配置参数有哪些？" class="headerlink" title="你平时工作用过的 JVM 常用的基本配置参数有哪些？"></a>你平时工作用过的 JVM 常用的基本配置参数有哪些？</h2><ul>
+<h2 id="&#x4F60;&#x5E73;&#x65F6;&#x5DE5;&#x4F5C;&#x7528;&#x8FC7;&#x7684;-JVM-&#x5E38;&#x7528;&#x7684;&#x57FA;&#x672C;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;"><a href="#&#x4F60;&#x5E73;&#x65F6;&#x5DE5;&#x4F5C;&#x7528;&#x8FC7;&#x7684;-JVM-&#x5E38;&#x7528;&#x7684;&#x57FA;&#x672C;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;" class="headerlink" title="&#x4F60;&#x5E73;&#x65F6;&#x5DE5;&#x4F5C;&#x7528;&#x8FC7;&#x7684; JVM &#x5E38;&#x7528;&#x7684;&#x57FA;&#x672C;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;"></a>&#x4F60;&#x5E73;&#x65F6;&#x5DE5;&#x4F5C;&#x7528;&#x8FC7;&#x7684; JVM &#x5E38;&#x7528;&#x7684;&#x57FA;&#x672C;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h2><ul>
 <li>-Xms<ul>
-<li>初始大小内存，默认为物理内存 1/64</li>
-<li>等价于 -XX:InitialHeapSize</li>
+<li>&#x521D;&#x59CB;&#x5927;&#x5C0F;&#x5185;&#x5B58;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x7269;&#x7406;&#x5185;&#x5B58; 1/64</li>
+<li>&#x7B49;&#x4EF7;&#x4E8E; -XX:InitialHeapSize</li>
 </ul>
 </li>
 <li>-Xmx<ul>
-<li>最大分配内存，默认为物理内存的 1/4</li>
-<li>等价于 -XX:MaxHeapSize</li>
+<li>&#x6700;&#x5927;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x7269;&#x7406;&#x5185;&#x5B58;&#x7684; 1/4</li>
+<li>&#x7B49;&#x4EF7;&#x4E8E; -XX:MaxHeapSize</li>
 </ul>
 </li>
 <li>-Xss<ul>
-<li>设置单个线程栈的大小，一般默认为 512-1024k</li>
-<li>等价于 -XX:ThreadStackSize</li>
+<li>&#x8BBE;&#x7F6E;&#x5355;&#x4E2A;&#x7EBF;&#x7A0B;&#x6808;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x4E00;&#x822C;&#x9ED8;&#x8BA4;&#x4E3A; 512-1024k</li>
+<li>&#x7B49;&#x4EF7;&#x4E8E; -XX:ThreadStackSize</li>
 </ul>
 </li>
 <li>-Xmn<ul>
-<li>设置年轻代的大小</li>
-<li><strong>整个JVM内存大小=年轻代大小 + 年老代大小 + 持久代大小</strong>，持久代一般固定大小为64m，所以增大年轻代后，将会减小年老代大小。此值对系统性能影响较大，Sun官方推荐配置为整个堆的3/8。</li>
+<li>&#x8BBE;&#x7F6E;&#x5E74;&#x8F7B;&#x4EE3;&#x7684;&#x5927;&#x5C0F;</li>
+<li><strong>&#x6574;&#x4E2A;JVM&#x5185;&#x5B58;&#x5927;&#x5C0F;=&#x5E74;&#x8F7B;&#x4EE3;&#x5927;&#x5C0F; + &#x5E74;&#x8001;&#x4EE3;&#x5927;&#x5C0F; + &#x6301;&#x4E45;&#x4EE3;&#x5927;&#x5C0F;</strong>&#xFF0C;&#x6301;&#x4E45;&#x4EE3;&#x4E00;&#x822C;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x4E3A;64m&#xFF0C;&#x6240;&#x4EE5;&#x589E;&#x5927;&#x5E74;&#x8F7B;&#x4EE3;&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#x51CF;&#x5C0F;&#x5E74;&#x8001;&#x4EE3;&#x5927;&#x5C0F;&#x3002;&#x6B64;&#x503C;&#x5BF9;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x5F71;&#x54CD;&#x8F83;&#x5927;&#xFF0C;Sun&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x914D;&#x7F6E;&#x4E3A;&#x6574;&#x4E2A;&#x5806;&#x7684;3/8&#x3002;</li>
 </ul>
 </li>
 <li>-XX:MetaspaceSize<ul>
-<li>设置元空间大小（元空间的本质和永久代类似，都是对 JVM 规范中的方法区的实现，不过元空间于永久代之间最大区别在于，<strong>元空间并不在虚拟中，而是使用本地内存</strong>，因此默认情况下，元空间的大小仅受本地内存限制）</li>
-<li>元空间默认比较小，我们可以调大一点</li>
+<li>&#x8BBE;&#x7F6E;&#x5143;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#xFF08;&#x5143;&#x7A7A;&#x95F4;&#x7684;&#x672C;&#x8D28;&#x548C;&#x6C38;&#x4E45;&#x4EE3;&#x7C7B;&#x4F3C;&#xFF0C;&#x90FD;&#x662F;&#x5BF9; JVM &#x89C4;&#x8303;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x8FC7;&#x5143;&#x7A7A;&#x95F4;&#x4E8E;&#x6C38;&#x4E45;&#x4EE3;&#x4E4B;&#x95F4;&#x6700;&#x5927;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;<strong>&#x5143;&#x7A7A;&#x95F4;&#x5E76;&#x4E0D;&#x5728;&#x865A;&#x62DF;&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5185;&#x5B58;</strong>&#xFF0C;&#x56E0;&#x6B64;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5143;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#x4EC5;&#x53D7;&#x672C;&#x5730;&#x5185;&#x5B58;&#x9650;&#x5236;&#xFF09;</li>
+<li>&#x5143;&#x7A7A;&#x95F4;&#x9ED8;&#x8BA4;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8C03;&#x5927;&#x4E00;&#x70B9;</li>
 </ul>
 </li>
 <li><p>-XX:+PrintGCDetails</p>
 <ul>
-<li><p>输出详细 GC 收集日志信息</p>
+<li><p>&#x8F93;&#x51FA;&#x8BE6;&#x7EC6; GC &#x6536;&#x96C6;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;</p>
 <ul>
-<li>设置 JVM 参数为： -Xms10m -Xmx10m -XX:+PrintGCDetails</li>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloGC &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        byte[] bytes = new byte[20 * 1024 * 1024];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>&#x8BBE;&#x7F6E; JVM &#x53C2;&#x6570;&#x4E3A;&#xFF1A; -Xms10m -Xmx10m -XX:+PrintGCDetails</li>
+<li><p>&#x4EE3;&#x7801;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloGC {</span><br><span class="line">    public static void main(String[] args) {</span><br><span class="line">        byte[] bytes = new byte[20 * 1024 * 1024];</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>打印结果</p>
+<li><p>&#x6253;&#x5370;&#x7ED3;&#x679C;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[GC (Allocation Failure) [PSYoungGen: 1231K-&gt;448K(2560K)] 1231K-&gt;456K(9728K), 0.0015616 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 448K-&gt;384K(2560K)] 456K-&gt;392K(9728K), 0.0016999 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 384K-&gt;0K(2560K)] [ParOldGen: 8K-&gt;358K(7168K)] 392K-&gt;358K(9728K), [Metaspace: 3028K-&gt;3028K(1056768K)], 0.0066696 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] 358K-&gt;358K(9728K), 0.0005321 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] [ParOldGen: 358K-&gt;340K(7168K)] 358K-&gt;340K(9728K), [Metaspace: 3028K-&gt;3028K(1056768K)], 0.0051543 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">Heap</span><br><span class="line"> PSYoungGen      total 2560K, used 81K [0x00000000ffd00000, 0x0000000100000000, 0x0000000100000000)</span><br><span class="line">  eden space 2048K, 3% used [0x00000000ffd00000,0x00000000ffd14668,0x00000000fff00000)</span><br><span class="line">  from space 512K, 0% used [0x00000000fff00000,0x00000000fff00000,0x00000000fff80000)</span><br><span class="line">  to   space 512K, 0% used [0x00000000fff80000,0x00000000fff80000,0x0000000100000000)</span><br><span class="line"> ParOldGen       total 7168K, used 340K [0x00000000ff600000, 0x00000000ffd00000, 0x00000000ffd00000)</span><br><span class="line">  object space 7168K, 4% used [0x00000000ff600000,0x00000000ff655188,0x00000000ffd00000)</span><br><span class="line"> Metaspace       used 3060K, capacity 4496K, committed 4864K, reserved 1056768K</span><br><span class="line">  class space    used 336K, capacity 388K, committed 512K, reserved 1048576K</span><br><span class="line">Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">	at com.cuzz.jvm.HelloGC.main(HelloGC.java:12)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>GC<br><img src="/2019/05/10/JVM面试/a9a0eb99b30cf3fd8973f464eb4678bf50f760cc.jpg" alt="img"></p>
+<li><p>GC<br><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/a9a0eb99b30cf3fd8973f464eb4678bf50f760cc.jpg" alt="img"></p>
 </li>
-<li>FullGC<br><img src="/2019/05/10/JVM面试/e04f3f3b68cff61027e5ba8eba9613bb7c69a08a.jpg" alt="img"></li>
+<li>FullGC<br><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/e04f3f3b68cff61027e5ba8eba9613bb7c69a08a.jpg" alt="img"></li>
 </ul>
 </li>
 <li>-XX:SurvivorRatio<ul>
-<li>设置新生代中 eden 和 S0/S1 空间比例</li>
-<li>默认 -XX:SurvivorRatio=8，Eden : S0 : S1 = 8 : 1 : 1</li>
+<li>&#x8BBE;&#x7F6E;&#x65B0;&#x751F;&#x4EE3;&#x4E2D; eden &#x548C; S0/S1 &#x7A7A;&#x95F4;&#x6BD4;&#x4F8B;</li>
+<li>&#x9ED8;&#x8BA4; -XX:SurvivorRatio=8&#xFF0C;Eden : S0 : S1 = 8 : 1 : 1</li>
 </ul>
 </li>
 <li>-XX:NewRatio<ul>
-<li>配置年轻代和老年代在堆结构的占比</li>
-<li>默认 -XX:NewRatio=2 新生代占1，老年代占2，年轻代占整个堆的 1/3</li>
+<li>&#x914D;&#x7F6E;&#x5E74;&#x8F7B;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#x5728;&#x5806;&#x7ED3;&#x6784;&#x7684;&#x5360;&#x6BD4;</li>
+<li>&#x9ED8;&#x8BA4; -XX:NewRatio=2 &#x65B0;&#x751F;&#x4EE3;&#x5360;1&#xFF0C;&#x8001;&#x5E74;&#x4EE3;&#x5360;2&#xFF0C;&#x5E74;&#x8F7B;&#x4EE3;&#x5360;&#x6574;&#x4E2A;&#x5806;&#x7684; 1/3</li>
 </ul>
 </li>
 <li>-XX:MaxTenuringThreshold<ul>
-<li>设置垃圾最大年龄</li>
+<li>&#x8BBE;&#x7F6E;&#x5783;&#x573E;&#x6700;&#x5927;&#x5E74;&#x9F84;</li>
 </ul>
 </li>
 </ul>
-<h2 id="强引用、软引用、弱引用和虚引用分别是什么？"><a href="#强引用、软引用、弱引用和虚引用分别是什么？" class="headerlink" title="强引用、软引用、弱引用和虚引用分别是什么？"></a>强引用、软引用、弱引用和虚引用分别是什么？</h2><p>在Java语言中，除了基本数据类型外，其他的都是指向各类对象的对象引用；Java中根据其生命周期的长短，将引用分为4类。</p>
+<h2 id="&#x5F3A;&#x5F15;&#x7528;&#x3001;&#x8F6F;&#x5F15;&#x7528;&#x3001;&#x5F31;&#x5F15;&#x7528;&#x548C;&#x865A;&#x5F15;&#x7528;&#x5206;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;"><a href="#&#x5F3A;&#x5F15;&#x7528;&#x3001;&#x8F6F;&#x5F15;&#x7528;&#x3001;&#x5F31;&#x5F15;&#x7528;&#x548C;&#x865A;&#x5F15;&#x7528;&#x5206;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;" class="headerlink" title="&#x5F3A;&#x5F15;&#x7528;&#x3001;&#x8F6F;&#x5F15;&#x7528;&#x3001;&#x5F31;&#x5F15;&#x7528;&#x548C;&#x865A;&#x5F15;&#x7528;&#x5206;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;"></a>&#x5F3A;&#x5F15;&#x7528;&#x3001;&#x8F6F;&#x5F15;&#x7528;&#x3001;&#x5F31;&#x5F15;&#x7528;&#x548C;&#x865A;&#x5F15;&#x7528;&#x5206;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h2><p>&#x5728;Java&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x90FD;&#x662F;&#x6307;&#x5411;&#x5404;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#xFF1B;Java&#x4E2D;&#x6839;&#x636E;&#x5176;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x957F;&#x77ED;&#xFF0C;&#x5C06;&#x5F15;&#x7528;&#x5206;&#x4E3A;4&#x7C7B;&#x3002;</p>
 <ul>
-<li>强引用<ul>
-<li>特点：我们平常典型编码Object obj = new Object()中的obj就是强引用。通过关键字new创建的对象所关联的引用就是强引用。 当JVM内存空间不足，JVM宁愿抛出OutOfMemoryError运行时错误（OOM），使程序异常终止，也不会靠随意回收具有强引用的“存活”对象来解决内存不足的问题。对于一个普通的对象，如果没有其他的引用关系，只要超过了引用的作用域或者显式地将相应（强）引用赋值为 null，就是可以被垃圾收集的了，具体回收时机还是要看垃圾收集策略。</li>
+<li>&#x5F3A;&#x5F15;&#x7528;<ul>
+<li>&#x7279;&#x70B9;&#xFF1A;&#x6211;&#x4EEC;&#x5E73;&#x5E38;&#x5178;&#x578B;&#x7F16;&#x7801;Object obj = new Object()&#x4E2D;&#x7684;obj&#x5C31;&#x662F;&#x5F3A;&#x5F15;&#x7528;&#x3002;&#x901A;&#x8FC7;&#x5173;&#x952E;&#x5B57;new&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x6240;&#x5173;&#x8054;&#x7684;&#x5F15;&#x7528;&#x5C31;&#x662F;&#x5F3A;&#x5F15;&#x7528;&#x3002; &#x5F53;JVM&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#xFF0C;JVM&#x5B81;&#x613F;&#x629B;&#x51FA;OutOfMemoryError&#x8FD0;&#x884C;&#x65F6;&#x9519;&#x8BEF;&#xFF08;OOM&#xFF09;&#xFF0C;&#x4F7F;&#x7A0B;&#x5E8F;&#x5F02;&#x5E38;&#x7EC8;&#x6B62;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x9760;&#x968F;&#x610F;&#x56DE;&#x6536;&#x5177;&#x6709;&#x5F3A;&#x5F15;&#x7528;&#x7684;&#x201C;&#x5B58;&#x6D3B;&#x201D;&#x5BF9;&#x8C61;&#x6765;&#x89E3;&#x51B3;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#xFF0C;&#x53EA;&#x8981;&#x8D85;&#x8FC7;&#x4E86;&#x5F15;&#x7528;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x6216;&#x8005;&#x663E;&#x5F0F;&#x5730;&#x5C06;&#x76F8;&#x5E94;&#xFF08;&#x5F3A;&#xFF09;&#x5F15;&#x7528;&#x8D4B;&#x503C;&#x4E3A; null&#xFF0C;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7684;&#x4E86;&#xFF0C;&#x5177;&#x4F53;&#x56DE;&#x6536;&#x65F6;&#x673A;&#x8FD8;&#x662F;&#x8981;&#x770B;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7B56;&#x7565;&#x3002;</li>
 </ul>
 </li>
-<li><p>软引用</p>
+<li><p>&#x8F6F;&#x5F15;&#x7528;</p>
 <ul>
-<li>特点：软引用通过SoftReference类实现。 软引用的生命周期比强引用短一些。只有当 JVM 认为内存不足时，才会去试图回收软引用指向的对象：即JVM 会确保在抛出 OutOfMemoryError 之前，清理软引用指向的对象。软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被垃圾回收器回收，Java虚拟机就会把这个软引用加入到与之关联的引用队列中。后续，我们可以调用ReferenceQueue的poll()方法来检查是否有它所关心的对象被回收。如果队列为空，将返回一个null,否则该方法返回队列中前面的一个Reference对象。</li>
-<li>应用场景：软引用通常用来实现内存敏感的缓存。如果还有空闲内存，就可以暂时保留缓存，当内存不足时清理掉，这样就保证了使用缓存的同时，不会耗尽内存。</li>
-<li><p>代码验证<br>我设置 JVM 参数为 <code>-Xms10m -Xmx10m -XX:+PrintGCDetails</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SoftReferenceDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        SoftReference&lt;Object&gt; softReference = <span class="keyword">new</span> SoftReference&lt;&gt;(obj);</span><br><span class="line">        obj = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 分配 20 M</span></span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">20</span> * <span class="number">1024</span> * <span class="number">1024</span>];</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"软引用："</span> + softReference.get());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[GC (Allocation Failure) [PSYoungGen: 1234K-&gt;448K(2560K)] 1234K-&gt;456K(9728K), 0.0016748 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 448K-&gt;384K(2560K)] 456K-&gt;392K(9728K), 0.0018398 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 384K-&gt;0K(2560K)] [ParOldGen: 8K-&gt;358K(7168K)] 392K-&gt;358K(9728K), [Metaspace: 3030K-&gt;3030K(1056768K)], 0.0057246 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] 358K-&gt;358K(9728K), 0.0006038 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] [ParOldGen: 358K-&gt;340K(7168K)] 358K-&gt;340K(9728K), [Metaspace: 3030K-&gt;3030K(1056768K)], 0.0115080 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">软引用：null</span><br><span class="line">Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">	at com.cuzz.jvm.SoftReferenceDemo.main(SoftReferenceDemo.java:21)</span><br><span class="line">Heap</span><br><span class="line"> PSYoungGen      total 2560K, used 98K [0x00000000ffd00000, 0x0000000100000000, 0x0000000100000000)</span><br><span class="line">  eden space 2048K, 4% used [0x00000000ffd00000,0x00000000ffd18978,0x00000000fff00000)</span><br><span class="line">  from space 512K, 0% used [0x00000000fff00000,0x00000000fff00000,0x00000000fff80000)</span><br><span class="line">  to   space 512K, 0% used [0x00000000fff80000,0x00000000fff80000,0x0000000100000000)</span><br><span class="line"> ParOldGen       total 7168K, used 340K [0x00000000ff600000, 0x00000000ffd00000, 0x00000000ffd00000)</span><br><span class="line">  object space 7168K, 4% used [0x00000000ff600000,0x00000000ff6552f8,0x00000000ffd00000)</span><br><span class="line"> Metaspace       used 3067K, capacity 4496K, committed 4864K, reserved 1056768K</span><br><span class="line">  class space    used 336K, capacity 388K, committed 512K, reserved 1048576K</span><br></pre></td></tr></table></figure>
-<p>发现当内存不够的时候就会被回收。</p>
+<li>&#x7279;&#x70B9;&#xFF1A;&#x8F6F;&#x5F15;&#x7528;&#x901A;&#x8FC7;SoftReference&#x7C7B;&#x5B9E;&#x73B0;&#x3002; &#x8F6F;&#x5F15;&#x7528;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6BD4;&#x5F3A;&#x5F15;&#x7528;&#x77ED;&#x4E00;&#x4E9B;&#x3002;&#x53EA;&#x6709;&#x5F53; JVM &#x8BA4;&#x4E3A;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x53BB;&#x8BD5;&#x56FE;&#x56DE;&#x6536;&#x8F6F;&#x5F15;&#x7528;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#xFF1A;&#x5373;JVM &#x4F1A;&#x786E;&#x4FDD;&#x5728;&#x629B;&#x51FA; OutOfMemoryError &#x4E4B;&#x524D;&#xFF0C;&#x6E05;&#x7406;&#x8F6F;&#x5F15;&#x7528;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x8F6F;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x548C;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x961F;&#x5217;&#xFF08;ReferenceQueue&#xFF09;&#x8054;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x8F6F;&#x5F15;&#x7528;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x56DE;&#x6536;&#xFF0C;Java&#x865A;&#x62DF;&#x673A;&#x5C31;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x8F6F;&#x5F15;&#x7528;&#x52A0;&#x5165;&#x5230;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x5F15;&#x7528;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x540E;&#x7EED;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8C03;&#x7528;ReferenceQueue&#x7684;poll()&#x65B9;&#x6CD5;&#x6765;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6709;&#x5B83;&#x6240;&#x5173;&#x5FC3;&#x7684;&#x5BF9;&#x8C61;&#x88AB;&#x56DE;&#x6536;&#x3002;&#x5982;&#x679C;&#x961F;&#x5217;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;null,&#x5426;&#x5219;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x961F;&#x5217;&#x4E2D;&#x524D;&#x9762;&#x7684;&#x4E00;&#x4E2A;Reference&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x8F6F;&#x5F15;&#x7528;&#x901A;&#x5E38;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x5185;&#x5B58;&#x654F;&#x611F;&#x7684;&#x7F13;&#x5B58;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x6709;&#x7A7A;&#x95F2;&#x5185;&#x5B58;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x4FDD;&#x7559;&#x7F13;&#x5B58;&#xFF0C;&#x5F53;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x65F6;&#x6E05;&#x7406;&#x6389;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x8017;&#x5C3D;&#x5185;&#x5B58;&#x3002;</li>
+<li><p>&#x4EE3;&#x7801;&#x9A8C;&#x8BC1;<br>&#x6211;&#x8BBE;&#x7F6E; JVM &#x53C2;&#x6570;&#x4E3A; <code>-Xms10m -Xmx10m -XX:+PrintGCDetails</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SoftReferenceDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        SoftReference&lt;Object&gt; softReference = <span class="keyword">new</span> SoftReference&lt;&gt;(obj);</span><br><span class="line">        obj = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            <span class="comment">// &#x5206;&#x914D; 20 M</span></span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">20</span> * <span class="number">1024</span> * <span class="number">1024</span>];</span><br><span class="line">        } <span class="keyword">catch</span> (Exception e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        } <span class="keyword">finally</span> {</span><br><span class="line">            System.out.println(<span class="string">&quot;&#x8F6F;&#x5F15;&#x7528;&#xFF1A;&quot;</span> + softReference.get());</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x8F93;&#x51FA;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[GC (Allocation Failure) [PSYoungGen: 1234K-&gt;448K(2560K)] 1234K-&gt;456K(9728K), 0.0016748 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 448K-&gt;384K(2560K)] 456K-&gt;392K(9728K), 0.0018398 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 384K-&gt;0K(2560K)] [ParOldGen: 8K-&gt;358K(7168K)] 392K-&gt;358K(9728K), [Metaspace: 3030K-&gt;3030K(1056768K)], 0.0057246 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">[GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] 358K-&gt;358K(9728K), 0.0006038 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] </span><br><span class="line">[Full GC (Allocation Failure) [PSYoungGen: 0K-&gt;0K(2560K)] [ParOldGen: 358K-&gt;340K(7168K)] 358K-&gt;340K(9728K), [Metaspace: 3030K-&gt;3030K(1056768K)], 0.0115080 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] </span><br><span class="line">&#x8F6F;&#x5F15;&#x7528;&#xFF1A;null</span><br><span class="line">Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Java heap space</span><br><span class="line">	at com.cuzz.jvm.SoftReferenceDemo.main(SoftReferenceDemo.java:21)</span><br><span class="line">Heap</span><br><span class="line"> PSYoungGen      total 2560K, used 98K [0x00000000ffd00000, 0x0000000100000000, 0x0000000100000000)</span><br><span class="line">  eden space 2048K, 4% used [0x00000000ffd00000,0x00000000ffd18978,0x00000000fff00000)</span><br><span class="line">  from space 512K, 0% used [0x00000000fff00000,0x00000000fff00000,0x00000000fff80000)</span><br><span class="line">  to   space 512K, 0% used [0x00000000fff80000,0x00000000fff80000,0x0000000100000000)</span><br><span class="line"> ParOldGen       total 7168K, used 340K [0x00000000ff600000, 0x00000000ffd00000, 0x00000000ffd00000)</span><br><span class="line">  object space 7168K, 4% used [0x00000000ff600000,0x00000000ff6552f8,0x00000000ffd00000)</span><br><span class="line"> Metaspace       used 3067K, capacity 4496K, committed 4864K, reserved 1056768K</span><br><span class="line">  class space    used 336K, capacity 388K, committed 512K, reserved 1048576K</span><br></pre></td></tr></table></figure>
+<p>&#x53D1;&#x73B0;&#x5F53;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#x3002;</p>
 </li>
 </ul>
 </li>
-<li><p>弱引用</p>
+<li><p>&#x5F31;&#x5F15;&#x7528;</p>
 <ul>
-<li>特点：弱引用通过WeakReference类实现。 弱引用的生命周期比软引用短。在垃圾回收器线程扫描它所管辖的内存区域的过程中，一旦发现了具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。由于垃圾回收器是一个优先级很低的线程，因此不一定会很快回收弱引用的对象。弱引用可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联的引用队列中。</li>
-<li>应用场景：弱应用同样可用于内存敏感的缓存。</li>
-<li><p>代码验证</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeakReferenceDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        WeakReference&lt;Object&gt; weakReference = <span class="keyword">new</span> WeakReference&lt;&gt;(obj);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line"></span><br><span class="line">        obj = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">"GC之后...."</span>);</span><br><span class="line">        </span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object@1540e19d</span><br><span class="line">java.lang.Object@1540e19d</span><br><span class="line">GC之后....</span><br><span class="line">null</span><br><span class="line">null</span><br></pre></td></tr></table></figure>
-<p>值得注意的是<code>String name = &quot;cuzz&quot;</code> 这种会放入永久代，以及 <code>Integer age = 1</code> 在 int 中 -128 到 127 会被缓存，所以是强引用，然后 GC 也不会被回收。</p>
+<li>&#x7279;&#x70B9;&#xFF1A;&#x5F31;&#x5F15;&#x7528;&#x901A;&#x8FC7;WeakReference&#x7C7B;&#x5B9E;&#x73B0;&#x3002; &#x5F31;&#x5F15;&#x7528;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x6BD4;&#x8F6F;&#x5F15;&#x7528;&#x77ED;&#x3002;&#x5728;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x7EBF;&#x7A0B;&#x626B;&#x63CF;&#x5B83;&#x6240;&#x7BA1;&#x8F96;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4E00;&#x65E6;&#x53D1;&#x73B0;&#x4E86;&#x5177;&#x6709;&#x5F31;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x7BA1;&#x5F53;&#x524D;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x8DB3;&#x591F;&#x4E0E;&#x5426;&#xFF0C;&#x90FD;&#x4F1A;&#x56DE;&#x6536;&#x5B83;&#x7684;&#x5185;&#x5B58;&#x3002;&#x7531;&#x4E8E;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x5148;&#x7EA7;&#x5F88;&#x4F4E;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x5F88;&#x5FEB;&#x56DE;&#x6536;&#x5F31;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5F31;&#x5F15;&#x7528;&#x53EF;&#x4EE5;&#x548C;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x961F;&#x5217;&#xFF08;ReferenceQueue&#xFF09;&#x8054;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x5F31;&#x5F15;&#x7528;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;Java&#x865A;&#x62DF;&#x673A;&#x5C31;&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;&#x5F31;&#x5F15;&#x7528;&#x52A0;&#x5165;&#x5230;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x5F15;&#x7528;&#x961F;&#x5217;&#x4E2D;&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x5F31;&#x5E94;&#x7528;&#x540C;&#x6837;&#x53EF;&#x7528;&#x4E8E;&#x5185;&#x5B58;&#x654F;&#x611F;&#x7684;&#x7F13;&#x5B58;&#x3002;</li>
+<li><p>&#x4EE3;&#x7801;&#x9A8C;&#x8BC1;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeakReferenceDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        WeakReference&lt;Object&gt; weakReference = <span class="keyword">new</span> WeakReference&lt;&gt;(obj);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line"></span><br><span class="line">        obj = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">&quot;GC&#x4E4B;&#x540E;....&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x8F93;&#x51FA;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object@1540e19d</span><br><span class="line">java.lang.Object@1540e19d</span><br><span class="line">GC&#x4E4B;&#x540E;....</span><br><span class="line">null</span><br><span class="line">null</span><br></pre></td></tr></table></figure>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;<code>String name = &quot;cuzz&quot;</code> &#x8FD9;&#x79CD;&#x4F1A;&#x653E;&#x5165;&#x6C38;&#x4E45;&#x4EE3;&#xFF0C;&#x4EE5;&#x53CA; <code>Integer age = 1</code> &#x5728; int &#x4E2D; -128 &#x5230; 127 &#x4F1A;&#x88AB;&#x7F13;&#x5B58;&#xFF0C;&#x6240;&#x4EE5;&#x662F;&#x5F3A;&#x5F15;&#x7528;&#xFF0C;&#x7136;&#x540E; GC &#x4E5F;&#x4E0D;&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#x3002;</p>
 </li>
-<li><p>引用队列</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReferenceQueueDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        ReferenceQueue&lt;Object&gt; referenceQueue = <span class="keyword">new</span> ReferenceQueue&lt;&gt;();</span><br><span class="line">        WeakReference&lt;Object&gt; weakReference = <span class="keyword">new</span> WeakReference&lt;&gt;(obj, referenceQueue);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line">        System.out.println(weakReference);</span><br><span class="line"></span><br><span class="line">        obj = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        Thread.sleep(<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"GC之后...."</span>);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line">        System.out.println(weakReference);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object@1540e19d</span><br><span class="line">java.lang.Object@1540e19d</span><br><span class="line">java.lang.ref.WeakReference@677327b6</span><br><span class="line">GC之后....</span><br><span class="line">null</span><br><span class="line">null</span><br><span class="line">java.lang.ref.WeakReference@677327b6</span><br></pre></td></tr></table></figure>
-<p>会把该对象的包装类即<code>weakReference</code>放入到<code>ReferenceQueue</code>里面，我们可以从queue中获取到相应的对象信息，同时进行额外的处理。比如反向操作，数据清理等。</p>
-</li>
-</ul>
-</li>
-<li>虚引用<ul>
-<li>特点：虚引用也叫幻象引用，通过PhantomReference类来实现。无法通过虚引用访问对象的任何属性或函数。幻象引用仅仅是提供了一种确保对象被 finalize 以后，做某些事情的机制。如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收器回收。虚引用必须和引用队列 （ReferenceQueue）联合使用。当垃圾回收器准备回收一个对象时，如果发现它还有虚引用，就会在回收对象的内存之前，把这个虚引用加入到与之关联的引用队列中。<br>ReferenceQueue queue = new ReferenceQueue ();<br>PhantomReference pr = new PhantomReference (object, queue);<br>程序可以通过判断引用队列中是否已经加入了虚引用，来了解被引用的对象是否将要被垃圾回收。如果程序发现某个虚引用已经被加入到引用队列，那么就可以在所引用的对象的内存被回收之前采取一些程序行动。</li>
-<li>应用场景：可用来跟踪对象被垃圾回收器回收的活动，当一个虚引用关联的对象被垃圾收集器回收之前会收到一条系统通知。</li>
-</ul>
+<li><p>&#x5F15;&#x7528;&#x961F;&#x5217;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReferenceQueueDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>{</span><br><span class="line">        Object obj = <span class="keyword">new</span> Object();</span><br><span class="line">        ReferenceQueue&lt;Object&gt; referenceQueue = <span class="keyword">new</span> ReferenceQueue&lt;&gt;();</span><br><span class="line">        WeakReference&lt;Object&gt; weakReference = <span class="keyword">new</span> WeakReference&lt;&gt;(obj, referenceQueue);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line">        System.out.println(weakReference);</span><br><span class="line"></span><br><span class="line">        obj = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        Thread.sleep(<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;GC&#x4E4B;&#x540E;....&quot;</span>);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">        System.out.println(weakReference.get());</span><br><span class="line">        System.out.println(weakReference);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x8F93;&#x51FA;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object@1540e19d</span><br><span class="line">java.lang.Object@1540e19d</span><br><span class="line">java.lang.ref.WeakReference@677327b6</span><br><span class="line">GC&#x4E4B;&#x540E;....</span><br><span class="line">null</span><br><span class="line">null</span><br><span class="line">java.lang.ref.WeakReference@677327b6</span><br></pre></td></tr></table></figure>
+<p>&#x4F1A;&#x628A;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x5373;<code>weakReference</code>&#x653E;&#x5165;&#x5230;<code>ReferenceQueue</code>&#x91CC;&#x9762;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;queue&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x4FE1;&#x606F;&#xFF0C;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x989D;&#x5916;&#x7684;&#x5904;&#x7406;&#x3002;&#x6BD4;&#x5982;&#x53CD;&#x5411;&#x64CD;&#x4F5C;&#xFF0C;&#x6570;&#x636E;&#x6E05;&#x7406;&#x7B49;&#x3002;</p>
 </li>
 </ul>
-<h2 id="请谈谈你对-OOM-的认识？"><a href="#请谈谈你对-OOM-的认识？" class="headerlink" title="请谈谈你对 OOM 的认识？"></a>请谈谈你对 OOM 的认识？</h2><ul>
+</li>
+<li>&#x865A;&#x5F15;&#x7528;<ul>
+<li>&#x7279;&#x70B9;&#xFF1A;&#x865A;&#x5F15;&#x7528;&#x4E5F;&#x53EB;&#x5E7B;&#x8C61;&#x5F15;&#x7528;&#xFF0C;&#x901A;&#x8FC7;PhantomReference&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x865A;&#x5F15;&#x7528;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x7684;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#x6216;&#x51FD;&#x6570;&#x3002;&#x5E7B;&#x8C61;&#x5F15;&#x7528;&#x4EC5;&#x4EC5;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x786E;&#x4FDD;&#x5BF9;&#x8C61;&#x88AB; finalize &#x4EE5;&#x540E;&#xFF0C;&#x505A;&#x67D0;&#x4E9B;&#x4E8B;&#x60C5;&#x7684;&#x673A;&#x5236;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4EC5;&#x6301;&#x6709;&#x865A;&#x5F15;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x548C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5F15;&#x7528;&#x4E00;&#x6837;&#xFF0C;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x53EF;&#x80FD;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x56DE;&#x6536;&#x3002;&#x865A;&#x5F15;&#x7528;&#x5FC5;&#x987B;&#x548C;&#x5F15;&#x7528;&#x961F;&#x5217; &#xFF08;ReferenceQueue&#xFF09;&#x8054;&#x5408;&#x4F7F;&#x7528;&#x3002;&#x5F53;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x51C6;&#x5907;&#x56DE;&#x6536;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x5B83;&#x8FD8;&#x6709;&#x865A;&#x5F15;&#x7528;&#xFF0C;&#x5C31;&#x4F1A;&#x5728;&#x56DE;&#x6536;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x4E4B;&#x524D;&#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x865A;&#x5F15;&#x7528;&#x52A0;&#x5165;&#x5230;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x5F15;&#x7528;&#x961F;&#x5217;&#x4E2D;&#x3002;<br>ReferenceQueue queue = new ReferenceQueue ();<br>PhantomReference pr = new PhantomReference (object, queue);<br>&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5224;&#x65AD;&#x5F15;&#x7528;&#x961F;&#x5217;&#x4E2D;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x52A0;&#x5165;&#x4E86;&#x865A;&#x5F15;&#x7528;&#xFF0C;&#x6765;&#x4E86;&#x89E3;&#x88AB;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5C06;&#x8981;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x3002;&#x5982;&#x679C;&#x7A0B;&#x5E8F;&#x53D1;&#x73B0;&#x67D0;&#x4E2A;&#x865A;&#x5F15;&#x7528;&#x5DF2;&#x7ECF;&#x88AB;&#x52A0;&#x5165;&#x5230;&#x5F15;&#x7528;&#x961F;&#x5217;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x88AB;&#x56DE;&#x6536;&#x4E4B;&#x524D;&#x91C7;&#x53D6;&#x4E00;&#x4E9B;&#x7A0B;&#x5E8F;&#x884C;&#x52A8;&#x3002;</li>
+<li>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x53EF;&#x7528;&#x6765;&#x8DDF;&#x8E2A;&#x5BF9;&#x8C61;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x56DE;&#x6536;&#x7684;&#x6D3B;&#x52A8;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x865A;&#x5F15;&#x7528;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#x88AB;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x56DE;&#x6536;&#x4E4B;&#x524D;&#x4F1A;&#x6536;&#x5230;&#x4E00;&#x6761;&#x7CFB;&#x7EDF;&#x901A;&#x77E5;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;-OOM-&#x7684;&#x8BA4;&#x8BC6;&#xFF1F;"><a href="#&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;-OOM-&#x7684;&#x8BA4;&#x8BC6;&#xFF1F;" class="headerlink" title="&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9; OOM &#x7684;&#x8BA4;&#x8BC6;&#xFF1F;"></a>&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9; OOM &#x7684;&#x8BA4;&#x8BC6;&#xFF1F;</h2><ul>
 <li>java.lang.StackOverflowError<ul>
-<li>在一个函数中调用自己就会产生这个错误</li>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;</li>
 </ul>
 </li>
 <li>java.lang.OutOfMemoryError : Java heap space<ul>
-<li>new 一个很大对象</li>
+<li>new &#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x5BF9;&#x8C61;</li>
 </ul>
 </li>
 <li>java.lang.OutOfMemoryError : GC overhead limit exceeded<ul>
-<li>执行垃圾收集的时间比例太大， 有效的运算量太小，默认情况下,，如果GC花费的时间超过 <strong>98%</strong>， 并且GC回收的内存少于 <strong>2%</strong>， JVM就会抛出这个错误。</li>
+<li>&#x6267;&#x884C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7684;&#x65F6;&#x95F4;&#x6BD4;&#x4F8B;&#x592A;&#x5927;&#xFF0C; &#x6709;&#x6548;&#x7684;&#x8FD0;&#x7B97;&#x91CF;&#x592A;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;,&#xFF0C;&#x5982;&#x679C;GC&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x8D85;&#x8FC7; <strong>98%</strong>&#xFF0C; &#x5E76;&#x4E14;GC&#x56DE;&#x6536;&#x7684;&#x5185;&#x5B58;&#x5C11;&#x4E8E; <strong>2%</strong>&#xFF0C; JVM&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x3002;</li>
 </ul>
 </li>
-<li><p>java.lang.OutOfMemoryError : Direct buffer memory<br>配置参数：-Xms10m -Xmx10m -XX:+PrintGCDetails -XX:MaxDirectMemorySize=5m</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirectBufferDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"maxDirectMemory : "</span> + sun.misc.VM.maxDirectMemory() / (<span class="number">1024</span> * <span class="number">1024</span>) + <span class="string">"MB"</span>);</span><br><span class="line">        ByteBuffer byteBuffer = ByteBuffer.allocateDirect(<span class="number">6</span> * <span class="number">1024</span> * <span class="number">1024</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出</p>
+<li><p>java.lang.OutOfMemoryError : Direct buffer memory<br>&#x914D;&#x7F6E;&#x53C2;&#x6570;&#xFF1A;-Xms10m -Xmx10m -XX:+PrintGCDetails -XX:MaxDirectMemorySize=5m</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DirectBufferDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">&quot;maxDirectMemory : &quot;</span> + sun.misc.VM.maxDirectMemory() / (<span class="number">1024</span> * <span class="number">1024</span>) + <span class="string">&quot;MB&quot;</span>);</span><br><span class="line">        ByteBuffer byteBuffer = ByteBuffer.allocateDirect(<span class="number">6</span> * <span class="number">1024</span> * <span class="number">1024</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x8F93;&#x51FA;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">maxDirectMemory : 5MB</span><br><span class="line">[GC (System.gc()) [PSYoungGen: 1315K-&gt;464K(2560K)] 1315K-&gt;472K(9728K), 0.0008907 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] </span><br><span class="line">[Full GC (System.gc()) [PSYoungGen: 464K-&gt;0K(2560K)] [ParOldGen: 8K-&gt;359K(7168K)] 472K-&gt;359K(9728K), [Metaspace: 3037K-&gt;3037K(1056768K)], 0.0060466 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] </span><br><span class="line">Exception in thread &quot;main&quot; java.lang.OutOfMemoryError: Direct buffer memory</span><br><span class="line">	at java.nio.Bits.reserveMemory(Bits.java:694)</span><br><span class="line">	at java.nio.DirectByteBuffer.&lt;init&gt;(DirectByteBuffer.java:123)</span><br><span class="line">	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:311)</span><br><span class="line">	at com.cuzz.jvm.DirectBufferDemo.main(DirectBufferDemo.java:17)</span><br><span class="line">Heap</span><br><span class="line"> PSYoungGen      total 2560K, used 56K [0x00000000ffd00000, 0x0000000100000000, 0x0000000100000000)</span><br><span class="line">  eden space 2048K, 2% used [0x00000000ffd00000,0x00000000ffd0e170,0x00000000fff00000)</span><br><span class="line">  from space 512K, 0% used [0x00000000fff00000,0x00000000fff00000,0x00000000fff80000)</span><br><span class="line">  to   space 512K, 0% used [0x00000000fff80000,0x00000000fff80000,0x0000000100000000)</span><br><span class="line"> ParOldGen       total 7168K, used 359K [0x00000000ff600000, 0x00000000ffd00000, 0x00000000ffd00000)</span><br><span class="line">  object space 7168K, 5% used [0x00000000ff600000,0x00000000ff659e28,0x00000000ffd00000)</span><br><span class="line"> Metaspace       used 3068K, capacity 4496K, committed 4864K, reserved 1056768K</span><br><span class="line">  class space    used 336K, capacity 388K, committed 512K, reserved 1048576K</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>java.lang.OutOfMemoryError : unable to create new native thread</p>
 <ul>
-<li>创建线程数太多了</li>
+<li>&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x6570;&#x592A;&#x591A;&#x4E86;</li>
 </ul>
 </li>
 <li>java.lang.OutOfMemoryError : Metaspace<ul>
-<li>Java 8 之后的版本使用元空间（Metaspace）代替了永久代，元空间是方法区在 HotSpot 中的实现，它与持久代最大的区别是：元空间并不在虚拟机中的内存中而是使用本地内存。</li>
-<li>元空间存放的信息：<ul>
-<li>虚拟机加载的类信息</li>
-<li>常量池</li>
-<li>静态变量</li>
-<li>即时编译后的代码</li>
+<li>Java 8 &#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x4F7F;&#x7528;&#x5143;&#x7A7A;&#x95F4;&#xFF08;Metaspace&#xFF09;&#x4EE3;&#x66FF;&#x4E86;&#x6C38;&#x4E45;&#x4EE3;&#xFF0C;&#x5143;&#x7A7A;&#x95F4;&#x662F;&#x65B9;&#x6CD5;&#x533A;&#x5728; HotSpot &#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x4E0E;&#x6301;&#x4E45;&#x4EE3;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x662F;&#xFF1A;&#x5143;&#x7A7A;&#x95F4;&#x5E76;&#x4E0D;&#x5728;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5185;&#x5B58;&#x3002;</li>
+<li>&#x5143;&#x7A7A;&#x95F4;&#x5B58;&#x653E;&#x7684;&#x4FE1;&#x606F;&#xFF1A;<ul>
+<li>&#x865A;&#x62DF;&#x673A;&#x52A0;&#x8F7D;&#x7684;&#x7C7B;&#x4FE1;&#x606F;</li>
+<li>&#x5E38;&#x91CF;&#x6C60;</li>
+<li>&#x9759;&#x6001;&#x53D8;&#x91CF;</li>
+<li>&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x4EE3;&#x7801;</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>具体的实现可以看看这个帖子：<a href="http://www.dataguru.cn/thread-351920-1-1.html" target="_blank" rel="noopener">几种手动OOM的方式</a></p>
-<h2 id="GC-垃圾回收算法和垃圾收集器的关系？谈谈你的理解？"><a href="#GC-垃圾回收算法和垃圾收集器的关系？谈谈你的理解？" class="headerlink" title="GC 垃圾回收算法和垃圾收集器的关系？谈谈你的理解？"></a>GC 垃圾回收算法和垃圾收集器的关系？谈谈你的理解？</h2><ul>
-<li>四种 GC 垃圾回收算法<ul>
-<li>引用计数</li>
-<li>复制回收</li>
-<li>标记清除</li>
-<li>标记整理</li>
+<p>&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x8FD9;&#x4E2A;&#x5E16;&#x5B50;&#xFF1A;<a href="http://www.dataguru.cn/thread-351920-1-1.html" target="_blank" rel="noopener">&#x51E0;&#x79CD;&#x624B;&#x52A8;OOM&#x7684;&#x65B9;&#x5F0F;</a></p>
+<h2 id="GC-&#x5783;&#x573E;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x5173;&#x7CFB;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x7406;&#x89E3;&#xFF1F;"><a href="#GC-&#x5783;&#x573E;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x5173;&#x7CFB;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x7406;&#x89E3;&#xFF1F;" class="headerlink" title="GC &#x5783;&#x573E;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x5173;&#x7CFB;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x7406;&#x89E3;&#xFF1F;"></a>GC &#x5783;&#x573E;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x5173;&#x7CFB;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x7406;&#x89E3;&#xFF1F;</h2><ul>
+<li>&#x56DB;&#x79CD; GC &#x5783;&#x573E;&#x56DE;&#x6536;&#x7B97;&#x6CD5;<ul>
+<li>&#x5F15;&#x7528;&#x8BA1;&#x6570;</li>
+<li>&#x590D;&#x5236;&#x56DE;&#x6536;</li>
+<li>&#x6807;&#x8BB0;&#x6E05;&#x9664;</li>
+<li>&#x6807;&#x8BB0;&#x6574;&#x7406;</li>
 </ul>
 </li>
-<li>GC 算法是内存回收的方法论，垃圾收集其就是算法的落实的实现。</li>
-<li>目前为止还没有完美的收集器的出现，更加没有万能的收集器，只是针对具体应用最适合的收集器，进行分代收集。</li>
-<li>串行垃圾回收器（Serial）<ul>
-<li>它为单线程环境设计且只使用一个线程进行垃圾回收，会暂停所有的用户线程，所以不适合服务环境。</li>
+<li>GC &#x7B97;&#x6CD5;&#x662F;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x7684;&#x65B9;&#x6CD5;&#x8BBA;&#xFF0C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5176;&#x5C31;&#x662F;&#x7B97;&#x6CD5;&#x7684;&#x843D;&#x5B9E;&#x7684;&#x5B9E;&#x73B0;&#x3002;</li>
+<li>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x8FD8;&#x6CA1;&#x6709;&#x5B8C;&#x7F8E;&#x7684;&#x6536;&#x96C6;&#x5668;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x66F4;&#x52A0;&#x6CA1;&#x6709;&#x4E07;&#x80FD;&#x7684;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x53EA;&#x662F;&#x9488;&#x5BF9;&#x5177;&#x4F53;&#x5E94;&#x7528;&#x6700;&#x9002;&#x5408;&#x7684;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x8FDB;&#x884C;&#x5206;&#x4EE3;&#x6536;&#x96C6;&#x3002;</li>
+<li>&#x4E32;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#xFF08;Serial&#xFF09;<ul>
+<li>&#x5B83;&#x4E3A;&#x5355;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x8BBE;&#x8BA1;&#x4E14;&#x53EA;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x4F1A;&#x6682;&#x505C;&#x6240;&#x6709;&#x7684;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9002;&#x5408;&#x670D;&#x52A1;&#x73AF;&#x5883;&#x3002;</li>
 </ul>
 </li>
-<li>并行垃圾回收器（Parallel）<ul>
-<li>多个垃圾收集线程并行工作，此时用户线程是暂停的，用于科学计算、大数据处理等弱交互场景。</li>
+<li>&#x5E76;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#xFF08;Parallel&#xFF09;<ul>
+<li>&#x591A;&#x4E2A;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7EBF;&#x7A0B;&#x5E76;&#x884C;&#x5DE5;&#x4F5C;&#xFF0C;&#x6B64;&#x65F6;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x662F;&#x6682;&#x505C;&#x7684;&#xFF0C;&#x7528;&#x4E8E;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x3001;&#x5927;&#x6570;&#x636E;&#x5904;&#x7406;&#x7B49;&#x5F31;&#x4EA4;&#x4E92;&#x573A;&#x666F;&#x3002;</li>
 </ul>
 </li>
-<li>并发垃圾回收器（CMS）<ul>
-<li>用户线程和垃圾收集线程同时执行（不一定是并行，可能是交替执行），不需要停顿用户线程，互联网公司多用它，适用对相应时间有要求的场景。</li>
+<li>&#x5E76;&#x53D1;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#xFF08;CMS&#xFF09;<ul>
+<li>&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x6267;&#x884C;&#xFF08;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5E76;&#x884C;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x4EA4;&#x66FF;&#x6267;&#x884C;&#xFF09;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x505C;&#x987F;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x591A;&#x7528;&#x5B83;&#xFF0C;&#x9002;&#x7528;&#x5BF9;&#x76F8;&#x5E94;&#x65F6;&#x95F4;&#x6709;&#x8981;&#x6C42;&#x7684;&#x573A;&#x666F;&#x3002;</li>
 </ul>
 </li>
-<li>G1 垃圾回收器<ul>
-<li>G1 垃圾回收器将堆内存分割成不同的区域然后并发的对其进行垃圾回收。</li>
+<li>G1 &#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;<ul>
+<li>G1 &#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x5C06;&#x5806;&#x5185;&#x5B58;&#x5206;&#x5272;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x533A;&#x57DF;&#x7136;&#x540E;&#x5E76;&#x53D1;&#x7684;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x3002;</li>
 </ul>
 </li>
 </ul>
-<h2 id="怎么查看服务器默认垃圾收集器是哪个？生产是如何配置垃圾收集器？谈谈你对垃圾收集器的理解？"><a href="#怎么查看服务器默认垃圾收集器是哪个？生产是如何配置垃圾收集器？谈谈你对垃圾收集器的理解？" class="headerlink" title="怎么查看服务器默认垃圾收集器是哪个？生产是如何配置垃圾收集器？谈谈你对垃圾收集器的理解？"></a>怎么查看服务器默认垃圾收集器是哪个？生产是如何配置垃圾收集器？谈谈你对垃圾收集器的理解？</h2><ul>
-<li>怎么查看服务器默认垃圾收集器是哪个？<ul>
+<h2 id="&#x600E;&#x4E48;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x662F;&#x54EA;&#x4E2A;&#xFF1F;&#x751F;&#x4EA7;&#x662F;&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x7406;&#x89E3;&#xFF1F;"><a href="#&#x600E;&#x4E48;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x662F;&#x54EA;&#x4E2A;&#xFF1F;&#x751F;&#x4EA7;&#x662F;&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x7406;&#x89E3;&#xFF1F;" class="headerlink" title="&#x600E;&#x4E48;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x662F;&#x54EA;&#x4E2A;&#xFF1F;&#x751F;&#x4EA7;&#x662F;&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x7406;&#x89E3;&#xFF1F;"></a>&#x600E;&#x4E48;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x662F;&#x54EA;&#x4E2A;&#xFF1F;&#x751F;&#x4EA7;&#x662F;&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF1F;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x7406;&#x89E3;&#xFF1F;</h2><ul>
+<li>&#x600E;&#x4E48;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x662F;&#x54EA;&#x4E2A;&#xFF1F;<ul>
 <li>Java -XX:+PrintCommandLineFlags</li>
 </ul>
 </li>
-<li>Java 的 GC 回收的类型主要有：<ul>
-<li>UseSerialGC，UseParallelGC，UseConcMarkSweepGC，UseParNewGC，UseParallelOldGC，UseG1GC</li>
-<li>Java 8 以后基本不使用 Serial Old</li>
+<li>Java &#x7684; GC &#x56DE;&#x6536;&#x7684;&#x7C7B;&#x578B;&#x4E3B;&#x8981;&#x6709;&#xFF1A;<ul>
+<li>UseSerialGC&#xFF0C;UseParallelGC&#xFF0C;UseConcMarkSweepGC&#xFF0C;UseParNewGC&#xFF0C;UseParallelOldGC&#xFF0C;UseG1GC</li>
+<li>Java 8 &#x4EE5;&#x540E;&#x57FA;&#x672C;&#x4E0D;&#x4F7F;&#x7528; Serial Old</li>
 </ul>
 </li>
-<li>垃圾收集器<br><img src="/2019/05/10/JVM面试/timg.jpg" alt="timg"></li>
-<li>参数说明<ul>
+<li>&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;<br><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/timg.jpg" alt="timg"></li>
+<li>&#x53C2;&#x6570;&#x8BF4;&#x660E;<ul>
 <li>DefNew : Default New Generation</li>
 <li>Tenured : Old</li>
 <li>ParNew : Parallel New Generation</li>
@@ -713,117 +713,117 @@
 <li>ParOldGen : Parallel Old Generation</li>
 </ul>
 </li>
-<li>Server/Client 模式分别是什么意思<ul>
-<li>最主要的差别在于：-Server模式启动时，速度较慢，但是一旦运行起来后，性能将会有很大的提升。</li>
-<li>当虚拟机运行在-client模式的时候，使用的是一个代号为C1的轻量级编译器, 而-server模式启动的虚拟机采用相对重量级，代号为C2的编译器，C2比C1编译器编译的相对彻底，服务起来之后,性能更高。</li>
-<li>所以通常用于做服务器的时候我们用服务端模式，如果你的电脑只是运行一下java程序，就客户端模式就可以了。当然这些都是我们做程序优化程序才需要这些东西的，普通人并不关注这些专业的东西了。其实服务器模式即使编译更彻底，然后垃圾回收优化更好，这当然吃的内存要多点相对于客户端模式。</li>
+<li>Server/Client &#x6A21;&#x5F0F;&#x5206;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;<ul>
+<li>&#x6700;&#x4E3B;&#x8981;&#x7684;&#x5DEE;&#x522B;&#x5728;&#x4E8E;&#xFF1A;-Server&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x901F;&#x5EA6;&#x8F83;&#x6162;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x540E;&#xFF0C;&#x6027;&#x80FD;&#x5C06;&#x4F1A;&#x6709;&#x5F88;&#x5927;&#x7684;&#x63D0;&#x5347;&#x3002;</li>
+<li>&#x5F53;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5728;-client&#x6A21;&#x5F0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4EE3;&#x53F7;&#x4E3A;C1&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x7F16;&#x8BD1;&#x5668;, &#x800C;-server&#x6A21;&#x5F0F;&#x542F;&#x52A8;&#x7684;&#x865A;&#x62DF;&#x673A;&#x91C7;&#x7528;&#x76F8;&#x5BF9;&#x91CD;&#x91CF;&#x7EA7;&#xFF0C;&#x4EE3;&#x53F7;&#x4E3A;C2&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;C2&#x6BD4;C1&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x7684;&#x76F8;&#x5BF9;&#x5F7B;&#x5E95;&#xFF0C;&#x670D;&#x52A1;&#x8D77;&#x6765;&#x4E4B;&#x540E;,&#x6027;&#x80FD;&#x66F4;&#x9AD8;&#x3002;</li>
+<li>&#x6240;&#x4EE5;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x505A;&#x670D;&#x52A1;&#x5668;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x6A21;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x7535;&#x8111;&#x53EA;&#x662F;&#x8FD0;&#x884C;&#x4E00;&#x4E0B;java&#x7A0B;&#x5E8F;&#xFF0C;&#x5C31;&#x5BA2;&#x6237;&#x7AEF;&#x6A21;&#x5F0F;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x5F53;&#x7136;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x6211;&#x4EEC;&#x505A;&#x7A0B;&#x5E8F;&#x4F18;&#x5316;&#x7A0B;&#x5E8F;&#x624D;&#x9700;&#x8981;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x7684;&#xFF0C;&#x666E;&#x901A;&#x4EBA;&#x5E76;&#x4E0D;&#x5173;&#x6CE8;&#x8FD9;&#x4E9B;&#x4E13;&#x4E1A;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;&#x5176;&#x5B9E;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;&#x5373;&#x4F7F;&#x7F16;&#x8BD1;&#x66F4;&#x5F7B;&#x5E95;&#xFF0C;&#x7136;&#x540E;&#x5783;&#x573E;&#x56DE;&#x6536;&#x4F18;&#x5316;&#x66F4;&#x597D;&#xFF0C;&#x8FD9;&#x5F53;&#x7136;&#x5403;&#x7684;&#x5185;&#x5B58;&#x8981;&#x591A;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x6A21;&#x5F0F;&#x3002;</li>
 </ul>
 </li>
-<li>新生代<ul>
-<li>串行 GC (Serial/ Serital Copying)</li>
-<li>并行 GC (ParNew)</li>
-<li>并行回收 GC (Parallel/ Parallel Scanvenge)</li>
+<li>&#x65B0;&#x751F;&#x4EE3;<ul>
+<li>&#x4E32;&#x884C; GC (Serial/ Serital Copying)</li>
+<li>&#x5E76;&#x884C; GC (ParNew)</li>
+<li>&#x5E76;&#x884C;&#x56DE;&#x6536; GC (Parallel/ Parallel Scanvenge)</li>
 </ul>
 </li>
-<li>老年代<ul>
-<li>串行 GC (Serial Old/ Serial MSC)</li>
-<li>并行 GC (Parallel Old/ Parallel MSC)</li>
-<li>并发标记清除 GC (CMS)<ul>
-<li>是一种以获取最短回收停顿时间为目标的收集器，适合应用在互联网站或者 B/S 系统的服务器上，这个类应用尤其重视服务器的响应速度，希望系统停顿时间最短。</li>
-<li>CMS 非常适合堆内存大、CPU 核数多的服务器端应用，也是 G1 出现之前大型应用首选收集器。</li>
-<li>并发停顿比较少，并发指的是与用户线程一起执行。</li>
-<li>过程<ul>
-<li>初始标记（initail mark）：只是标记一下 GC Roots 能直接关联的对象，速度很快，需要暂停所有的工作线程</li>
-<li>并发标记（concurrent mark 和用户线程一起）：进行 GC Roots 的跟踪过程，和用户线程一起工作，不需要暂停工作线程。</li>
-<li>重新标记（remark）：为了修正在并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，仍然需要暂停所有的工作线程。</li>
-<li>并发清除（concurrent sweep 和用户线程一起）：清除 GC 不可达对象，和用户线程一起工作，不需要暂停工作线程，基于标记结果，直接清除。由于耗时最长的并发标记和并发清除过程中，垃圾收集线程和用户线程可以一起并发工作，所以总体来看 CMS 收集器的内存回收和用户线程是一起并发地执行。</li>
+<li>&#x8001;&#x5E74;&#x4EE3;<ul>
+<li>&#x4E32;&#x884C; GC (Serial Old/ Serial MSC)</li>
+<li>&#x5E76;&#x884C; GC (Parallel Old/ Parallel MSC)</li>
+<li>&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x6E05;&#x9664; GC (CMS)<ul>
+<li>&#x662F;&#x4E00;&#x79CD;&#x4EE5;&#x83B7;&#x53D6;&#x6700;&#x77ED;&#x56DE;&#x6536;&#x505C;&#x987F;&#x65F6;&#x95F4;&#x4E3A;&#x76EE;&#x6807;&#x7684;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x9002;&#x5408;&#x5E94;&#x7528;&#x5728;&#x4E92;&#x8054;&#x7F51;&#x7AD9;&#x6216;&#x8005; B/S &#x7CFB;&#x7EDF;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x5E94;&#x7528;&#x5C24;&#x5176;&#x91CD;&#x89C6;&#x670D;&#x52A1;&#x5668;&#x7684;&#x54CD;&#x5E94;&#x901F;&#x5EA6;&#xFF0C;&#x5E0C;&#x671B;&#x7CFB;&#x7EDF;&#x505C;&#x987F;&#x65F6;&#x95F4;&#x6700;&#x77ED;&#x3002;</li>
+<li>CMS &#x975E;&#x5E38;&#x9002;&#x5408;&#x5806;&#x5185;&#x5B58;&#x5927;&#x3001;CPU &#x6838;&#x6570;&#x591A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5E94;&#x7528;&#xFF0C;&#x4E5F;&#x662F; G1 &#x51FA;&#x73B0;&#x4E4B;&#x524D;&#x5927;&#x578B;&#x5E94;&#x7528;&#x9996;&#x9009;&#x6536;&#x96C6;&#x5668;&#x3002;</li>
+<li>&#x5E76;&#x53D1;&#x505C;&#x987F;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x5E76;&#x53D1;&#x6307;&#x7684;&#x662F;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#x6267;&#x884C;&#x3002;</li>
+<li>&#x8FC7;&#x7A0B;<ul>
+<li>&#x521D;&#x59CB;&#x6807;&#x8BB0;&#xFF08;initail mark&#xFF09;&#xFF1A;&#x53EA;&#x662F;&#x6807;&#x8BB0;&#x4E00;&#x4E0B; GC Roots &#x80FD;&#x76F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x901F;&#x5EA6;&#x5F88;&#x5FEB;&#xFF0C;&#x9700;&#x8981;&#x6682;&#x505C;&#x6240;&#x6709;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;</li>
+<li>&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#xFF08;concurrent mark &#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#xFF09;&#xFF1A;&#x8FDB;&#x884C; GC Roots &#x7684;&#x8DDF;&#x8E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6682;&#x505C;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x3002;</li>
+<li>&#x91CD;&#x65B0;&#x6807;&#x8BB0;&#xFF08;remark&#xFF09;&#xFF1A;&#x4E3A;&#x4E86;&#x4FEE;&#x6B63;&#x5728;&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x671F;&#x95F4;&#xFF0C;&#x56E0;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x7EE7;&#x7EED;&#x8FD0;&#x884C;&#x800C;&#x5BFC;&#x81F4;&#x6807;&#x8BB0;&#x4EA7;&#x751F;&#x53D8;&#x52A8;&#x7684;&#x90A3;&#x4E00;&#x90E8;&#x5206;&#x5BF9;&#x8C61;&#x7684;&#x6807;&#x8BB0;&#x8BB0;&#x5F55;&#xFF0C;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x6682;&#x505C;&#x6240;&#x6709;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x3002;</li>
+<li>&#x5E76;&#x53D1;&#x6E05;&#x9664;&#xFF08;concurrent sweep &#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#xFF09;&#xFF1A;&#x6E05;&#x9664; GC &#x4E0D;&#x53EF;&#x8FBE;&#x5BF9;&#x8C61;&#xFF0C;&#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6682;&#x505C;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#xFF0C;&#x57FA;&#x4E8E;&#x6807;&#x8BB0;&#x7ED3;&#x679C;&#xFF0C;&#x76F4;&#x63A5;&#x6E05;&#x9664;&#x3002;&#x7531;&#x4E8E;&#x8017;&#x65F6;&#x6700;&#x957F;&#x7684;&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x548C;&#x5E76;&#x53D1;&#x6E05;&#x9664;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5783;&#x573E;&#x6536;&#x96C6;&#x7EBF;&#x7A0B;&#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x4E00;&#x8D77;&#x5E76;&#x53D1;&#x5DE5;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x603B;&#x4F53;&#x6765;&#x770B; CMS &#x6536;&#x96C6;&#x5668;&#x7684;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x548C;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x662F;&#x4E00;&#x8D77;&#x5E76;&#x53D1;&#x5730;&#x6267;&#x884C;&#x3002;</li>
 </ul>
 </li>
-<li>优缺点<ul>
-<li>优点：并发收集停顿低</li>
-<li>缺点：并发执行对 CPU 资源压力大，采用的标记清除算法会导致大量碎片</li>
+<li>&#x4F18;&#x7F3A;&#x70B9;<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x5E76;&#x53D1;&#x6536;&#x96C6;&#x505C;&#x987F;&#x4F4E;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x5E76;&#x53D1;&#x6267;&#x884C;&#x5BF9; CPU &#x8D44;&#x6E90;&#x538B;&#x529B;&#x5927;&#xFF0C;&#x91C7;&#x7528;&#x7684;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x4F1A;&#x5BFC;&#x81F4;&#x5927;&#x91CF;&#x788E;&#x7247;</li>
 </ul>
 </li>
-<li>由于并发进行， CMS 在收集与应用线程会同时增加对堆内存的占用，也就是说，CMS 必须要在老年代堆用尽之前完成垃圾回收，否者 CMS 回收失败，将触发担保机制，串行老年代收集器将会以 STW 的方式进行一次 GC，从而造成较大的停顿时间。</li>
-<li>标记清除算法无法整理空间碎片，老年代空间会随着应用时长被逐渐耗尽，最后将不得不通过担保机制对堆内存进行压缩。CMS 也提供了参数 -XX:CMSFullGCsBeForeCompaction (默认0，即每次都进行内存整理) 来指定多少次 CMS 收集之后，进行一次压</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>垃圾收集器配置代码总结<ul>
-<li>配置新生代收集器，老年代收集器会自动配置上。<br><img src="/2019/05/10/JVM面试/1558237229584.png" alt="1558237229584"></li>
-</ul>
-</li>
-<li>如何选择垃圾收集器<ul>
-<li>单 CPU 或者小内存，单机程序：-XX:UseSerialGC</li>
-<li>多 CPU 需要最大吞吐量，如后台计算型应用：-XX:UseParallelGC 或者 -XX:UseParallelOldGC</li>
-<li>多 CPU 追求低停顿时间，需要快速响应，如互联网应用：-XX:+UseConcMarkSweepGC</li>
+<li>&#x7531;&#x4E8E;&#x5E76;&#x53D1;&#x8FDB;&#x884C;&#xFF0C; CMS &#x5728;&#x6536;&#x96C6;&#x4E0E;&#x5E94;&#x7528;&#x7EBF;&#x7A0B;&#x4F1A;&#x540C;&#x65F6;&#x589E;&#x52A0;&#x5BF9;&#x5806;&#x5185;&#x5B58;&#x7684;&#x5360;&#x7528;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;CMS &#x5FC5;&#x987B;&#x8981;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x5806;&#x7528;&#x5C3D;&#x4E4B;&#x524D;&#x5B8C;&#x6210;&#x5783;&#x573E;&#x56DE;&#x6536;&#xFF0C;&#x5426;&#x8005; CMS &#x56DE;&#x6536;&#x5931;&#x8D25;&#xFF0C;&#x5C06;&#x89E6;&#x53D1;&#x62C5;&#x4FDD;&#x673A;&#x5236;&#xFF0C;&#x4E32;&#x884C;&#x8001;&#x5E74;&#x4EE3;&#x6536;&#x96C6;&#x5668;&#x5C06;&#x4F1A;&#x4EE5; STW &#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x4E00;&#x6B21; GC&#xFF0C;&#x4ECE;&#x800C;&#x9020;&#x6210;&#x8F83;&#x5927;&#x7684;&#x505C;&#x987F;&#x65F6;&#x95F4;&#x3002;</li>
+<li>&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x65E0;&#x6CD5;&#x6574;&#x7406;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#xFF0C;&#x8001;&#x5E74;&#x4EE3;&#x7A7A;&#x95F4;&#x4F1A;&#x968F;&#x7740;&#x5E94;&#x7528;&#x65F6;&#x957F;&#x88AB;&#x9010;&#x6E10;&#x8017;&#x5C3D;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x4E0D;&#x5F97;&#x4E0D;&#x901A;&#x8FC7;&#x62C5;&#x4FDD;&#x673A;&#x5236;&#x5BF9;&#x5806;&#x5185;&#x5B58;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;CMS &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x53C2;&#x6570; -XX:CMSFullGCsBeForeCompaction (&#x9ED8;&#x8BA4;0&#xFF0C;&#x5373;&#x6BCF;&#x6B21;&#x90FD;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x6574;&#x7406;) &#x6765;&#x6307;&#x5B9A;&#x591A;&#x5C11;&#x6B21; CMS &#x6536;&#x96C6;&#x4E4B;&#x540E;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x538B;</li>
 </ul>
 </li>
 </ul>
-<h2 id="G1-垃圾收集器你了解吗？"><a href="#G1-垃圾收集器你了解吗？" class="headerlink" title="G1 垃圾收集器你了解吗？"></a>G1 垃圾收集器你了解吗？</h2><ul>
-<li>以前收集器的特点<ul>
-<li>年轻代和老年代是各自独立且连续的内存块</li>
-<li>年轻代收集器使用 eden + S0 + S1 进行复制算法</li>
-<li>老年代收集必须扫描整个老年代区域</li>
-<li>都是以尽可能的少而快速地执行 GC 为设计原则</li>
+</li>
+<li>&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#x603B;&#x7ED3;<ul>
+<li>&#x914D;&#x7F6E;&#x65B0;&#x751F;&#x4EE3;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x8001;&#x5E74;&#x4EE3;&#x6536;&#x96C6;&#x5668;&#x4F1A;&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x4E0A;&#x3002;<br><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/1558237229584.png" alt="1558237229584"></li>
 </ul>
 </li>
-<li>G1 是什么<ul>
-<li>G1 是一种面向服务端的垃圾收集器，应用在多核处理器和大容量内存环境中，在实现高吞吐量的同时，尽可能的满足垃圾收集器的暂停时间要求。</li>
-<li>像 CMS 收集器一样，能与应用程序线程并发执行，整理空闲空间更快，需要更多的时间来预测 GC 停顿时间，不希望牺牲大量的吞吐性能，不需要更大的 JAVA Heap。</li>
-<li>G1 收集器的设计目的是取代 CMS 收集器，同时与 CMS 相比，G1 垃圾收集器是一个有整理内存过程的垃圾收集器，不会产生很多内存碎片。G1 的 Stop The World 更可控，G1 在停顿上添加了预测机制，用户可以指定期望的停顿时间。</li>
-<li>G1 是在 2012 年才在 jdk.1.7u4 中可以呀用，在 jdk9 中将 G1 变成默认垃圾收集器来代替 CMS。它是以款面向服务应用的收集器。</li>
-<li>主要改变是 Eden、Survivor 和 Tenured 等内存区域不再是连续的，而是变成了一个个大小一样的 region，每个 region 从 1M 到 32M 不等，一个 region 有可能属于 Eden、Survivor 或者 Tenured 内存区域。</li>
+<li>&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;<ul>
+<li>&#x5355; CPU &#x6216;&#x8005;&#x5C0F;&#x5185;&#x5B58;&#xFF0C;&#x5355;&#x673A;&#x7A0B;&#x5E8F;&#xFF1A;-XX:UseSerialGC</li>
+<li>&#x591A; CPU &#x9700;&#x8981;&#x6700;&#x5927;&#x541E;&#x5410;&#x91CF;&#xFF0C;&#x5982;&#x540E;&#x53F0;&#x8BA1;&#x7B97;&#x578B;&#x5E94;&#x7528;&#xFF1A;-XX:UseParallelGC &#x6216;&#x8005; -XX:UseParallelOldGC</li>
+<li>&#x591A; CPU &#x8FFD;&#x6C42;&#x4F4E;&#x505C;&#x987F;&#x65F6;&#x95F4;&#xFF0C;&#x9700;&#x8981;&#x5FEB;&#x901F;&#x54CD;&#x5E94;&#xFF0C;&#x5982;&#x4E92;&#x8054;&#x7F51;&#x5E94;&#x7528;&#xFF1A;-XX:+UseConcMarkSweepGC</li>
 </ul>
 </li>
-<li>特点<ul>
-<li>G1 能充分利用多 CPU、多核环境硬件优势，尽量缩短 STW。</li>
-<li>G1 整体采用标记-整理算法，局部是通过是通过复制算法，<strong>不会产生内存碎片</strong>。</li>
-<li>宏观上看 G1 之中不在区分年轻代和老年代，被内存划分为多个独立的子区域。</li>
-<li>G1 收集器里面讲整个的内存区域混合在一起，<strong>但其本身依然在小范围内要进行年轻代和老年代的区分</strong>。保留了新生代和老年代，但她们不在是物理隔离，而是一部分 Region 的集合且不需要 Region 是连续的，也就是说依然会采用不同的 GC 方式来处理不同的区域。</li>
-<li>G1 虽然也是分代收集器，但整个内存分区不存在物理上的年轻代和老年代的区别，也不需要完全独立的 Survivor to space 堆做复制准备。G1 只有逻辑上的分代概念，或者说每个分区都可能随 G1 的运行在不同代之间前后切换。</li>
+</ul>
+<h2 id="G1-&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F60;&#x4E86;&#x89E3;&#x5417;&#xFF1F;"><a href="#G1-&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F60;&#x4E86;&#x89E3;&#x5417;&#xFF1F;" class="headerlink" title="G1 &#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F60;&#x4E86;&#x89E3;&#x5417;&#xFF1F;"></a>G1 &#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x4F60;&#x4E86;&#x89E3;&#x5417;&#xFF1F;</h2><ul>
+<li>&#x4EE5;&#x524D;&#x6536;&#x96C6;&#x5668;&#x7684;&#x7279;&#x70B9;<ul>
+<li>&#x5E74;&#x8F7B;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#x662F;&#x5404;&#x81EA;&#x72EC;&#x7ACB;&#x4E14;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x5757;</li>
+<li>&#x5E74;&#x8F7B;&#x4EE3;&#x6536;&#x96C6;&#x5668;&#x4F7F;&#x7528; eden + S0 + S1 &#x8FDB;&#x884C;&#x590D;&#x5236;&#x7B97;&#x6CD5;</li>
+<li>&#x8001;&#x5E74;&#x4EE3;&#x6536;&#x96C6;&#x5FC5;&#x987B;&#x626B;&#x63CF;&#x6574;&#x4E2A;&#x8001;&#x5E74;&#x4EE3;&#x533A;&#x57DF;</li>
+<li>&#x90FD;&#x662F;&#x4EE5;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5C11;&#x800C;&#x5FEB;&#x901F;&#x5730;&#x6267;&#x884C; GC &#x4E3A;&#x8BBE;&#x8BA1;&#x539F;&#x5219;</li>
 </ul>
 </li>
-<li><p>底层原理</p>
+<li>G1 &#x662F;&#x4EC0;&#x4E48;<ul>
+<li>G1 &#x662F;&#x4E00;&#x79CD;&#x9762;&#x5411;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x5E94;&#x7528;&#x5728;&#x591A;&#x6838;&#x5904;&#x7406;&#x5668;&#x548C;&#x5927;&#x5BB9;&#x91CF;&#x5185;&#x5B58;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5728;&#x5B9E;&#x73B0;&#x9AD8;&#x541E;&#x5410;&#x91CF;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x6EE1;&#x8DB3;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x7684;&#x6682;&#x505C;&#x65F6;&#x95F4;&#x8981;&#x6C42;&#x3002;</li>
+<li>&#x50CF; CMS &#x6536;&#x96C6;&#x5668;&#x4E00;&#x6837;&#xFF0C;&#x80FD;&#x4E0E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x6267;&#x884C;&#xFF0C;&#x6574;&#x7406;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x66F4;&#x5FEB;&#xFF0C;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x9884;&#x6D4B; GC &#x505C;&#x987F;&#x65F6;&#x95F4;&#xFF0C;&#x4E0D;&#x5E0C;&#x671B;&#x727A;&#x7272;&#x5927;&#x91CF;&#x7684;&#x541E;&#x5410;&#x6027;&#x80FD;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x5927;&#x7684; JAVA Heap&#x3002;</li>
+<li>G1 &#x6536;&#x96C6;&#x5668;&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x7684;&#x662F;&#x53D6;&#x4EE3; CMS &#x6536;&#x96C6;&#x5668;&#xFF0C;&#x540C;&#x65F6;&#x4E0E; CMS &#x76F8;&#x6BD4;&#xFF0C;G1 &#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x6574;&#x7406;&#x5185;&#x5B58;&#x8FC7;&#x7A0B;&#x7684;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x5F88;&#x591A;&#x5185;&#x5B58;&#x788E;&#x7247;&#x3002;G1 &#x7684; Stop The World &#x66F4;&#x53EF;&#x63A7;&#xFF0C;G1 &#x5728;&#x505C;&#x987F;&#x4E0A;&#x6DFB;&#x52A0;&#x4E86;&#x9884;&#x6D4B;&#x673A;&#x5236;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x671F;&#x671B;&#x7684;&#x505C;&#x987F;&#x65F6;&#x95F4;&#x3002;</li>
+<li>G1 &#x662F;&#x5728; 2012 &#x5E74;&#x624D;&#x5728; jdk.1.7u4 &#x4E2D;&#x53EF;&#x4EE5;&#x5440;&#x7528;&#xFF0C;&#x5728; jdk9 &#x4E2D;&#x5C06; G1 &#x53D8;&#x6210;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x6765;&#x4EE3;&#x66FF; CMS&#x3002;&#x5B83;&#x662F;&#x4EE5;&#x6B3E;&#x9762;&#x5411;&#x670D;&#x52A1;&#x5E94;&#x7528;&#x7684;&#x6536;&#x96C6;&#x5668;&#x3002;</li>
+<li>&#x4E3B;&#x8981;&#x6539;&#x53D8;&#x662F; Eden&#x3001;Survivor &#x548C; Tenured &#x7B49;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x4E0D;&#x518D;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x4E2A;&#x5927;&#x5C0F;&#x4E00;&#x6837;&#x7684; region&#xFF0C;&#x6BCF;&#x4E2A; region &#x4ECE; 1M &#x5230; 32M &#x4E0D;&#x7B49;&#xFF0C;&#x4E00;&#x4E2A; region &#x6709;&#x53EF;&#x80FD;&#x5C5E;&#x4E8E; Eden&#x3001;Survivor &#x6216;&#x8005; Tenured &#x5185;&#x5B58;&#x533A;&#x57DF;&#x3002;</li>
+</ul>
+</li>
+<li>&#x7279;&#x70B9;<ul>
+<li>G1 &#x80FD;&#x5145;&#x5206;&#x5229;&#x7528;&#x591A; CPU&#x3001;&#x591A;&#x6838;&#x73AF;&#x5883;&#x786C;&#x4EF6;&#x4F18;&#x52BF;&#xFF0C;&#x5C3D;&#x91CF;&#x7F29;&#x77ED; STW&#x3002;</li>
+<li>G1 &#x6574;&#x4F53;&#x91C7;&#x7528;&#x6807;&#x8BB0;-&#x6574;&#x7406;&#x7B97;&#x6CD5;&#xFF0C;&#x5C40;&#x90E8;&#x662F;&#x901A;&#x8FC7;&#x662F;&#x901A;&#x8FC7;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#xFF0C;<strong>&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x5185;&#x5B58;&#x788E;&#x7247;</strong>&#x3002;</li>
+<li>&#x5B8F;&#x89C2;&#x4E0A;&#x770B; G1 &#x4E4B;&#x4E2D;&#x4E0D;&#x5728;&#x533A;&#x5206;&#x5E74;&#x8F7B;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#xFF0C;&#x88AB;&#x5185;&#x5B58;&#x5212;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5B50;&#x533A;&#x57DF;&#x3002;</li>
+<li>G1 &#x6536;&#x96C6;&#x5668;&#x91CC;&#x9762;&#x8BB2;&#x6574;&#x4E2A;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x6DF7;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;<strong>&#x4F46;&#x5176;&#x672C;&#x8EAB;&#x4F9D;&#x7136;&#x5728;&#x5C0F;&#x8303;&#x56F4;&#x5185;&#x8981;&#x8FDB;&#x884C;&#x5E74;&#x8F7B;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x533A;&#x5206;</strong>&#x3002;&#x4FDD;&#x7559;&#x4E86;&#x65B0;&#x751F;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#xFF0C;&#x4F46;&#x5979;&#x4EEC;&#x4E0D;&#x5728;&#x662F;&#x7269;&#x7406;&#x9694;&#x79BB;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x90E8;&#x5206; Region &#x7684;&#x96C6;&#x5408;&#x4E14;&#x4E0D;&#x9700;&#x8981; Region &#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x4F9D;&#x7136;&#x4F1A;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684; GC &#x65B9;&#x5F0F;&#x6765;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7684;&#x533A;&#x57DF;&#x3002;</li>
+<li>G1 &#x867D;&#x7136;&#x4E5F;&#x662F;&#x5206;&#x4EE3;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x4F46;&#x6574;&#x4E2A;&#x5185;&#x5B58;&#x5206;&#x533A;&#x4E0D;&#x5B58;&#x5728;&#x7269;&#x7406;&#x4E0A;&#x7684;&#x5E74;&#x8F7B;&#x4EE3;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x7684; Survivor to space &#x5806;&#x505A;&#x590D;&#x5236;&#x51C6;&#x5907;&#x3002;G1 &#x53EA;&#x6709;&#x903B;&#x8F91;&#x4E0A;&#x7684;&#x5206;&#x4EE3;&#x6982;&#x5FF5;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x90FD;&#x53EF;&#x80FD;&#x968F; G1 &#x7684;&#x8FD0;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x4EE3;&#x4E4B;&#x95F4;&#x524D;&#x540E;&#x5207;&#x6362;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x5E95;&#x5C42;&#x539F;&#x7406;</p>
 <ul>
-<li><p>Region 区域化垃圾收集器：最大好处是化整为零，避免全内存扫描，只需要按照区域来进行扫描即可。</p>
+<li><p>Region &#x533A;&#x57DF;&#x5316;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#xFF1A;&#x6700;&#x5927;&#x597D;&#x5904;&#x662F;&#x5316;&#x6574;&#x4E3A;&#x96F6;&#xFF0C;&#x907F;&#x514D;&#x5168;&#x5185;&#x5B58;&#x626B;&#x63CF;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6309;&#x7167;&#x533A;&#x57DF;&#x6765;&#x8FDB;&#x884C;&#x626B;&#x63CF;&#x5373;&#x53EF;&#x3002;</p>
 </li>
-<li><h3 id="Region"><a href="#Region" class="headerlink" title="Region"></a>Region</h3><p><img src="/2019/05/10/JVM面试/5611237-f643066bd97c7703.png" alt="5611237-f643066bd97c7703"><br>G1的内存结构和传统的内存空间划分有比较的不同。G1将内存划分成了多个大小相等的Region（默认是512K），Region逻辑上连续，物理内存地址不连续。同时每个Region被标记成E、S、O、H，分别表示Eden、Survivor、Old、Humongous。其中E、S属于年轻代，O与H属于老年代。<br>H表示Humongous。从字面上就可以理解表示大的对象（下面简称H对象）。<strong>当分配的对象大于等于Region大小的一半</strong>的时候就会被认为是巨型对象。H对象默认分配在老年代，可以防止GC的时候大对象的内存拷贝。通过如果发现堆内存容不下H对象的时候，会触发一次GC操作。 </p>
+<li><h3 id="Region"><a href="#Region" class="headerlink" title="Region"></a>Region</h3><p><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/5611237-f643066bd97c7703.png" alt="5611237-f643066bd97c7703"><br>G1&#x7684;&#x5185;&#x5B58;&#x7ED3;&#x6784;&#x548C;&#x4F20;&#x7EDF;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x5212;&#x5206;&#x6709;&#x6BD4;&#x8F83;&#x7684;&#x4E0D;&#x540C;&#x3002;G1&#x5C06;&#x5185;&#x5B58;&#x5212;&#x5206;&#x6210;&#x4E86;&#x591A;&#x4E2A;&#x5927;&#x5C0F;&#x76F8;&#x7B49;&#x7684;Region&#xFF08;&#x9ED8;&#x8BA4;&#x662F;512K&#xFF09;&#xFF0C;Region&#x903B;&#x8F91;&#x4E0A;&#x8FDE;&#x7EED;&#xFF0C;&#x7269;&#x7406;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E0D;&#x8FDE;&#x7EED;&#x3002;&#x540C;&#x65F6;&#x6BCF;&#x4E2A;Region&#x88AB;&#x6807;&#x8BB0;&#x6210;E&#x3001;S&#x3001;O&#x3001;H&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;Eden&#x3001;Survivor&#x3001;Old&#x3001;Humongous&#x3002;&#x5176;&#x4E2D;E&#x3001;S&#x5C5E;&#x4E8E;&#x5E74;&#x8F7B;&#x4EE3;&#xFF0C;O&#x4E0E;H&#x5C5E;&#x4E8E;&#x8001;&#x5E74;&#x4EE3;&#x3002;<br>H&#x8868;&#x793A;Humongous&#x3002;&#x4ECE;&#x5B57;&#x9762;&#x4E0A;&#x5C31;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x8868;&#x793A;&#x5927;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x4E0B;&#x9762;&#x7B80;&#x79F0;H&#x5BF9;&#x8C61;&#xFF09;&#x3002;<strong>&#x5F53;&#x5206;&#x914D;&#x7684;&#x5BF9;&#x8C61;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;Region&#x5927;&#x5C0F;&#x7684;&#x4E00;&#x534A;</strong>&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x5DE8;&#x578B;&#x5BF9;&#x8C61;&#x3002;H&#x5BF9;&#x8C61;&#x9ED8;&#x8BA4;&#x5206;&#x914D;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#xFF0C;&#x53EF;&#x4EE5;&#x9632;&#x6B62;GC&#x7684;&#x65F6;&#x5019;&#x5927;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x62F7;&#x8D1D;&#x3002;&#x901A;&#x8FC7;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x5806;&#x5185;&#x5B58;&#x5BB9;&#x4E0D;&#x4E0B;H&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21;GC&#x64CD;&#x4F5C;&#x3002; </p>
 </li>
-<li>回收步骤<ul>
-<li>参看：<a href="https://www.jianshu.com/p/548c67aa1bc0" target="_blank" rel="noopener">G1从入门到放弃</a></li>
+<li>&#x56DE;&#x6536;&#x6B65;&#x9AA4;<ul>
+<li>&#x53C2;&#x770B;&#xFF1A;<a href="https://www.jianshu.com/p/548c67aa1bc0" target="_blank" rel="noopener">G1&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x653E;&#x5F03;</a></li>
 </ul>
 </li>
-<li>四步过程<br><img src="/2019/05/10/JVM面试/u=1236259389,1737476709&amp;fm=26&amp;gp=0.jpg" alt="u=1236259389,1737476709&amp;fm=26&amp;gp=0"></li>
+<li>&#x56DB;&#x6B65;&#x8FC7;&#x7A0B;<br><img src="/2019/05/10/JVM&#x9762;&#x8BD5;/u=1236259389,1737476709&amp;fm=26&amp;gp=0.jpg" alt="u=1236259389,1737476709&amp;fm=26&amp;gp=0"></li>
 </ul>
 </li>
 </ul>
-<h2 id="生产环境服务器变慢，诊断思路和性能评估谈谈？"><a href="#生产环境服务器变慢，诊断思路和性能评估谈谈？" class="headerlink" title="生产环境服务器变慢，诊断思路和性能评估谈谈？"></a>生产环境服务器变慢，诊断思路和性能评估谈谈？</h2><ul>
-<li>整机：top</li>
-<li>CPU：vmstat</li>
-<li>内存：free</li>
-<li>硬盘：df</li>
-<li>磁盘IO：iostat</li>
-<li>网络IO：ifstat</li>
+<h2 id="&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x670D;&#x52A1;&#x5668;&#x53D8;&#x6162;&#xFF0C;&#x8BCA;&#x65AD;&#x601D;&#x8DEF;&#x548C;&#x6027;&#x80FD;&#x8BC4;&#x4F30;&#x8C08;&#x8C08;&#xFF1F;"><a href="#&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x670D;&#x52A1;&#x5668;&#x53D8;&#x6162;&#xFF0C;&#x8BCA;&#x65AD;&#x601D;&#x8DEF;&#x548C;&#x6027;&#x80FD;&#x8BC4;&#x4F30;&#x8C08;&#x8C08;&#xFF1F;" class="headerlink" title="&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x670D;&#x52A1;&#x5668;&#x53D8;&#x6162;&#xFF0C;&#x8BCA;&#x65AD;&#x601D;&#x8DEF;&#x548C;&#x6027;&#x80FD;&#x8BC4;&#x4F30;&#x8C08;&#x8C08;&#xFF1F;"></a>&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x670D;&#x52A1;&#x5668;&#x53D8;&#x6162;&#xFF0C;&#x8BCA;&#x65AD;&#x601D;&#x8DEF;&#x548C;&#x6027;&#x80FD;&#x8BC4;&#x4F30;&#x8C08;&#x8C08;&#xFF1F;</h2><ul>
+<li>&#x6574;&#x673A;&#xFF1A;top</li>
+<li>CPU&#xFF1A;vmstat</li>
+<li>&#x5185;&#x5B58;&#xFF1A;free</li>
+<li>&#x786C;&#x76D8;&#xFF1A;df</li>
+<li>&#x78C1;&#x76D8;IO&#xFF1A;iostat</li>
+<li>&#x7F51;&#x7EDC;IO&#xFF1A;ifstat</li>
 </ul>
-<h2 id="假如生产环境出现-CPU-过高，请谈谈你的分析思路和定位？"><a href="#假如生产环境出现-CPU-过高，请谈谈你的分析思路和定位？" class="headerlink" title="假如生产环境出现 CPU 过高，请谈谈你的分析思路和定位？"></a>假如生产环境出现 CPU 过高，请谈谈你的分析思路和定位？</h2><ul>
-<li>先用 top 命令找出 CPU 占比最高的</li>
-<li>ps -ef 或者 jps 进一步定位，得知是一个怎么样的一个后台程序</li>
-<li>定位到具体的线程或代码<ul>
+<h2 id="&#x5047;&#x5982;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x51FA;&#x73B0;-CPU-&#x8FC7;&#x9AD8;&#xFF0C;&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x5206;&#x6790;&#x601D;&#x8DEF;&#x548C;&#x5B9A;&#x4F4D;&#xFF1F;"><a href="#&#x5047;&#x5982;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x51FA;&#x73B0;-CPU-&#x8FC7;&#x9AD8;&#xFF0C;&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x5206;&#x6790;&#x601D;&#x8DEF;&#x548C;&#x5B9A;&#x4F4D;&#xFF1F;" class="headerlink" title="&#x5047;&#x5982;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x51FA;&#x73B0; CPU &#x8FC7;&#x9AD8;&#xFF0C;&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x5206;&#x6790;&#x601D;&#x8DEF;&#x548C;&#x5B9A;&#x4F4D;&#xFF1F;"></a>&#x5047;&#x5982;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x51FA;&#x73B0; CPU &#x8FC7;&#x9AD8;&#xFF0C;&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x7684;&#x5206;&#x6790;&#x601D;&#x8DEF;&#x548C;&#x5B9A;&#x4F4D;&#xFF1F;</h2><ul>
+<li>&#x5148;&#x7528; top &#x547D;&#x4EE4;&#x627E;&#x51FA; CPU &#x5360;&#x6BD4;&#x6700;&#x9AD8;&#x7684;</li>
+<li>ps -ef &#x6216;&#x8005; jps &#x8FDB;&#x4E00;&#x6B65;&#x5B9A;&#x4F4D;&#xFF0C;&#x5F97;&#x77E5;&#x662F;&#x4E00;&#x4E2A;&#x600E;&#x4E48;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x7A0B;&#x5E8F;</li>
+<li>&#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;&#x7EBF;&#x7A0B;&#x6216;&#x4EE3;&#x7801;<ul>
 <li>ps -mp 11111 -o THREAD,tid,time</li>
-<li>-m 显示所有的线程</li>
-<li>-p 进程使用cpu的时间</li>
-<li>-o 该参数后是用户自定义格式</li>
+<li>-m &#x663E;&#x793A;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;</li>
+<li>-p &#x8FDB;&#x7A0B;&#x4F7F;&#x7528;cpu&#x7684;&#x65F6;&#x95F4;</li>
+<li>-o &#x8BE5;&#x53C2;&#x6570;&#x540E;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;</li>
 </ul>
 </li>
-<li>将需要的线程 ID 转化为 16 进制格式</li>
-<li>jstat &lt;进程ID&gt; | grep &lt;线程ID(16进制)&gt; -A60</li>
+<li>&#x5C06;&#x9700;&#x8981;&#x7684;&#x7EBF;&#x7A0B; ID &#x8F6C;&#x5316;&#x4E3A; 16 &#x8FDB;&#x5236;&#x683C;&#x5F0F;</li>
+<li>jstat &lt;&#x8FDB;&#x7A0B;ID&gt; | grep &lt;&#x7EBF;&#x7A0B;ID(16&#x8FDB;&#x5236;)&gt; -A60</li>
 </ul>
-<h2 id="对于-JDK-自带的-JVM-监控和性能分析工具用过哪些？一般机是怎么用到的？"><a href="#对于-JDK-自带的-JVM-监控和性能分析工具用过哪些？一般机是怎么用到的？" class="headerlink" title="对于 JDK 自带的 JVM 监控和性能分析工具用过哪些？一般机是怎么用到的？"></a>对于 JDK 自带的 JVM 监控和性能分析工具用过哪些？一般机是怎么用到的？</h2><p>下一篇重点介绍。</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://time.geekbang.org/column/article/6970" target="_blank" rel="noopener">强引用、软引用、弱引用、幻象引用有什么区别？(评论)</a></li>
-<li><a href="https://www.jianshu.com/p/548c67aa1bc0" target="_blank" rel="noopener">G1从入门到放弃</a></li>
+<h2 id="&#x5BF9;&#x4E8E;-JDK-&#x81EA;&#x5E26;&#x7684;-JVM-&#x76D1;&#x63A7;&#x548C;&#x6027;&#x80FD;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x7528;&#x8FC7;&#x54EA;&#x4E9B;&#xFF1F;&#x4E00;&#x822C;&#x673A;&#x662F;&#x600E;&#x4E48;&#x7528;&#x5230;&#x7684;&#xFF1F;"><a href="#&#x5BF9;&#x4E8E;-JDK-&#x81EA;&#x5E26;&#x7684;-JVM-&#x76D1;&#x63A7;&#x548C;&#x6027;&#x80FD;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x7528;&#x8FC7;&#x54EA;&#x4E9B;&#xFF1F;&#x4E00;&#x822C;&#x673A;&#x662F;&#x600E;&#x4E48;&#x7528;&#x5230;&#x7684;&#xFF1F;" class="headerlink" title="&#x5BF9;&#x4E8E; JDK &#x81EA;&#x5E26;&#x7684; JVM &#x76D1;&#x63A7;&#x548C;&#x6027;&#x80FD;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x7528;&#x8FC7;&#x54EA;&#x4E9B;&#xFF1F;&#x4E00;&#x822C;&#x673A;&#x662F;&#x600E;&#x4E48;&#x7528;&#x5230;&#x7684;&#xFF1F;"></a>&#x5BF9;&#x4E8E; JDK &#x81EA;&#x5E26;&#x7684; JVM &#x76D1;&#x63A7;&#x548C;&#x6027;&#x80FD;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x7528;&#x8FC7;&#x54EA;&#x4E9B;&#xFF1F;&#x4E00;&#x822C;&#x673A;&#x662F;&#x600E;&#x4E48;&#x7528;&#x5230;&#x7684;&#xFF1F;</h2><p>&#x4E0B;&#x4E00;&#x7BC7;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;"><a href="#&#x53C2;&#x8003;&#x94FE;&#x63A5;" class="headerlink" title="&#x53C2;&#x8003;&#x94FE;&#x63A5;"></a>&#x53C2;&#x8003;&#x94FE;&#x63A5;</h2><ul>
+<li><a href="https://time.geekbang.org/column/article/6970" target="_blank" rel="noopener">&#x5F3A;&#x5F15;&#x7528;&#x3001;&#x8F6F;&#x5F15;&#x7528;&#x3001;&#x5F31;&#x5F15;&#x7528;&#x3001;&#x5E7B;&#x8C61;&#x5F15;&#x7528;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;(&#x8BC4;&#x8BBA;)</a></li>
+<li><a href="https://www.jianshu.com/p/548c67aa1bc0" target="_blank" rel="noopener">G1&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x653E;&#x5F03;</a></li>
 </ul>
 
       

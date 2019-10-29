@@ -449,38 +449,38 @@
 
       
         
-          <h2 id="课程导论"><a href="#课程导论" class="headerlink" title="课程导论"></a>课程导论</h2><ul>
-<li>特点<ul>
-<li>没有“对象”，没有继承，没有泛型，没有 try/catch</li>
-<li>有接口，函数式编程，CSP 并发模型（goroutine + channel）</li>
-<li>语法简单</li>
+          <h2 id="&#x8BFE;&#x7A0B;&#x5BFC;&#x8BBA;"><a href="#&#x8BFE;&#x7A0B;&#x5BFC;&#x8BBA;" class="headerlink" title="&#x8BFE;&#x7A0B;&#x5BFC;&#x8BBA;"></a>&#x8BFE;&#x7A0B;&#x5BFC;&#x8BBA;</h2><ul>
+<li>&#x7279;&#x70B9;<ul>
+<li>&#x6CA1;&#x6709;&#x201C;&#x5BF9;&#x8C61;&#x201D;&#xFF0C;&#x6CA1;&#x6709;&#x7EE7;&#x627F;&#xFF0C;&#x6CA1;&#x6709;&#x6CDB;&#x578B;&#xFF0C;&#x6CA1;&#x6709; try/catch</li>
+<li>&#x6709;&#x63A5;&#x53E3;&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#xFF0C;CSP &#x5E76;&#x53D1;&#x6A21;&#x578B;&#xFF08;goroutine + channel&#xFF09;</li>
+<li>&#x8BED;&#x6CD5;&#x7B80;&#x5355;</li>
 </ul>
 </li>
-<li>基本语法<ul>
-<li>变量</li>
-<li>选择，循环</li>
-<li>指针，数组，容器</li>
+<li>&#x57FA;&#x672C;&#x8BED;&#x6CD5;<ul>
+<li>&#x53D8;&#x91CF;</li>
+<li>&#x9009;&#x62E9;&#xFF0C;&#x5FAA;&#x73AF;</li>
+<li>&#x6307;&#x9488;&#xFF0C;&#x6570;&#x7EC4;&#xFF0C;&#x5BB9;&#x5668;</li>
 </ul>
 </li>
-<li>面向接口<ul>
-<li>结构体</li>
-<li>duck typing 的概念</li>
-<li>组合的思想</li>
+<li>&#x9762;&#x5411;&#x63A5;&#x53E3;<ul>
+<li>&#x7ED3;&#x6784;&#x4F53;</li>
+<li>duck typing &#x7684;&#x6982;&#x5FF5;</li>
+<li>&#x7EC4;&#x5408;&#x7684;&#x601D;&#x60F3;</li>
 </ul>
 </li>
-<li>函数式编程<ul>
-<li>闭包的概念</li>
+<li>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;<ul>
+<li>&#x95ED;&#x5305;&#x7684;&#x6982;&#x5FF5;</li>
 </ul>
 </li>
-<li>工程化<ul>
-<li>资源管理，错误处理</li>
-<li>测试和文档</li>
-<li>性能调优</li>
+<li>&#x5DE5;&#x7A0B;&#x5316;<ul>
+<li>&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#xFF0C;&#x9519;&#x8BEF;&#x5904;&#x7406;</li>
+<li>&#x6D4B;&#x8BD5;&#x548C;&#x6587;&#x6863;</li>
+<li>&#x6027;&#x80FD;&#x8C03;&#x4F18;</li>
 </ul>
 </li>
-<li>并发编程<ul>
-<li>goroutine 和 channel</li>
-<li>理解调度器</li>
+<li>&#x5E76;&#x53D1;&#x7F16;&#x7A0B;<ul>
+<li>goroutine &#x548C; channel</li>
+<li>&#x7406;&#x89E3;&#x8C03;&#x5EA6;&#x5668;</li>
 </ul>
 </li>
 </ul>
@@ -667,14 +667,14 @@
 
       
         
-          <h2 id="Lambda-表达式和函数式接口"><a href="#Lambda-表达式和函数式接口" class="headerlink" title="Lambda 表达式和函数式接口"></a>Lambda 表达式和函数式接口</h2><p>Lambda 表达式定义：</p>
+          <h2 id="Lambda-&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;"><a href="#Lambda-&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;" class="headerlink" title="Lambda &#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;"></a>Lambda &#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;</h2><p>Lambda &#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;&#xFF1A;</p>
 <blockquote>
 <p>Lambda: In programming languages such as Lisp, Python and Ruby lambda is an operator used to denote <strong>anonymous functions</strong> or <strong>closures</strong>, following the usage of lambda calculus.</p>
 </blockquote>
-<p>为何需要使用 Lambda 表达式：</p>
+<p>&#x4E3A;&#x4F55;&#x9700;&#x8981;&#x4F7F;&#x7528; Lambda &#x8868;&#x8FBE;&#x5F0F;&#xFF1A;</p>
 <ul>
-<li>在 Java 中，我们无法将函数作为一个参数传递给一个方法，也无法声明一个返回一个函数的方法。</li>
-<li>在 JavaScript 中，函数的参数是一个函数，返回值是另一个函数的情况是非常常见的，JavaScript 是一门典型的函数式语言。</li>
+<li>&#x5728; Java &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x5C06;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x5728; JavaScript &#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#x7684;&#xFF0C;JavaScript &#x662F;&#x4E00;&#x95E8;&#x5178;&#x578B;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x8BED;&#x8A00;&#x3002;</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
@@ -859,8 +859,8 @@
 
       
         
-          <h2 id="如何控制线程打印顺序"><a href="#如何控制线程打印顺序" class="headerlink" title="如何控制线程打印顺序"></a>如何控制线程打印顺序</h2><h3 id="使用-join-方法"><a href="#使用-join-方法" class="headerlink" title="使用 join 方法"></a>使用 join 方法</h3><p>如下面代码所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Thread thread1 = <span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">"thread1"</span>));</span><br><span class="line">        <span class="keyword">final</span> Thread thread2 = <span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">"thread2"</span>));</span><br><span class="line">        <span class="keyword">final</span> Thread thread3 = <span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">"thread3"</span>));</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.start();</span><br><span class="line">        thread2.join();</span><br><span class="line">        thread3.start();</span><br><span class="line">        thread3.join();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="&#x5982;&#x4F55;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x6253;&#x5370;&#x987A;&#x5E8F;"><a href="#&#x5982;&#x4F55;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x6253;&#x5370;&#x987A;&#x5E8F;" class="headerlink" title="&#x5982;&#x4F55;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x6253;&#x5370;&#x987A;&#x5E8F;"></a>&#x5982;&#x4F55;&#x63A7;&#x5236;&#x7EBF;&#x7A0B;&#x6253;&#x5370;&#x987A;&#x5E8F;</h2><h3 id="&#x4F7F;&#x7528;-join-&#x65B9;&#x6CD5;"><a href="#&#x4F7F;&#x7528;-join-&#x65B9;&#x6CD5;" class="headerlink" title="&#x4F7F;&#x7528; join &#x65B9;&#x6CD5;"></a>&#x4F7F;&#x7528; join &#x65B9;&#x6CD5;</h3><p>&#x5982;&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>{</span><br><span class="line">        <span class="keyword">final</span> Thread thread1 = <span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">&quot;thread1&quot;</span>));</span><br><span class="line">        <span class="keyword">final</span> Thread thread2 = <span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">&quot;thread2&quot;</span>));</span><br><span class="line">        <span class="keyword">final</span> Thread thread3 = <span class="keyword">new</span> Thread(() -&gt; System.out.println(<span class="string">&quot;thread3&quot;</span>));</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.start();</span><br><span class="line">        thread2.join();</span><br><span class="line">        thread3.start();</span><br><span class="line">        thread3.join();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/23/面试高频题/#more" rel="contents">
@@ -1045,7 +1045,7 @@
       
         
           
-          分布式基础CAP 定理CAP 定理指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可兼得
+          &#x5206;&#x5E03;&#x5F0F;&#x57FA;&#x7840;CAP &#x5B9A;&#x7406;CAP &#x5B9A;&#x7406;&#x6307;&#x7684;&#x6
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1230,11 +1230,11 @@
 
       
         
-          <p>写代码的时候有个地方需要把 <code>Integer</code> 类型强转为 <code>String</code></p>
+          <p>&#x5199;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E2A;&#x5730;&#x65B9;&#x9700;&#x8981;&#x628A; <code>Integer</code> &#x7C7B;&#x578B;&#x5F3A;&#x8F6C;&#x4E3A; <code>String</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer firstEventType = eventTask.getEventType1();</span><br><span class="line">String firstEventTypeName = eventTypeService.queryDescByCode(String.valueOf(firstEventType));</span><br></pre></td></tr></table></figure>
-<p>当我点开 <code>String#valueof</code> 这个静态方式时</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="keyword">null</span>) ? <span class="string">"null"</span> : obj.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当我们没有获取到 firstEventType 这个值时，为 null，此时它返回给我们的是字符串 <strong>“null”</strong> ，有时候就不符合我们的业务场景，最好是提前做空值判断。</p>
+<p>&#x5F53;&#x6211;&#x70B9;&#x5F00; <code>String#valueof</code> &#x8FD9;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x5F0F;&#x65F6;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(Object obj)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="keyword">null</span>) ? <span class="string">&quot;null&quot;</span> : obj.toString();</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230; firstEventType &#x8FD9;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x4E3A; null&#xFF0C;&#x6B64;&#x65F6;&#x5B83;&#x8FD4;&#x56DE;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x4E32; <strong>&#x201C;null&#x201D;</strong> &#xFF0C;&#x6709;&#x65F6;&#x5019;&#x5C31;&#x4E0D;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#xFF0C;&#x6700;&#x597D;&#x662F;&#x63D0;&#x524D;&#x505A;&#x7A7A;&#x503C;&#x5224;&#x65AD;&#x3002;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/06/03/关于null的思考/#more" rel="contents">
@@ -1419,14 +1419,7 @@
       
         
           
-          JVM 垃圾回收的时候如何确定垃圾？知道什么是 GC Roots ?
-什么是垃圾
-简单来说就是内存中已经不在被使用到的空间就是垃圾
-
-
-要进行垃圾回收，如何判断一个对象是否可以被回收？
-引用计数法
-枚
+          JVM &#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;&#x65F6;&#x5019;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x5783;
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1611,7 +1604,7 @@
 
       
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>3 月份开始准备春招到现在已经 2 个多月了， 总结一下这个两个月的面试的一些情况，下面是我这个月面过的一些公司。</p>
+          <h2 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h2><p>3 &#x6708;&#x4EFD;&#x5F00;&#x59CB;&#x51C6;&#x5907;&#x6625;&#x62DB;&#x5230;&#x73B0;&#x5728;&#x5DF2;&#x7ECF; 2 &#x4E2A;&#x591A;&#x6708;&#x4E86;&#xFF0C; &#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x4E24;&#x4E2A;&#x6708;&#x7684;&#x9762;&#x8BD5;&#x7684;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x6211;&#x8FD9;&#x4E2A;&#x6708;&#x9762;&#x8FC7;&#x7684;&#x4E00;&#x4E9B;&#x516C;&#x53F8;&#x3002;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/05/07/2019春招总结/#more" rel="contents">
@@ -1795,22 +1788,22 @@
 
       
         
-          <h2 id="请谈谈你对-volatile-的理解"><a href="#请谈谈你对-volatile-的理解" class="headerlink" title="请谈谈你对 volatile 的理解"></a>请谈谈你对 volatile 的理解</h2><h3 id="volatile-是-Java-虚拟机提供的轻量级的同步机制"><a href="#volatile-是-Java-虚拟机提供的轻量级的同步机制" class="headerlink" title="volatile 是 Java 虚拟机提供的轻量级的同步机制"></a>volatile 是 Java 虚拟机提供的轻量级的同步机制</h3><ul>
-<li>保证可见性</li>
-<li>禁止指令排序</li>
-<li>不保证原子性</li>
+          <h2 id="&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;-volatile-&#x7684;&#x7406;&#x89E3;"><a href="#&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9;-volatile-&#x7684;&#x7406;&#x89E3;" class="headerlink" title="&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9; volatile &#x7684;&#x7406;&#x89E3;"></a>&#x8BF7;&#x8C08;&#x8C08;&#x4F60;&#x5BF9; volatile &#x7684;&#x7406;&#x89E3;</h2><h3 id="volatile-&#x662F;-Java-&#x865A;&#x62DF;&#x673A;&#x63D0;&#x4F9B;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x540C;&#x6B65;&#x673A;&#x5236;"><a href="#volatile-&#x662F;-Java-&#x865A;&#x62DF;&#x673A;&#x63D0;&#x4F9B;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x540C;&#x6B65;&#x673A;&#x5236;" class="headerlink" title="volatile &#x662F; Java &#x865A;&#x62DF;&#x673A;&#x63D0;&#x4F9B;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x540C;&#x6B65;&#x673A;&#x5236;"></a>volatile &#x662F; Java &#x865A;&#x62DF;&#x673A;&#x63D0;&#x4F9B;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x540C;&#x6B65;&#x673A;&#x5236;</h3><ul>
+<li>&#x4FDD;&#x8BC1;&#x53EF;&#x89C1;&#x6027;</li>
+<li>&#x7981;&#x6B62;&#x6307;&#x4EE4;&#x6392;&#x5E8F;</li>
+<li>&#x4E0D;&#x4FDD;&#x8BC1;&#x539F;&#x5B50;&#x6027;</li>
 </ul>
-<h3 id="JMM（Java-内存模型）-你谈谈"><a href="#JMM（Java-内存模型）-你谈谈" class="headerlink" title="JMM（Java 内存模型） 你谈谈"></a>JMM（Java 内存模型） 你谈谈</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
-<li>JMM 本身是一种抽象的概念并不是真实存在，它描述的是一组规定或则规范，通过这组规范定义了程序中的访问方式。</li>
-<li>JMM 同步规定<ul>
-<li>线程解锁前，必须把共享变量的值刷新回主内存</li>
-<li>线程加锁前，必须读取主内存的最新值到自己的工作内存</li>
-<li>加锁解锁是同一把锁</li>
+<h3 id="JMM&#xFF08;Java-&#x5185;&#x5B58;&#x6A21;&#x578B;&#xFF09;-&#x4F60;&#x8C08;&#x8C08;"><a href="#JMM&#xFF08;Java-&#x5185;&#x5B58;&#x6A21;&#x578B;&#xFF09;-&#x4F60;&#x8C08;&#x8C08;" class="headerlink" title="JMM&#xFF08;Java &#x5185;&#x5B58;&#x6A21;&#x578B;&#xFF09; &#x4F60;&#x8C08;&#x8C08;"></a>JMM&#xFF08;Java &#x5185;&#x5B58;&#x6A21;&#x578B;&#xFF09; &#x4F60;&#x8C08;&#x8C08;</h3><h4 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x57FA;&#x672C;&#x6982;&#x5FF5;</h4><ul>
+<li>JMM &#x672C;&#x8EAB;&#x662F;&#x4E00;&#x79CD;&#x62BD;&#x8C61;&#x7684;&#x6982;&#x5FF5;&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x5B9E;&#x5B58;&#x5728;&#xFF0C;&#x5B83;&#x63CF;&#x8FF0;&#x7684;&#x662F;&#x4E00;&#x7EC4;&#x89C4;&#x5B9A;&#x6216;&#x5219;&#x89C4;&#x8303;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x7EC4;&#x89C4;&#x8303;&#x5B9A;&#x4E49;&#x4E86;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>JMM &#x540C;&#x6B65;&#x89C4;&#x5B9A;<ul>
+<li>&#x7EBF;&#x7A0B;&#x89E3;&#x9501;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x628A;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x5237;&#x65B0;&#x56DE;&#x4E3B;&#x5185;&#x5B58;</li>
+<li>&#x7EBF;&#x7A0B;&#x52A0;&#x9501;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x8BFB;&#x53D6;&#x4E3B;&#x5185;&#x5B58;&#x7684;&#x6700;&#x65B0;&#x503C;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;</li>
+<li>&#x52A0;&#x9501;&#x89E3;&#x9501;&#x662F;&#x540C;&#x4E00;&#x628A;&#x9501;</li>
 </ul>
 </li>
-<li>由于 JVM 运行程序的实体是线程，而每个线程创建时 JVM 都会为其创建一个工作内存，工作内存是每个线程的私有数据区域，而 Java 内存模型中规定所有变量的储存在主内存，主内存是共享内存区域，所有的线程都可以访问，但线程对变量的操作（读取赋值等）必须都工作内存进行看。</li>
-<li>首先要将变量从主内存拷贝的自己的工作内存空间，然后对变量进行操作，操作完成后再将变量写回主内存，不能直接操作主内存中的变量，工作内存中存储着主内存中的变量副本拷贝，前面说过，工作内存是每个线程的私有数据区域，因此不同的线程间无法访问对方的工作内存，线程间的通信(传值)必须通过主内存来完成。</li>
-<li>内存模型图<br><img src="/2019/04/16/Java并发编程/搜狗截图20190416211412.png" alt="搜狗截图20190416211412"></li>
+<li>&#x7531;&#x4E8E; JVM &#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x5B9E;&#x4F53;&#x662F;&#x7EBF;&#x7A0B;&#xFF0C;&#x800C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x65F6; JVM &#x90FD;&#x4F1A;&#x4E3A;&#x5176;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#xFF0C;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#x662F;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;&#x533A;&#x57DF;&#xFF0C;&#x800C; Java &#x5185;&#x5B58;&#x6A21;&#x578B;&#x4E2D;&#x89C4;&#x5B9A;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x7684;&#x50A8;&#x5B58;&#x5728;&#x4E3B;&#x5185;&#x5B58;&#xFF0C;&#x4E3B;&#x5185;&#x5B58;&#x662F;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x7EBF;&#x7A0B;&#x5BF9;&#x53D8;&#x91CF;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x8BFB;&#x53D6;&#x8D4B;&#x503C;&#x7B49;&#xFF09;&#x5FC5;&#x987B;&#x90FD;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#x8FDB;&#x884C;&#x770B;&#x3002;</li>
+<li>&#x9996;&#x5148;&#x8981;&#x5C06;&#x53D8;&#x91CF;&#x4ECE;&#x4E3B;&#x5185;&#x5B58;&#x62F7;&#x8D1D;&#x7684;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#x518D;&#x5C06;&#x53D8;&#x91CF;&#x5199;&#x56DE;&#x4E3B;&#x5185;&#x5B58;&#xFF0C;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x4E3B;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x50A8;&#x7740;&#x4E3B;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x526F;&#x672C;&#x62F7;&#x8D1D;&#xFF0C;&#x524D;&#x9762;&#x8BF4;&#x8FC7;&#xFF0C;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#x662F;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;&#x533A;&#x57DF;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x95F4;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x5BF9;&#x65B9;&#x7684;&#x5DE5;&#x4F5C;&#x5185;&#x5B58;&#xFF0C;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;(&#x4F20;&#x503C;)&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x4E3B;&#x5185;&#x5B58;&#x6765;&#x5B8C;&#x6210;&#x3002;</li>
+<li>&#x5185;&#x5B58;&#x6A21;&#x578B;&#x56FE;<br><img src="/2019/04/16/Java&#x5E76;&#x53D1;&#x7F16;&#x7A0B;/&#x641C;&#x72D7;&#x622A;&#x56FE;20190416211412.png" alt="&#x641C;&#x72D7;&#x622A;&#x56FE;20190416211412"></li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1996,9 +1989,9 @@
       
         
           
-          维基百科解释：
+          &#x7EF4;&#x57FA;&#x767E;&#x79D1;&#x89E3;&#x91CA;&#xFF1A;
 
-In computing, the producer–consumer problem[1][2] (also known as the bounded-buffer problem
+In computing, the producer&#x2013;consumer
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2184,10 +2177,7 @@ In computing, the producer–consumer problem[1][2] (also known as the bounded-b
       
         
           
-          LRU（Least recently used，最近最少使用）算法根据数据的历史访问记录来进行淘汰数据，其核心思想是“如果数据最近被访问过，那么将来被访问的几率也更高” 。
-
-代码：
-12345678
+          LRU&#xFF08;Least recently used&#xFF0C;&#x6700;&#x8FD1;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#xFF09;&#x7B9
           ...
           <!--noindex-->
           <div class="post-button text-center">

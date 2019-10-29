@@ -449,9 +449,9 @@
 
       
         
-          <h2 id="synchronized-字节码分析"><a href="#synchronized-字节码分析" class="headerlink" title="synchronized 字节码分析"></a>synchronized 字节码分析</h2><p>我们先来看一下一个简单的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: cuzz</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/3/4 13:34</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest02</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用 <code>javap -v com.cuzz.jvm.bytecode.MyTest02</code> 命令，找到 <code>setX</code> 方法</p>
+          <h2 id="synchronized-&#x5B57;&#x8282;&#x7801;&#x5206;&#x6790;"><a href="#synchronized-&#x5B57;&#x8282;&#x7801;&#x5206;&#x6790;" class="headerlink" title="synchronized &#x5B57;&#x8282;&#x7801;&#x5206;&#x6790;"></a>synchronized &#x5B57;&#x8282;&#x7801;&#x5206;&#x6790;</h2><p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: cuzz</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/3/4 13:34</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest02</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(<span class="keyword">int</span> x)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x4F7F;&#x7528; <code>javap -v com.cuzz.jvm.bytecode.MyTest02</code> &#x547D;&#x4EE4;&#xFF0C;&#x627E;&#x5230; <code>setX</code> &#x65B9;&#x6CD5;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public void setX(int);</span><br><span class="line">  descriptor: (I)V</span><br><span class="line">  flags: ACC_PUBLIC</span><br><span class="line">  Code:</span><br><span class="line">    stack=2, locals=2, args_size=2</span><br><span class="line">       0: aload_0</span><br><span class="line">       1: iload_1</span><br><span class="line">       2: putfield      #2                  // Field x:I</span><br><span class="line">       5: return</span><br><span class="line">    LineNumberTable:</span><br><span class="line">      line 12: 0</span><br><span class="line">      line 13: 5</span><br><span class="line">    LocalVariableTable:</span><br><span class="line">      Start  Length  Slot  Name   Signature</span><br><span class="line">          0       6     0  this   Lcom/cuzz/jvm/bytecode/MyTest02;</span><br><span class="line">          0       6     1     x   I</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
@@ -637,10 +637,7 @@
       
         
           
-          算法剑指 Offer 题解Leetcode 题解算法操作系统计算机操作系统Linux网络计算机网络HTTP
-Brief History of HTTP
-
-Socket面向对象设计模式面向对象思想数据库
+          &#x7B97;&#x6CD5;&#x5251;&#x6307; Offer &#x9898;&#x89E3;Leetcode &#x9898;&#x89E3;&#x7B97;&#x6CD5;&#x6
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -825,8 +822,8 @@ Socket面向对象设计模式面向对象思想数据库
 
       
         
-          <h2 id="什么是-Redis-？"><a href="#什么是-Redis-？" class="headerlink" title="什么是 Redis ？"></a>什么是 Redis ？</h2><p>Redis，全称 Remote Dictionary Server，是一个基于内存的高性能 Key-Value 数据库。</p>
-<p>另外，Redis 已经成为互联网公司在缓存组件选择的唯一，更多的关注点是，如何使用好 Redis 。</p>
+          <h2 id="&#x4EC0;&#x4E48;&#x662F;-Redis-&#xFF1F;"><a href="#&#x4EC0;&#x4E48;&#x662F;-Redis-&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F; Redis &#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F; Redis &#xFF1F;</h2><p>Redis&#xFF0C;&#x5168;&#x79F0; Remote Dictionary Server&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x7684;&#x9AD8;&#x6027;&#x80FD; Key-Value &#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;Redis &#x5DF2;&#x7ECF;&#x6210;&#x4E3A;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;&#x5728;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#x9009;&#x62E9;&#x7684;&#x552F;&#x4E00;&#xFF0C;&#x66F4;&#x591A;&#x7684;&#x5173;&#x6CE8;&#x70B9;&#x662F;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x597D; Redis &#x3002;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/23/Redis/#more" rel="contents">
@@ -1011,14 +1008,7 @@ Socket面向对象设计模式面向对象思想数据库
       
         
           
-          数据库架构数据库架构可以分为存储文件系统和程序实例两大块，而程序实例根据不同的功能又可以分为如下小模块。
-
-索引模块常见的问题有：
-
-为什么要使用索引
-什么样的信息能成为索引
-索引的数据结构
-密集索引
+          &#x6570;&#x636E;&#x5E93;&#x67B6;&#x6784;&#x6570;&#x636E;&#x5E93;&#x67B6;&#x6784;&#x53EF;&#x4EE5;&#x5
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1204,13 +1194,8 @@ Socket面向对象设计模式面向对象思想数据库
       
         
           
-          计算机网络体系结构
-OSI其中表示层和会话层用途如下：
-
-表示层 ：数据压缩、加密以及数据描述，这使得应用程序不必关心在各台主机中数据内部格式不同的问题。
-会话层 ：建立及管理会话。
-
-五层协议没有表
+          &#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;
+OSI&#x5176;&#x4E2D;&#x8868;
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1396,10 +1381,10 @@ OSI其中表示层和会话层用途如下：
       
         
           <blockquote>
-<p>正常情况下，每个子线程完成各自的任务就可以结束了。不过有的时候，我们希望多个线程协同工作来完成某个任务，这时就涉及到了线程间通信了。</p>
-<p>本文涉及到的知识点：<code>thread.join()</code>, <code>object.wait()</code>, <code>object.notify()</code>, <code>CountdownLatch</code>, <code>CyclicBarrier</code>, <code>FutureTask</code>, <code>Callable</code> 等。</p>
-<p>原文链接：<a href="http://wingjay.com/2017/04/09/Java%E9%87%8C%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%EF%BC%9F/" target="_blank" rel="noopener">Java 中是如何实现线程通信？</a></p>
-<p>本文涉及代码：<a href="https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java" target="_blank" rel="noopener">https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java</a></p>
+<p>&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x5B8C;&#x6210;&#x5404;&#x81EA;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x53EF;&#x4EE5;&#x7ED3;&#x675F;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#x6709;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x534F;&#x540C;&#x5DE5;&#x4F5C;&#x6765;&#x5B8C;&#x6210;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x7EBF;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x4E86;&#x3002;</p>
+<p>&#x672C;&#x6587;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#xFF1A;<code>thread.join()</code>, <code>object.wait()</code>, <code>object.notify()</code>, <code>CountdownLatch</code>, <code>CyclicBarrier</code>, <code>FutureTask</code>, <code>Callable</code> &#x7B49;&#x3002;</p>
+<p>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a href="http://wingjay.com/2017/04/09/Java%E9%87%8C%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%EF%BC%9F/" target="_blank" rel="noopener">Java &#x4E2D;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x901A;&#x4FE1;&#xFF1F;</a></p>
+<p>&#x672C;&#x6587;&#x6D89;&#x53CA;&#x4EE3;&#x7801;&#xFF1A;<a href="https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java" target="_blank" rel="noopener">https://github.com/wingjay/HelloJava/blob/master/multi-thread/src/ForArticle.java</a></p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1584,18 +1569,18 @@ OSI其中表示层和会话层用途如下：
 
       
         
-          <h2 id="Java中的锁分类"><a href="#Java中的锁分类" class="headerlink" title="Java中的锁分类"></a>Java中的锁分类</h2><p>在读很多并发文章中，会提及各种各样锁如公平锁，乐观锁等等，这篇文章介绍各种锁的分类。介绍的内容如下：</p>
+          <h2 id="Java&#x4E2D;&#x7684;&#x9501;&#x5206;&#x7C7B;"><a href="#Java&#x4E2D;&#x7684;&#x9501;&#x5206;&#x7C7B;" class="headerlink" title="Java&#x4E2D;&#x7684;&#x9501;&#x5206;&#x7C7B;"></a>Java&#x4E2D;&#x7684;&#x9501;&#x5206;&#x7C7B;</h2><p>&#x5728;&#x8BFB;&#x5F88;&#x591A;&#x5E76;&#x53D1;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x4F1A;&#x63D0;&#x53CA;&#x5404;&#x79CD;&#x5404;&#x6837;&#x9501;&#x5982;&#x516C;&#x5E73;&#x9501;&#xFF0C;&#x4E50;&#x89C2;&#x9501;&#x7B49;&#x7B49;&#xFF0C;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4ECB;&#x7ECD;&#x5404;&#x79CD;&#x9501;&#x7684;&#x5206;&#x7C7B;&#x3002;&#x4ECB;&#x7ECD;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
-<li>公平锁/非公平锁</li>
-<li>可重入锁</li>
-<li>独享锁/共享锁</li>
-<li>互斥锁/读写锁</li>
-<li>乐观锁/悲观锁</li>
-<li>分段锁</li>
-<li>偏向锁/轻量级锁/重量级锁</li>
-<li>自旋锁</li>
+<li>&#x516C;&#x5E73;&#x9501;/&#x975E;&#x516C;&#x5E73;&#x9501;</li>
+<li>&#x53EF;&#x91CD;&#x5165;&#x9501;</li>
+<li>&#x72EC;&#x4EAB;&#x9501;/&#x5171;&#x4EAB;&#x9501;</li>
+<li>&#x4E92;&#x65A5;&#x9501;/&#x8BFB;&#x5199;&#x9501;</li>
+<li>&#x4E50;&#x89C2;&#x9501;/&#x60B2;&#x89C2;&#x9501;</li>
+<li>&#x5206;&#x6BB5;&#x9501;</li>
+<li>&#x504F;&#x5411;&#x9501;/&#x8F7B;&#x91CF;&#x7EA7;&#x9501;/&#x91CD;&#x91CF;&#x7EA7;&#x9501;</li>
+<li>&#x81EA;&#x65CB;&#x9501;</li>
 </ul>
-<p>上面是很多锁的名词，这些分类并不是全是指锁的状态，有的指锁的特性，有的指锁的设计，下面总结的内容是对每个锁的名词进行一定的解释。</p>
+<p>&#x4E0A;&#x9762;&#x662F;&#x5F88;&#x591A;&#x9501;&#x7684;&#x540D;&#x8BCD;&#xFF0C;&#x8FD9;&#x4E9B;&#x5206;&#x7C7B;&#x5E76;&#x4E0D;&#x662F;&#x5168;&#x662F;&#x6307;&#x9501;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6709;&#x7684;&#x6307;&#x9501;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x6709;&#x7684;&#x6307;&#x9501;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x4E0B;&#x9762;&#x603B;&#x7ED3;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5BF9;&#x6BCF;&#x4E2A;&#x9501;&#x7684;&#x540D;&#x8BCD;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x7684;&#x89E3;&#x91CA;&#x3002;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/13/Java 中的锁/#more" rel="contents">
@@ -1779,7 +1764,7 @@ OSI其中表示层和会话层用途如下：
 
       
         
-          <h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><p>当程序有使用某个类时，如果该类还没有被加载到内存中，则系统会通过加载，连接，初始化三步来实现对这个类进行初始化</p>
+          <h2 id="&#x7C7B;&#x52A0;&#x8F7D;&#x5668;"><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5668;" class="headerlink" title="&#x7C7B;&#x52A0;&#x8F7D;&#x5668;"></a>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</h2><p>&#x5F53;&#x7A0B;&#x5E8F;&#x6709;&#x4F7F;&#x7528;&#x67D0;&#x4E2A;&#x7C7B;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x7C7B;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5219;&#x7CFB;&#x7EDF;&#x4F1A;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;&#xFF0C;&#x8FDE;&#x63A5;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E09;&#x6B65;&#x6765;&#x5B9E;&#x73B0;&#x5BF9;&#x8FD9;&#x4E2A;&#x7C7B;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/11/Java 反射/#more" rel="contents">
@@ -1963,7 +1948,7 @@ OSI其中表示层和会话层用途如下：
 
       
         
-          <h2 id="AOP面向切面编程"><a href="#AOP面向切面编程" class="headerlink" title="AOP面向切面编程"></a>AOP面向切面编程</h2><p>AOP（Aspect Oriented Programming），即面向切面编程，可以说是OOP（Object Oriented Programming，面向对象编程）的补充和完善。OOP引入封装、继承、多态等概念来建立一种对象层次结构，用于模拟公共行为的一个集合。不过OOP允许开发者定义纵向的关系，但并不适合定义横向的关系，例如日志功能。日志代码往往横向地散布在所有对象层次中，而与它对应的对象的核心功能毫无关系对于其他类型的代码，如安全性、异常处理和透明的持续性也都是如此，这种散布在各处的无关的代码被称为横切（cross cutting），在OOP设计中，它导致了大量代码的重复，而不利于各个模块的重用。</p>
+          <h2 id="AOP&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;"><a href="#AOP&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;" class="headerlink" title="AOP&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;"></a>AOP&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;</h2><p>AOP&#xFF08;Aspect Oriented Programming&#xFF09;&#xFF0C;&#x5373;&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;OOP&#xFF08;Object Oriented Programming&#xFF0C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#xFF09;&#x7684;&#x8865;&#x5145;&#x548C;&#x5B8C;&#x5584;&#x3002;OOP&#x5F15;&#x5165;&#x5C01;&#x88C5;&#x3001;&#x7EE7;&#x627F;&#x3001;&#x591A;&#x6001;&#x7B49;&#x6982;&#x5FF5;&#x6765;&#x5EFA;&#x7ACB;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#xFF0C;&#x7528;&#x4E8E;&#x6A21;&#x62DF;&#x516C;&#x5171;&#x884C;&#x4E3A;&#x7684;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x3002;&#x4E0D;&#x8FC7;OOP&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x5B9A;&#x4E49;&#x7EB5;&#x5411;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x9002;&#x5408;&#x5B9A;&#x4E49;&#x6A2A;&#x5411;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F8B;&#x5982;&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#x3002;&#x65E5;&#x5FD7;&#x4EE3;&#x7801;&#x5F80;&#x5F80;&#x6A2A;&#x5411;&#x5730;&#x6563;&#x5E03;&#x5728;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x5C42;&#x6B21;&#x4E2D;&#xFF0C;&#x800C;&#x4E0E;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#x6BEB;&#x65E0;&#x5173;&#x7CFB;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x5B89;&#x5168;&#x6027;&#x3001;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x548C;&#x900F;&#x660E;&#x7684;&#x6301;&#x7EED;&#x6027;&#x4E5F;&#x90FD;&#x662F;&#x5982;&#x6B64;&#xFF0C;&#x8FD9;&#x79CD;&#x6563;&#x5E03;&#x5728;&#x5404;&#x5904;&#x7684;&#x65E0;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x88AB;&#x79F0;&#x4E3A;&#x6A2A;&#x5207;&#xFF08;cross cutting&#xFF09;&#xFF0C;&#x5728;OOP&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x5B83;&#x5BFC;&#x81F4;&#x4E86;&#x5927;&#x91CF;&#x4EE3;&#x7801;&#x7684;&#x91CD;&#x590D;&#xFF0C;&#x800C;&#x4E0D;&#x5229;&#x4E8E;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x91CD;&#x7528;&#x3002;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/10/Spring注解驱动开发（四）/#more" rel="contents">
@@ -2147,7 +2132,7 @@ OSI其中表示层和会话层用途如下：
 
       
         
-          <h3 id="Java-字节码"><a href="#Java-字节码" class="headerlink" title="Java 字节码"></a>Java 字节码</h3><p>代码编译结果从本地机器码转变为字节码，是存储格式发展的一小步，确是编程语言发展的一大步。</p>
+          <h3 id="Java-&#x5B57;&#x8282;&#x7801;"><a href="#Java-&#x5B57;&#x8282;&#x7801;" class="headerlink" title="Java &#x5B57;&#x8282;&#x7801;"></a>Java &#x5B57;&#x8282;&#x7801;</h3><p>&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x4ECE;&#x672C;&#x5730;&#x673A;&#x5668;&#x7801;&#x8F6C;&#x53D8;&#x4E3A;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x662F;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x53D1;&#x5C55;&#x7684;&#x4E00;&#x5C0F;&#x6B65;&#xFF0C;&#x786E;&#x662F;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x53D1;&#x5C55;&#x7684;&#x4E00;&#x5927;&#x6B65;&#x3002;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/02/06/深入理解Java虚拟机（三）/#more" rel="contents">

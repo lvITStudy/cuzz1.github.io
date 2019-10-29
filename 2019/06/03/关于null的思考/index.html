@@ -98,17 +98,17 @@
 
 
 
-<meta name="description" content="写代码的时候有个地方需要把 Integer 类型强转为 String 12Integer firstEventType = eventTask.getEventType1();String firstEventTypeName = eventTypeService.queryDescByCode(String.valueOf(firstEventType)); 当我点开 String#valueo">
+<meta name="description" content="&amp;#x5199;&amp;#x4EE3;&amp;#x7801;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x6709;&amp;#x4E2A;&amp;#x5730;&amp;#x65B9;&amp;#x9700;&amp;#x8981;&amp;#x628A; Integer &amp;#x7C7B;&amp;#x578B;&amp;#x5F3A;&amp;#x8F6C;&amp;#x4E3A; String 12Integer firstEventType = eventTask.ge">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于null的思考">
 <meta property="og:url" content="http://blog.cuzz.site/2019/06/03/关于null的思考/index.html">
 <meta property="og:site_name" content="cuzz&#39;s blog">
-<meta property="og:description" content="写代码的时候有个地方需要把 Integer 类型强转为 String 12Integer firstEventType = eventTask.getEventType1();String firstEventTypeName = eventTypeService.queryDescByCode(String.valueOf(firstEventType)); 当我点开 String#valueo">
+<meta property="og:description" content="&amp;#x5199;&amp;#x4EE3;&amp;#x7801;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x6709;&amp;#x4E2A;&amp;#x5730;&amp;#x65B9;&amp;#x9700;&amp;#x8981;&amp;#x628A; Integer &amp;#x7C7B;&amp;#x578B;&amp;#x5F3A;&amp;#x8F6C;&amp;#x4E3A; String 12Integer firstEventType = eventTask.ge">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-12T12:03:26.852Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于null的思考">
-<meta name="twitter:description" content="写代码的时候有个地方需要把 Integer 类型强转为 String 12Integer firstEventType = eventTask.getEventType1();String firstEventTypeName = eventTypeService.queryDescByCode(String.valueOf(firstEventType)); 当我点开 String#valueo">
+<meta name="twitter:description" content="&amp;#x5199;&amp;#x4EE3;&amp;#x7801;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x6709;&amp;#x4E2A;&amp;#x5730;&amp;#x65B9;&amp;#x9700;&amp;#x8981;&amp;#x628A; Integer &amp;#x7C7B;&amp;#x578B;&amp;#x5F3A;&amp;#x8F6C;&amp;#x4E3A; String 12Integer firstEventType = eventTask.ge">
 
 
 
@@ -446,25 +446,25 @@
       
 
       
-        <p>写代码的时候有个地方需要把 <code>Integer</code> 类型强转为 <code>String</code></p>
+        <p>&#x5199;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x6709;&#x4E2A;&#x5730;&#x65B9;&#x9700;&#x8981;&#x628A; <code>Integer</code> &#x7C7B;&#x578B;&#x5F3A;&#x8F6C;&#x4E3A; <code>String</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer firstEventType = eventTask.getEventType1();</span><br><span class="line">String firstEventTypeName = eventTypeService.queryDescByCode(String.valueOf(firstEventType));</span><br></pre></td></tr></table></figure>
-<p>当我点开 <code>String#valueof</code> 这个静态方式时</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="keyword">null</span>) ? <span class="string">"null"</span> : obj.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当我们没有获取到 firstEventType 这个值时，为 null，此时它返回给我们的是字符串 <strong>“null”</strong> ，有时候就不符合我们的业务场景，最好是提前做空值判断。</p>
+<p>&#x5F53;&#x6211;&#x70B9;&#x5F00; <code>String#valueof</code> &#x8FD9;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x5F0F;&#x65F6;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(Object obj)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="keyword">null</span>) ? <span class="string">&quot;null&quot;</span> : obj.toString();</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230; firstEventType &#x8FD9;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x4E3A; null&#xFF0C;&#x6B64;&#x65F6;&#x5B83;&#x8FD4;&#x56DE;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x662F;&#x5B57;&#x7B26;&#x4E32; <strong>&#x201C;null&#x201D;</strong> &#xFF0C;&#x6709;&#x65F6;&#x5019;&#x5C31;&#x4E0D;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#xFF0C;&#x6700;&#x597D;&#x662F;&#x63D0;&#x524D;&#x505A;&#x7A7A;&#x503C;&#x5224;&#x65AD;&#x3002;</p>
 <a id="more"></a> 
-<p>看下面一个例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(String.valueOf(i));    <span class="comment">// 输出 null</span></span><br><span class="line">System.out.println(String.valueOf(<span class="keyword">null</span>)); <span class="comment">// 空指针</span></span><br></pre></td></tr></table></figure>
-<p><strong>感觉很奇怪，竟然输出结果不一样。</strong></p>
-<p>看看这两个重载方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="keyword">null</span>) ? <span class="string">"null"</span> : obj.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span> data[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>凭直觉来看以为<code>String.valueOf(null)</code> 会选择第一做为 <code>valueOf(Object obj)</code> 这个从载方法，然而选择的是<code>valueOf(char data[])</code> 所以会报空指针异常。</p>
-<p>下面是查到官方文档 <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.12.2.5" target="_blank" rel="noopener">https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.12.2.5</a></p>
+<p>&#x770B;&#x4E0B;&#x9762;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(String.valueOf(i));    <span class="comment">// &#x8F93;&#x51FA; null</span></span><br><span class="line">System.out.println(String.valueOf(<span class="keyword">null</span>)); <span class="comment">// &#x7A7A;&#x6307;&#x9488;</span></span><br></pre></td></tr></table></figure>
+<p><strong>&#x611F;&#x89C9;&#x5F88;&#x5947;&#x602A;&#xFF0C;&#x7ADF;&#x7136;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x6837;&#x3002;</strong></p>
+<p>&#x770B;&#x770B;&#x8FD9;&#x4E24;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(Object obj)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="keyword">null</span>) ? <span class="string">&quot;null&quot;</span> : obj.toString();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">valueOf</span><span class="params">(<span class="keyword">char</span> data[])</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(data);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x51ED;&#x76F4;&#x89C9;&#x6765;&#x770B;&#x4EE5;&#x4E3A;<code>String.valueOf(null)</code> &#x4F1A;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x505A;&#x4E3A; <code>valueOf(Object obj)</code> &#x8FD9;&#x4E2A;&#x4ECE;&#x8F7D;&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x800C;&#x9009;&#x62E9;&#x7684;&#x662F;<code>valueOf(char data[])</code> &#x6240;&#x4EE5;&#x4F1A;&#x62A5;&#x7A7A;&#x6307;&#x9488;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x67E5;&#x5230;&#x5B98;&#x65B9;&#x6587;&#x6863; <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.12.2.5" target="_blank" rel="noopener">https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.12.2.5</a></p>
 <blockquote>
-<p>如果第一个方法处理的任何调用都可以传递给另一个没有编译时类型错误的调用，那么一个方法比另一个方法更具体。</p>
+<p>&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x7684;&#x4EFB;&#x4F55;&#x8C03;&#x7528;&#x90FD;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x7F16;&#x8BD1;&#x65F6;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6BD4;&#x53E6;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x66F4;&#x5177;&#x4F53;&#x3002;</p>
 </blockquote>
-<p>从意思来看 <code>valueOf(char data[])</code> 比 <code>valueOf(Object obj)</code> 更具体。</p>
-<p>我们非常痛恨的 null 到底是什么</p>
-<p>Java 语言定义</p>
+<p>&#x4ECE;&#x610F;&#x601D;&#x6765;&#x770B; <code>valueOf(char data[])</code> &#x6BD4; <code>valueOf(Object obj)</code> &#x66F4;&#x5177;&#x4F53;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x975E;&#x5E38;&#x75DB;&#x6068;&#x7684; null &#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;</p>
+<p>Java &#x8BED;&#x8A00;&#x5B9A;&#x4E49;</p>
 <blockquote>
 <p>There is also a special null type, the type of the expression null, which has no name. Because the null type has no name, it is impossible to declare a variable of the null type or to cast to the null type. The null reference is the only possible value of an expression of null type. The null reference can always be cast to any reference type. <strong>In practice, the programmer can ignore the null type</strong> and just pretend that null is merely a special literal that can be of any reference type.</p>
 </blockquote>
