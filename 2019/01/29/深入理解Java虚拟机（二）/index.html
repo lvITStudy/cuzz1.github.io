@@ -106,12 +106,12 @@
 <meta property="og:site_name" content="cuzz&#39;s blog">
 <meta property="og:description" content="ClassLoader&amp;#x6587;&amp;#x6863;&amp;#xFF1A;https://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.cuzz.site/2019/01/29/深入理解Java虚拟机（二）/深入理解Java虚拟机（二）/1549005960054.png">
-<meta property="og:updated_time" content="2019-07-16T11:43:31.361Z">
+<meta property="og:image" content="http://blog.cuzz.site/2019/01/29/深入理解Java虚拟机（二）/深入理解Java虚拟机(二">
+<meta property="og:updated_time" content="2019-11-01T06:51:34.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解Java虚拟机（二）">
 <meta name="twitter:description" content="ClassLoader&amp;#x6587;&amp;#x6863;&amp;#xFF1A;https://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html">
-<meta name="twitter:image" content="http://blog.cuzz.site/2019/01/29/深入理解Java虚拟机（二）/深入理解Java虚拟机（二）/1549005960054.png">
+<meta name="twitter:image" content="http://blog.cuzz.site/2019/01/29/深入理解Java虚拟机（二）/深入理解Java虚拟机(二">
 
 
 
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  8,899
+                  8,901
                 </span>
               
 
@@ -628,7 +628,7 @@
 <p>&#x6211;&#x4EEC;&#x5148;&#x770B;&#x6E90;&#x7801;</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceLoader</span>&lt;<span class="title">S</span>&gt; <span class="keyword">implements</span> <span class="title">Iterable</span>&lt;<span class="title">S</span>&gt; </span>{</span><br><span class="line">	<span class="comment">// &#x524D;&#x7F00;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String PREFIX = <span class="string">&quot;META-INF/services/&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// The class or interface representing the service being loaded</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Class&lt;S&gt; service;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// The class loader used to locate, load, and instantiate providers</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> ClassLoader loader;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// The access control context taken when the ServiceLoader is created</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> AccessControlContext acc;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Cached providers, in instantiation order</span></span><br><span class="line">    <span class="keyword">private</span> LinkedHashMap&lt;String,S&gt; providers = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// The current lazy-lookup iterator</span></span><br><span class="line">    <span class="keyword">private</span> LazyIterator lookupIterator;</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>&#x8BE5;&#x7C7B;&#x4E2D;&#x6709;&#x4E2A;&#x5E38;&#x91CF; PREFIX &#xFF0C;&#x6839;&#x636E;&#x6587;&#x6863;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x770B; mysql-connnector-java &#x4E2D;&#x4E5F;&#x6709;</p>
-<p><img src="/2019/01/29/&#x6DF1;&#x5165;&#x7406;&#x89E3;Java&#x865A;&#x62DF;&#x673A;&#xFF08;&#x4E8C;&#xFF09;/&#x6DF1;&#x5165;&#x7406;&#x89E3;Java&#x865A;&#x62DF;&#x673A;&#xFF08;&#x4E8C;&#xFF09;\1549005960054.png" alt="1549005960054"></p>
+<p><img src="/2019/01/29/&#x6DF1;&#x5165;&#x7406;&#x89E3;Java&#x865A;&#x62DF;&#x673A;&#xFF08;&#x4E8C;&#xFF09;/&#x6DF1;&#x5165;&#x7406;&#x89E3;Java&#x865A;&#x62DF;&#x673A;(&#x4E8C;" alt="1549005960054">/1549005960054.png)</p>
 <p>&#x5176;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x5B57;&#x5C31;&#x662F;&#x670D;&#x52A1;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x636E;&#x5E93;&#x9A71;&#x52A8;&#x7684;&#x670D;&#x52A1;&#x662F;java.sql.Drive&#xFF0C;&#x6211;&#x4EEC;&#x5728;mysql&#x7684;jar&#x5305;&#x4E0B;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x91CC;&#x8FB9;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x5168;&#x9650;&#x5B9A;&#x540D;&#xFF1A;  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">com.mysql.jdbc.Driver</span><br><span class="line">com.mysql.fabric.jdbc.FabricMySQLDriver</span><br></pre></td></tr></table></figure>
 <p>&#x4E0E;&#x524D;&#x9762;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x9A71;&#x52A8;&#x662F;&#x4E00;&#x6837;&#x7684;</p>
@@ -677,7 +677,7 @@
   <p><span>本文标题:</span><a href="/2019/01/29/深入理解Java虚拟机（二）/">深入理解Java虚拟机（二）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 cuzz 的个人博客">cuzz</a></p>
   <p><span>发布时间:</span>2019年01月29日 - 23:01</p>
-  <p><span>最后更新:</span>2019年07月16日 - 19:07</p>
+  <p><span>最后更新:</span>2019年11月01日 - 14:11</p>
   <p><span>原始链接:</span><a href="/2019/01/29/深入理解Java虚拟机（二）/" title="深入理解Java虚拟机（二）">http://blog.cuzz.site/2019/01/29/深入理解Java虚拟机（二）/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://blog.cuzz.site/2019/01/29/深入理解Java虚拟机（二）/" aria-label="复制成功！"></i></span>
   </p>
